@@ -1,0 +1,72 @@
+---
+const numStars = 500; // Cantidad de estrellas (aumentada un poco)
+
+const stars = Array.from({ length: numStars }).map((_, i) => {
+  const size = Math.random() * 3 + 1; // Tamaño aleatorio entre 1px y 4px
+  const top = Math.random() * 100; // Posición vertical aleatoria
+  const left = Math.random() * 200; // Posición horizontal aleatoria sobre el doble del ancho para desplazamiento continuo
+  const opacity = Math.random() * 0.5 + 0.5; // Opacidad inicial aleatoria entre 0.5 y 1
+  const delay = Math.random() * 50; // Retardo de animación aleatorio para parpadeo (tu duración: 50s)
+  return {
+    style: `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      top: ${top}%;
+      left: ${left}%;
+      background: radial-gradient(circle, white 0%, transparent 70%); /* Suaviza los bordes de la estrella */
+      border-radius: 50%;
+      opacity: ${opacity};
+      animation: twinkle 8s ease-in-out infinite ${delay}s; /* Parpadeo independiente */
+    `,
+  };
+});
+---
+
+<div class="space-background">
+  <div class="stars-container">
+    {
+      stars.map(star => (
+        <div style={star.style}></div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000000, #1a1a2e);
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .stars-container {
+    position: absolute;
+    width: 200%; /* Ancho doble para desplazamiento horizontal continuo */
+    height: 100%; 
+    top: 0;
+    left: 0;
+    animation: float 900s linear infinite; /* Movimiento horizontal más lento */
+  }
+
+  /* Los estilos de las estrellas individuales están en los estilos inline */
+
+  @keyframes float {
+    0% {
+      transform: translateX(0); /* Inicio del movimiento */
+    }
+    100% {
+      transform: translateX(-100%); /* Se mueve el 100% del ancho del contenedor */
+    }
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; } /* Opacidad baja */
+    50% { opacity: 1; } /* Opacidad alta */
+  }
+</style> 
