@@ -1,3 +1,7 @@
+---
+import SpaceBackground from '../components/SpaceBackground.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,6 +12,7 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<SpaceBackground />
 		<slot />
 	</body>
 </html>
@@ -18,5 +23,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		color: white;
 	}
 </style>
