@@ -30,8 +30,8 @@ import SpaceBackground from '../components/SpaceBackground.astro';
 				});
 				
 				const layers = [
-					{ count: 1000, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
-					{ count: 200, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
+					{ count: 900, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
+					{ count: 500, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
 					{ count: 100, speed: 0.5, colorRange: [140, 200], sizeFactor: 4 }
 				];
 				
@@ -59,7 +59,7 @@ import SpaceBackground from '../components/SpaceBackground.astro';
 					}
 				}
 				
-				const fov = 200;
+				const fov = 300;
 				
 				function draw() {
 					ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
