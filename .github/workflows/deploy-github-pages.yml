@@ -30,28 +30,18 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Upload artifact (explicit)
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages-artifact
-          path: ./dist
-
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-          
-  publish:
+
+  deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-      packages: write
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checking out
-        uses: actions/checkout@v4
-      - name: Publish
-        id: publish
-        uses: actions/publish-immutable-action@0.0.3
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
