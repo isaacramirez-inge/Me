@@ -1,23 +1,22 @@
 ---
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+const { t } = Astro.props;
 ---
 
 <div id="container">
 	<main>
 		<section id="hero">
 			<h1 style="color:white">
-				The Isaac's portfolio is actually under construction
+				{t.title}
 			</h1>
 			<section id="links">
-				<a class="button" href="#">Wait for it! ;)</a>
-				
+				<a class="button" href="#">{t.button}</a>
 			</section>
 		</section>
 	</main>
-
-	
 </div>
+
 
 <style>
 	#background {
