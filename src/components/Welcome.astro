@@ -27,17 +27,17 @@ const { t } = Astro.props;
 		</div>
         <div class="slider-container">
           <div class="slider-item">
-            <p class="text-xl font-serif font-thin tracking-wider font-verdana black-shadow">
+            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
 				Soy una persona altamente comprometida con cada proyecto en el que participo y apasionada por crear soluciones tecnológicas de alto impacto. Creo firmemente que la tecnología es una herramienta que se aprende, pero lo verdaderamente importante es comprender a fondo el problema y trazar el camino más eficaz y eficiente hacia su solución.
 			</p>
           </div>
           <div class="slider-item">
-            <p class="text-xl font-serif font-thin tracking-wider font-verdana black-shadow">
+            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
 				Cuento con más de cinco años de experiencia desarrollando soluciones fullstack creativas para desafíos complejos, utilizando un stack tecnológico amplio y adaptándome con facilidad a distintos entornos. He trabajado con clientes de diversos sectores como banca, salud, telecomunicaciones y gobierno, cada uno con objetivos, restricciones y ecosistemas tecnológicos únicos. Esta diversidad me ha brindado una visión integral y me permite adaptarme rápidamente a nuevos retos.
 			</p>
           </div>
           <div id="last" class="slider-item" >
-            <p class="text-xl font-serif font-thin tracking-wider font-verdana black-shadow">
+            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
 				Mi enfoque está orientado a resultados, con una combinación de pensamiento estratégico, habilidades técnicas y una fuerte capacidad de análisis, lo que me convierte en un aliado valioso para cualquier equipo o proyecto.
 			</p>
           </div>
@@ -101,50 +101,63 @@ const { t } = Astro.props;
 </style>
 
 <!-- Script del lado del cliente -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script is:inline type="module">
-
   document.addEventListener('DOMContentLoaded', function() {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
     const indicators = document.querySelectorAll('.indicator-item');
-    const indicators_wraper = document.querySelectorAll('.indicator-item-wrapper');
-	const last = sliderItems[sliderItems.length - 1];
+    const indicatorsWrapper = document.querySelectorAll('.indicator-item-wrapper');
 
-    indicators_wraper.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentIndex = index;
-		toggleIndicator();
-        updateSlider();
-      });
-    });
-	last.addEventListener('click', (e)=>{
-		e.preventDefault();
-		currentIndex = 0; 
-		updateSlider();
-	})
 
     let currentIndex = 0;
 
+    // Inicializa Hammer.js para el slider
+    const hammer = new Hammer(sliderContainer);
+    hammer.on('swipeleft', () => {
+      if (currentIndex < sliderItems.length - 1) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+
+    hammer.on('swiperight', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+
+    indicatorsWrapper.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        toggleIndicator();
+        updateSlider();
+      });
+    });
+
+
     function nextSlide() {
-		if (currentIndex + 1 === sliderItems.length ){return;}
+      if (currentIndex + 1 === sliderItems.length) { return; }
       currentIndex = (currentIndex + 1) % sliderItems.length;
       updateSlider();
     }
 
     function updateSlider() {
-		toggleIndicator(currentIndex);
+      toggleIndicator(currentIndex);
       sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-	function toggleIndicator() {
+    function toggleIndicator() {
       indicators.forEach((indicator, i) => {
         if (i === currentIndex) {
           indicator.classList.add('active');
         } else {
           indicator.classList.remove('active');
         }
-      });	
+      });
     }
+
     setInterval(nextSlide, 20 * 1000);
   });
 </script>
