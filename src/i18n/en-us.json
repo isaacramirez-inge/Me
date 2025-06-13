@@ -1,4 +1,8 @@
 {
     "title":"The Isaac's web site is under construction",
-    "button":"Wait for it!"
+    "button":"Wait for it!",
+    "aboutMe":{
+        "subtitle":"Developer / Just living an examined life",
+        "description":"I'm a person "
+    }
 }

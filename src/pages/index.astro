@@ -1,13 +1,15 @@
 ---
+import LottieIntro from '../components/intro.astro';
 const supportedLocales = ['en-us', 'es-es', 'es-sv'];
-const defaultLocale = 'en-US';
+const defaultLocale = 'en-us';
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isa Wild Dev -1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+    
     <style>
       body {
         display: flex;
@@ -18,36 +20,66 @@ const defaultLocale = 'en-US';
         color: white;
         font-family: sans-serif;
         margin: 0;
-        flex-direction: column;
-      }
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid #ccc;
-        border-top-color: #ff6d00;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin-top: 1rem;
-      }
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
+        flex-direction: column; 
       }
     </style>
-    <script type="text/javascript">
-      const supported = ["en-us", "es-es", "es-sv"];
-      const fallback = "en-us";
-      const lang = navigator.language || navigator.userLanguage;
-      const matched = supported.find(l => lang.startsWith(l.split("-")[0])) || fallback;
-
-      // Retrasar un poco para permitir ver la animación (opcional)
-      setTimeout(() => {
-        window.location.replace(`/Me/${matched}/`);
-      }, 800); // 0.8 segundos
-    </script>
   </head>
   <body>
-    <div class="spinner"></div>
+    <LottieIntro /> 
+    
+    <script is:inline>
+      const supportedLocalesForRedirect = ["en-us", "es-es", "es-sv"];
+      const defaultLocaleForRedirect = "en-us";
+      let redirectHasBeenTriggered = false;
+
+      function performRedirect() {
+        if (redirectHasBeenTriggered) {
+          return; // Evitar múltiples redirecciones
+        }
+        redirectHasBeenTriggered = true;
+
+        const userDetectedLanguage = (navigator.language || navigator.userLanguage || defaultLocaleForRedirect).toLowerCase();
+        // Find the best matching locale from the supported list.
+        const matched = supportedLocalesForRedirect.find(l => userDetectedLanguage.startsWith(l.split("-")[0])) || defaultLocaleForRedirect;
+        console.log(`User detected language: ${userDetectedLanguage}, Redirecting to /Me/${matched}/`);
+        window.location.replace(`/Me/${matched}/`);
+      }
+      
+      document.addEventListener('astro-lottie-animation-ready', (event) => {
+        console.log('staring animation');
+        console.log(event);
+        const { id, player } = event.detail;
+
+        if (id === 'my-animation') {
+          console.log("Lottie animation 'my-animation' is ready and found!");
+
+          // Reproducir la animación después de 3 segundos (según tu lógica existente)
+          setTimeout(() => {
+            if (player && typeof player.play === 'function') {
+              player.play();
+            } else {
+              console.error("Lottie player o método play no disponible para 'my-animation'. Redirigiendo por fallback.");
+              performRedirect();
+            }
+          }, 3000);
+
+          // Escuchar el evento 'complete' de la animación para redirigir.
+          // El componente LottieIntro tiene loop={false}, así que 'complete' se disparará una vez por reproducción.
+          player.addEventListener('complete', () => {
+            console.log("Lottie animation 'my-animation' completed. Redirecting...");
+            performRedirect();
+          });
+        }
+      });
+
+      // Fallback: Redirigir si el evento de Lottie no se recibe o la animación no se completa en un tiempo prudencial.
+      // Esto maneja casos donde el componente Lottie podría fallar en cargarse o inicializarse completamente.
+      setTimeout(() => {
+        if (!redirectHasBeenTriggered) { 
+             console.warn("Lottie no activó la redirección a tiempo. Realizando redirección de fallback.");
+             performRedirect();
+        }
+      }, 5000); // Ajusta este tiempo según sea necesario (ej. 15 segundos)
+    </script>
   </body>
 </html>

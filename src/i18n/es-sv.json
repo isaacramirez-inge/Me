@@ -1,4 +1,8 @@
 {
     "title":"Ahorita estamos viendo de terminar esta onda!",
-    "button":"Espéralo bicho!"
+    "button":"Espéralo bicho!",
+    "aboutMe":{
+        "subtitle":"Developer / Just living an examined life",
+        "description":"I'm a person "
+    }
 }

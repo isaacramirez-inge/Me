@@ -1,11 +1,17 @@
+---
+import faviconUrl from '../../public/favicon.svg?url';
+const { t } = Astro.props;
+
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/Me/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Isa ridevr</title>
+		<title>Isaac Wild Dev</title>
+		<link rel="stylesheet" href="/src/css/tailwind.css" /> 
 	</head>
 	<body>
 		<canvas id="starfield"/>
@@ -26,8 +32,8 @@
 				});
 				
 				const layers = [
-					{ count: 900, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
-					{ count: 500, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
+					{ count: 500, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
+					{ count: 250, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
 					{ count: 100, speed: 0.5, colorRange: [140, 200], sizeFactor: 4 }
 				];
 				
@@ -55,7 +61,7 @@
 					}
 				}
 				
-				const fov = 310;
+				const fov = 150;
 				
 				function draw() {
 					ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
@@ -106,15 +112,18 @@
 	html,
 	body {
 		margin: 0;
-		width: 100dvw;
-		height: 100dvh;
+		width: 100%;
+		height: 100%;
+	}
+	body{
+		border: 1px solid transparent;
 	}
 	#starfield{
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
+		width: 100dvw;
+		height: 100dvh;
 		z-index:-1;
 		background-color: black;
 	}

@@ -2,6 +2,8 @@
 import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
 
+import "../../css/global.css";
+
 import en from '../../i18n/en-us.json';
 import es from '../../i18n/es-es.json';
 import sv from '../../i18n/es-sv.json';
@@ -10,13 +12,12 @@ type Locale = 'en-us' | 'es-es' | 'es-sv';
 
 type Translations = {
   title: string;
-  description: string;
 };
 
 const translations: Record<Locale, Translations> = {
   'en-us': en,
   'es-es': es,
-  'es-sv': sv
+  'es-sv': sv,
 };
 
 export async function getStaticPaths() {

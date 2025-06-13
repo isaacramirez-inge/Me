@@ -10,7 +10,11 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "astro": "^5.7.13"
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.7.13",
+    "astro-integration-lottie": "^0.3.2",
+    "gsap": "^3.13.0",
+    "lottie-web": "^5.13.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"

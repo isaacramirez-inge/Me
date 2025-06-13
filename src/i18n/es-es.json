@@ -1,4 +1,8 @@
 {
     "title":"El portafolio de isaac está actualmente en construcción",
-    "button":"Espéralo!"
+    "button":"Espéralo!",
+    "aboutMe":{
+        "subtitle":"Developer / Just living an examined life",
+        "description":"I'm a person "
+    }
 }
