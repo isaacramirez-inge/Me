@@ -3,7 +3,6 @@ import img_me_just_living from '../assets/img/me/me-just-living-trbg.png?url';
 const { t } = Astro.props;
 ---
 
-<!-- Sección visual fija -->
 <div id="first-view" class="fixed top-0 left-0 w-screen h-screen relative overflow-hidden z-10">
   <img src={`${img_me_just_living}`} class="fixed top-0 left-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
 
@@ -14,33 +13,24 @@ const { t } = Astro.props;
 
       <!-- Contenedor del slider -->
       <div class="slider h-60 overflow-hidden">
-		<div class="indicators">
-			<div class="indicator-item-wrapper">
-				<div class="indicator-item active"></div>
-			</div>
-			<div class="indicator-item-wrapper">
-				<div class="indicator-item"></div>
-			</div>
-			<div class="indicator-item-wrapper">
-				<div class="indicator-item"></div>
-			</div>
-		</div>
+        <div class="indicators">
+          {t.home.welcome.descriptions.map((_: string, index: number) => (
+            <div class="indicator-item-wrapper">
+              <div class={`indicator-item ${index === 0 ? 'active' : ''}`}/>
+            </div>
+          ))}
+        </div>
         <div class="slider-container">
-          <div class="slider-item">
-            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
-				Soy una persona altamente comprometida con cada proyecto en el que participo y apasionada por crear soluciones tecnológicas de alto impacto. Creo firmemente que la tecnología es una herramienta que se aprende, pero lo verdaderamente importante es comprender a fondo el problema y trazar el camino más eficaz y eficiente hacia su solución.
-			</p>
-          </div>
-          <div class="slider-item">
-            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
-				Cuento con más de cinco años de experiencia desarrollando soluciones fullstack creativas para desafíos complejos, utilizando un stack tecnológico amplio y adaptándome con facilidad a distintos entornos. He trabajado con clientes de diversos sectores como banca, salud, telecomunicaciones y gobierno, cada uno con objetivos, restricciones y ecosistemas tecnológicos únicos. Esta diversidad me ha brindado una visión integral y me permite adaptarme rápidamente a nuevos retos.
-			</p>
-          </div>
-          <div id="last" class="slider-item" >
-            <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
-				Mi enfoque está orientado a resultados, con una combinación de pensamiento estratégico, habilidades técnicas y una fuerte capacidad de análisis, lo que me convierte en un aliado valioso para cualquier equipo o proyecto.
-			</p>
-          </div>
+          {t.home.welcome.descriptions.map((description: string, index: number) => (
+            <div
+              id={index === t.home.welcome.descriptions.length - 1 ? 'last' : undefined}
+              class="slider-item"
+            >
+              <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
+                {description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -93,8 +83,9 @@ const { t } = Astro.props;
   }
   .slider-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; 
   }
+  
   .slider-item {
     min-width: 100%;
   }

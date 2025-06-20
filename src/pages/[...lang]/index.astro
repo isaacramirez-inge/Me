@@ -1,38 +1,17 @@
 ---
 import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
-
 import "../../css/global.css";
-
-import en from '../../i18n/en-us.json';
-import es from '../../i18n/es-es.json';
-import sv from '../../i18n/es-sv.json';
-
-type Locale = 'en-us' | 'es-es' | 'es-sv';
-
-type Translations = {
-  title: string;
-};
-
-const translations: Record<Locale, Translations> = {
-  'en-us': en,
-  'es-es': es,
-  'es-sv': sv,
-};
+import { getTranslation, paths} from '../../i18n';
 
 export async function getStaticPaths() {
-  return [
-    { params: { lang: 'en-us' } },
-    { params: { lang: 'es-es' } },
-    { params: { lang: 'es-sv' } },
-  ];
+  return paths();
 }
 
 const { lang } = Astro.params as { lang: string };
-const locale = (lang.toLowerCase() as Locale) ?? 'en-us';
-const t = translations[locale] ?? en;
+const t = getTranslation(lang.toLocaleLowerCase());
 ---
 
-<Layout title={t.title}>
+<Layout >
   <Welcome t={t} />
 </Layout>

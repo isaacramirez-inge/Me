@@ -1,0 +1,19 @@
+import en from '../i18n/en-us.json';
+import es from '../i18n/es-es.json';
+import sv from '../i18n/es-sv.json';
+
+import type { Translation } from '../types/types';
+
+const translations: Translation[] = [en, es, sv];
+
+export function getTranslation(code: string): Translation {
+    return translations.find(t => t._info.code === code) || en;
+}
+
+export async function paths() {
+  return translations.map(t => ({
+    params: {
+      lang: t._info.code
+    }
+  }));
+}
