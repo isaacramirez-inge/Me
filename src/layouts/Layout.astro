@@ -1,5 +1,6 @@
 ---
 import faviconUrl from '../../public/favicon.svg?url';
+import Navbar from '../components/Navbar.astro';
 const { t } = Astro.props;
 
 ---
@@ -10,12 +11,15 @@ const { t } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Isaac Wild Dev</title>
+		<title>{t.common.tabtitle}</title>
 		<link rel="stylesheet" href="/src/css/global.css" /> 
 	</head>
 	<body>
 		<canvas id="starfield"/>
-		<slot />
+		<Navbar t={t}/>
+		<main>
+			<slot />
+		</main>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const canvas = document.getElementById('starfield') as HTMLCanvasElement;
@@ -112,11 +116,8 @@ const { t } = Astro.props;
 	html,
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-	body{
-		border: 1px solid transparent;
+		width: 100dvw;
+		height: 300dvh;
 	}
 	#starfield{
 		position: fixed;

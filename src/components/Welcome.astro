@@ -1,12 +1,11 @@
 ---
-import img_me_just_living from '../assets/img/me/me-just-living-trbg.png?url';
+import img_me_just_living from '../assets/img/me/me-just-living-trbg.png';
 const { t } = Astro.props;
 ---
 
-<div id="first-view" class="fixed top-0 left-0 w-screen h-screen relative overflow-hidden z-10">
-  <img src={`${img_me_just_living}`} class="fixed top-0 left-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
+  <img src={`${img_me_just_living.src}`} id="main-image" class="fixed top-0 left-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
 
-  <div class="absolute inset-0 flex md:items-center px-[5%] py-[10%] pl-[10%] text-white z-10 items-end">
+  <div id="main-text"class="fixed top-0 left-0 inset-0 flex md:items-center px-[5%] py-[10%]  text-white z-10 items-end">
     <div class="text-left relative left-container">
       <h2 class="text-6xl black-shadow font-serif font-thin tracking-wider mt-2 font-verdana">Isaac Sarceño</h2>
       <p class="text-3xl font-serif font-thin tracking-wider mt-3 font-verdana black-shadow">Developer / Just living</p>
@@ -20,7 +19,7 @@ const { t } = Astro.props;
             </div>
           ))}
         </div>
-        <div class="slider-container">
+        <div class="slider-container h-[200px]">
           {t.home.welcome.descriptions.map((description: string, index: number) => (
             <div
               id={index === t.home.welcome.descriptions.length - 1 ? 'last' : undefined}
@@ -35,7 +34,6 @@ const { t } = Astro.props;
       </div>
     </div>
   </div>
-</div>
 
 <!-- Estilos -->
 <style>
@@ -78,7 +76,7 @@ const { t } = Astro.props;
   }
   .slider {
     width: 100%;
-	height: 200px;;
+	  height: 200px;;
     position: relative;
   }
   .slider-container {
@@ -93,6 +91,7 @@ const { t } = Astro.props;
 
 <!-- Script del lado del cliente -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
 <script is:inline type="module">
   document.addEventListener('DOMContentLoaded', function() {
     const sliderContainer = document.querySelector('.slider-container');
@@ -151,4 +150,35 @@ const { t } = Astro.props;
 
     setInterval(nextSlide, 20 * 1000);
   });
+</script>
+
+<script is:inline type="module">
+  import('https://cdn.skypack.dev/gsap').then(({ gsap }) => {
+        import('https://cdn.skypack.dev/gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+          gsap.registerPlugin(ScrollTrigger);
+          gsap.registerPlugin(scroll);
+          
+          const tl = gsap.timeline({
+            ease: "power2.out",
+            scrollTrigger: {
+              scrub: 1,
+            },
+          })
+          tl.to("#main-text", { 
+            duration: 1, 
+            scale: 0.1, 
+            transform: "translateX(-100%)",
+            opacity: 0
+           }).to("#main-image", { 
+            duration: 0.2, 
+            scale: 0.1, 
+            transform: "translateX(100%)",
+            opacity: 0
+           },0.15)
+        });
+  });
+
+          
+
+
 </script>

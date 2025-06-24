@@ -1,0 +1,37 @@
+---
+const { t } = Astro.props;
+---
+
+<nav class="sticky top-0 z-50 text-white shadow-md px-[5%] py-[20px] ">
+  <div class="flex items-center justify-between">
+    <!-- Título o logo -->
+    <div class="text-xl font-semibold">{t.navbar.this_is_me}</div>
+
+    <!-- Botón "Menu" visible solo en mobile -->
+    <button 
+      id="menu-toggle" 
+      class="md:hidden text-sm border px-3 py-1 rounded"
+      onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+    >
+      Menu
+    </button>
+
+    <!-- Menú desktop -->
+    <div class="hidden md:flex gap-4">
+      <div class="menu">Home</div>
+      <div class="menu">Skills</div>
+      <div class="menu">Projects</div>
+      <div class="menu">Profile</div>
+      <div class="menu">Contact</div>
+    </div>
+  </div>
+
+  <!-- Menú mobile oculto por defecto -->
+  <div id="mobile-menu" class="mt-4 flex-col gap-2 hidden md:hidden">
+    <div class="menu">Home</div>
+    <div class="menu">Skills</div>
+    <div class="menu">Projects</div>
+    <div class="menu">Profile</div>
+    <div class="menu">Contact</div>
+  </div>
+</nav>

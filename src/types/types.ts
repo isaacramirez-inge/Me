@@ -3,20 +3,21 @@ export type Locale = 'en-us' | 'es-es' | 'es-sv';
 
 export type Translation = {
   _info: {
-    name: string;
-    code: string;
-  };
+    name: string,
+    code: string,
+  },
   common: {
     name: string,
+    tabtitle: string,
   },
   navbar: {
-    this_is_me: string;
-  };
+    this_is_me: string,
+  },
   home: {
     welcome: {
-      title: string;
-      subtitle: string;
-      descriptions: string[];
-    };
-  };
+      title: string,
+      subtitle: string,
+      descriptions: string[],
+    },
+  },
 };

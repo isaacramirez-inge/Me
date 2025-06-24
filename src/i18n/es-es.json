@@ -1,11 +1,11 @@
-
 {
     "_info":{
         "name": "Español",
         "code": "es-es"
     },
     "common":{
-        "name": "Isaac Ramírez"
+        "name": "Isaac Ramírez",
+        "tabtitle": "Isa Wild Developer"
     },
     "navbar":{
         "this_is_me": "This is me"

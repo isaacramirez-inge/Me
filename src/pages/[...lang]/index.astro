@@ -12,6 +12,6 @@ const { lang } = Astro.params as { lang: string };
 const t = getTranslation(lang.toLocaleLowerCase());
 ---
 
-<Layout >
+<Layout t={t}>
   <Welcome t={t} />
 </Layout>
