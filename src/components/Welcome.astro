@@ -1,102 +1,15 @@
 ---
-import img_me_just_living from '../assets/img/me/me-just-living-trbg.png';
 import Timeline from '../components/Timeline.astro';
 import TimelineSpacer from './TimelineSpacer';
+import MainText from './MainText';
 const { t, m } = Astro.props;
 ---
 <div class="welcome-container"> 
-  <img src={`${img_me_just_living.src}`} id="main-image" class="fixed inset-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
-
-  <div id="main-text"class="fixed inset-0 flex md:items-center px-[5%] py-[10%]  text-white z-10 items-end">
-    <div class="text-left relative left-container">
-      <h2 class="text-6xl black-shadow font-serif font-thin tracking-wider mt-2 font-verdana">Isaac Sarceño</h2>
-      <p class="text-3xl font-serif font-thin tracking-wider mt-3 font-verdana black-shadow">Developer / Just living</p>
-
-      <div class="slider h-60 overflow-hidden">
-        <div class="indicators">
-          {t.home.welcome.descriptions.map((_: string, index: number) => (
-            <div class="indicator-item-wrapper">
-              <div class={`indicator-item ${index === 0 ? 'active' : ''}`}/>
-            </div>
-          ))}
-        </div>
-        <div class="slider-container h-[200px]">
-          {t.home.welcome.descriptions.map((description: string, index: number) => (
-            <div
-              id={index === t.home.welcome.descriptions.length - 1 ? 'last' : undefined }
-              class="slider-item"
-            >
-              <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
-                {description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <MainText client:only="react" t={t} />
   <TimelineSpacer client:load />
   <Timeline t={t} m={m}/>
   
 </div>
-<!-- Estilos -->
-<style>
-  *{
-    box-sizing: border-box;
-  }
-
-	.indicators{
-		height: 20px;
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		margin-top: 10px;
-		width: 100%;
-	}
-	.indicator-item{
-		width: 100%;
-		height: 3px;
-		background-color: transparent;
-		border: 1px solid white;
-		margin: 0 1px;
-		border-radius: 2px;
-		cursor: pointer;
-	}
-	.indicator-item-wrapper{
-		width: 50px;
-		height: 100%;
-		margin: 0 1px;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-	}
-	.indicator-item.active{
-		background-color: white;
-	}
-  .black-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  .me-just-living {
-    mask-image: linear-gradient(to bottom, 50%, transparent);
-  }
-  .left-container{
-	width: 100%;
-  }
-  .slider {
-    width: 100%;
-	  height: 200px;;
-    position: relative;
-  }
-  .slider-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out; 
-  }
-  
-  .slider-item {
-    min-width: 100%;
-  }
-</style>
 
 <script>
   const options = {
@@ -116,92 +29,25 @@ const { t, m } = Astro.props;
   });
 </script>
 
-<!-- Script del lado del cliente -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-
-<script is:inline type="module">
-  document.addEventListener('DOMContentLoaded', function() {
-    const sliderContainer = document.querySelector('.slider-container');
-    const sliderItems = document.querySelectorAll('.slider-item');
-    const indicators = document.querySelectorAll('.indicator-item');
-    const indicatorsWrapper = document.querySelectorAll('.indicator-item-wrapper');
-
-
-    let currentIndex = 0;
-
-    // Inicializa Hammer.js para el slider
-    const hammer = new Hammer(sliderContainer);
-    hammer.on('swipeleft', () => {
-      if (currentIndex < sliderItems.length - 1) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-
-    hammer.on('swiperight', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
-
-    indicatorsWrapper.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentIndex = index;
-        toggleIndicator();
-        updateSlider();
-      });
-    });
-
-
-    function nextSlide() {
-      if (currentIndex + 1 === sliderItems.length) { return; }
-      currentIndex = (currentIndex + 1) % sliderItems.length;
-      updateSlider();
-    }
-
-    function updateSlider() {
-      toggleIndicator(currentIndex);
-      sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    function toggleIndicator() {
-      indicators.forEach((indicator, i) => {
-        if (i === currentIndex) {
-          indicator.classList.add('active');
-        } else {
-          indicator.classList.remove('active');
-        }
-      });
-    }
-
-    setInterval(nextSlide, 20 * 1000);
-  });
-</script>
-
 <script is:inline type="module">
   import('https://cdn.skypack.dev/gsap').then(({ gsap }) => {
-        import('https://cdn.skypack.dev/gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.registerPlugin(scroll);
-          
-          const tl = gsap.timeline({
-            ease: "power2.out",
-            scrollTrigger: {
-              scrub: 1,
-            },
-          })
-          tl.to("#main-text", { 
-            duration: 0.1, 
-            scale: 0.1, 
-            transform: "translateX(-100%)",
-            opacity: 0
-           }).to("#main-image", { 
-            duration: 0.2, 
-            scale: 0.1, 
-            transform: "translateX(100%)",
-            opacity: 0
-           },0.15)
-        });
+    import('https://cdn.skypack.dev/gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+      gsap.registerPlugin(ScrollTrigger);
+      // TIMELINE 2: Animar #main-chat cuando se pasa cierto punto
+      const tl2 = gsap.timeline({
+        ease: "power2.out",
+        scrollTrigger: {
+          scrub: 1,
+        },
+      });
+
+      tl2.from("#main-chat", {
+        duration: 0.1,
+        opacity: 0,
+      }).to("#main-chat", {
+        duration: 0.5,
+        opacity: 1,
+      });
+    });
   });
 </script>

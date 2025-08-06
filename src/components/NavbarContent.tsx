@@ -3,7 +3,10 @@ import React, { useEffect, useState } from 'react';
 import SwitchLang from './SwitchLang'; // O ajusta el path si está en Astro
 import Chat from './Chat';
 import type { Metrics } from '../assets/metrics/metrics';
+import Lottie from 'react-lottie-player';
 import type { MainCardData } from './_react/timeline/TimelineTypes';
+import botHi from '../assets/anim/bot-hi.json';
+
 
 interface SupLang{
     code: string;
@@ -58,10 +61,33 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ t, m, langs }) => {
     }
   }, [inOutControl]);
 
+  const onCloseChat = () => {
+    setViewChat(false);
+    window.dispatchEvent(new CustomEvent('mainchat-visible', { detail: false }));
+  }
+  const onOpenChat = () => {
+    setViewChat(true);
+    window.dispatchEvent(new CustomEvent('mainchat-visible', { detail: true }));
+  }
+  
   return (
     <>
       <div className="flex items-center justify-between">
-        {viewChat && <Chat t={t} m={m} setViewChat={setViewChat}/>}
+      {viewChat && <Chat t={t} m={m} onCloseChat={onCloseChat}/>}
+      {!viewChat && (
+        <div className="main-bothi cursor-pointer h-40 w-40 fixed -left-8 top-3/4 transform  ">
+           {(() => { return(
+            <Lottie
+              loop
+              animationData={botHi}
+              play
+              onClick={onOpenChat}
+            />
+            )})()}
+        </div>
+      )}
+
+      
         {/* Título o logo */}
         <div className="text-xl font-semibold">{t.navbar.this_is_me}</div>
         {viewInputarea &&

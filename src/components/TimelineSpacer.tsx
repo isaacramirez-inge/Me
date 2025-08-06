@@ -28,7 +28,7 @@ const TimelineSpacer: React.FC = () => {
     }, []);
 
     return (
-    <div ref={spacerRef} className="maincard h-screen text-white flex items-center justify-center"> &nbsp;</div>
+    <div ref={spacerRef} id='main-spacer' className="maincard h-screen text-white flex items-center justify-center"> &nbsp;</div>
     );
 }
 export default TimelineSpacer;

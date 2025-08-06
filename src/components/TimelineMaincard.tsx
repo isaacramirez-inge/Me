@@ -28,7 +28,15 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
     const [roles, setRoles] = useState<RolView[]>([]);
     const [tabs, setTabs] = useState<Tab[]>([]);
     const [showChat, setShowChat] = useState<boolean>(true);
-    const borderb = "border-2 border-white";
+
+    useEffect(() => {
+        window.addEventListener('mainchat-visible', ((event: CustomEvent) => {
+            setShowChat(event.detail);
+        }) as EventListener);
+        return () => {
+        window.removeEventListener('mainchat-visible', (() => {}) as EventListener);
+    }}, []);
+
     useEffect(() => {
         setTabs([]);
         setHasTechs(group.projects.some(p => p.technologies.length > 0));
@@ -81,7 +89,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
     }, [group]);
 
     return (
-    <div ref={cardRef} id="card-content" className={`maincard-content ${showChat && 'md:ml-[20%]'}  flex flex-col md:flex-row h-full w-full `}>
+    <div ref={cardRef} id="card-content" className={`maincard-content ${showChat && 'md:ml-[20%]'} transition flex flex-col md:flex-row h-full w-full `}>
         <div className={`header-company-container flex flex-col w-full md:w-2/5 h-1/2 md:h-full `} >
 
             <div className="header-company-data flex flex-row w-full h-[30%]">
@@ -170,7 +178,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
                         </div>
                     )
                 default:
-                    return (<h1 className='mx-auto text-base sm:text-lg md:text-xl leading-relaxed text-white/90 font-light whitespace-pre-line'>Loading ...</h1>);
+                    return (<h1 className='mx-auto text-base sm:text-lg md:text-xl leading-relaxed text-white/90 font-light whitespace-pre-line'>Loading content ...</h1>);
             }
 
         })()}

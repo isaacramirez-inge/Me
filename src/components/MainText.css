@@ -1,0 +1,34 @@
+.indicators{
+    height: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+.indicator-item{
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin: 0 1px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.indicator-item-wrapper{
+    width: 50px;
+    height: 100%;
+    margin: 0 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.indicator-item.active{
+    background-color: white;
+}
+.black-shadow {
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.me-just-living {
+mask-image: linear-gradient(to bottom, 50%, transparent);
+}

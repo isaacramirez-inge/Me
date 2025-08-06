@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BiSend, BiBot, BiTrash, BiX } from 'react-icons/bi';
-
+import Lottie from 'react-lottie-player';
+import botAnim from '../assets/anim/bot.json'; 
 interface ChatProps {
   t: any;
   m: any;
-  setViewChat: React.Dispatch<React.SetStateAction<boolean>>;
+  onCloseChat: () => void;
 }
 
 interface ChatMessage {
@@ -18,7 +19,7 @@ const initialSuggestions = [
   '¿Puede liderar un equipo técnico?',
 ];
 
-const Chat: React.FC<ChatProps> = ({ setViewChat }) => {
+const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
   const [uuid, setUuid] = useState<string>('');
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<ChatMessage[]>([]);
@@ -74,8 +75,8 @@ const Chat: React.FC<ChatProps> = ({ setViewChat }) => {
 
   return (
     <div
-      id="chat-container"
-      className={`${expanded ? 'fixed inset-0 w-full z-50' : 'fixed inset-0 w-[20%]'} h-full flex items-center justify-center pt-[5%] pb-2`}
+      id="main-chat"
+      className={` ${expanded ? 'fixed inset-0 w-full z-50' : 'fixed inset-0 w-[20%]'} h-full flex items-center justify-center pt-[5%] pb-2`}
     >
       <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
 
@@ -95,7 +96,7 @@ const Chat: React.FC<ChatProps> = ({ setViewChat }) => {
             </button>
             <button
               title="Cerrar"
-              onClick={() => setViewChat(false)}
+              onClick={() => onCloseChat()}
               className="text-white hover:text-red-300 transition"
             >
               <BiX />
@@ -107,6 +108,15 @@ const Chat: React.FC<ChatProps> = ({ setViewChat }) => {
         <div className="mx-auto text-sm text-white/90 text-center">
           <p>Pregunta a ChatGPT si Isaac tiene las habilidades que buscas</p>
           <p className="text-xs mt-1 text-gray-100">Ingresa el puesto para el cual buscas</p>
+        </div>
+
+        {/* Animación asistente (solo si no hay mensajes aún) */}
+        <div className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 pointer-events-none ${chat.length > 0 ? 'hidden' : ''} transition`}>
+          <div className="flex items-center p-8 justify-center w-full h-full">
+            {(()=>{ return(
+              <Lottie animationData={botAnim} loop play />
+            )})()}
+          </div>
         </div>
 
         {/* Área de mensajes */}
