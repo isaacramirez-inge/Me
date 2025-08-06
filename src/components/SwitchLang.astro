@@ -1,9 +1,0 @@
----
-const { currentLang } = Astro.props;
-const otherLang = currentLang === 'en' ? 'es' : 'en';
----
-
-
-<a href={`/${otherLang}/`} style="margin-top: 1rem;">
-  {otherLang === 'en' ? 'English' : 'Español'}
-</a>

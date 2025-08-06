@@ -1,16 +1,17 @@
 ---
 import img_me_just_living from '../assets/img/me/me-just-living-trbg.png';
-const { t } = Astro.props;
+import Timeline from '../components/Timeline.astro';
+import TimelineSpacer from './TimelineSpacer';
+const { t, m } = Astro.props;
 ---
+<div class="welcome-container"> 
+  <img src={`${img_me_just_living.src}`} id="main-image" class="fixed inset-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
 
-  <img src={`${img_me_just_living.src}`} id="main-image" class="fixed top-0 left-0 md:scale-123 me-just-living w-full h-full md:object-contain md:object-right absolute inset-0 object-cover object-center" alt="Isaac just living" />
-
-  <div id="main-text"class="fixed top-0 left-0 inset-0 flex md:items-center px-[5%] py-[10%]  text-white z-10 items-end">
+  <div id="main-text"class="fixed inset-0 flex md:items-center px-[5%] py-[10%]  text-white z-10 items-end">
     <div class="text-left relative left-container">
       <h2 class="text-6xl black-shadow font-serif font-thin tracking-wider mt-2 font-verdana">Isaac Sarceño</h2>
       <p class="text-3xl font-serif font-thin tracking-wider mt-3 font-verdana black-shadow">Developer / Just living</p>
 
-      <!-- Contenedor del slider -->
       <div class="slider h-60 overflow-hidden">
         <div class="indicators">
           {t.home.welcome.descriptions.map((_: string, index: number) => (
@@ -22,7 +23,7 @@ const { t } = Astro.props;
         <div class="slider-container h-[200px]">
           {t.home.welcome.descriptions.map((description: string, index: number) => (
             <div
-              id={index === t.home.welcome.descriptions.length - 1 ? 'last' : undefined}
+              id={index === t.home.welcome.descriptions.length - 1 ? 'last' : undefined }
               class="slider-item"
             >
               <p class="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
@@ -35,8 +36,16 @@ const { t } = Astro.props;
     </div>
   </div>
 
+  <TimelineSpacer client:load />
+  <Timeline t={t} m={m}/>
+  
+</div>
 <!-- Estilos -->
 <style>
+  *{
+    box-sizing: border-box;
+  }
+
 	.indicators{
 		height: 20px;
 		display: flex;
@@ -88,6 +97,24 @@ const { t } = Astro.props;
     min-width: 100%;
   }
 </style>
+
+<script>
+  const options = {
+    threshold: 0.2 // Cuando un % del elemento es visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }, options);
+
+  document.querySelectorAll('.maincard').forEach(card => {
+    observer.observe(card);
+  });
+</script>
 
 <!-- Script del lado del cliente -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
@@ -165,7 +192,7 @@ const { t } = Astro.props;
             },
           })
           tl.to("#main-text", { 
-            duration: 1, 
+            duration: 0.1, 
             scale: 0.1, 
             transform: "translateX(-100%)",
             opacity: 0
@@ -177,8 +204,4 @@ const { t } = Astro.props;
            },0.15)
         });
   });
-
-          
-
-
 </script>

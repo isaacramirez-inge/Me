@@ -1,8 +1,8 @@
 ---
 import faviconUrl from '../../public/favicon.svg?url';
 import Navbar from '../components/Navbar.astro';
-const { t } = Astro.props;
-
+const { t, m } = Astro.props;
+import '../styles/global.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -12,14 +12,14 @@ const { t } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{t.common.tabtitle}</title>
-		<link rel="stylesheet" href="/src/css/global.css" /> 
 	</head>
 	<body>
 		<canvas id="starfield"/>
-		<Navbar t={t}/>
+		<Navbar t={t} m={m}/>
 		<main>
 			<slot />
 		</main>
+		<script src="/src/assets/js/scroll.js"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const canvas = document.getElementById('starfield') as HTMLCanvasElement;

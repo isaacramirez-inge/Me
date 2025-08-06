@@ -1,23 +1,22 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
+import tailwind from '@astrojs/tailwind';
 import lottie from "astro-integration-lottie";
+import react from '@astrojs/react';
 
-// https://astro.build/config
 export default defineConfig({
     base: '/Me/',
     output: 'static',
     i18n: {
         locales: ['en-us', 'es-es', 'es-sv'],
         defaultLocale: 'en-us',
-        routing:{
+        routing: {
             prefixDefaultLocale: false,
         }
     },
-    vite: {
-        plugins: [tailwindcss()],
-    },
     integrations: [
+        tailwind(),
         lottie(),
+        react()
     ]
 });

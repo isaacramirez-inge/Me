@@ -17,3 +17,11 @@ export async function paths() {
     }
   }));
 }
+
+export async function supportedLanguages() {
+  return translations.map(t => ({
+      code: t._info.code,
+      name: t._info.name
+    })
+  );
+}

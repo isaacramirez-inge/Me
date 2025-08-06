@@ -1,0 +1,51 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+    .scrollbar-white {
+      scrollbar-width: thin; /* Firefox */
+      scrollbar-color: gray transparent; /* Firefox */
+  
+      /* WebKit */
+    }
+  
+    .scrollbar-white::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+  
+    .scrollbar-white::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 4px;
+    }
+  
+    .scrollbar-white::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  
+    .scrollbar-white::-webkit-scrollbar-button {
+      background-color: gray;
+      height: 8px;
+      width: 8px;
+    }
+}
+  
+
+button{
+    border-radius: 5%/50%;
+    background-color: transparent;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border: 2px solid #ffffff80;
+    color: var(--primary-color)
+}
+button.selected{
+    border-radius: 5%/50%;
+    background-color: transparent;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: #ffffff80;
+    border: 2px solid #ffffff80;
+    color: #000;
+}
