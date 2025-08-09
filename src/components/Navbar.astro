@@ -8,5 +8,5 @@ const sup = await supportedLanguages();
 ---
 
 <nav class=`fixed top-0 z-50 w-full  text-white shadow-md h-[${m.navbar_height}] px-[5%] py-[20px]`>
-  <NavbarContent client:visible t={t} m={m} langs={sup}/>
+  <NavbarContent client:only="react" t={t} m={m} langs={sup}/>
 </nav>

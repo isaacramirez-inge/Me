@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { BiSend, BiBot, BiTrash, BiX } from 'react-icons/bi';
 import Lottie from 'react-lottie-player';
 import botAnim from '../assets/anim/bot.json'; 
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+
 interface ChatProps {
   t: any;
   m: any;
@@ -9,14 +11,24 @@ interface ChatProps {
 }
 
 interface ChatMessage {
-  role: 'user' | 'assistant';
+  role: 'user' | 'model';
   content: string;
 }
+interface ChatRequest {
+  intl: string;
+  messages: ChatMessage[];
+  suggestedQuestions: SuggestedQuestion[];
+  provider?: string;
+}
+interface SuggestedQuestion{
+  question: string;
+  taken: boolean;
+}
 
-const initialSuggestions = [
-  '¿Tiene experiencia en React?',
-  '¿Ha trabajado en proyectos en la nube?',
-  '¿Puede liderar un equipo técnico?',
+const initialSuggestions: SuggestedQuestion[] = [
+  { question: '¿Tiene experiencia en React?', taken: false},
+  { question: '¿Ha trabajado en proyectos en la nube?', taken: false},
+  { question: '¿Puede liderar un equipo técnico?', taken: false},
 ];
 
 const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
@@ -24,7 +36,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState<string[]>(initialSuggestions);
+  const [suggestions, setSuggestions] = useState<SuggestedQuestion[]>(initialSuggestions);
   const [expanded, setExpanded] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -51,21 +63,33 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSend = (text: string) => {
+  const handleSend = async (text: string) => {
     if (!text.trim()) return;
 
     const userMessage: ChatMessage = { role: 'user', content: text };
     setChat((prev) => [...prev, userMessage]);
     setInput('');
     setLoading(true);
+    setSuggestions([]); // Clear suggestions after sending a message
 
-    setTimeout(() => {
-      const reply = `Simulando respuesta para: "${text}"`;
-      const assistantMessage: ChatMessage = { role: 'assistant', content: reply };
+    try {
+      const chatRq: ChatRequest = {intl: 'es-es', messages: chat, suggestedQuestions: suggestions};
+      const response = await fetch(`${apiUrl}/api/message`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(chatRq),
+      });
+      
+      const data = await response.json();
+      const reply = data.response || 'Error al obtener respuesta.';
+      const assistantMessage: ChatMessage = { role: 'model', content: reply };
       setChat((prev) => [...prev, assistantMessage]);
       setSuggestions(initialSuggestions);
       setLoading(false);
-    }, 1000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setLoading(false);
+    }
   };
 
   const handleClear = () => {
@@ -106,7 +130,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
 
         {/* Chat intro */}
         <div className="mx-auto text-sm text-white/90 text-center">
-          <p>Pregunta a ChatGPT si Isaac tiene las habilidades que buscas</p>
+          <p>Pregunta a IsaBOT si Isaac tiene las habilidades que buscas</p>
           <p className="text-xs mt-1 text-gray-100">Ingresa el puesto para el cual buscas</p>
         </div>
 
@@ -139,15 +163,15 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat }) => {
 
         {/* Sugerencias */}
         {suggestions.length > 0 && (
-          <div className="mt-1 mb-2">
+          <div className="mt-1 mb-2 max-h-[100px] overflow-y-auto scrollbar-white">
             <div className="flex flex-wrap gap-1 justify-center">
               {suggestions.map((q, i) => (
                 <button
                   key={i}
                   className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:scale-105 transition border border-white/30"
-                  onClick={() => handleSend(q)}
+                  onClick={() => handleSend(q.question)}
                 >
-                  {q}
+                  {q.question}
                 </button>
               ))}
             </div>
