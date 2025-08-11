@@ -1,0 +1,9 @@
+---
+import SidebarContent from './SidebarContent';
+
+const { t, m } = Astro.props;
+---
+
+<div class="sidebar-container">
+    <SidebarContent client:only="react" t={t} m={m}/>
+</div>

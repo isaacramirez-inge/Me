@@ -1,6 +1,7 @@
 ---
 import faviconUrl from '../../public/favicon.svg?url';
 import Navbar from '../components/Navbar.astro';
+import SideBar from '../components/Sidebar.astro';
 const { t, m } = Astro.props;
 import '../styles/global.css';
 ---
@@ -16,6 +17,7 @@ import '../styles/global.css';
 	<body>
 		<canvas id="starfield"/>
 		<Navbar t={t} m={m}/>
+		<SideBar t={t} m={m}/>
 		<main>
 			<slot />
 		</main>

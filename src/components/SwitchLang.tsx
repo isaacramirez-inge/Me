@@ -7,29 +7,28 @@ interface Lang {
 }
 
 interface SwitchLangProps {
-  t: any; // Idealmente deberías tipar `t` si es posible
+  actualCode: string;
   langs: Lang[];
 }
 
-const SwitchLang: React.FC<SwitchLangProps> = ({ t, langs }) => {
+const SwitchLang: React.FC<SwitchLangProps> = ({ actualCode, langs }) => {
   const [languages] = useState<Lang[]>(langs);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log('Cambio de idioma:', e.target.value);
     const newLang = e.target.value;
-    const urlParts = window.location.href.split('/').slice(0, -1).join('/');
-    window.location.href = `${urlParts}/${newLang}`;
+    const newUrl = window.location.href.replace(actualCode, newLang);
+    window.location.href = newUrl;
   };
 
   return (
     <select
       name="lang"
       className="lang-select text-white bg-transparent"
-      value={t._info.code}
+      value={actualCode}
       onChange={handleChange}
     >
       {languages.map((lang) => (
-        <option key={lang.code} value={lang.code} className='bg-transparent'>
+        <option key={lang.code} value={lang.code} className='text-black bg-transparent'>
           {lang.name}
         </option>
       ))}

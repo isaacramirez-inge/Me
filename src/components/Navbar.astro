@@ -5,8 +5,15 @@ import { supportedLanguages } from '../i18n';
 
 const { t, m } = Astro.props;
 const sup = await supportedLanguages();
+const links = [
+  { show: true, name: 'Home', path: 'home' },
+  { show: true, name: 'Skills', path: 'skills' },
+  { show: false, name: 'Top Projects', path: 'topprojects' },
+  { show: true, name: 'Profile', path: 'profile' },
+  { show: true, name: 'Contact', path: 'contact' },
+]
 ---
 
 <nav class=`fixed top-0 z-50 w-full  text-white shadow-md h-[${m.navbar_height}] px-[5%] py-[20px]`>
-  <NavbarContent client:only="react" t={t} m={m} langs={sup}/>
+  <NavbarContent client:only="react" t={t} m={m} langs={sup} links={links}/>
 </nav>

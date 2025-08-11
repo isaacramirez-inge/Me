@@ -7,6 +7,9 @@ import react from '@astrojs/react';
 export default defineConfig({
     base: '/Me/',
     output: 'static',
+    vite: {
+        assetsInclude: ['**/*.lottie'],
+    },
     i18n: {
         locales: ['en-us', 'es-es', 'es-sv'],
         defaultLocale: 'en-us',
@@ -16,7 +19,6 @@ export default defineConfig({
     },
     integrations: [
         tailwind(),
-        lottie(),
         react()
     ]
 });

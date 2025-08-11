@@ -7,6 +7,7 @@
     "bg_color": "#20232a",
     "text_color": "#61dafb",
     "border_color": "#282c34",
+    "category": "Frontend",
     "display_text": "React"
   },
   {
@@ -17,6 +18,7 @@
     "bg_color": "#563d7c",
     "text_color": "#fff",
     "border_color": "#6f42c1",
+    "category": "Frontend",
     "display_text": "Bootstrap"
   },
   {
@@ -27,6 +29,7 @@
     "bg_color": "#e2e2e2",
     "text_color": "#333",
     "border_color": "#bdbdbd",
+    "category": "Backend",
     "display_text": "XSLT"
   },
   {
@@ -37,6 +40,7 @@
     "bg_color": "#f7df1e",
     "text_color": "#222",
     "border_color": "#e5c700",
+    "category": "Backend",
     "display_text": "WebSockets"
   },
   {
@@ -47,6 +51,7 @@
     "bg_color": "#512bd4",
     "text_color": "#fff",
     "border_color": "#3b169c",
+    "category": "Backend",
     "display_text": ".NET"
   },
   {
@@ -57,6 +62,7 @@
     "bg_color": "#b7178c",
     "text_color": "#fff",
     "border_color": "#a1156c",
+    "category": "Frontend",
     "display_text": "RxJS"
   },
   {
@@ -67,6 +73,7 @@
     "bg_color": "#f0db4f",
     "text_color": "#323330",
     "border_color": "#e5c700",
+    "category": "Frontend",
     "display_text": "VanillaJS"
   },
   {
@@ -77,6 +84,7 @@
     "bg_color": "#264de4",
     "text_color": "#fff",
     "border_color": "#2965f1",
+    "category": "Frontend",
     "display_text": "CSS"
   },
   {
@@ -87,6 +95,7 @@
     "bg_color": "#007fff",
     "text_color": "#fff",
     "border_color": "#005fa3",
+    "category": "Cloud",
     "display_text": "Azure"
   },
   {
@@ -97,6 +106,7 @@
     "bg_color": "#25a162",
     "text_color": "#fff",
     "border_color": "#1b7c47",
+    "category": "Server",
     "display_text": "IIS"
   },
   {
@@ -107,6 +117,7 @@
     "bg_color": "#cc2927",
     "text_color": "#fff",
     "border_color": "#a61d1b",
+    "category": "Database",
     "display_text": "SQL Server"
   },
   {
@@ -117,6 +128,7 @@
     "bg_color": "#fc6d26",
     "text_color": "#fff",
     "border_color": "#e24329",
+    "category": "DevOps",
     "display_text": "GitLab"
   },
   {
@@ -127,6 +139,7 @@
     "bg_color": "#333",
     "text_color": "#fff",
     "border_color": "#222",
+    "category": "Networking",
     "display_text": "SSH"
   },
   {
@@ -137,6 +150,7 @@
     "bg_color": "#0052cc",
     "text_color": "#fff",
     "border_color": "#0747a6",
+    "category": "Project Management",
     "display_text": "Jira"
   },
   {
@@ -147,6 +161,7 @@
     "bg_color": "#dd0031",
     "text_color": "#fff",
     "border_color": "#b71c1c",
+    "category": "Frontend",
     "display_text": "Angular"
   },
   {
@@ -157,6 +172,7 @@
     "bg_color": "#e34c26",
     "text_color": "#fff",
     "border_color": "#c0392b",
+    "category": "Frontend",
     "display_text": "HTML"
   },
   {
@@ -167,6 +183,7 @@
     "bg_color": "#0078d6",
     "text_color": "#fff",
     "border_color": "#005fa3",
+    "category": "Server",
     "display_text": "Windows Server"
   },
   {
@@ -177,6 +194,7 @@
     "bg_color": "#f36c21",
     "text_color": "#fff",
     "border_color": "#d35400",
+    "category": "Networking",
     "display_text": "Remote Desktop"
   },
   {
@@ -187,6 +205,7 @@
     "bg_color": "#4a90e2",
     "text_color": "#fff",
     "border_color": "#357ab7",
+    "category": "AI/ML",
     "display_text": "OCR"
   },
   {
@@ -197,6 +216,7 @@
     "bg_color": "#00bcd4",
     "text_color": "#fff",
     "border_color": "#0097a7",
+    "category": "Workflow",
     "display_text": "Q-flow"
   },
   {
@@ -207,6 +227,7 @@
     "bg_color": "#007396",
     "text_color": "#fff",
     "border_color": "#005f73",
+    "category": "Backend",
     "display_text": "Java"
   },
   {
@@ -217,6 +238,7 @@
     "bg_color": "#6db33f",
     "text_color": "#fff",
     "border_color": "#4e8c2b",
+    "category": "Backend",
     "display_text": "Spring Boot"
   },
   {
@@ -227,6 +249,7 @@
     "bg_color": "#e2001a",
     "text_color": "#fff",
     "border_color": "#a80013",
+    "category": "Server",
     "display_text": "JBoss"
   },
   {
@@ -237,6 +260,7 @@
     "bg_color": "#00bfae",
     "text_color": "#fff",
     "border_color": "#008c7e",
+    "category": "Backend",
     "display_text": "REST"
   },
   {
@@ -247,6 +271,7 @@
     "bg_color": "#333",
     "text_color": "#f7df1e",
     "border_color": "#222",
+    "category": "Operating System",
     "display_text": "Linux"
   },
   {
@@ -257,6 +282,7 @@
     "bg_color": "#38bdf8",
     "text_color": "#fff",
     "border_color": "#0ea5e9",
+    "category": "Frontend",
     "display_text": "Tailwind"
   },
   {
@@ -267,6 +293,7 @@
     "bg_color": "#512bd4",
     "text_color": "#fff",
     "border_color": "#3b169c",
+    "category": "Frontend",
     "display_text": "Windows Forms"
   },
   {
@@ -277,6 +304,7 @@
     "bg_color": "#1d1d1d",
     "text_color": "#fff",
     "border_color": "#333",
+    "category": "Database",
     "display_text": "AS-400"
   },
   {
@@ -287,6 +315,7 @@
     "bg_color": "#5a29e4",
     "text_color": "#fff",
     "border_color": "#3b169c",
+    "category": "Frontend",
     "display_text": "Axios"
   },
   {
@@ -297,6 +326,7 @@
     "bg_color": "#000",
     "text_color": "#f7b731",
     "border_color": "#333",
+    "category": "Security",
     "display_text": "JWT"
   },
   {
@@ -307,6 +337,7 @@
     "bg_color": "#f38020",
     "text_color": "#fff",
     "border_color": "#e55d13",
+    "category": "Cloud",
     "display_text": "Cloudflare"
   },
   {
@@ -317,6 +348,7 @@
     "bg_color": "#4285f4",
     "text_color": "#fff",
     "border_color": "#3367d6",
+    "category": "Security",
     "display_text": "Captcha"
   },
   {
@@ -327,6 +359,7 @@
     "bg_color": "#e6e6e6",
     "text_color": "#333",
     "border_color": "#bdbdbd",
+    "category": "Backend",
     "display_text": "SOAP"
   },
   {
@@ -337,6 +370,7 @@
     "bg_color": "#F80000",
     "text_color": "#fff",
     "border_color": "#B22222",
+    "category": "Database",
     "display_text": "Oracle SQL Database"
   },
   {
@@ -347,6 +381,7 @@
     "bg_color": "#4E9A06",
     "text_color": "#fff",
     "border_color": "#387002",
+    "category": "Project Management",
     "display_text": "Tuleap"
   },
   {
@@ -357,6 +392,7 @@
     "bg_color": "#D33833",
     "text_color": "#fff",
     "border_color": "#A62622",
+    "category": "CI/CD",
     "display_text": "Jenkins"
   },
   {
@@ -367,6 +403,7 @@
     "bg_color": "#F0AD4E",
     "text_color": "#fff",
     "border_color": "#C77C02",
+    "category": "DevOps",
     "display_text": "Gerrit"
   },
   {
@@ -377,6 +414,7 @@
     "bg_color": "#25A162",
     "text_color": "#fff",
     "border_color": "#1B7C47",
+    "category": "Testing",
     "display_text": "JUnit"
   },
   {
@@ -387,6 +425,7 @@
     "bg_color": "#C21325",
     "text_color": "#fff",
     "border_color": "#8B0A1B",
+    "category": "Testing",
     "display_text": "Jest"
   },
   {
@@ -397,6 +436,7 @@
     "bg_color": "#0077C8",
     "text_color": "#fff",
     "border_color": "#005fa3",
+    "category": "Architecture",
     "display_text": "SOA BPEL"
   },
   {
@@ -407,6 +447,7 @@
     "bg_color": "#003366",
     "text_color": "#fff",
     "border_color": "#001f3f",
+    "category": "Server",
     "display_text": "WebLogic"
   },
   {
@@ -417,6 +458,7 @@
     "bg_color": "#f89820",
     "text_color": "#fff",
     "border_color": "#c7761a",
+    "category": "Middleware",
     "display_text": "Middleware"
   },
   {
@@ -427,6 +469,7 @@
     "bg_color": "#007396",
     "text_color": "#fff",
     "border_color": "#005f73",
+    "category": "Messaging",
     "display_text": "JMS"
   },
   {
@@ -437,6 +480,7 @@
     "bg_color": "#e2e2e2",
     "text_color": "#333",
     "border_color": "#bdbdbd",
+    "category": "Data Format",
     "display_text": "XML"
   },
   {
@@ -447,6 +491,7 @@
     "bg_color": "#d32f2f",
     "text_color": "#fff",
     "border_color": "#b71c1c",
+    "category": "IDE",
     "display_text": "JDeveloper"
   },
   {
@@ -457,6 +502,7 @@
     "bg_color": "#1a73e8",
     "text_color": "#fff",
     "border_color": "#174ea6",
+    "category": "AI/ML",
     "display_text": "Gemini CLI"
   },
   {
@@ -467,6 +513,7 @@
     "bg_color": "#D51B1BFF",
     "text_color": "#fff",
     "border_color": "#1a1a1a",
+    "category": "IDE",
     "display_text": "Cursor"
   },
   {
@@ -477,6 +524,7 @@
     "bg_color": "#007acc",
     "text_color": "#fff",
     "border_color": "#005a9e",
+    "category": "IDE",
     "display_text": "VSCode"
   },
   {
@@ -487,6 +535,7 @@
     "bg_color": "#10a37f",
     "text_color": "#fff",
     "border_color": "#0b6e4f",
+    "category": "AI/ML",
     "display_text": "Codex (OpenAI)"
   },
   {
@@ -497,6 +546,7 @@
     "bg_color": "#3b3b3b",
     "text_color": "#fff",
     "border_color": "#222",
+    "category": "Terminal",
     "display_text": "MobaXterm SSH"
   },
   {
@@ -507,6 +557,7 @@
     "bg_color": "#333",
     "text_color": "#f7df1e",
     "border_color": "#222",
+    "category": "Server",
     "display_text": "Linux Server"
   },
   {
@@ -517,6 +568,7 @@
     "bg_color": "#ff9800",
     "text_color": "#fff",
     "border_color": "#e65100",
+    "category": "Networking",
     "display_text": "SMTP"
   },
   {
@@ -527,6 +579,7 @@
     "bg_color": "#1C3F94",
     "text_color": "#fff",
     "border_color": "#12285C",
+    "category": "Frontend",
     "display_text": "PowerBuilder"
   },
   {
@@ -537,6 +590,7 @@
     "bg_color": "#777bb4",
     "text_color": "#fff",
     "border_color": "#4F5B93",
+    "category": "Backend",
     "display_text": "PHP"
   },
   {
@@ -547,6 +601,7 @@
     "bg_color": "#4479A1",
     "text_color": "#fff",
     "border_color": "#234567",
+    "category": "Database",
     "display_text": "MySQL"
   },
   {
@@ -557,6 +612,7 @@
     "bg_color": "#8d5524",
     "text_color": "#fff",
     "border_color": "#5c3310",
+    "category": "Networking",
     "display_text": "Cableado estructurado UTP 6ta categoria"
   },
   {
@@ -567,6 +623,7 @@
     "bg_color": "#1ba0d7",
     "text_color": "#fff",
     "border_color": "#0e5a7a",
+    "category": "Networking",
     "display_text": "Switch Cisco"
   },
   {
@@ -577,6 +634,7 @@
     "bg_color": "#607d8b",
     "text_color": "#fff",
     "border_color": "#37474f",
+    "category": "Networking",
     "display_text": "Router"
   },
   {
@@ -587,6 +645,7 @@
     "bg_color": "#9e9e9e",
     "text_color": "#fff",
     "border_color": "#616161",
+    "category": "Networking",
     "display_text": "Repetidor"
   },
   {
@@ -597,6 +656,7 @@
     "bg_color": "#212121",
     "text_color": "#fff",
     "border_color": "#757575",
+    "category": "Networking",
     "display_text": "Cámara de videovigilancia"
   },
   {
@@ -607,6 +667,7 @@
     "bg_color": "#fbc02d",
     "text_color": "#333",
     "border_color": "#b8860b",
+    "category": "Networking",
     "display_text": "Crimpadora RJ45"
   },
   {
@@ -617,6 +678,7 @@
     "bg_color": "#e00",
     "text_color": "#fff",
     "border_color": "#a10000",
+    "category": "Operating System",
     "display_text": "Red Hat"
   },
   {
@@ -627,6 +689,7 @@
     "bg_color": "#5C2D91",
     "text_color": "#fff",
     "border_color": "#3C1C5C",
+    "category": "IDE",
     "display_text": "Visual Studio"
   },
   {
@@ -637,6 +700,7 @@
     "bg_color": "#073551",
     "text_color": "#fff",
     "border_color": "#052a3f",
+    "category": "Development Tool",
     "display_text": "cURL"
   },
   {
@@ -647,6 +711,7 @@
     "bg_color": "#D00000",
     "text_color": "#fff",
     "border_color": "#A00000",
+    "category": "AI/ML",
     "display_text": "Keras"
   },
   {
@@ -657,6 +722,7 @@
     "bg_color": "#EE4C2C",
     "text_color": "#fff",
     "border_color": "#B22222",
+    "category": "AI/ML",
     "display_text": "PyTorch"
   },
   {
@@ -667,6 +733,7 @@
     "bg_color": "#150458",
     "text_color": "#fff",
     "border_color": "#0D0036",
+    "category": "AI/ML",
     "display_text": "Pandas"
   },
   {
@@ -677,6 +744,7 @@
     "bg_color": "#3776AB",
     "text_color": "#fff",
     "border_color": "#1A365D",
+    "category": "Programming Language",
     "display_text": "Python"
   },
   {
@@ -687,6 +755,7 @@
     "bg_color": "#F9AB00",
     "text_color": "#222",
     "border_color": "#C97D00",
+    "category": "AI/ML",
     "display_text": "Google Colab"
   },
   {
@@ -697,6 +766,7 @@
     "bg_color": "#11557C",
     "text_color": "#fff",
     "border_color": "#0A2C40",
+    "category": "AI/ML",
     "display_text": "Matplotlib"
   },
   {
@@ -707,6 +777,7 @@
     "bg_color": "#5C3EE8",
     "text_color": "#fff",
     "border_color": "#2C1A7A",
+    "category": "AI/ML",
     "display_text": "OpenCV"
   },
   {
@@ -717,6 +788,7 @@
     "bg_color": "#F2C811",
     "text_color": "#222",
     "border_color": "#B89D00",
+    "category": "Business Intelligence",
     "display_text": "Power BI"
   },
   {
@@ -727,6 +799,7 @@
     "bg_color": "#4285F4",
     "text_color": "#fff",
     "border_color": "#174EA6",
+    "category": "Business Intelligence",
     "display_text": "Looker Studio"
   },
   {
@@ -737,6 +810,7 @@
     "bg_color": "#8F0000",
     "text_color": "#fff",
     "border_color": "#5A0000",
+    "category": "IoT",
     "display_text": "Node-RED"
   },
   {
@@ -747,6 +821,7 @@
     "bg_color": "#660066",
     "text_color": "#fff",
     "border_color": "#330033",
+    "category": "IoT",
     "display_text": "MQTT"
   },
   {
@@ -757,6 +832,7 @@
     "bg_color": "#2E7D32",
     "text_color": "#fff",
     "border_color": "#1B5E20",
+    "category": "Industrial Automation",
     "display_text": "PLC/SCADA"
   }
 ] 

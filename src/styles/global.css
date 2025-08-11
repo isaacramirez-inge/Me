@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body{
+  overflow-x: hidden;
+}
+
 @layer utilities {
     .scrollbar-white {
       scrollbar-width: thin; /* Firefox */

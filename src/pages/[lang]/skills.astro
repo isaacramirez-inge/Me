@@ -1,0 +1,18 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import "../../styles/global.css";
+import { getTranslation, paths} from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics'
+
+export async function getStaticPaths() {
+  return paths();
+}
+
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
+---
+
+<Layout t={t} lang={lang} m={metrics}>
+    <div class="text-xl text-white font-bold">My Skills</div> 
+</Layout>
