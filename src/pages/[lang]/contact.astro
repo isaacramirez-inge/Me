@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import "../../styles/global.css";
+import { getTranslation, getStaticPaths } from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics.ts';
+import RenderJsonLottie from '../../components/_react/RenderJsonLottie.tsx';
+import botAnimation from '../../assets/anim/bot.json';
+import botHiAnimation from '../../assets/anim/bot-hi.json';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
+---
+
+<Layout title="Contact" t={t} lang={lang} m={metrics}>
+  <div class="container mx-auto p-8 text-white/80">
+    <h1 class="text-5xl font-bold text-center mb-12">Contact Me</h1>
+
+    <div id="contact-wrapper" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Left Column: Form -->
+      <div id="contact-form-container" class="bg-white/5 p-8 rounded-lg">
+        <form id="contact-form">
+          <div class="mb-4">
+            <label for="name" class="block mb-2">Name</label>
+            <input type="text" id="name" name="name" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block mb-2">Email</label>
+            <input type="email" id="email" name="email" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50"></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="captcha" id="captcha-label" class="block mb-2"></label>
+            <input type="number" id="captcha" name="captcha" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+          </div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Column: Lottie Animation -->
+      <div class="flex justify-center items-center">
+        <div id="bot-default-anim">
+            <RenderJsonLottie client:load source={botAnimation} loop={true} autoplay={true} width={300} height={300} />
+        </div>
+        <div id="bot-react-anim" style="display: none;">
+            <RenderJsonLottie client:load source={botHiAnimation} loop={false} autoplay={true} width={300} height={300} />
+        </div>
+      </div>
+    </div>
+
+    <div id="success-message" class="text-center mt-8" style="display: none;">
+        <h2 class="text-3xl font-bold text-green-400">Thank you!</h2>
+        <p>Your message has been "sent". The bot is happy!</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const captchaLabel = document.getElementById('captcha-label');
+      const captchaInput = document.getElementById('captcha') as HTMLInputElement;
+      let num1: number, num2: number;
+
+      function generateCaptcha() {
+        num1 = Math.floor(Math.random() * 10) + 1;
+        num2 = Math.floor(Math.random() * 10) + 1;
+        if (captchaLabel) {
+            captchaLabel.textContent = `What is ${num1} + ${num2}?`;
+        }
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userAnswer = parseInt(captchaInput.value, 10);
+        if (userAnswer === num1 + num2) {
+          // Correct captcha
+          const formContainer = document.getElementById('contact-form-container');
+          const successMessage = document.getElementById('success-message');
+          const botDefault = document.getElementById('bot-default-anim');
+          const botReact = document.getElementById('bot-react-anim');
+
+          if (formContainer) formContainer.style.display = 'none';
+          if (successMessage) successMessage.style.display = 'block';
+          if (botDefault) botDefault.style.display = 'none';
+          if (botReact) botReact.style.display = 'block';
+
+        } else {
+          // Incorrect captcha
+          alert('Incorrect captcha, please try again!');
+          generateCaptcha();
+          captchaInput.value = '';
+        }
+      });
+
+      generateCaptcha();
+    });
+  </script>
+</Layout>
