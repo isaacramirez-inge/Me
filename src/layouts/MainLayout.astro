@@ -2,7 +2,7 @@
 import faviconUrl from '../../public/favicon.svg?url';
 import Navbar from '../components/Navbar.astro';
 import SideBar from '../components/Sidebar.astro';
-const { t, m } = Astro.props;
+const { t, m, title } = Astro.props;
 import '../styles/global.css';
 ---
 <!doctype html>
@@ -16,11 +16,24 @@ import '../styles/global.css';
 	</head>
 	<body>
 		<canvas id="starfield"/>
-		<Navbar t={t} m={m}/>
+		<Navbar title={title} t={t} m={m}/>
 		<SideBar t={t} m={m}/>
 		<main>
 			<slot />
 		</main>
+		<script define:vars={{}}>
+			const mainEl = document.querySelector('main');
+			if (mainEl) {
+				window.addEventListener("mainchat-visible", (e) => {
+					if (e.detail === true) {
+						mainEl.classList.add("ml-[20%]");
+					} else {
+						mainEl.classList.remove("ml-[20%]");
+					}
+				}
+				);
+			}
+		</script>
 		<script src="/src/assets/js/scroll.js"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {

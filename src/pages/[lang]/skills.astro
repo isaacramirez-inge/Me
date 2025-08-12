@@ -1,24 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/MainLayout.astro';
 import SkillTabs from '../../components/skills/SkillTabs';
 import timelineData from '../../assets/data/timeline.json';
 import technologiesData from '../../assets/data/technologies.json';
-import { getTranslation, paths } from '../../i18n';
+import { getTranslation, getStaticPaths } from '../../i18n';
 import { metrics } from '../../assets/metrics/metrics';
 
-export async function getStaticPaths() {
-  return paths();
-}
+export { getStaticPaths };
 
 const { lang } = Astro.params as { lang: string };
 const t = getTranslation(lang.toLocaleLowerCase());
 ---
 
-<Layout t={t} lang={lang} m={metrics}>
+<Layout title={t.skills.title} t={t} lang={lang} m={metrics}>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold text-center text-white mb-12 mt-20" style="text-shadow: 0 0 10px #9f7aea, 0 0 20px #9f7aea;">
-      {t.skills.title}
-    </h1>
     <SkillTabs client:load timelineData={timelineData} technologiesData={technologiesData} />
   </div>
 </Layout>

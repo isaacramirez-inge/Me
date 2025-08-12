@@ -20,4 +20,7 @@ export type Translation = {
       descriptions: string[],
     },
   },
+  skills:{
+    title: string,
+  }
 };

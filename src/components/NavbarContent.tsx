@@ -4,6 +4,7 @@ import SwitchLang from './SwitchLang';
 import type { Metrics } from '../assets/metrics/metrics';
 import type { MainCardData } from './_react/timeline/TimelineTypes';
 import MenuRender from '../components/navbar/MenuRender';
+import type { Translation } from '../types/types';
 
 const basePath = import.meta.env.PUBLIC_BASE_PATH || '';
 
@@ -18,13 +19,14 @@ interface link {
 }
 
 interface NavbarContentProps {
-  t: any;
+  pageTitle: string;
+  t: Translation;
   m: Metrics;
   langs: SupLang[];
   links: link[];
 }
 
-const NavbarContent: React.FC<NavbarContentProps> = ({ t, m, links, langs }) => {
+const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, langs }) => {
   const [chatPlaceholder, setChatPlaceholder] = useState<string>('Ask ChatGPT about me...');
   const [inOutControl, setInOutControl] = useState<{in: number | null, out: number | null}>({in: null, out: null});
   const [viewInputarea, setViewInputarea] = useState<boolean>(false);
@@ -71,7 +73,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ t, m, links, langs }) => 
       <div className="flex items-center justify-between">
       
         {/* Título o logo */}
-        <div className="text-xl font-semibold">{t.navbar.this_is_me}</div>
+        <div className="text-xl font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
        
         {/* Botón "Menu" visible solo en mobile */}
         <button

@@ -19,11 +19,11 @@ function Menu({ links: ls, base = "", lang , prefetch}: MenuProps) {
 
     const handlePrefetch = useCallback((url: string) => {
         if (!prefetchedUrls.current.has(url)) {
-        const linkPrefetch = document.createElement("link");
-        linkPrefetch.rel = "prefetch";
-        linkPrefetch.href = url;
-        document.head.appendChild(linkPrefetch);
-        prefetchedUrls.current.add(url);
+            const linkPrefetch = document.createElement("link");
+            linkPrefetch.rel = "prefetch";
+            linkPrefetch.href = url;
+            document.head.appendChild(linkPrefetch);
+            prefetchedUrls.current.add(url);
         }
     }, []);
 

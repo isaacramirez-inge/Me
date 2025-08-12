@@ -89,7 +89,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
     }, [group]);
 
     return (
-    <div ref={cardRef} id="card-content" className={`maincard-content ${showChat && 'md:ml-[20%]'} transition flex flex-col md:flex-row h-full w-full `}>
+    <div ref={cardRef} id="card-content" className={`maincard-content transition flex flex-col md:flex-row h-full w-full `}>
         <div className={`header-company-container flex flex-col w-full md:w-2/5 h-1/2 md:h-full `} >
 
             <div className="header-company-data flex flex-row w-full h-[30%]">

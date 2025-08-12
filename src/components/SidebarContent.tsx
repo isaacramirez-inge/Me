@@ -25,7 +25,7 @@ const SidebarContent: React.FC<Props> = ({ t, m }) => {
     return (
     <>
         <Chat t={t} m={m} isVisible={viewChat} onCloseChat={onCloseChat}/>
-        <div className={`main-bothi cursor-pointer h-40 w-40 fixed -left-8 top-3/4 transform transition-transform duration-500 ${!viewChat ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`main-bothi cursor-pointer z-500 h-40 w-40 fixed -left-8 top-3/4 transform transition-transform duration-500 ${!viewChat ? 'translate-x-0' : '-translate-x-full'}`}>
             {(() => { return(
             <Lottie
                 loop

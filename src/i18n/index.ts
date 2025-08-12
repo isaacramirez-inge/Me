@@ -11,7 +11,7 @@ export function getTranslation(code: string): Translation {
     return translations.find(t => t._info.code === code) || en;
 }
 
-export async function paths(sub: any = null) {
+export async function getStaticPaths() {
   return translations.map(t => ({
     params: {
       lang: t._info.code 
