@@ -1,0 +1,31 @@
+{
+    "_info":{
+        "name": "Español",
+        "code": "es-es"
+    },
+    "common":{
+        "name": "Isaac Ramírez",
+        "tabtitle": "Isa Wild Developer"
+    },
+    "navbar":{
+        "this_is_me": "This is me"
+    },
+    "home":{
+        "welcome":{
+            "title": "Isaac Sarceño",
+            "subtitle": "Developer / Just living an examined life",
+            "descriptions":[
+                "Soy una persona altamente comprometida con cada proyecto en el que participo y apasionada por crear soluciones tecnológicas de alto impacto. Creo firmemente que la tecnología es una herramienta que se aprende, pero lo verdaderamente importante es comprender a fondo el problema y trazar el camino más eficaz y eficiente hacia su solución.",
+                "Cuento con más de cinco años de experiencia desarrollando soluciones fullstack creativas para desafíos complejos, utilizando un stack tecnológico amplio y adaptándome con facilidad a distintos entornos. He trabajado con clientes de diversos sectores como banca, salud, telecomunicaciones y gobierno, cada uno con objetivos, restricciones y ecosistemas tecnológicos únicos. Esta diversidad me ha brindado una visión integral y me permite adaptarme rápidamente a nuevos retos.",
+                "Mi enfoque está orientado a resultados, con una combinación de pensamiento estratégico, habilidades técnicas y una fuerte capacidad de análisis, lo que me convierte en un aliado valioso para cualquier equipo o proyecto."
+            ]
+        },
+        "timeline":{
+            "title": "Timeline",
+            "descriptions": ""
+        }
+    },
+    "skills": {
+        "title": "Mis Habilidades"
+    }
+}

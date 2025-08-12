@@ -1,11 +1,31 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ReactRenderBridge from '../components/_react/ReactRenderBridge';
+import {supportedLanguages, defaultTranslation} from '../i18n';
+const langs = await supportedLanguages();
+const defaultLocale = defaultTranslation;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Isa Wild Dev -1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+    
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #0b0b0b;
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+        flex-direction: column; 
+      }
+    </style>
+  </head>
+  <body>
+    <ReactRenderBridge client:only="react"  langs={langs} defaultLocale={defaultLocale}  /> 
+  </body>
+</html>

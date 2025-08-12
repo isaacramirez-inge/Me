@@ -1,0 +1,16 @@
+---
+import Welcome from '../../components/Welcome.astro';
+import Layout from '../../layouts/MainLayout.astro';
+import "../../styles/global.css";
+import { getTranslation, getStaticPaths} from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics.ts'
+
+export {getStaticPaths};
+
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
+---
+
+<Layout title={t.navbar.this_is_me} t={t} lang={lang} m={metrics}>
+  <Welcome t={t} m={metrics}/>
+</Layout>

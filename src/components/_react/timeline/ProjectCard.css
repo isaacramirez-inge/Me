@@ -1,0 +1,201 @@
+.project-card {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.visible-area {
+  padding: 1.5rem;
+  width: 70%;
+  transition: width 0.4s ease; /* Animation for width change */
+}
+
+.hidden-area {
+  overflow-y: hidden;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 72%;
+  background-color: #f7f7f7;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  border-left: 2px solid #0070d2;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.carry-button {
+  height: 50px;
+  width: 50px;
+  cursor: ew-resize;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Animación de movimiento suave de la flecha */
+  animation: arrow-bounce-right 1.2s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes arrow-bounce-right {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(8px);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.carry-button:hover {
+  scale: 1.1;
+}
+
+.project-card {
+  position: relative;
+}
+
+
+
+
+.project-card:hover .hidden-area {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-20%); 
+}
+
+.project-card:hover .visible-area {
+  width: 70%; /* Keep visible area fixed or adjust as needed */
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-logo {
+  width: 100px;
+  height: 75px;
+  overflow: hidden;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure logo fits */
+}
+
+.project-title-container {
+  border-left: 2px solid #ffffffb0;
+  padding-left: 1rem;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.company-name {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.project-roles {
+  margin-bottom: 1rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.role-tag {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 0.18rem 0.6rem;
+  border-radius: 12px;
+  margin-right: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.project-description-text {
+  color: #333;
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
+}
+
+.tech-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  color: #0070d2;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.tech-icon-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  object-fit: contain;
+}
+
+.tech-icon-name {
+  margin: 0;
+}
+
+.implementation-type {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.bullet-points {
+  list-style-type: disc;
+  padding-left: 18px;
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .project-header {
+      flex-direction: column;
+      align-items: start;
+  }
+  .project-title-container{
+    padding-left: 0;
+  }
+  .visible-area{
+    padding: 0;
+  }
+}

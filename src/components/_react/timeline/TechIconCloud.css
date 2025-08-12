@@ -1,0 +1,49 @@
+.tech-icon-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 32px;
+  width: 100%;
+}
+
+.tech-icon-cloud-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: transparent;
+  transition: transform 0.2s;
+}
+
+.tech-icon-cloud-img:hover {
+  transform: scale(1.15) translateY(-2px);
+  z-index: 2;
+}
+
+@keyframes tech-float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-6px); }
+}
+
+.tv-company-techs-icons {
+  height: 100%;
+}
+
+.dvd-cloud {
+  border-radius: 12px;
+  background: transparent;
+  position: relative;
+  min-height: 80px;
+  will-change: transform;
+  animation: dvd-float 4s ease-in-out infinite alternate;
+}
+
+@keyframes dvd-float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+.dvd-icon {
+  border-radius: 6px;
+  background: transparent;
+} 

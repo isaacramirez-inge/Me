@@ -1,0 +1,14 @@
+---
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import introJsonUrl from "../assets/intro.json?url";
+const intro: string = "my-animation";
+---
+<div id={intro + "-container"} class="intro-container" style="width:500px; height:500px;">
+    <LottieAnimation
+        id={intro}
+        src={introJsonUrl}
+        autoplay='visible'
+        loop={true}
+        player="full"
+    />
+</div>
