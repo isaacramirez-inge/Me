@@ -15,10 +15,17 @@
             "title":"Isaac Sarceño",
             "subtitle": "Developer / Just living an examined life",
             "descriptions":[
-                "Soy una persona altamente comprometida con cada proyecto en el que participo y apasionada por crear soluciones tecnológicas de alto impacto. Creo firmemente que la tecnología es una herramienta que se aprende, pero lo verdaderamente importante es comprender a fondo el problema y trazar el camino más eficaz y eficiente hacia su solución.",
-                "Cuento con más de cinco años de experiencia desarrollando soluciones fullstack creativas para desafíos complejos, utilizando un stack tecnológico amplio y adaptándome con facilidad a distintos entornos. He trabajado con clientes de diversos sectores como banca, salud, telecomunicaciones y gobierno, cada uno con objetivos, restricciones y ecosistemas tecnológicos únicos. Esta diversidad me ha brindado una visión integral y me permite adaptarme rápidamente a nuevos retos.",
-                "Mi enfoque está orientado a resultados, con una combinación de pensamiento estratégico, habilidades técnicas y una fuerte capacidad de análisis, lo que me convierte en un aliado valioso para cualquier equipo o proyecto."
+                "I am a person highly committed to each project in which I participate and passionate about creating high-impact technological solutions. I firmly believe that technology is a tool that is learned, but what is truly important is to thoroughly understand the problem and draw the most effective and efficient path towards its solution.",
+                "I have more than five years of experience developing creative fullstack solutions for complex challenges, using a broad technological stack and easily adapting to different environments. I have worked with clients from various sectors such as banking, health, telecommunications and government, each with unique objectives, restrictions and technological ecosystems. This diversity has given me a comprehensive vision and allows me to adapt quickly to new challenges.",
+                "My approach is results-oriented, with a combination of strategic thinking, technical skills and a strong analytical capacity, which makes me a valuable ally for any team or project."
             ]
+        },
+        "timeline": {
+            "title": "Timeline",
+            "descriptions": ""
         }
+    },
+    "skills": {
+        "title": "My Skills"
     }
 }
