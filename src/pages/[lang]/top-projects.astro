@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import "../../styles/global.css";
+import { getTranslation, getStaticPaths } from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics.ts';
+import timelineData from '../../assets/data/timeline.json';
+import type { Project } from '../../components/_react/timeline/TimelineTypes';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
+
+const highlightedProjects: Project[] = timelineData.jobs_history
+  .flatMap(job => job.projects)
+  .filter(project => project.highlight);
+---
+
+<Layout title="Top Projects" t={t} lang={lang} m={metrics}>
+  <div class="h-screen w-full snap-y snap-mandatory overflow-y-scroll scrollbar-white">
+    <div class="h-screen w-full snap-start flex items-center justify-center text-center text-white/80 flex-col">
+        <h1 class="text-5xl font-bold">Top Projects</h1>
+        <p class="mt-4">Scroll down to see the highlights</p>
+        <div class="animate-bounce mt-8 text-3xl">↓</div>
+    </div>
+
+    {highlightedProjects.map(project => (
+      <div class="h-screen w-full snap-start flex items-center justify-center p-4 md:p-8">
+        <div class="bg-white/5 rounded-lg p-6 md:p-8 w-full max-w-4xl h-[90vh] overflow-y-auto scrollbar-white text-white/80">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">{project.project_name}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col items-center">
+              <img
+                src={`/Me/img/company/card/${project.company_logo_path}`}
+                alt={project.company}
+                class="max-h-48 object-contain mb-4 bg-white/10 rounded p-2"
+                onerror="this.style.display='none'"
+              />
+              <div class="w-full text-left">
+                <h3 class="text-xl font-bold mb-2">Description</h3>
+                <p class="mb-4">{project.project_description.description}</p>
+                <h4 class="text-lg font-bold mb-2">Key Points:</h4>
+                <ul class="list-disc pl-5">
+                  {project.project_description.bullet_points.map(point => <li>{point}</li>)}
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <h3 class="text-xl font-bold mb-2">Diagram</h3>
+              <div class="bg-white rounded p-4 w-full h-full min-h-[300px]">
+                <pre class="mermaid">
+                  graph TD;
+                      A[Start] --> B[End];
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</Layout>
+<style>
+.scrollbar-white::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-white::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.scrollbar-white::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+.scrollbar-white::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+</style>
