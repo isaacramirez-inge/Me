@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import { getTranslation, getStaticPaths } from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics.ts';
+import technologiesData from '../../assets/data/technologies.json';
+import timelineData from '../../assets/data/timeline.json';
+import CategoryDistributionChart from '../../components/charts/d3/CategoryDistributionChart';
+import TechnologyProficiencyChart from '../../components/charts/d3/TechnologyProficiencyChart';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
+---
+
+<Layout title="Skills (D3.js)" t={t} lang={lang} m={metrics}>
+  <div class="container mx-auto px-4 py-8 text-white">
+    <h1 class="text-3xl font-bold">Skills Dashboard: D3.js</h1>
+    <p class="mt-4">This page contains charts built with D3.js, demonstrating its flexibility.</p>
+
+    <div class="mt-8">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Technology Distribution by Category</h2>
+      <CategoryDistributionChart client:load technologies={technologiesData} />
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Technology Proficiency (by Project Count)</h2>
+      <TechnologyProficiencyChart client:load technologies={technologiesData} timeline={timelineData} />
+    </div>
+
+  </div>
+</Layout>
