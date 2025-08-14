@@ -14,32 +14,24 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>{t.common.tabtitle}</title>
 	</head>
-	<body class="overflow-hidden">
+	<body>
 		<canvas id="starfield"/>
 		<Navbar title={title} t={t} m={m}/>
 		<SideBar t={t} m={m}/>
-		<main class="transition-transform h-[95dvh] border mt-[5%] scrollbar-white overflow-auto duration-1000 ">
+		<main>
 			<slot />
 		</main>
 		<script define:vars={{}}>
 			const mainEl = document.querySelector('main');
 			if (mainEl) {
-				window.addEventListener("chat-state-change", (e) => {
-					const { isOpen, isMobile } = e.detail;
-
-					// Always remove classes to start fresh
-					mainEl.classList.remove("ml-[20%]", "hidden");
-
-					if (isMobile) {
-						if (isOpen) {
-							mainEl.classList.add("hidden");
-						}
+				window.addEventListener("mainchat-visible", (e) => {
+					if (e.detail === true) {
+						mainEl.classList.add("ml-[20%]");
 					} else {
-						if (isOpen) {
-							mainEl.classList.add("ml-[20%]");
-						}
+						mainEl.classList.remove("ml-[20%]");
 					}
-				});
+				}
+				);
 			}
 		</script>
 		<script src="/src/assets/js/scroll.js"></script>
