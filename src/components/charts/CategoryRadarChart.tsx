@@ -107,7 +107,11 @@ const CategoryRadarChart: React.FC<CategoryRadarChartProps> = ({ technologiesDat
     }
   };
 
-  return <Radar data={data} options={options} />;
+  return (
+    <div className="relative h-96 w-full">
+      <Radar data={data} options={options} />
+    </div>
+  );
 };
 
 export default CategoryRadarChart;

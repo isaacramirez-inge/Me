@@ -17,34 +17,43 @@ const t = getTranslation(lang.toLocaleLowerCase());
   <div class="container mx-auto p-8 text-white/80">
     <h1 class="text-5xl font-bold text-center mb-12">Contact Me</h1>
 
-    <div id="contact-wrapper" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <!-- Left Column: Form -->
-      <div id="contact-form-container" class="bg-white/5 p-8 rounded-lg">
+    <div id="contact-wrapper" class="flex flex-col items-center">
+      <!-- Form Container -->
+      <div id="contact-form-container" class="bg-white/5 p-8 rounded-lg w-full max-w-4xl">
         <form id="contact-form">
-          <div class="mb-4">
-            <label for="name" class="block mb-2">Name</label>
-            <input type="text" id="name" name="name" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left inputs -->
+            <div class="flex flex-col gap-4">
+              <div>
+                <label for="name" class="block mb-2">Name</label>
+                <input type="text" id="name" name="name" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+              </div>
+              <div>
+                <label for="email" class="block mb-2">Email</label>
+                <input type="email" id="email" name="email" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+              </div>
+              <div>
+                <label for="captcha" id="captcha-label" class="block mb-2"></label>
+                <input type="number" id="captcha" name="captcha" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+              </div>
+            </div>
+            <!-- Right Textarea -->
+            <div>
+              <label for="message" class="block mb-2">Message</label>
+              <textarea id="message" name="message" rows="10" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50"></textarea>
+            </div>
           </div>
-          <div class="mb-4">
-            <label for="email" class="block mb-2">Email</label>
-            <input type="email" id="email" name="email" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
+          <!-- Submit Button -->
+          <div class="mt-6">
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
+              Send Message
+            </button>
           </div>
-          <div class="mb-4">
-            <label for="message" class="block mb-2">Message</label>
-            <textarea id="message" name="message" rows="4" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50"></textarea>
-          </div>
-          <div class="mb-4">
-            <label for="captcha" id="captcha-label" class="block mb-2"></label>
-            <input type="number" id="captcha" name="captcha" required class="w-full p-2 bg-white/10 rounded border border-white/20 focus:outline-none focus:border-white/50">
-          </div>
-          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Send Message
-          </button>
         </form>
       </div>
 
-      <!-- Right Column: Lottie Animation -->
-      <div class="flex justify-center items-center">
+      <!-- Lottie Animation Container -->
+      <div class="mt-8 flex justify-center items-center">
         <div id="bot-default-anim">
             <RenderJsonLottie client:load source={botAnimation} loop={true} autoplay={true} width={300} height={300} />
         </div>

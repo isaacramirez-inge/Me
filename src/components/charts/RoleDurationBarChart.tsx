@@ -111,7 +111,11 @@ const RoleDurationBarChart: React.FC<RoleDurationBarChartProps> = ({ timelineDat
         }
     };
 
-    return <Bar data={chartData} options={options} />;
+    return (
+        <div className="relative h-96 w-full">
+            <Bar data={chartData} options={options} />
+        </div>
+    );
 };
 
 export default RoleDurationBarChart;

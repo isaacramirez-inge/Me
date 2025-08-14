@@ -93,7 +93,11 @@ const TechnologyCategoryPolarAreaChart: React.FC<TechnologyCategoryPolarAreaChar
         }
     };
 
-    return <PolarArea data={chartData} options={options} />;
+    return (
+        <div className="relative h-96 w-full">
+            <PolarArea data={chartData} options={options} />
+        </div>
+    );
 };
 
 export default TechnologyCategoryPolarAreaChart;

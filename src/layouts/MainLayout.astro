@@ -24,14 +24,22 @@ import '../styles/global.css';
 		<script define:vars={{}}>
 			const mainEl = document.querySelector('main');
 			if (mainEl) {
-				window.addEventListener("mainchat-visible", (e) => {
-					if (e.detail === true) {
-						mainEl.classList.add("ml-[20%]");
+				window.addEventListener("chat-state-change", (e) => {
+					const { isOpen, isMobile } = e.detail;
+
+					// Always remove classes to start fresh
+					mainEl.classList.remove("ml-[20%]", "hidden");
+
+					if (isMobile) {
+						if (isOpen) {
+							mainEl.classList.add("hidden");
+						}
 					} else {
-						mainEl.classList.remove("ml-[20%]");
+						if (isOpen) {
+							mainEl.classList.add("ml-[20%]");
+						}
 					}
-				}
-				);
+				});
 			}
 		</script>
 		<script src="/src/assets/js/scroll.js"></script>
