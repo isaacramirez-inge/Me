@@ -98,9 +98,7 @@ const TechnologyCategoryDonut: React.FC<TechnologyCategoryDonutProps> = ({ techn
     };
 
     return (
-        <div className="relative h-96 w-full">
             <Doughnut data={chartData} options={options} />
-        </div>
     );
 };
 

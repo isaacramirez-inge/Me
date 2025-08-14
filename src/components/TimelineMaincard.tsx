@@ -111,7 +111,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
             case 'projects': return <TimelineProjectNavigator projects={(st.tab as Project[])} />;
             case 'resume': return (
                 <div className="tab-resume w-full h-full overflow-y-auto px-2 md:px-6 py-4 flex-wrap scrollbar-white flex justify-center items-center">
-                    <p className="max-w-3xl mx-auto text-sm md:text-base leading-relaxed text-white/90 font-light whitespace-pre-line">
+                    <p className="max-w-3xl mx-auto text-sm md:text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
                         {(st.tab as string)}
                     </p>
                 </div>
@@ -133,10 +133,10 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({group, dates, techs, ind
                 <>
                     <div className="header-company-container flex flex-col w-2/5 h-full p-4">
                         <div className="h-[30%]">{CompanyInfo}</div>
+                        <div className="flex-shrink-0">{TabButtons}</div>
                         <div className="h-[70%]">{Technologies}</div>
                     </div>
                     <div className="tab-container w-3/5 h-full flex flex-col p-1 justify-center">
-                        <div className="flex-shrink-0">{TabButtons}</div>
                         <div className="flex-grow mt-2">{TabContent}</div>
                     </div>
                 </>

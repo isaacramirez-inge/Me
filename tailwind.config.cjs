@@ -7,7 +7,11 @@ module.exports = {
     "./src/components/**/*.{astro,js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},  
+    extend: {}, 
+    screens: {
+      'xs': { 'max': '767px' }, // hasta 767px
+      'md': '768px',            // de 768px hacia arriba
+    }, 
   },
   plugins: [],
 };

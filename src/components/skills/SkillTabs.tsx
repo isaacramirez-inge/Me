@@ -81,8 +81,8 @@ const SkillsTabs: React.FC<SkillsTabsProps> = ({ timelineData, technologiesData,
   };
 
   return (
-    <div className={`w-full max-w-6xl mx-auto p-4 text-white mt-[4%] border`}>
-      <div className="flex flex-wrap justify-center space-x-2 border-b border-gray-700 mb-4">
+    <div className={`w-full h-full flex flex-row mx-auto text-white border bg-red-500`}>
+      <div className="flex flex-col h-full w-1/4 items-end justify-center overflow-y-auto scrollbar-white border-b bg-gray-700 mb-4">
         {tabs.map(tab => (
           <button
             key={tab.id}
@@ -98,7 +98,7 @@ const SkillsTabs: React.FC<SkillsTabsProps> = ({ timelineData, technologiesData,
           </button>
         ))}
       </div>
-      <div className="mt-8 p-4 bg-gray-900 bg-opacity-50 rounded-lg shadow-lg">
+      <div className="flex justify-center items-center h-full max-h-full w-3/4 p-4 bg-gray-900 bg-opacity-50 rounded-lg bg-green-500 shadow-lg">
         {renderChart()}
       </div>
     </div>

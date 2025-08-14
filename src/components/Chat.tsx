@@ -61,9 +61,13 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
           console.log('Error  retrieving initial questions', error);
         }
     }
-    
-    if(initialSuggestions?.length === 0){
+    const lastquestions: SuggestedQuestion[] = recoverLastQuestions();
+    if(!lastquestions){
       fetchInitialSuggestions();
+    }else{
+      setInitialSuggestions(lastquestions);
+      setSuggestionsHistory(lastquestions);
+      setSuggestions(lastquestions);
     }
   },[initialSuggestions]);
 
@@ -79,10 +83,10 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
         if (displayedResponseContent.split(' ').length === fullResponseContent.split(' ').length - 1) {
           setSuggestions(beforeDisplaySuggestions);
         }
-      }, 50); // Adjust the delay for the desired streaming speed
+      }, 50); 
       return () => clearTimeout(timer);
     } else if (fullResponseContent && displayedResponseContent.length === fullResponseContent.length) {
-        setFullResponseContent(''); // Clear the full response content once streaming is complete
+        setFullResponseContent(''); 
     }
   }, [fullResponseContent, displayedResponseContent]);
 
@@ -107,7 +111,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
 
     try {
       const suggestionsValidated = suggestionsHistory.map(sq => ({...sq, taken: sq.question === text}));
-      const chatRq: ChatRequest = {uuid: uuid, intl: 'es-es', messages: [...chat, userMessage], suggestedQuestions: suggestionsValidated, modelUsage: modelUsage};
+      const chatRq: ChatRequest = {uuid: uuid, intl: t._info.code, messages: [...chat, userMessage], suggestedQuestions: suggestionsValidated, modelUsage: modelUsage};
       const response = await sendMessage(chatRq);
       const reply: string = response.response || 'Error al obtener respuesta.';
       
@@ -126,6 +130,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
       setChat((prev) => [...prev, assistantMessage]);
       setBeforeDisplaySuggestions(newSuggestions);
       setSuggestionsHistory([...suggestionsValidated, ...newSuggestions]);
+      saveLastQuestions(newSuggestions);
       setLoading(false);
 
     } catch (error) {
@@ -162,6 +167,16 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
     };
   }, [isVisible, chat.length]);
   
+  const saveLastQuestions = (questions: SuggestedQuestion[]) => {
+    localStorage.setItem('lastQuestions', JSON.stringify(questions));
+  }
+  const recoverLastQuestions = (): SuggestedQuestion[] => {
+    const lastQuestions = localStorage.getItem('lastQuestions');
+    if (lastQuestions) {
+      return JSON.parse(lastQuestions) as SuggestedQuestion[];
+    }
+    return [];
+  }
 
   return (
     <div
@@ -240,7 +255,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
               {suggestions.map((q, i) => (
                 <button
                   key={i}
-                  className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30"
+                  className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay" 
                   onClick={() => handleSend(q.question)}
                 >
                   {q.question}

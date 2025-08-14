@@ -13,16 +13,5 @@ const t = getTranslation(lang.toLocaleLowerCase());
 ---
 
 <Layout title={t.skills.title} t={t} lang={lang} m={metrics}>
-  <div class="container mx-auto px-4 py-8 text-white">
-    <div class="mb-8 p-4 border border-white/20 rounded-lg bg-white/5 text-center">
-      <h2 class="text-xl font-bold mb-2">Chart Library Comparison</h2>
-      <p class="mb-4">The following pages were created to compare different charting libraries:</p>
-      <div class="flex justify-center gap-4">
-        <a href={`/${lang}/skills-lightweight`} class="text-sky-400 hover:underline">Lightweight Charts</a>
-        <a href={`/${lang}/skills-echarts`} class="text-sky-400 hover:underline">ECharts</a>
-        <a href={`/${lang}/skills-d3`} class="text-sky-400 hover:underline">D3.js</a>
-      </div>
-    </div>
-    <SkillTabs client:load timelineData={timelineData} technologiesData={technologiesData} />
-  </div>
+    <SkillTabs client:load timelineData={timelineData} technologiesData={technologiesData} m={metrics}/>
 </Layout>
