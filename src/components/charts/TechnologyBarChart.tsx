@@ -111,7 +111,11 @@ const TechnologyBarChart: React.FC<TechnologyBarChartProps> = ({ technologiesDat
     }
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div className="relative h-96 w-full">
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
 
 export default TechnologyBarChart;

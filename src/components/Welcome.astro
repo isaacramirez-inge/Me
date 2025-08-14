@@ -27,26 +27,3 @@ const { t, m } = Astro.props;
     observer.observe(card);
   });
 </script>
-
-<script is:inline type="module">
-  import('https://cdn.skypack.dev/gsap').then(({ gsap }) => {
-    import('https://cdn.skypack.dev/gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-      gsap.registerPlugin(ScrollTrigger);
-      // TIMELINE 2: Animar #main-chat cuando se pasa cierto punto
-      const tl2 = gsap.timeline({
-        ease: "power2.out",
-        scrollTrigger: {
-          scrub: 1,
-        },
-      });
-
-      tl2.from("#main-chat", {
-        duration: 0.1,
-        opacity: 0,
-      }).to("#main-chat", {
-        duration: 0.5,
-        opacity: 1,
-      });
-    });
-  });
-</script>

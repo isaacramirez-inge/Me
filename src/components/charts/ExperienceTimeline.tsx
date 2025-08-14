@@ -143,8 +143,10 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ timelineData })
   };
 
   return (
-    <div style={{ height: `${labels.length * 40}px`, position: 'relative' }}>
-        <Bar data={chartData} options={options} />
+    <div className="relative w-full" style={{ height: '600px', overflowY: 'auto' }}>
+        <div style={{ height: `${labels.length * 40}px`, position: 'relative' }}>
+            <Bar data={chartData} options={options} />
+        </div>
     </div>
   );
 };

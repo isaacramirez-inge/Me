@@ -88,7 +88,11 @@ const CompanyProjectsBarChart: React.FC<CompanyProjectsBarChartProps> = ({ timel
         }
     };
 
-    return <Bar data={chartData} options={options} />;
+  return (
+    <div className="relative h-96 w-full">
+      <Bar options={options} data={chartData} />
+    </div>
+  );
 };
 
 export default CompanyProjectsBarChart;

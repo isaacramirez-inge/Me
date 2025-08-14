@@ -107,7 +107,11 @@ const TechnologyTrendLineChart: React.FC<TechnologyTrendLineChartProps> = ({ tec
         }
     };
 
-    return <Line data={chartData} options={options} />;
+    return (
+        <div className="relative h-96 w-full">
+            <Line data={chartData} options={options} />
+        </div>
+    );
 };
 
 export default TechnologyTrendLineChart;

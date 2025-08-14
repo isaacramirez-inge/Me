@@ -24,3 +24,15 @@ export type Translation = {
     title: string,
   }
 };
+
+export interface Technology {
+  id: number;
+  name: string;
+  logo_path: string;
+  extension: string;
+  bg_color: string;
+  text_color: string;
+  border_color: string;
+  category: string;
+  display_text: string;
+}
