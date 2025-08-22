@@ -1,5 +1,6 @@
 // src/components/SwitchLang.tsx
 import React, { useEffect, useState } from 'react';
+import { setCookie } from '../utils/cookies';
 
 interface Lang {
   code: string;
@@ -16,6 +17,7 @@ const SwitchLang: React.FC<SwitchLangProps> = ({ actualCode, langs }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value;
+    setCookie('lang', newLang, { expires: 365 });
     const newUrl = window.location.href.replace(actualCode, newLang);
     window.location.href = newUrl;
   };

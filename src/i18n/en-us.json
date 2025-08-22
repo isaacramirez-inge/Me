@@ -59,5 +59,20 @@
         "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
         "hit_limit_2": "Parece que has alcanzado el limite de chats",
         "captcha_message":"Por favor marca la casilla para continuar"
+    },
+    "cookies": {
+        "message": "We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.",
+        "accept": "Accept",
+        "policy": "Privacy Policy"
+    },
+    "policy": {
+        "title": "Privacy Policy",
+        "last_updated": "Last updated: August 22, 2025",
+        "introduction_title": "Introduction",
+        "introduction_text": "This Privacy Policy describes how we collect, use, and disclose your information.",
+        "cookies_title": "Cookies",
+        "cookies_text": "We use cookies to operate and improve our services. A cookie is a small piece of data stored on your device. We use a 'lang' cookie to store your language preference, and a 'browser_id' cookie to uniquely identify your browser for analytics and security purposes.",
+        "data_title": "Data Collection and Use",
+        "data_text": "When you use our contact form or chat, we collect your name, email, and the content of your message, along with your 'browser_id' and 'lang' cookies. This data is used to respond to your inquiries and improve our services."
     }
 }

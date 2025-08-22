@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import type { Translation } from '../../types/types';
+import { getCookie } from '../../utils/cookies';
 
 interface FormData {
   name: string;
@@ -28,8 +29,11 @@ const ContactForm: React.FC<Props> = ({t}) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const browserId = getCookie('browser_id');
+    const lang = getCookie('lang');
+    const data = { ...formData, browserId, lang };
+    console.log('Form submitted:', data);
     // Handle form submission logic (e.g., sending data to a backend)
-    console.log('Form submitted:', formData);
     // Reset form
     setFormData({ name: '', email: '', message: '' });
   };
