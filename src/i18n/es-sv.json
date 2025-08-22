@@ -55,5 +55,20 @@
         "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
         "hit_limit_2": "Parece que has alcanzado el limite de chats",
         "captcha_message":"Por favor marca la casilla para continuar"
+    },
+    "cookies": {
+        "message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.",
+        "accept": "Aceptar",
+        "policy": "Política de Privacidad"
+    },
+    "policy": {
+        "title": "Política de Privacidad",
+        "last_updated": "Última actualización: 22 de agosto de 2025",
+        "introduction_title": "Introducción",
+        "introduction_text": "Esta Política de Privacidad describe cómo recopilamos, usamos y divulgamos su información.",
+        "cookies_title": "Cookies",
+        "cookies_text": "Utilizamos cookies para operar y mejorar nuestros servicios. Una cookie es un pequeño dato almacenado en su dispositivo. Usamos una cookie 'lang' para almacenar su preferencia de idioma y una cookie 'browser_id' para identificar de forma única su navegador con fines de análisis y seguridad.",
+        "data_title": "Recopilación y Uso de Datos",
+        "data_text": "Cuando utiliza nuestro formulario de contacto o chat, recopilamos su nombre, correo electrónico y el contenido de su mensaje, junto con sus cookies 'browser_id' y 'lang'. Estos datos se utilizan para responder a sus consultas y mejorar nuestros servicios."
     }
 }

@@ -2,6 +2,7 @@
 import faviconUrl from '../../public/favicon.svg?url';
 import Navbar from '../components/Navbar.astro';
 import SideBar from '../components/Sidebar.astro';
+import CookieConsent from '../components/CookieConsent.tsx';
 const { t, m, title } = Astro.props;
 import '../styles/global.css';
 ---
@@ -18,6 +19,7 @@ import '../styles/global.css';
 		<canvas id="starfield"/>
 		<Navbar title={title} t={t} m={m}/>
 		<SideBar t={t} m={m}/>
+        <CookieConsent t={t} lang={t._info.code} client:load />
 		<main>
 			<slot />
 		</main>
