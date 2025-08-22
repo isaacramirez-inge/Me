@@ -4,16 +4,21 @@ import Hammer from 'hammerjs';
 import gsap from 'gsap';
 import './MainText.css';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '../styles/breakpoints';
 
 interface Props {
   t: any;
 }
 
 const MainText: React.FC<Props> = ({ t }) => {
+  const isMobile = useMediaQuery({ query: breakpoints.mobile });
   const [chatVisible, setChatVisible] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [descriptions] = useState<string[]>(t.home.welcome.descriptions as string[]);
+
+  const itemRefs = useRef<Array<HTMLDivElement | null >>([]);
 
   useEffect(() => {
     const handleChatVisibility = (event: CustomEvent) => {
@@ -102,52 +107,53 @@ const MainText: React.FC<Props> = ({ t }) => {
   }, [descriptions.length]);
 
   return (
-    <div className=' h-full w-full flex gap-1 items-center justify-center bg-white/30'>
-      <div id="main-text" className={`pl-[5%] py-[10%] w-3/4 text-white z-10 items-end`} >
-        <div className="text-left relative left-container">
-          <h2 className="text-6xl black-shadow font-serif font-thin tracking-wider mt-2 font-verdana">
-            Isaac Sarceño
+    <div className='relative  h-full w-full flex gap-1 items-center justify-center'>
+      <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-end`} >
+        <div className="text-left relative flex flex-wrap  "
+              style={isMobile ? {alignContent: 'end'} : {alignContent: 'center'}}>
+          <h2 className="text-white/80 text-6xl xs:text-2xl w-full black-shadow font-serif font-thin tracking-wider mt-2 font-verdana">
+            {t.common.name}
           </h2>
-          <p className="text-3xl font-serif font-thin tracking-wider mt-3 font-verdana black-shadow">
+          <p className="text-white/80 text-3xl xs:text-xl w-full  mt-3 black-shadow">
             Developer / Just living
           </p>
 
-          <div className="slider h-60 overflow-hidden">
+          <div className=" w-full slider overflow-hidden">
             <div className="indicators">
               {descriptions.map((_: string, index: number) => (
                 <div 
                   className="indicator-item-wrapper" 
                   key={`indicator-${index}`}
-                  onClick={() => setCurrentIndex(index)} // Agregamos el evento de clic para actualizar el estado
+                  onClick={() => setCurrentIndex(index)}
                 >
-                  {/* Se elimina la lógica del indicador activo y se actualiza con el estado */}
-                  <div className={`indicator-item ${index === currentIndex ? 'active' : ''}`} />
+                  <div className={`indicator-item ${index === currentIndex ? 'active' : 'bg-transparent'}`} />
                 </div>
               ))}
             </div>
             <div 
-              className="slider-container h-[200px] flex transition-transform duration-500 ease-in-out" 
+              className="slider-container h-1/2 xs:text-base flex transition-transform duration-500 ease-in-out" 
               ref={sliderRef}
-              // Agregamos el estilo para mover el slider
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {descriptions.map((description: string, index: number) => (
+
                 <div
                   key={`slide-${index}`}
                   id={index === descriptions.length - 1 ? 'last' : undefined}
                   className="slider-item min-w-full"
                 >
-                  <p className="md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
+                  <p className="text-white/80 leading-relaxed md:text-xl text-m font-serif font-thin tracking-wider font-verdana black-shadow">
                     {description}
                   </p>
                 </div>
+
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div id="main-image" className="w-1/2 h-full object-contain object-right-bottom">
-          <img src={`${img_me_just_living.src}`}  alt="Isaac just living" />
+      <div id="main-image" className=" xs:absolute xs:right-0 xs:w-full xs:p-0 justify-end w-1/2 h-full pr-[5%] py-[5%] flex justify-center align-end object-contain">
+          <img src={`${img_me_just_living.src}`}  alt="Isaac just living" className=' object-contain'/>
       </div>
     </div>
   );

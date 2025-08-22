@@ -3,13 +3,17 @@ import ReactRenderBridge from '../components/_react/ReactRenderBridge';
 import {supportedLanguages, defaultTranslation} from '../i18n';
 const langs = await supportedLanguages();
 const defaultLocale = defaultTranslation;
+
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Isa Wild Dev -1</title>
+    <title>Isa Wild Dev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+    {langs.map((lang) => (
+      <link rel="prefetch" href={`/${lang.code}/home`} />
+    ))}
     
     <style>
       body {

@@ -105,6 +105,7 @@ export interface ProjectRoleTimeline {
   }
   
   export interface TechIconCloudProps {
+    techAll: Technology[];
     technologies: (number | string)[];
   }
     

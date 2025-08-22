@@ -106,9 +106,7 @@ const RolePieChart: React.FC<RolePieChartProps> = ({ timelineData }) => {
   };
 
   return (
-    <div className="relative h-96 w-full">
-      <Pie data={data} options={options} />
-    </div>
+    <Pie data={data} options={options} />
   );
 };
 

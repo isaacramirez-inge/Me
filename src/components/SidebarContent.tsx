@@ -13,8 +13,8 @@ interface Props {
 }
 
 const SidebarContent: React.FC<Props> = ({ t, m }) => {
-    const [viewChat, setViewChat] = useState<boolean>(true);
     const isMobile = useMediaQuery({ query: breakpoints.mobile });
+    const [viewChat, setViewChat] = useState<boolean>(!isMobile);
 
     const handleChatStateChange = (isOpen: boolean) => {
         setViewChat(isOpen);
@@ -32,7 +32,7 @@ const SidebarContent: React.FC<Props> = ({ t, m }) => {
     return (
     <>
         <Chat t={t} m={m} isVisible={viewChat} onCloseChat={onCloseChat}/>
-        <div className={`main-bothi cursor-pointer z-50 h-40 w-40 fixed -left-8 top-3/4 transform transition-transform duration-500 ${!viewChat ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`main-bothi xs:scale-75 cursor-pointer z-50 h-40 w-40 fixed -left-8 top-3/4 transform transition-transform duration-500 ${!viewChat ? 'translate-x-0' : '-translate-x-full'}`}>
             {(() => { return(
             <Lottie
                 loop

@@ -3,109 +3,82 @@ import Layout from '../../layouts/MainLayout.astro';
 import "../../styles/global.css";
 import { getTranslation, getStaticPaths } from '../../i18n';
 import { metrics } from '../../assets/metrics/metrics.ts';
-import profileData from '../../assets/data/profile.json';
+import { buyData } from '../../lib/data/DataDealer';
 
 export { getStaticPaths };
-
 const { lang } = Astro.params as { lang: string };
-const t = getTranslation(lang.toLocaleLowerCase());
+const t = getTranslation(lang);
+
+interface Detail {
+  show: boolean;
+  type: "keyvalue" | "text" | "link"; // Puedes agregar más tipos si son necesarios
+  key?: string; // Opcional para type "text"
+  value?: string; // Opcional para type "link"
+  platform?: string; // Solo para type "link"
+  user?: string; // Solo para type "link"
+}
+
+interface Section {
+  title: string;
+  details: Detail[];
+}
+
+interface ExtraInsight {
+  show: boolean;
+  title: string;
+  description: string;
+}
+
+export interface ProfileData {
+  locale: string;
+  name?: string;
+  tagline: string;
+  content: Section[];
+  extra_insights: ExtraInsight[];
+}
 
 const {
   name,
   tagline,
-  email,
-  phone,
-  location,
-  date_of_birth,
-  degree,
-  professional_summary,
-  languages,
-  social_media,
-  hobbies,
-  strong_areas,
-  interests,
-  extra_insights
-} = profileData;
+  content,
+  extra_insights,
+} = await buyData('profile', lang) as ProfileData;
+
 ---
+<!-- /home/user/Me/src/pages/[lang]/profile.astro -->
+<Layout title={t.profile.title} t={t} m={metrics} >
+  <div class="grid place-items-center mx-auto px-4 py-8 mt-[10%] xs:mt[15%] pr-[5dvh] text-white text-opacity-80 grid gap-8 grid-cols-1 xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">{name}</h1>
+    <p class="text-xl md:text-2xl mb-8">{tagline}</p>
 
-<Layout title="Profile" t={t} lang={lang} m={metrics}>
-  <div class="container mx-auto p-8 text-white/80">
-    <div class="text-center mb-12">
-      <h1 class="text-5xl font-bold mb-2">{name}</h1>
-      <p class="text-xl italic">{tagline}</p>
-    </div>
+    {content.map((section) => (
+      <section class="mb-8 leading-relaxed">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{section.title}</h2>
+        {section.details.map((detail) => (
+          detail.show && (
+            <div class="mb-2">
+              {detail.type === "keyvalue" && detail.key && detail.value && (
+                <p><strong class="font-medium">{detail.key}:</strong> {detail.value}</p>
+              )}
+              {detail.type === "text" && detail.value && (
+                <p>{detail.value}</p>
+              )}
+              {detail.type === "link" && detail.platform && detail.user && (
+                <p>{detail.platform}: <a href={`https://${detail.platform}.com/${detail.user}`} target="_blank" class="text-blue-400 hover:underline">{detail.user}</a></p>
+              )}
+            </div>
+          )
+        ))}
+      </section>
+    ))}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <!-- Left Column -->
-      <div class="bg-white/5 p-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Personal Details</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-            <p><strong>Email:</strong> {email}</p>
-            <p><strong>Phone:</strong> {phone}</p>
-            <p><strong>Location:</strong> {location}</p>
-            <p><strong>Degree:</strong> {degree}</p>
-            <p><strong>Age:</strong> <span id="age"></span></p>
-        </div>
-      </div>
-
-      <!-- Right Column -->
-      <div class="bg-white/5 p-6 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Professional Summary</h2>
-        <p>{professional_summary}</p>
-      </div>
-    </div>
-
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Languages</h2>
-            <ul>
-                {languages.map(lang => <li><strong>{lang.language}:</strong> {lang.level}</li>)}
-            </ul>
-        </div>
-        <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Social Media</h2>
-            <ul>
-                {Object.entries(social_media).map(([platform, user]) => user && (
-                    <li><a href={`https://www.${platform}.com/${user}`} target="_blank" rel="noopener noreferrer" class="capitalize hover:text-white">{platform}</a></li>
-                ))}
-            </ul>
-        </div>
-        <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Strong Areas</h2>
-            <p>{strong_areas.join(', ')}</p>
-        </div>
-        <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Interests</h2>
-            <p>{interests.join(', ')}</p>
-        </div>
-        <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Hobbies</h2>
-            <p>{hobbies.join(', ')}</p>
-        </div>
-    </div>
-
-    <div class="mt-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Extra Insights</h2>
-      {extra_insights.map(insight => (
-        <div class="bg-white/5 p-6 rounded-lg mb-6">
-          <h3 class="text-xl font-bold mb-2">{insight.title}</h3>
+    {extra_insights.map((insight) => (
+      insight.show && (
+        <section class="mb-8 leading-relaxed">
+          <h3 class="text-xl md:text-2xl font-medium mb-2">{insight.title}</h3>
           <p>{insight.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <script define:vars={{ date_of_birth }}>
-    const ageElement = document.getElementById('age');
-    if (ageElement) {
-        const birthDate = new Date(date_of_birth);
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-        ageElement.textContent = age.toString();
-    }
-  </script>
+        </section>
+      )
+    ))}
+      </div>
 </Layout>

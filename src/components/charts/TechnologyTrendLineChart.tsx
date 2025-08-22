@@ -97,6 +97,7 @@ const TechnologyTrendLineChart: React.FC<TechnologyTrendLineChartProps> = ({ tec
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { position: 'top' as const, labels: { color: '#ffffff' }},
             title: { display: true, text: 'Technology Category Trends Over Years', color: '#ffffff' },
@@ -108,9 +109,7 @@ const TechnologyTrendLineChart: React.FC<TechnologyTrendLineChartProps> = ({ tec
     };
 
     return (
-        <div className="relative h-96 w-full">
             <Line data={chartData} options={options} />
-        </div>
     );
 };
 

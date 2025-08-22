@@ -1,0 +1,17 @@
+[
+    { "order": 100, "show": true, "id": "tech-usage", "label": "Technology Usage" },
+    { "order": 100, "show": true, "id": "role-dist", "label": "Role Distribution" },
+    { "order": 100, "show": true, "id": "category-radar", "label": "Competence by Category" },
+    { "order": 100, "show": true, "id": "exp-timeline", "label": "Experience Timeline" },
+    { "order": 100, "show": true, "id": "category-donut", "label": "Category Donut" },
+    { "order": 100, "show": true, "id": "role-duration-bar", "label": "Role Duration" },
+    { "order": 100, "show": true, "id": "projects-per-year", "label": "Projects per Year" },
+    { "order": 100, "show": false, "id": "implementation-type", "label": "Implementation Types" },
+    { "order": 100, "show": false, "id": "company-projects", "label": "Projects per Company" },
+    { "order": 100, "show": true, "id": "tech-per-project", "label": "Technologies per Project" },
+    { "order": 100, "show": true, "id": "frontend-vs-backend", "label": "Frontend vs. Backend" },
+    { "order": 100, "show": false, "id": "achievements", "label": "Achievement Milestones" },
+    { "order": 10, "show": true, "id": "tech-trend", "label": "Technology Trend" },
+    { "order": 100, "show": true, "id": "tech-heatmap", "label": "Technology Heatmap" },
+    { "order": 100, "show": true, "id": "tech-polar-area", "label": "Categories (Polar Area)" }
+]

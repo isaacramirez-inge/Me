@@ -111,11 +111,11 @@
             {"description":"Gestión de proyectos y seguimiento de resultados"},
             {"description":"Coordinacion de reuniones con el cliente"}
           ],
-          "start_date": "2023-03-18",
+          "start_date": "2024-08-18",
           "end_date": "2025-01-24"
         },
         {
-          "job_role": "Ingeniero desarrollador implementador",
+          "job_role": "Ingeniero desarrollador",
           "show_first": true,
           "job_role_id": 2,
           "responsabilities": [
@@ -126,7 +126,7 @@
             {"description": "Desarrollo de scripts de integracion y bases de datos"},
             {"description": "Creacion y mantenimiento de infraestructura en la nube Azure para clientes de ACF"}
           ],
-          "start_date": "2023-03-18",
+          "start_date": "2023-07-18",
           "end_date": "2025-01-24"
         },
         {
@@ -139,12 +139,12 @@
             { "description": "Monitoreo y mantenimiento continuo de las soluciones implementadas para garantizar su correcto funcionamiento y optimización continua." }
           ],
           "start_date": "2023-03-18",
-          "end_date": "2025-01-24"
+          "end_date": "2024-08-24"
         }
       ],
       "projects": [
         {
-          "project_name": "Implementación piloto de Q-flow para Emcali",
+ "project_name": "Piloto Q-flow Emcali",
           "implementation_type": "ACF Cloud hosted",
           "company": "Emcali Colombia",
           "company_logo_path": "emcalicolombia.png",
@@ -168,7 +168,7 @@
           "project_id": 1
         },
         {
-          "project_name": "Implementacion de sistema de gestion de colas Asesuisa",
+ "project_name": "Sistema Gestión Colas Asesuisa",
           "implementation_type": "ACF Cloud hosted",
           "company":"Asesuisa El Salvador",
           "company_logo_path": "asesuisaelsalvador.png",
@@ -194,7 +194,7 @@
           "project_id": 2
         },
         {
-          "project_name": "Migracion de version de sistema de gestion de colas Tigo Bolivia",
+ "project_name": "Migración Sistema Colas Tigo Bolivia",
           "implementation_type": "Onpremise",
           "company":"Tigo Bolivia",
           "company_logo_path": "tigobolivia.png",
@@ -220,7 +220,7 @@
           "project_id": 3
         },
         {
-          "project_name": "Rediseño de Infopage para Veterinaria los Heroes",
+ "project_name": "Rediseño Infopage Veterinaria Los Heroes",
           "implementation_type": "On-premise",
           "company": "Veterinaria los Heroes El Salvador",
           "company_logo_path": "veterinarialosheroeselsalvador.png",
@@ -246,7 +246,7 @@
           "project_id": 4
         },
         {
-          "project_name": "Desarrollo de quiosco con integración de cámara para BAC",
+ "project_name": "Quiosco con Cámara BAC Guatemala",
           "implementation_type": "On-premise",
           "company": "BAC Guatemala",
           "company_logo_path": "bacguatemala.png",
@@ -272,7 +272,7 @@
           "project_id": 5
         },
         {
-          "project_name": "Actualización del sistema Sense para Claro",
+ "project_name": "Actualización Sense Claro El Salvador",
           "implementation_type": "On-premise",
           "company": "Claro El Salvador",
           "company_logo_path": "claroelsalvador.png",
@@ -300,7 +300,7 @@
           "project_id": 6
         },
         {
-          "project_name": "Actualización visual de quiosco para Promerica",
+ "project_name": "Actualización Quiosco Promerica",
           "implementation_type": "On-premise",
           "company": "Promerica El Salvador",
           "company_logo_path": "promericaelsalvador.svg",
@@ -325,7 +325,7 @@
           "project_id": 7
         },
         {
-          "project_name": "Implementación de Q-flow y Sense para Microlab",
+ "project_name": "Q-flow y Sense Microlab Honduras",
           "implementation_type": "On-premise",
           "company": "Microlab Honduras",
           "company_logo_path": "microlabhonduras.png",
@@ -358,7 +358,7 @@
           "project_id": 8
         },
         {
-          "project_name": "Mantenimiento y mejora de quiosco para Aguas de Saltillo",
+ "project_name": "Mantenimiento Quiosco Aguas de Saltillo",
           "implementation_type": "On-premise",
           "company": "Aguas de Saltillo México",
           "company_logo_path": "aguasdesaltillomexico.png",
@@ -383,7 +383,7 @@
           "project_id": 9
         },
         {
-          "project_name": "Implementación de Q-flow para CNR",
+ "project_name": "Q-flow CNR El Salvador",
           "implementation_type": "On-premise",
           "company": "CNR El Salvador",
           "company_logo_path": "cnrelsalvador.png",
@@ -414,7 +414,7 @@
           "project_id": 10
         },
         {
-          "project_name": "Rediseño de flujo de atención para Banpais",
+ "project_name": "Rediseño Flujo Atención Banpais",
           "implementation_type": "On-premise",
           "company": "Banpais Honduras",
           "company_logo_path": "banpaisonduras.png",
@@ -439,7 +439,7 @@
           "project_id": 11
         },
         {
-          "project_name": "Integración de identificación de clientes para Davivienda",
+ "project_name": "Identificación Clientes Davivienda",
           "implementation_type": "On-premise",
           "company": "Davivienda Honduras",
           "company_logo_path": "daviviendahonduras.png",
@@ -465,7 +465,7 @@
           "project_id": 12
         },
         {
-          "project_name": "Desarrollo de quiosco parametrizable para Santander México",
+ "project_name": "Quiosco Parametrizable Santander México",
           "implementation_type": "On-premise",
           "company": "Santander México",
           "company_logo_path": "santandermexico.png",
@@ -493,7 +493,7 @@
           "project_id": 13
         },
         {
-          "project_name": "Desarrollo de quiosco de autogestión e Infopage para RNPN",
+ "project_name": "Quiosco e Infopage RNPN",
           "implementation_type": "On-premise",
           "company": "RNPN El Salvador",
           "company_logo_path": "rnpnelsalvador.png",
@@ -519,7 +519,7 @@
           "project_id": 14
         },
         {
-          "project_name": "Mentoría y capacitación en desarrollo de quioscos de autogestión e infopages",
+ "project_name": "Mentoría Desarrollo Quioscos/Infopages",
           "implementation_type": "Capacitación interna / Mentoría técnica",
           "company": "ACF Technologies LATAM",
           "highlight": false,
@@ -546,7 +546,7 @@
           "project_id": 26
         },
         {
-          "project_name": "Desarrollo de OABS para SURA México",
+ "project_name": "OABS SURA México",
           "implementation_type": "Client Cloud hosted",
           "company": "SURA México",
           "highlight": true,
@@ -572,7 +572,7 @@
           "project_id": 15
         },
         {
-          "project_name": "Implementación de Q-flow en nuevas sucursales de Banco Cuscatlán",
+ "project_name": "Q-flow Nuevas Sucursales Cuscatlán",
           "implementation_type": "On-premise",
           "company": "Banco Cuscatlán El Salvador",
           "company_logo_path": "bancocuscatlanelsalvador.png",
@@ -599,7 +599,7 @@
           "project_id": 16
         },
         {
-          "project_name": "Desarrollo de quiosco de autogestión para BBVA México",
+ "project_name": "Quiosco Autogestión BBVA México",
           "implementation_type": "ACF Cloud hosted",
           "company": "BBVA México",
           "highlight": true,
@@ -631,7 +631,7 @@
           "project_id": 17
         },
         {
-          "project_name": "Renovación de quiosco de autogestión para BAC Regional",
+ "project_name": "Renovación Quiosco BAC Regional",
           "implementation_type": "Client Cloud hosted",
           "company": "BAC Regional (GT, SV, HN, CR, PA)",
           "company_logo_path": "bacguatemala.png",
@@ -657,7 +657,7 @@
           "project_id": 18
         },
         {
-          "project_name": "Rediseño de Infopage para Banco Agrícola",
+ "project_name": "Rediseño Infopage Banco Agrícola",
           "implementation_type": "On-premise",
           "company": "Banco Agrícola El Salvador",
           "company_logo_path": "bancoagricolaelsalvador.png",
@@ -714,7 +714,7 @@
       ],
       "projects": [
         {
-          "project_name": "Implementación de infraestructura tecnológica y redes en nueva sede",
+ "project_name": "Infraestructura/Redes Nueva Sede GLS",
           "implementation_type": "Infraestructura y redes",
           "company": "Grupo LS El Salvador",
           "company_logo_path": "grupolselsalvador.png",
@@ -744,7 +744,7 @@
           "project_id": 25
         },
         {
-          "project_name": "Mejora continua del sistema de gestión de negocios y clientes",
+ "project_name": "Mejora Sistema Gestión Clientes GLS",
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "highlight": true,
@@ -781,7 +781,7 @@
           "project_id": 22
         },
         {
-          "project_name": "Integración de datos de GPS vehicular",
+ "project_name": "Integración GPS Vehicular",
           "implementation_type": "Integración de sistemas y visualización interna",
           "company": "Grupo LS El Salvador",
           "highlight": true,
@@ -808,7 +808,7 @@
           "project_id": 24
         },
         {
-          "project_name": "Sitio web para Prestauto",
+ "project_name": "Sitio Web Prestauto",
           "implementation_type": "Web hosting GoDaddy",
           "company": "Grupo LS El Salvador - Prestauto",
           "company_logo_path": "grupolselsalvador.png",
@@ -963,7 +963,7 @@
       ],
       "projects": [
         {
-          "project_name": "Redes neuronales multicapa para problemas matemáticos y visión por computadora",
+ "project_name": "Redes Neuronales y Visión Computadora",
           "implementation_type": "Proyecto académico / Investigación aplicada",
           "company": "Universidad Tecnológica de El Salvador",
           "company_logo_path": "utec.png",
@@ -994,7 +994,7 @@
           "project_id": 100
         },
         {
-          "project_name": "Dashboards interactivos para análisis y toma de decisiones",
+ "project_name": "Dashboards Análisis/Decisiones",
           "implementation_type": "Proyecto académico / Visualización de datos",
           "company": "Universidad Tecnológica de El Salvador",
           "company_logo_path": "utec.png",
@@ -1023,7 +1023,7 @@
           "project_id": 101
         },
         {
-          "project_name": "Simulación y procesamiento de datos IoT con Node-RED, Python y PLC",
+ "project_name": "Simulación IoT con Node-RED/Python",
           "implementation_type": "Proyecto académico / IoT y automatización",
           "company": "Universidad Tecnológica de El Salvador",
           "company_logo_path": "utec.png",

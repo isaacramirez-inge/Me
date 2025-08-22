@@ -2,7 +2,7 @@
 import faviconUrl from '../../public/favicon.svg?url';
 import Navbar from '../components/Navbar.astro';
 import SideBar from '../components/Sidebar.astro';
-const { t, m, title } = Astro.props;
+const { t, m, title, pagekey } = Astro.props;
 import '../styles/global.css';
 ---
 <!doctype html>
@@ -13,12 +13,13 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{t.common.tabtitle}</title>
+		{pagekey && pagekey === 'contact' && <script src="https://www.google.com/recaptcha/api.js" async defer></script>}
 	</head>
 	<body class="overflow-hidden">
 		<canvas id="starfield"/>
 		<Navbar title={title} t={t} m={m}/>
 		<SideBar t={t} m={m}/>
-		<main class="transition-transform h-[92dvh] border mt-[8%] scrollbar-white overflow-auto duration-1000 ">
+		<main class="transition-transform h-[100dvh] scrollbar-white overflow-auto duration-1000 ">
 			<slot />
 		</main>
 		<script define:vars={{}}>
@@ -106,7 +107,7 @@ import '../styles/global.css';
 				
 						if (sx < 0 || sx >= width || sy < 0 || sy >= height) continue;
 				
-						const size = (1 - star.z / width) * star.sizeFactor * 2;
+						const size = Math.max(0, (1 - star.z / width)) * star.sizeFactor * 2;
 						const alpha = (1 - star.z / width) * 0.9;
 				
 						ctx.beginPath();

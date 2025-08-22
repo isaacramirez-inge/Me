@@ -80,9 +80,7 @@ const FrontendVsBackendPieChart: React.FC<FrontendVsBackendPieChartProps> = ({ t
     };
 
     return (
-        <div className="relative h-96 w-full">
             <Pie data={chartData} options={options} />
-        </div>
     );
 };
 

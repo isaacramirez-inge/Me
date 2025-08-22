@@ -41,7 +41,7 @@ function Menu({ links: ls, base = "", lang , prefetch}: MenuProps) {
         {links.map((link) => {
             const url = `${link.path}`;
             return (
-            <a key={link.path} href={url} className="font-bold text-white/80 cursor-pointer" style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>
+            <a key={link.path} href={url} className="hover:scale-125 transition-transform duration-300 font-bold text-white/80 cursor-pointer" style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>
                 {link.name}
             </a>
             );

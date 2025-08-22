@@ -1,16 +1,9 @@
-import type { MainCardData, Technology } from '../../components/_react/timeline/TimelineTypes'; 
 
-export type DataName = 'timeline' | 'technologies';
+export type DataName = 'timeline' | 'technologies' | 'profile' | 'charts';
 
-export const buyData = async (what: DataName) => {
-    switch (what) {
-        case 'timeline':
-            const timeline: MainCardData[] = (await import('../../assets/data/timeline.json')).default.jobs_history ;
-            return timeline;
-        case 'technologies':
-            const techs: Technology[] = (await import('../../assets/data/technologies.json')).default;
-            return techs;
-        default:
-            return null;
-    }
+const search = async (path: string) => {return (await import(path)).default;};
+export const buyData = async (what: DataName, lang: string) => {
+    const rpath = `${lang}/${what}.json`;
+    const path = `../../../src/assets/data/${rpath}`;
+    return await search(path);
 }
