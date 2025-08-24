@@ -26,7 +26,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ t, lang }) => {
     };
 
     const handlePolicy = () => {
-        window.location.href = `/${lang}/policy-privacy`;
+        window.location.href = `policy-privacy`;
     };
 
     if (!isVisible) {
