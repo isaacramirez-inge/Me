@@ -1,19 +1,21 @@
 ---
 import Layout from '../../layouts/MainLayout.astro';
-import SkillTabs from '../../components/skills/SkillTabs';
-import timelineData from '../../assets/data/timeline.json';
-import technologiesData from '../../assets/data/technologies.json';
+import SkillTabs , { type ChartData } from '../../components/skills/SkillTabs';
 import { getTranslation, getStaticPaths } from '../../i18n';
 import { metrics } from '../../assets/metrics/metrics';
+import { buyData } from '../../lib/data/DataDealer';
+import type { MainCardData, Technology } from '../../components/_react/timeline/TimelineTypes';
 
-export { getStaticPaths };
+export { getStaticPaths }; 
 
 const { lang } = Astro.params as { lang: string };
 const t = getTranslation(lang.toLocaleLowerCase());
+const techs = await buyData('technologies',lang) as Technology[];
+const timeline = await buyData('timeline',lang) as MainCardData[];
+const charts = await buyData('charts',lang) as ChartData[];
+
 ---
 
 <Layout title={t.skills.title} t={t} lang={lang} m={metrics}>
-  <div class="container mx-auto px-4 py-8">
-    <SkillTabs client:load timelineData={timelineData} technologiesData={technologiesData} />
-  </div>
+    <SkillTabs client:only="react" tabs={charts} timelineData={timeline} technologiesData={techs} m={metrics}/>
 </Layout>

@@ -1,0 +1,1102 @@
+{
+  "jobs_history": [
+    {
+      "type": "empresa",
+      "company": "Datum Redsoft SV",
+      "description": "Ofrece soluciones innovadoras de consultoría, soporte técnico y transformación digital para múltiples industrias en Centroamérica, respaldadas por alianzas estratégicas como partner oficial de Red Hat y Oracle",
+      "logo_url": "datumredsoftsv.png",
+      "resume":"Experto en arquitectura y desarrollo de soluciones tecnológicas, especializado en el desarrollo y migración de aplicaciones monolíticas a microservicios. Lidero el diseño e implementación de soluciones escalables, con énfasis en la automatización de despliegues y la configuración de pipelines CI/CD para garantizar entregas continuas y estables. Brindo consultoria al equipo de desarrollo del cliente.",
+      "orden": 1,
+      "job_roles": [
+        {
+          "job_role": "Development Specialist",
+          "job_role_id": 4,
+          "start_date": "2025-01-29",
+          "end_date": null,
+          "actually": true,
+          "responsabilities": [
+            {"description":"Arquitectura y desarrollo de soluciones tecnológicas eficientes"},
+            {"description":"Migrar aplicaciones monoliticas hacia microservicios"},
+            {"description":"Configurar servidores para el despliegue de aplicaciones"},
+            {"description":"Desplegar nuevas funcionalidades manualmente y CI/CD"},
+            {"description":"Configurar pipelines para integraciones CI/CD"}
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "project_name": "Migración de módulo PAGOS",
+          "implementation_type": "On-premise",
+          "company": "Secretaría de Estado (SEDE) - Ministerio de Hacienda",
+          "company_logo_path": "escudoelsalvador.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Migración y modernización del módulo de pagos de una aplicación monolítica Java 8/Primefaces a una arquitectura moderna basada en microservicios y frontend desacoplado.",
+            "bullet_points": [
+              "Análisis preliminar de la aplicación monolítica original (Java 8, Primefaces)",
+              "Diseño y estructuración de la nueva arquitectura basada en microservicios",
+              "Migración del backend a Java 17 con Spring Boot (tres capas)",
+              "Desarrollo de frontend desacoplado con React y Bootstrap",
+              "Implementación de un backend adicional para reportería",
+              "Uso de JBoss EAP 8 como servidor de aplicaciones",
+              "Integración de Axios para consumo de APIs REST",
+              "Recreación y migración de objetos en Oracle SQL Database",
+              "Comunicación entre servicios mediante REST",
+              "Gestión de versiones y CI/CD con Tuleap, Jenkins y Gerrit",
+              "Acceso y despliegue seguro mediante SSH",
+              "Pruebas unitarias con JUnit (backend) y Jest (frontend)"
+            ]
+          },
+          "technologies": [21, 22, 23, 1, 2, 29, 24, 34, 35, 36, 37, 13, 38, 39, 46, 62, 64],
+          "project_role_timeline": [
+            {
+              "role": 4,
+              "start_date": "2025-02-01",
+              "end_date": "2025-06-30"
+            }
+          ],
+          "orden": 20250201,
+          "project_id": 20
+        },
+        {
+          "project_name": "Migración de Control de saldos de cuentas bancarias",
+          "implementation_type": "On-premise",
+          "company": "Dirección General de Tesorería (DGT) - Ministerio de Hacienda El Salvador",
+          "company_logo_path": "escudoelsalvador.png",  
+          "highlight": true,
+          "project_description": {
+            "description": "Modernización de los procesos de integración bancaria para el control de saldos de cuentas de instituciones gubernamentales, migrando de procesos FTP tradicionales a una arquitectura moderna basada en APIs, mensajería y orquestación SOA.\n\nFase 1: Rediseño y desarrollo de los procesos de integración para las tramas 6, 7 y 8, con APIs de encolamiento y procesamiento, integración con SOA BPEL, validaciones avanzadas y notificaciones automáticas.\nFase 2: Preparación de la arquitectura y procesos para futura migración a OpenShift.",
+            "bullet_points": [
+              "Diseño de la nueva arquitectura considerando futura migración a OpenShift",
+              "Identificación y rediseño de los procesos de integración para tramas 6 (cargos/abonos), 7 (apertura/cierre de cuentas) y 8 (análisis de rentabilidades)",
+              "Desarrollo de APIs de encolamiento y procesamiento de mensajes para cada trama",
+              "Implementación de API intermedia para escucha y ruteo de mensajes de cola",
+              "Integración con SOA BPEL para validación granular y procesamiento de datos",
+              "Automatización de inserción de datos en Oracle SQL Database mediante BPEL",
+              "Desarrollo de lógica para manejo de resultados: éxito (envío de email vía REST/SMTP) e inconsistencias (generación de archivo JSON y envío por FTP)",
+              "Desarrollo de servicios REST para notificaciones automáticas",
+              "Configuración y despliegue de APIs en WebLogic y SOA BPEL en EM",
+              "Creación y migración de objetos necesarios en Oracle SQL Database",
+              "Uso de Spring Boot, Java Middleware, JMS, XML, JSON, REST y SOAP",
+              "Gestión de versiones y colaboración con Tuleap y Gerrit",
+              "Desarrollo y pruebas en entornos Linux Server, uso de herramientas como JDeveloper, Gemini CLI, Cursor, VSCode, Codex (OpenAI) y MobaXterm SSH"
+            ]
+          },
+          "technologies": [22, 24, 34, 40, 41, 42, 43, 44, 13, 35, 37, 45, 46, 47, 48, 49, 50, 51, 52, 1, 2, 62, 64],
+          "project_role_timeline": [
+            {
+              "role": 4,
+              "start_date": "2025-03-01",
+              "end_date": "2025-11-30"
+            }
+          ],
+          "orden": 20250301,
+          "project_id": 21
+        }
+      ]
+    },
+    {
+      "type": "empresa",
+      "company": "ACF Technologies LATAM",
+      "description": "Mejora la experiencia del cliente mediante soluciones personalizadas de gestión de citas, atención y flujos de servicio para diferentes clientes de distintas industrias.",
+      "logo_url": "acftechnologieslatam.png",
+      "resume":"Desarrollador con experiencia en la gestión de proyectos y desarrollo de soluciones de gestión de colas y atención al cliente. Especializado en la implementación de sistemas en la nube e integración con sistemas empresariales. He trabajado sinergicamente con equipos multidisciplinarios para implementar soluciones tecnológicas que mejoran la experiencia del cliente y optimizan los procesos de negocio.",
+      "orden": 3,
+      "job_roles": [
+        {
+          "job_role": "Project Manager",
+          "job_role_id": 3,
+          "responsabilities": [
+            {"description":"Kick off y planificación de proyectos"},
+            {"description":"Gestión de proyectos y seguimiento de resultados"},
+            {"description":"Coordinacion de reuniones con el cliente"}
+          ],
+          "start_date": "2024-08-18",
+          "end_date": "2025-01-24"
+        },
+        {
+          "job_role": "Ingeniero desarrollador",
+          "show_first": true,
+          "job_role_id": 2,
+          "responsabilities": [
+            {"description":"Arquitectura y desarrollo de soluciones tecnológicas orientadas a la optimización de procesos de atención al cliente y mejora de la experiencia del usuario final."},
+            {"description": "Desarrollo de aplicaciones frontend modulares y backend."},
+            {"description": "Desarrollo de integraciones con sistemas de terceros (SSO, ERP, CRM, etc.)."},
+            {"description": "Diseño y desarrollo de modulos de bases de datos"},
+            {"description": "Desarrollo de scripts de integracion y bases de datos"},
+            {"description": "Creacion y mantenimiento de infraestructura en la nube Azure para clientes de ACF"}
+          ],
+          "start_date": "2023-07-18",
+          "end_date": "2025-01-24"
+        },
+        {
+          "job_role": "Ingeniero implementador",
+          "job_role_id": 1,
+          "responsabilities": [
+            { "description": "Análisis y recopilación de requerimientos técnicos y funcionales en colaboración con el Project Manager para la definición del alcance del proyecto." },
+            { "description": "Gestión e implementación de soluciones en múltiples entornos de infraestructura, incluyendo on-premise, cloud y modelos SaaS, garantizando la correcta integración y funcionamiento." },
+            { "description": "Capacitar a los usuarios finales en el uso de las soluciones implementadas." },
+            { "description": "Monitoreo y mantenimiento continuo de las soluciones implementadas para garantizar su correcto funcionamiento y optimización continua." }
+          ],
+          "start_date": "2023-03-18",
+          "end_date": "2024-08-24"
+        }
+      ],
+      "projects": [
+        {
+ "project_name": "Piloto Q-flow Emcali",
+          "implementation_type": "ACF Cloud hosted",
+          "company": "Emcali Colombia",
+          "company_logo_path": "emcalicolombia.png",
+          "project_description": {
+            "description": "Implementación piloto del sistema de gestión de colas Q-flow. Se realizó la configuración de servidores en la nube de Azure de ACF y el despliegue de la plataforma.",
+            "bullet_points": [
+              "Configuración de servidores Windows Server en Azure.",
+              "Configuración de instancia de SQL Server en Azure.",
+              "Despliegue de la plataforma Q-flow."
+            ]
+          },
+          "technologies": [17, 11, 9, 4, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2023-04-01",
+              "end_date": "2023-06-01"
+            }
+          ],
+          "orden": 20230401,
+          "project_id": 1
+        },
+        {
+ "project_name": "Sistema Gestión Colas Asesuisa",
+          "implementation_type": "ACF Cloud hosted",
+          "company":"Asesuisa El Salvador",
+          "company_logo_path": "asesuisaelsalvador.png",
+          "project_description": {
+            "description":"Asesuisa necesitaba mejorar los procesos de atención al cliente y mejorar la experiencia del usuario final. Para ello, se implementó un sistema de gestión de colas que permitía la optimización de los flujos de atención y la mejora de la experiencia del usuario final",
+            "bullet_points": [
+              "Optimización de los flujos de atención al cliente",
+              "Configuracion de servidores IIS en la nube de ACF en Azure",
+              "Implementacion de quiosco de autogestion de filas y citas",
+              "Implementacion de modulo \"Infopage\"",
+              "Capacitacion al usuario final en el uso del sistema."
+            ]
+          },
+          "technologies": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2023-04-01",
+              "end_date": "2023-07-01"
+            }
+          ],
+          "orden": 20230401,
+          "project_id": 2
+        },
+        {
+ "project_name": "Migración Sistema Colas Tigo Bolivia",
+          "implementation_type": "Onpremise",
+          "company":"Tigo Bolivia",
+          "company_logo_path": "tigobolivia.png",
+          "project_description": {  
+            "description":"Migracion de version de sistema de gestion de colas de Tigo Bolivia, de la version 5.7 a la version 6.2",
+            "bullet_points": [
+              "Configuracion de servidores IIS windows Server en infraestructura del cliente",
+              "Configuracion de balanceadores de carga en infraestructura del cliente",
+              "Migracion de version de sistema de gestion de colas e integraciones asociadas",
+              "Migracion de version de motor de la base de datos SQL Server",
+              "Capacitacion al usuario final en el uso de la nueva version del sistema."
+            ]
+          },
+          "technologies": [17, 10, 11, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2023-06-01",
+              "end_date": "2023-10-01"
+            }
+          ],
+          "orden": 20230601,
+          "project_id": 3
+        },
+        {
+ "project_name": "Rediseño Infopage Veterinaria Los Heroes",
+          "implementation_type": "On-premise",
+          "company": "Veterinaria los Heroes El Salvador",
+          "company_logo_path": "veterinarialosheroeselsalvador.png",
+          "project_description": {
+            "description": "Rediseño completo de la aplicación Infopage para mejorar la experiencia del usuario con un diseño totalmente responsivo.",
+            "bullet_points": [
+              "Rediseño completo de la interfaz del Infopage utilizando React",
+              "Implementación de diseño responsivo con CSS",
+              "Desarrollo de transformaciones XSLT para el procesamiento de datos",
+              "Desarrollo de scripts backend en .NET",
+              "Implementación en servidores IIS del cliente"
+            ]
+          },
+          "technologies": [1, 3, 8, 5, 10, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2023-08-01",
+              "end_date": "2023-09-01"
+            }
+          ],
+          "orden": 20230801,
+          "project_id": 4
+        },
+        {
+ "project_name": "Quiosco con Cámara BAC Guatemala",
+          "implementation_type": "On-premise",
+          "company": "BAC Guatemala",
+          "company_logo_path": "bacguatemala.png",
+          "project_description": {
+            "description": "Desarrollo de un quiosco de autogestión con integración de cámara de Windows para captura de fotos en flujos específicos. La solución incluyó una aplicación Windows Forms para la integración con hardware y una interfaz web moderna para la interacción del usuario.",
+            "bullet_points": [
+              "Desarrollo de aplicación Windows Forms para integración con cámara.",
+              "Desarrollo de interfaz de quiosco con React.",
+              "Desarrollo de scripts en .NET para manejo de archivos.",
+              "Creación de objetos en SQL Server para almacenamiento de datos.",
+              "Implementación remota en servidores del cliente."
+            ]
+          },
+          "technologies": [1, 5, 27, 11, 18, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2023-08-01",
+              "end_date": "2023-10-01"
+            }
+          ],
+          "orden": 20230801,
+          "project_id": 5
+        },
+        {
+ "project_name": "Actualización Sense Claro El Salvador",
+          "implementation_type": "On-premise",
+          "company": "Claro El Salvador",
+          "company_logo_path": "claroelsalvador.png",
+          "project_description": {
+            "description": "Actualización del sistema Sense y su integración con Q-flow. El proyecto incluyó la recopilación de requerimientos, coordinación con el equipo de desarrollo, y la implementación de mejoras en el sistema existente.",
+            "bullet_points": [
+              "Análisis y recopilación de requerimientos de mejora del sistema.",
+              "Coordinación con el equipo de desarrollo para la implementación de mejoras.",
+              "Instalación de nueva versión de la aplicación en Windows Server.",
+              "Ejecución de scripts de actualización en SQL Server.",
+              "Implementación remota de mejoras en el sistema.",
+              "Verificación y pruebas del sistema actualizado.",
+              "Certificar integraciones con QFlow"
+            ]
+          },
+          "technologies": [5, 17, 11, 18, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2023-08-01",
+              "end_date": "2023-10-31"
+            }
+          ],
+          "orden": 20230801,
+          "project_id": 6
+        },
+        {
+ "project_name": "Actualización Quiosco Promerica",
+          "implementation_type": "On-premise",
+          "company": "Promerica El Salvador",
+          "company_logo_path": "promericaelsalvador.svg",
+          "project_description": {
+            "description": "Actualización de la interfaz visual del quiosco de autogestión, incluyendo cambios en la tipografía y elementos visuales. La aplicación es utilizada en todas las sucursales del banco en el país.",
+            "bullet_points": [
+              "Implementación de nueva tipografía en la interfaz del quiosco.",
+              "Actualización de elementos visuales para mejorar la experiencia del usuario.",
+              "Despliegue de cambios en servidores IIS del cliente.",
+              "Implementación en todas las sucursales del banco a nivel nacional."
+            ]
+          },
+          "technologies": [7, 16, 8, 10, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2023-09-01",
+              "end_date": "2023-10-01"
+            }
+          ],
+          "orden": 20230901,
+          "project_id": 7
+        },
+        {
+ "project_name": "Q-flow y Sense Microlab Honduras",
+          "implementation_type": "On-premise",
+          "company": "Microlab Honduras",
+          "company_logo_path": "microlabhonduras.png",
+          "project_description": {
+            "description": "Implementación de sistema de gestión de colas Q-flow y sistema de monitoreo de audio Sense para el laboratorio clínico Microlab en Honduras. El proyecto incluyó el desarrollo de un quiosco de autogestión, una pantalla informativa (infopage), y la integración entre ambas plataformas.",
+            "bullet_points": [
+              "Desarrollo de quiosco de autogestión con Angular.",
+              "Desarrollo de módulo \"Infopage\" con React y WebSockets.",
+              "Análisis de requerimientos y diseño de flujos de atención al cliente.",
+              "Configuración de servidor Windows y base de datos SQL Server.",
+              "Desarrollo de scripts en .NET para la integración con el sistema de monitoreo de audio Sense.",
+              "Instalación de hardware y software en sitio en Tegucigalpa.",
+              "Capacitación a personal y jefaturas sobre el uso de las nuevas herramientas."
+            ]
+          },
+          "technologies": [15, 1, 4, 5, 17, 11, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2023-10-01",
+              "end_date": "2024-03-01"
+            },
+            {
+              "role": 1,
+              "start_date": "2024-03-01",
+              "end_date": "2024-03-31"
+            }
+          ],
+          "orden": 20231001,
+          "project_id": 8
+        },
+        {
+ "project_name": "Mantenimiento Quiosco Aguas de Saltillo",
+          "implementation_type": "On-premise",
+          "company": "Aguas de Saltillo México",
+          "company_logo_path": "aguasdesaltillomexico.png",
+          "project_description": {
+            "description": "Resolución de problemas de funcionamiento en el quiosco de autogestión heredado de un desarrollador anterior. El proyecto incluyó la actualización del sistema operativo del cliente y mejoras en el diseño funcional de la aplicación.",
+            "bullet_points": [
+              "Diagnóstico y resolución de problemas en flujos específicos del quiosco.",
+              "Actualización del sistema operativo de Windows 7 a Windows 10.",
+              "Instalación de librerías faltantes en el sistema.",
+              "Mejoras en el diseño funcional de la aplicación."
+            ]
+          },
+          "technologies": [7, 16, 8, 17, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2023-11-01",
+              "end_date": "2024-01-01"
+            }
+          ],
+          "orden": 20231101,
+          "project_id": 9
+        },
+        {
+ "project_name": "Q-flow CNR El Salvador",
+          "implementation_type": "On-premise",
+          "company": "CNR El Salvador",
+          "company_logo_path": "cnrelsalvador.png",
+          "project_description": {
+            "description": "Implementacion de sistema de gestión de colas Q-flow para el Centro Nacional de Registros (CNR) de El Salvador. Se implementaron quioscos de autogestion, pantallas informativas (infopages) y se diseñaron los flujos de atencion para optimizar los procesos de atencion al cliente en las 14 sedes a nivel nacional.",
+            "bullet_points": [
+              "Desarrollo de quiosco de autogestion de filas y citas.",
+              "Desarrollo de modulo \"Infopage\".",
+              "Diseño y adecuacion de flujos de atencion.",
+              "Instalacion y configuracion de sistema en las 14 sedes a nivel nacional.",
+              "Capacitacion al personal de las 14 sedes a nivel nacional."
+            ]
+          },
+          "technologies": [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-01-01",
+              "end_date": "2024-07-01"
+            },
+            {
+              "role": 1,
+              "start_date": "2024-06-01",
+              "end_date": "2024-11-30"
+            }
+          ],
+          "orden": 20240101,
+          "project_id": 10
+        },
+        {
+ "project_name": "Rediseño Flujo Atención Banpais",
+          "implementation_type": "On-premise",
+          "company": "Banpais Honduras",
+          "company_logo_path": "banpaisonduras.png",
+          "project_description": {
+            "description": "Rediseño de la interfaz del quiosco de autogestión y los flujos de encolamiento para optimizar la atención al cliente. La implementación se realizó de forma remota en los servidores del cliente.",
+            "bullet_points": [
+              "Rediseño de la interfaz del quiosco con React.",
+              "Desarrollo de nuevo flujo de atención con cambio en la priorización de encolamiento.",
+              "Creación de script en .NET para la lógica del nuevo flujo.",
+              "Implementación remota en servidores del cliente utilizando Remote Desktop y IIS."
+            ]
+          },
+          "technologies": [1, 5, 10, 18, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-02-01",
+              "end_date": "2024-04-01"
+            }
+          ],
+          "orden": 20240201,
+          "project_id": 11
+        },
+        {
+ "project_name": "Identificación Clientes Davivienda",
+          "implementation_type": "On-premise",
+          "company": "Davivienda Honduras",
+          "company_logo_path": "daviviendahonduras.png",
+          "project_description": {
+            "description": "Desarrollo e integración de una nueva funcionalidad para identificar clientes mediante documento o pasaporte en el quiosco de autogestión, incluyendo el diseño de una interfaz con teclado alfanumérico y la integración con servicios REST del cliente.",
+            "bullet_points": [
+              "Diseño e implementación de interfaz con teclado alfanumérico para ingreso de documentos.",
+              "Integración con servicios REST proporcionados por el cliente.",
+              "Desarrollo de backend con Java y Spring Boot.",
+              "Implementación remota en servidor JBoss del cliente.",
+              "Actualización de la aplicación del quiosco de autogestión."
+            ]
+          },
+          "technologies": [1, 2, 21, 22, 23, 24, 25, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-03-01",
+              "end_date": "2024-05-01"
+            }
+          ],
+          "orden": 20240301,
+          "project_id": 12
+        },
+        {
+ "project_name": "Quiosco Parametrizable Santander México",
+          "implementation_type": "On-premise",
+          "company": "Santander México",
+          "company_logo_path": "santandermexico.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Desarrollo de un quiosco de autogestión altamente optimizado para más de 1000 sucursales, con parametrización según el tipo de sucursal (Café, Empresarial, Banca Normal). El proyecto incluyó integración con hardware de lectura de tarjetas y validación de identidad mediante Windows Forms.",
+            "bullet_points": [
+              "Desarrollo de interfaz parametrizable según tipo de sucursal con React y Tailwind.",
+              "Implementación de integraciones REST y SOAP con servicios bancarios.",
+              "Desarrollo de aplicación Windows Forms para integración con lector de tarjetas.",
+              "Optimización de rendimiento para despliegue masivo.",
+              "Desarrollo de backend con .NET para scripts de integración.",
+              "Implementación de validación de identidad y seguridad bancaria."
+            ]
+          },
+          "technologies": [1, 26, 8, 4, 29, 5, 10, 24, 33, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-03-01",
+              "end_date": "2024-09-01"
+            }
+          ],
+          "orden": 20240301,
+          "project_id": 13
+        },
+        {
+ "project_name": "Quiosco e Infopage RNPN",
+          "implementation_type": "On-premise",
+          "company": "RNPN El Salvador",
+          "company_logo_path": "rnpnelsalvador.png",
+          "project_description": {
+            "description": "Desarrollo desde cero del quiosco de autogestión e Infopage para el Registro Nacional de Personas Naturales (RNPN). El desarrollo se realizó siguiendo las especificaciones y reglas de negocio proporcionadas a través de tickets de Jira.",
+            "bullet_points": [
+              "Desarrollo de quiosco de autogestión con React y Tailwind.",
+              "Desarrollo de Infopage con React y Tailwind.",
+              "Desarrollo de scripts de integración con Q-flow en .NET.",
+              "Implementación de reglas de negocio según especificaciones de Jira.",
+              "Preparación del paquete de instalación para el equipo de implementación."
+            ]
+          },
+          "technologies": [1, 26, 5, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-04-01",
+              "end_date": "2024-05-01"
+            }
+          ],
+          "orden": 20240401,
+          "project_id": 14
+        },
+        {
+ "project_name": "Mentoría Desarrollo Quioscos/Infopages",
+          "implementation_type": "Capacitación interna / Mentoría técnica",
+          "company": "ACF Technologies LATAM",
+          "highlight": false,
+          "company_logo_path": "acftechnologieslatam.png",
+          "project_description": {
+            "description": "Mentoría y capacitación dirigida a nuevos desarrolladores del equipo, enfocada en el desarrollo, estructura e integración de quioscos de autogestión e infopages, así como en las mejores prácticas para la integración con Q-flow y la extensión de funcionalidades.",
+            "bullet_points": [
+              "Preparación de material didáctico y documentación técnica sobre la arquitectura y desarrollo de quioscos de autogestión e infopages.",
+              "Sesiones prácticas y teóricas sobre la estructura de los proyectos, integración con Q-flow y flujos de atención.",
+              "Explicación de la extensibilidad y personalización de los módulos según requerimientos de clientes.",
+              "Mentoría personalizada para resolver dudas técnicas y acelerar el onboarding de los nuevos integrantes.",
+              "Transferencia de buenas prácticas de desarrollo, despliegue y mantenimiento de los sistemas."
+            ]
+          },
+          "technologies": [5, 1, 11, 4, 24, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-04-01",
+              "end_date": "2024-08-31"
+            }
+          ],
+          "orden": 20240401,
+          "project_id": 26
+        },
+        {
+ "project_name": "OABS SURA México",
+          "implementation_type": "Client Cloud hosted",
+          "company": "SURA México",
+          "highlight": true,
+          "company_logo_path": "suramexico.png",
+          "project_description": {
+            "description": "Desarrollo de un sistema de reserva de citas en línea (OABS) para SURA México. El proyecto incluyó la integración con servicios de terceros para la validación de CURP y tecnología OCR, así como la implementación de flujos de encolamiento y priorización complejos.",
+            "bullet_points": [
+              "Análisis de requerimientos del cliente.",
+              "Desarrollo de la aplicación con Angular y .NET.",
+              "Integración con servicios de terceros para validación de CURP y OCR.",
+              "Diseño e implementación de flujos de encolamiento y priorización basados en datos de entrada."
+            ]
+          },
+          "technologies": [15, 5, 9, 19, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-05-01",
+              "end_date": "2024-08-01"
+            }
+          ],
+          "orden": 20240501,
+          "project_id": 15
+        },
+        {
+ "project_name": "Q-flow Nuevas Sucursales Cuscatlán",
+          "implementation_type": "On-premise",
+          "company": "Banco Cuscatlán El Salvador",
+          "company_logo_path": "bancocuscatlanelsalvador.png",
+          "project_description": {
+            "description": "Implementación del sistema Q-flow en nuevas sucursales del banco. El proyecto incluyó la configuración del sistema, revisión de integraciones, pruebas funcionales de encolamiento y certificación del funcionamiento en cada sucursal.",
+            "bullet_points": [
+              "Configuración de nuevas sucursales en la plataforma Q-flow.",
+              "Revisión y validación de scripts de integración.",
+              "Pruebas funcionales de encolamiento en quioscos de autogestión.",
+              "Verificación de visualización en pantallas informativas (Infopage).",
+              "Pruebas de atención en Q-flow.",
+              "Certificación del funcionamiento integral del sistema."
+            ]
+          },
+          "technologies": [17, 11, 20, 10, 5, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 1,
+              "start_date": "2024-06-01",
+              "end_date": "2024-09-01"
+            }
+          ],
+          "orden": 20240601,
+          "project_id": 16
+        },
+        {
+ "project_name": "Quiosco Autogestión BBVA México",
+          "implementation_type": "ACF Cloud hosted",
+          "company": "BBVA México",
+          "highlight": true,
+          "company_logo_path": "bbvamexico.png",
+          "project_description": {
+            "description": "Desarrollo de aplicación de quiosco de autogestión para BBVA México con integraciones avanzadas incluyendo WhatsApp, lectura de tarjetas y validación de identidad. El proyecto incluyó configuración de infraestructura en la nube y despliegue con Cloudflare.",
+            "bullet_points": [
+              "Desarrollo de aplicación de quiosco de autogestión con React, Axios y Bootstrap.",
+              "Implementación de integración con WhatsApp para notificaciones.",
+              "Desarrollo de integración con Windows Forms para lectura de tarjetas.",
+              "Implementación de autenticación JWT para seguridad en la nube.",
+              "Configuración de Cloudflare para protección y optimización del frontend.",
+              "Implementación de captcha para validación de usuarios.",
+              "Desarrollo de integraciones REST para comunicación con servicios externos.",
+              "Configuración de servidores Windows Server en la nube de ACF.",
+              "Configuración de instancias de base de datos en la infraestructura cloud.",
+              "Desarrollo de backend con .NET para scripts de integración."
+            ]
+          },
+          "technologies": [1, 29, 2, 4, 30, 31, 32, 10, 24, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-07-01",
+              "end_date": "2025-01-01"
+            }
+          ],
+          "orden": 20240701,
+          "project_id": 17
+        },
+        {
+ "project_name": "Renovación Quiosco BAC Regional",
+          "implementation_type": "Client Cloud hosted",
+          "company": "BAC Regional (GT, SV, HN, CR, PA)",
+          "company_logo_path": "bacguatemala.png",
+          "project_description": {
+            "description": "Renovación completa de la aplicación de quiosco de autogestión para todas las sucursales de BAC en Centroamérica. El proyecto incluyó el rediseño de flujos para validación de tickets externos, identificación de usuarios mediante integración REST con AS-400, y despliegue en la infraestructura cloud del cliente.",
+            "bullet_points": [
+              "Levantamiento de requerimientos a nivel regional.",
+              "Rediseño de flujos de atención y validación de tickets.",
+              "Desarrollo de integración REST con AS-400 para identificación de usuarios.",
+              "Desarrollo de backend con .NET y creación de objetos en SQL Server.",
+              "Implementación en servidores Azure del cliente."
+            ]
+          },
+          "technologies": [5, 11, 9, 24, 28, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-08-01",
+              "end_date": "2025-01-01"
+            }
+          ],
+          "orden": 20240801,
+          "project_id": 18
+        },
+        {
+ "project_name": "Rediseño Infopage Banco Agrícola",
+          "implementation_type": "On-premise",
+          "company": "Banco Agrícola El Salvador",
+          "company_logo_path": "bancoagricolaelsalvador.png",
+          "project_description": {
+            "description": "Rediseño completo de la aplicación Infopage para todas las sucursales del banco, implementando un diseño responsivo adaptable a cualquier tamaño de televisor y un sistema de gestión de contenido multimedia personalizado por ubicación y horario.",
+            "bullet_points": [
+              "Levantamiento de requerimientos específicos para la personalización de campañas publicitarias.",
+              "Desarrollo de sistema de configuración de multimedia por ubicación.",
+              "Implementación de programación horaria para contenido multimedia.",
+              "Diseño e implementación de interfaz responsiva con React y Bootstrap.",
+              "Desarrollo de lógica de negocio con RxJS para manejo de estados y eventos.",
+              "Despliegue remoto en servidores del cliente para todas las sucursales."
+            ]
+          },
+          "technologies": [1, 2, 6, 8, 10, 12, 13, 14, 48, 63],
+          "project_role_timeline": [
+            {
+              "role": 2,
+              "start_date": "2024-10-01",
+              "end_date": "2025-01-01"
+            }
+          ],
+          "orden": 20241001,
+          "project_id": 19
+        }
+      ]
+    },
+    {
+      "type": "empresa",
+      "company": "Grupo LS EL Salvador",
+      "description": "Grupo LS El Salvador ofrece soluciones financieras innovadoras, incluyendo leasing vehicular, compra y venta de vehículos, y servicios de financiamiento flexibles. Facilita el acceso a vehículos mediante arrendamiento con opción a compra, préstamos inmediatos con respaldo vehicular y opciones de financiamiento accesibles, adaptándose a las necesidades de sus clientes tanto particulares como empresariales en El Salvador.",
+      "logo_url": "glssv.png",
+      "resume":"Apoyo técnico en el área de informatica y desarrollo, responsable de la implementación y mantenimiento de infraestructura tecnológica, redes y sistemas internos. Finalicé proyectos clave de transformación digital de la empresa, incluyendo la integración de sistemas GPS para flota vehicular y el desarrollo de soluciones personalizadas para la gestión de activos y servicios financieros.",
+      "orden": 5,
+      "job_roles": [
+        {
+          "job_role": "Analista desarrollador",
+          "job_role_id": 5,
+          "start_date": "2021-04-21",
+          "end_date": "2023-03-16",
+          "actually": false,
+          "responsabilities": [
+            { "description": "Levantamiento y análisis de requerimientos con dueños del negocio para nuevos desarrollos y mejoras." },
+            { "description": "Diseño y desarrollo de módulos y funcionalidades en PowerBuilder y Windows Forms." },
+            { "description": "Mantenimiento, mejora continua y soporte del sistema principal de gestión de negocios y clientes." },
+            { "description": "Creación y optimización de objetos de base de datos: triggers, stored procedures y funciones en SQL Server." },
+            { "description": "Desarrollo de integraciones entre sistemas internos y externos (por ejemplo, integración de datos GPS con MySQL y SQL Server)." },
+            { "description": "Desarrollo y despliegue de sitios web estáticos en PHP, HTML, CSS y JS para marcas de la empresa." },
+            { "description": "Implementación y soporte de infraestructura tecnológica: cableado estructurado, redes, servidores, cámaras de seguridad y telefonía." },
+            { "description": "Capacitación a usuarios finales en el uso de nuevos módulos y sistemas desarrollados." },
+            { "description": "Soporte técnico a usuarios ante problemas informáticos y de sistemas." }
+          ]
+        }
+      ],
+      "projects": [
+        {
+ "project_name": "Infraestructura/Redes Nueva Sede GLS",
+          "implementation_type": "Infraestructura y redes",
+          "company": "Grupo LS El Salvador",
+          "company_logo_path": "grupolselsalvador.png",
+          "project_description": {
+            "description": "Proyecto de instalación, configuración y puesta en marcha de la infraestructura tecnológica y de seguridad en el nuevo edificio de Grupo LS El Salvador, asegurando la conectividad, seguridad y operatividad de todas las áreas durante la mudanza y adecuación de las instalaciones. Incluyó el montaje y configuración de servidores en rack y la gestión de conectividad con proveedores de internet y telefonía.",
+            "bullet_points": [
+              "Instalación de cableado estructurado para red de datos, líneas telefónicas y cámaras de seguridad en todo el edificio.",
+              "Configuración y puesta en marcha de switches Cisco, routers y repetidores.",
+              "Instalación física y configuración de cámaras de videovigilancia (CCTV/IP), incluyendo cableado y ubicación estratégica.",
+              "Crimpado y armado de cables RJ45 (directos y cruzados) según necesidades de la red.",
+              "Diseño y configuración lógica de la topología de red, incluyendo subneteo y segmentación de redes.",
+              "Montaje y configuración de servidores en rack, asegurando su conectividad y funcionamiento.",
+              "Gestión y configuración de la conectividad con proveedores de internet y telefonía para la operación del edificio.",
+              "Pruebas de conectividad, seguridad y funcionamiento de la red y sistemas instalados.",
+              "Resolución de problemas técnicos en campo y soporte durante la adecuación de las instalaciones."
+            ]
+          },
+          "technologies": [56, 57, 58, 59, 60, 61],
+          "project_role_timeline": [
+            {
+              "role": 5,
+              "start_date": "21-04-2021",
+              "end_date": "20-07-2021"
+            }
+          ],
+          "orden": 20230101,
+          "project_id": 25
+        },
+        {
+ "project_name": "Mejora Sistema Gestión Clientes GLS",
+          "implementation_type": "On-premise",
+          "company": "Grupo LS El Salvador",
+          "highlight": true,
+          "company_logo_path": "grupolselsalvador.png",
+          "project_description": {
+            "description": "Proyecto de mantenimiento, mejora continua y expansión funcional del sistema principal de Grupo LS El Salvador, abarcando desde la toma de requerimientos hasta la entrega de módulos completos y reportes para la gestión de negocios y clientes. Incluyó implementacion, capacitacion de usuarios y soporte tecnico a los usuarios finales",
+            "bullet_points": [
+              "Levantamiento de requerimientos y análisis de procesos de negocio con dueños del negocio.",
+              "Diseño de flujos de datos y arquitectura de nuevos módulos y funcionalidades.",
+              "Creación y optimización de objetos de base de datos: triggers, stored procedures y funciones.",
+              "Desarrollo del módulo de cotizaciones según reglas de negocio específicas.",
+              "Implementación de captura y registro de datos de clientes, generación y gestión de expedientes virtuales.",
+              "Automatización de identificación de datos pre-negocio y clasificación según tipo de negocio.",
+              "Desarrollo de flujo de traslado de expedientes al área legal para verificación.",
+              "Implementación de sistema de aprobación de negocios con panel para jefaturas.",
+              "Generación automática de documentos para firma con datos recolectados.",
+              "Desarrollo de módulo de recepción para toma de datos preliminares y asignación equitativa de clientes a vendedores.",
+              "Implementación de lógica de colas para atención y balanceo de carga entre vendedores.",
+              "Creación de múltiples stored procedures para generación de reportes personalizados.",
+              "Entrega continua de mejoras, renovaciones y nuevas funcionalidades según necesidades del negocio.",
+              "Capacitación al personal en el uso correcto de los nuevos módulos desarrollados.",
+              "Soporte técnico a usuarios ante cualquier problema informático relacionado con el sistema o el entorno de trabajo."
+            ]
+          },
+          "technologies": [53, 27, 11, 17],
+          "project_role_timeline": [
+            {
+              "role": 5,
+              "start_date": "21-04-2021",
+              "end_date": "16-03-2023"
+            }
+          ],
+          "orden": 20230101,
+          "project_id": 22
+        },
+        {
+ "project_name": "Integración GPS Vehicular",
+          "implementation_type": "Integración de sistemas y visualización interna",
+          "company": "Grupo LS El Salvador",
+          "highlight": true,
+          "company_logo_path": "grupolselsalvador.png",
+          "project_description": {
+            "description": "Integración de los datos recogidos por dispositivos GPS instalados en los vehículos de la empresa, permitiendo la visualización y análisis interno de la información de localización y recorridos.",
+            "bullet_points": [
+              "Desarrollo de scripts en .NET ejecutados por cron en el servidor para la recolección periódica de datos desde una base de datos externa MySQL.",
+              "Transformación y normalización de los datos GPS para su integración con los sistemas internos.",
+              "Implementación de funciones y procedimientos en SQL Server para el procesamiento y almacenamiento de los datos transformados.",
+              "Desarrollo de un módulo en PowerBuilder para la visualización y análisis de la información de localización de vehículos.",
+              "Automatización del flujo de integración para asegurar la actualización continua de los datos GPS en la base interna."
+            ]
+          },
+          "technologies": [5, 53, 11, 55],
+          "project_role_timeline": [
+            {
+              "role": 5,
+              "start_date": "01-09-2023",
+              "end_date": "30-11-2023"
+            }
+          ],
+          "orden": 20230901,
+          "project_id": 24
+        },
+        {
+ "project_name": "Sitio Web Prestauto",
+          "implementation_type": "Web hosting GoDaddy",
+          "company": "Grupo LS El Salvador - Prestauto",
+          "company_logo_path": "grupolselsalvador.png",
+          "project_description": {
+            "description": "Desarrollo y despliegue de un sitio web estático para la marca Prestauto, orientado a la promoción de servicios de leasing y financiamiento vehicular.",
+            "bullet_points": [
+              "Levantamiento de requerimientos y definición de estructura de contenidos para la marca Prestauto.",
+              "Diseño y maquetación de sitio web estático responsivo.",
+              "Desarrollo en PHP para manejo de formularios y estructura básica.",
+              "Implementación de estilos personalizados con CSS y funcionalidades interactivas con JavaScript.",
+              "Uso de HTML para la estructura y presentación del contenido.",
+              "Despliegue y configuración del sitio en hosting GoDaddy mediante cPanel.",
+              "Optimización para navegadores modernos y dispositivos móviles."
+            ]
+          },
+          "technologies": [54, 16, 8, 7],
+          "project_role_timeline": [
+            {
+              "role": 5,
+              "start_date": "01-01-2024",
+              "end_date": "31-03-2024"
+            }
+          ],
+          "orden": 20240101,
+          "project_id": 23
+        }
+      ]
+    },
+    {
+      "type": "personal",
+      "company": "Portafolio personal",
+      "description": "Bloque dedicado a la creación y desarrollo de proyectos personales y prácticas tecnológicas, demostrando iniciativa, aprendizaje continuo y actualización profesional para destacar ante reclutadores.",
+      "logo_url": "logopersonal.png",
+      "orden": 2,
+      "job_roles": [
+        {
+          "job_role": "Desarrollador Fullstack",
+          "job_role_id": 2001,
+          "start_date": "2020-01-01",
+          "end_date": null,
+          "actually": true,
+          "responsabilities": [
+            {"description": "Diseño, desarrollo e implementación de proyectos personales para experimentar con nuevas tecnologías y metodologías de desarrollo."},
+            {"description": "Práctica continua de habilidades de frontend y backend para mantenerme actualizado en el mercado laboral."},
+            {"description": "Gestión integral de proyectos: desde la concepción de la idea hasta el despliegue y documentación."},
+            {"description": "Investigación y aplicación de buenas prácticas de desarrollo, seguridad y experiencia de usuario."}
+          ]
+        }
+      ],
+      "projects": []
+    },
+    {
+      "type": "estudio",
+      "company": "Universidad Tecnológica de El Salvador",
+      "description": "Carrera de Ingeniería en Sistemas y Computación",
+      "logo_url": "utec.png",
+      "orden": 8,
+      "job_roles": [
+        {
+          "job_role": "Estudiante de Ingeniería en Sistemas y Computación",
+          "job_role_id": 1001,
+          "start_date": "2018-01-01",
+          "end_date": "2023-12-31",
+          "actually": false,
+          "responsabilities": [
+            {"description": "Desarrollo de habilidades técnicas en programación, estructuras de datos, algoritmos y arquitectura de computadoras."},
+            {"description": "Aprendizaje de diseño y gestión de bases de datos, sistemas operativos y redes de computadoras."},
+            {"description": "Desarrollo de software siguiendo metodologías ágiles y buenas prácticas de ingeniería de software."},
+            {"description": "Trabajo en equipo, comunicación efectiva y resolución de problemas complejos."},
+            {"description": "Gestión de proyectos, planificación y organización del tiempo eficientemente."},
+            {"description": "Pensamiento crítico y capacidad de análisis para la toma de decisiones técnicas."},
+            {"description": "Aprendizaje continuo y adaptación a nuevas tecnologías y lenguajes de programación."},
+            {"description": "Investigación y aplicación de buenas prácticas de desarrollo, seguridad y experiencia de usuario."},
+            {"description": "Durante tres años, impartí tutorías de algoritmos, POO y lógica computacional a estudiantes de nuevo ingreso, bajo la mentoría de profesores."}
+          ]
+        }
+      ],
+      "projects": []
+    },
+    {
+      "type": "estudio",
+      "company": "Especialización en Innovación tecnológica en la industria 4.0",
+      "description": "Trabajo de graduación y especialización en industria 4.0.",
+      "logo_url": "utec.png",
+      "resume": "Especializado en tecnologías clave de la Cuarta Revolución Industrial, con experiencia práctica en inteligencia artificial, big data, IoT, robótica, computación en la nube y ciberseguridad. He desarrollado proyectos que integran análisis de datos avanzados, visualización de información y soluciones cloud, aplicando principios de liderazgo y trabajo en equipo para implementar innovaciones tecnológicas en entornos industriales.",
+      "orden": 2,
+      "job_roles": [
+        {
+          "job_role": "Inteligencia Artificial para la Industria 4.0",
+          "job_role_id": 1002,
+          "start_date": "2024-03-01",
+          "end_date": "2024-05-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Liderazgo y Gestión de Equipos",
+          "job_role_id": 1003,
+          "start_date": "2024-03-01",
+          "end_date": "2024-05-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Big Data y Ciencia de Datos",
+          "job_role_id": 1004,
+          "start_date": "2024-06-01",
+          "end_date": "2024-08-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Desarrollo de Equipos de Alto Rendimiento",
+          "job_role_id": 1005,
+          "start_date": "2024-06-01",
+          "end_date": "2024-08-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Visualización y Análisis de Datos",
+          "job_role_id": 1006,
+          "start_date": "2024-09-01",
+          "end_date": "2024-10-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "IoT y Robótica Industrial",
+          "job_role_id": 1007,
+          "start_date": "2024-11-01",
+          "end_date": "2024-12-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Computación en la Nube",
+          "job_role_id": 1008,
+          "start_date": "2024-09-01",
+          "end_date": "2024-12-31",
+          "actually": false,
+          "responsabilities": []
+        },
+        {
+          "job_role": "Ciberseguridad Industrial",
+          "job_role_id": 1009,
+          "start_date": "2024-10-01",
+          "end_date": "2024-12-31",
+          "actually": false,
+          "responsabilities": []
+        }
+      ],
+      "projects": [
+        {
+ "project_name": "Redes Neuronales y Visión Computadora",
+          "implementation_type": "Proyecto académico / Investigación aplicada",
+          "company": "Universidad Tecnológica de El Salvador",
+          "company_logo_path": "utec.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Desarrollo y entrenamiento de una red neuronal pequeña, multicapa utilizando Keras y PyTorch, con un enfoque académico y experimental. El proyecto incluyó la resolución de un problema matemático sencillo mediante una red de cuatro capas (entrada de dos neuronas, dos ocultas de dos neuronas y salida de tres neuronas), así como la experimentación con modelos de visión por computadora para la identificación de objetos en imágenes y la inferencia en video y cámara en tiempo real. Se emplearon herramientas como Pandas para el manejo de datos, Matplotlib para visualización, OpenCV para procesamiento de imágenes y Google Colab como entorno de desarrollo en la nube.",
+            "bullet_points": [
+              "Diseño y entrenamiento de una red neuronal multicapa para resolver una ecuación matemática específica.",
+              "Implementación de modelos de clasificación de objetos en imágenes usando Keras y PyTorch.",
+              "Despliegue de modelos para realizar inferencia en tiempo real sobre video y cámara local.",
+              "Uso de Pandas para la manipulación y análisis de datos de entrada y salida.",
+              "Visualización de resultados y métricas de entrenamiento con Matplotlib.",
+              "Procesamiento de imágenes y video con OpenCV.",
+              "Trabajo colaborativo y ejecución de experimentos en Google Colab.",
+              "Comprensión práctica del funcionamiento de redes multicapa y su aplicación en problemas reales.",
+              "Logro de inferencia en tiempo real y validación de resultados en diferentes escenarios."
+            ]
+          },
+          "technologies": [65, 66, 67, 68, 69, 70, 71],
+          "project_role_timeline": [
+            {
+              "role": 1002,
+              "start_date": "2024-03-01",
+              "end_date": "2024-04-15"
+            }
+          ],
+          "orden": 20240301,
+          "project_id": 100
+        },
+        {
+ "project_name": "Dashboards Análisis/Decisiones",
+          "implementation_type": "Proyecto académico / Visualización de datos",
+          "company": "Universidad Tecnológica de El Salvador",
+          "company_logo_path": "utec.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Desarrollo de dashboards interactivos utilizando Power BI y Looker Studio (Google) para el análisis de bancos de datos proporcionados por la universidad. El objetivo principal fue extraer información relevante y visual para apoyar la toma de decisiones, aplicando técnicas de integración, limpieza y transformación de datos con Python y librerías especializadas. El proyecto permitió comparar las capacidades de ambas herramientas y comprender el impacto de la visualización en el proceso de análisis de datos.",
+            "bullet_points": [
+              "Integración, limpieza y transformación de datos usando Python y librerías como pandas y numpy.",
+              "Desarrollo de dashboards interactivos y reportes personalizados en Power BI y Looker Studio.",
+              "Implementación de visualizaciones clave: gráficos de tendencias, segmentaciones, KPIs y mapas.",
+              "Comparativa técnica y funcional entre Power BI y Looker Studio para distintos escenarios de análisis.",
+              "Presentación de insights y recomendaciones para la toma de decisiones basada en datos.",
+              "Automatización de actualizaciones y conexión con fuentes externas de datos.",
+              "Logro de una comprensión profunda del proceso de análisis de datos y su impacto en la toma de decisiones."
+            ]
+          },
+          "technologies": [68, 67, 72, 73],
+          "project_role_timeline": [
+            {
+              "role": 1004,
+              "start_date": "2024-04-16",
+              "end_date": "2024-05-31"
+            }
+          ],
+          "orden": 20240416,
+          "project_id": 101
+        },
+        {
+ "project_name": "Simulación IoT con Node-RED/Python",
+          "implementation_type": "Proyecto académico / IoT y automatización",
+          "company": "Universidad Tecnológica de El Salvador",
+          "company_logo_path": "utec.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Desarrollo de scripts en Python para simular sensores IoT, configuración de Node-RED para procesar y visualizar mensajes, almacenamiento de datos simulados en SQL Server y exploración educativa de la programación de un brazo robótico PLC. Se utilizó el protocolo MQTT para la comunicación de mensajes y se analizaron diferentes protocolos y redes de bajo consumo para IoT, comprendiendo su aplicabilidad según el entorno y los requerimientos de consumo energético.",
+            "bullet_points": [
+              "Simulación de sensores IoT (temperatura, humedad, movimiento, etc.) mediante scripts de Python.",
+              "Procesamiento, visualización y creación de flujos de datos en Node-RED.",
+              "Almacenamiento y consulta de datos simulados en SQL Server.",
+              "Implementación y comprensión del protocolo MQTT y otros protocolos de comunicación IoT.",
+              "Exploración y programación básica de movimientos en un brazo robótico PLC usando software especializado.",
+              "Análisis de arquitecturas IoT y redes de bajo consumo energético.",
+              "Integración básica entre software de simulación, plataformas de automatización y hardware educativo.",
+              "Logro de una comprensión integral de los componentes y flujos de un sistema IoT real."
+            ]
+          },
+          "technologies": [68, 74, 75, 11, 76],
+          "project_role_timeline": [
+            {
+              "role": 1007,
+              "start_date": "2024-06-01",
+              "end_date": "2024-07-15"
+            }
+          ],
+          "orden": 20240601,
+          "project_id": 102
+        }
+      ]
+    },
+    {
+      "type": "logro",
+      "company": "Graduación de Ingeniería en Sistemas y Computación",
+      "description": "",
+      "logo_url": "utec.png",
+      "orden": 4,
+      "job_roles": [
+        {
+          "job_role": "Grado de Ingeniero en Sistemas y Computación",
+          "job_role_id": 1003,
+          "start_date": "2025-05-30",
+          "end_date": "2025-05-30",
+          "actually": false,
+          "responsabilities": []
+        }
+      ],
+      "projects": []
+    },
+    {
+      "type": "logro",
+      "company": "Ministerios Juveniles Adventistas, División Interamericana",
+      "description": "Currículo de Liderazgo para Embajadores y Líderes de Jóvenes Adultos",
+      "logo_url": "liderjuvenil.png",
+      "orden": 7,
+      "job_roles": [
+        {
+          "job_role": "Líder Juvenil Certificado (Mentor)",
+          "job_role_id": 1015,
+          "start_date": "2021-01-01",
+          "end_date": "2021-12-31",
+          "responsabilities": [
+            {"description": "Entendimiento de la historia, filosofía, visión, objetivos y estructura del Ministerio Juvenil Adventista."
+            },{"description": "Desarrollo de habilidades para comprender y adaptarse a la juventud actual, incluyendo el entorno digital."
+            },{"description": "Liderazgo espiritual, consejería y amistad con jóvenes, actuando como ejemplo de Cristo."
+            },{"description": "Promoción de la pertenencia y el empoderamiento juvenil en la iglesia, delegando responsabilidades."
+            },{"description": "Planificación eclesiástica basada en el propósito, utilizando las cuatro fuerzas dinámicas bíblicas (Gracia, Adoración, Comunidad, Servicio)."
+            },{"description": "Desarrollo de programas juveniles creativos, balanceados y alineados con los temas anuales de los Ministerios Juveniles."
+            },{"description": "Descubrimiento, motivación y utilización de los dones espirituales de los jóvenes para el servicio y la edificación de la iglesia."
+            },{"description": "Maximización de las oportunidades y evitación de las amenazas de las redes sociales en el ministerio digital."
+            }     ]
+        }
+      ],
+      "projects": []
+    }
+  ]
+}

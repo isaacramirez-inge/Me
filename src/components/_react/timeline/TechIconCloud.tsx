@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './TechIconCloud.css';
-import technologiesJsonContent from '../../../assets/data/technologies.json';
 import type { Technology, TechIconCloudProps, IconState } from './TimelineTypes';
 
 const ICON_SIZE = 30; // px
@@ -15,8 +14,8 @@ function detectCollision(a: IconState, b: IconState) {
   return dist < ICON_SIZE + ICON_MARGIN / 2;
 }
 
-const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies }) => {
-  const techList = (technologiesJsonContent as Technology[]).filter(tech => technologies.includes(tech.id));
+const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) => {
+  const techList = techAll.filter(tech => technologies.includes(tech.id));
   const uniqueTechs = Array.from(
     new Map(
       techList

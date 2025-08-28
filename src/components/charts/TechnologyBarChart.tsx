@@ -78,6 +78,7 @@ const TechnologyBarChart: React.FC<TechnologyBarChartProps> = ({ technologiesDat
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top' as const,
@@ -111,7 +112,9 @@ const TechnologyBarChart: React.FC<TechnologyBarChartProps> = ({ technologiesDat
     }
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+      <Bar options={options} data={data} />
+  );
 };
 
 export default TechnologyBarChart;

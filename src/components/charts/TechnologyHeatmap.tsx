@@ -93,9 +93,7 @@ const TechnologyHeatmap: React.FC<TechnologyHeatmapProps> = ({ technologiesData,
     };
 
     return (
-        <div style={{ height: '800px', position: 'relative' }}>
             <Bubble data={chartData} options={options} />
-        </div>
     );
 };
 

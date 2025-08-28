@@ -79,7 +79,9 @@ const FrontendVsBackendPieChart: React.FC<FrontendVsBackendPieChartProps> = ({ t
         },
     };
 
-    return <Pie data={chartData} options={options} />;
+    return (
+            <Pie data={chartData} options={options} />
+    );
 };
 
 export default FrontendVsBackendPieChart;

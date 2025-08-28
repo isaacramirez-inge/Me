@@ -72,6 +72,7 @@ const TechnologyCategoryPolarAreaChart: React.FC<TechnologyCategoryPolarAreaChar
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'right' as const,
@@ -93,7 +94,9 @@ const TechnologyCategoryPolarAreaChart: React.FC<TechnologyCategoryPolarAreaChar
         }
     };
 
-    return <PolarArea data={chartData} options={options} />;
+    return (
+        <PolarArea data={chartData} options={options} />
+    );
 };
 
 export default TechnologyCategoryPolarAreaChart;

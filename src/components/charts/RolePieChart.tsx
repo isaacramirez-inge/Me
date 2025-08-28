@@ -105,7 +105,9 @@ const RolePieChart: React.FC<RolePieChartProps> = ({ timelineData }) => {
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <Pie data={data} options={options} />
+  );
 };
 
 export default RolePieChart;

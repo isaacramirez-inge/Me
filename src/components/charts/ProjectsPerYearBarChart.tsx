@@ -100,7 +100,9 @@ const ProjectsPerYearBarChart: React.FC<ProjectsPerYearBarChartProps> = ({ timel
         }
     };
 
-    return <Bar data={chartData} options={options} />;
+ return (
+    <Bar options={options} data={chartData} />
+  )
 };
 
 export default ProjectsPerYearBarChart;

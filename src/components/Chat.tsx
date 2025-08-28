@@ -5,16 +5,24 @@ import { sendMessage } from '../lib/chat/ChatRequester';
 import RenderJsonLottie from '../components/_react/RenderJsonLottie';
 import botAnim from '../assets/anim/bot.json'; 
 import bubbleBot from '../assets/anim/bot-bubble.json'; 
+import type { Metrics } from '../assets/metrics/metrics';
+import type { Translation } from '../types/types';
+import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '../styles/breakpoints';
+import BotBubbleDispatcher from './bot/BotBubbleDispatcher';
 
 interface ChatProps {
-  t: any;
-  m: any;
+  t: Translation;
+  m: Metrics;
   isVisible: boolean;
   onCloseChat: () => void;
 }
 
 const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
-  const [chatLimit] = useState<number>(30);
+  const isMobile = useMediaQuery({ query: breakpoints.mobile });
+  const [messageLimit] = useState<number>(5);
+  const [chatUsage] = useState<number>(0);
+  const [chatLimit] = useState<number>(10);
   const [uuid, setUuid] = useState<string>('');
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<ChatMessage[]>([]);
@@ -30,10 +38,13 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
   const [errorChating, setErrorChating] = useState<any>(null);
   const bubbleBotGuideRef = useRef<HTMLDivElement | null>(null);
   const bubbleBotRef = useRef<HTMLDivElement | null>(null);
+  const [redrawCounter, setRedrawCounter] = useState<number>(0);
+
 
   useEffect(() => {
     const savedChat = localStorage.getItem('chat_history');
     const savedUuid = localStorage.getItem('chat_uuid');
+
     if (savedChat && savedUuid) {
       setChat(JSON.parse(savedChat));
       setUuid(savedUuid);
@@ -61,11 +72,15 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
           console.log('Error  retrieving initial questions', error);
         }
     }
-    
-    if(initialSuggestions?.length === 0){
+    const lastquestions: SuggestedQuestion[] = recoverLastQuestions();
+    if(!lastquestions){
       fetchInitialSuggestions();
+    }else{
+      setInitialSuggestions(lastquestions);
+      setSuggestionsHistory(lastquestions);
+      setSuggestions(lastquestions);
     }
-  },[initialSuggestions]);
+  },[]);
 
 
   useEffect(() => {
@@ -79,10 +94,10 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
         if (displayedResponseContent.split(' ').length === fullResponseContent.split(' ').length - 1) {
           setSuggestions(beforeDisplaySuggestions);
         }
-      }, 50); // Adjust the delay for the desired streaming speed
+      }, 50); 
       return () => clearTimeout(timer);
     } else if (fullResponseContent && displayedResponseContent.length === fullResponseContent.length) {
-        setFullResponseContent(''); // Clear the full response content once streaming is complete
+        setFullResponseContent(''); 
     }
   }, [fullResponseContent, displayedResponseContent]);
 
@@ -98,6 +113,10 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
 
   const handleSend = async (text: string) => {
     if (!text.trim()) return;
+    if (chat.length >= messageLimit || chatUsage >= chatLimit) {
+      setRedrawCounter(prev => prev + 1);
+      return;
+    }
 
     const userMessage: ChatMessage = { role: 'user', content: text };
     setChat((prev) => [...prev, userMessage]);
@@ -107,7 +126,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
 
     try {
       const suggestionsValidated = suggestionsHistory.map(sq => ({...sq, taken: sq.question === text}));
-      const chatRq: ChatRequest = {uuid: uuid, intl: 'es-es', messages: [...chat, userMessage], suggestedQuestions: suggestionsValidated, modelUsage: modelUsage};
+      const chatRq: ChatRequest = {uuid: uuid, intl: t._info.code, messages: [...chat, userMessage], suggestedQuestions: suggestionsValidated, modelUsage: modelUsage};
       const response = await sendMessage(chatRq);
       const reply: string = response.response || 'Error al obtener respuesta.';
       
@@ -126,6 +145,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
       setChat((prev) => [...prev, assistantMessage]);
       setBeforeDisplaySuggestions(newSuggestions);
       setSuggestionsHistory([...suggestionsValidated, ...newSuggestions]);
+      saveLastQuestions(newSuggestions);
       setLoading(false);
 
     } catch (error) {
@@ -148,12 +168,12 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
-    if (isVisible && chat.length >= 5) {
+    if (isVisible && chat.length >= chatLimit) {
       timer = setTimeout(() => {
         bubbleBotRef.current?.classList.add('flex');
         bubbleBotRef.current?.classList.remove('hidden');
       }, 1500);
-    } else if (!isVisible || chat.length < 5) {
+    } else if (!isVisible || chat.length < chatLimit) {
       bubbleBotRef.current?.classList.add('hidden');
       bubbleBotRef.current?.classList.remove('flex');
     }
@@ -162,31 +182,41 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
     };
   }, [isVisible, chat.length]);
   
+  const saveLastQuestions = (questions: SuggestedQuestion[]) => {
+    localStorage.setItem('lastQuestions', JSON.stringify(questions));
+  }
+  const recoverLastQuestions = (): SuggestedQuestion[] => {
+    const lastQuestions = localStorage.getItem('lastQuestions');
+    if (lastQuestions) {
+      return JSON.parse(lastQuestions) as SuggestedQuestion[];
+    }
+    return [];
+  }
 
   return (
     <div
       id="main-chat"
-      className={`fixed inset-0 w-[20%] h-full flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isVisible ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-full flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isVisible ? 'translate-x-0' : '-translate-x-full'}`}
     >
       <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
 
         {/* Encabezado Sticky */}
         <div className="sticky top-0 z-10 bg-black/20 p-0 rounded-md flex items-center justify-between ">
-          <div className="flex items-center gap-2 text-white text-base font-semibold">
-            <span>IsaBOT</span>
+          <div className="flex items-center gap-2 text-white/80 text-md font-bold">
+            <span>{t.chat.bot_name}</span>
           </div>
           <div className="flex items-center gap-3">
             <button
-              title="Reiniciar el Chat"
+              title=""
               onClick={handleClear}
-              className="text-white hover:text-red-300  border-0 transition"
+              className="text-white font-bold hover:text-red-300  border-0 transition"
             >
               <BiTrash />
             </button>
             <button
-              title="Cerrar"
+              title=""
               onClick={() => onCloseChat()}
-              className="text-white hover:text-red-300 border-0 transition"
+              className="text-white font-bold hover:text-red-300 border-0 transition"
             >
               <BiX />
             </button>
@@ -194,12 +224,12 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
         </div>
 
         {/* Chat intro */}
-        <div className="mx-auto text-sm text-white/90 text-center flex items-center justify-between">
-          <div className={`catbot h-20 ${chat.length === 0 || chat.length >= 5 ? 'hidden' : ''}`}>
+        <div className="mx-auto text-white/80 text-center flex items-center justify-between">
+          <div className={`catbot h-20 ${chat.length === 0 || chat.length >= messageLimit ? 'hidden' : ''}`}>
             <RenderJsonLottie source={botAnim} height={100} width={100}/>
           </div>
-          <p>Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?</p>
-          <p className="text-xs mt-1 text-gray-100"></p>
+          <p className={`font-bold ${chat.length > 0 || chat.length >= messageLimit ? 'hidden' : ''}`}>{t.chat.i_am_bot_message}</p>
+          <p className={`font-bold ${chat.length === 0 || chat.length >= messageLimit ? 'hidden' : ''}`}>{t.chat.its_a_pleasure}</p>
         </div>
 
         {/* Animación asistente (solo si no hay mensajes aún) */}
@@ -216,8 +246,8 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
               key={index}
               className={`rounded px-3 py-2 text-sm max-w-[90%] ${
                 msg.role === 'user'
-                  ? 'bg-white/25 border-white/90 text-white/90 self-end ml-auto rounded-l-full'
-                  : 'text-white/90 border-l-2 self-start rounded-none'
+                  ? 'bg-white/25 border-white/90 text-white/90 self-end ml-auto rounded-full rounded-br-none'
+                  : 'text-white/90 border-l-2 self-start rounded-none border-purple-500'
               }`}
             > 
             {/* Display the streamed content for the last assistant message */}
@@ -229,8 +259,8 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
             <div ref={messagesEndRef} />
           </div>))
           }
-          {loading && <div className="text-white text-xs animate-pulse">Escribiendo respuesta...</div>}
-          {errorChating && <div className="text-white text-xs animate-pulse">Oops, ocurrio un error!</div>}
+          {loading && <div className="text-white text-xs animate-pulse">...</div>}
+          {errorChating && <div className="text-white text-xs animate-pulse">{t.chat.error_chatting}</div>}
         </div>
 
         {/* Sugerencias */}
@@ -240,7 +270,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
               {suggestions.map((q, i) => (
                 <button
                   key={i}
-                  className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30"
+                  className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay" 
                   onClick={() => handleSend(q.question)}
                 >
                   {q.question}
@@ -251,9 +281,18 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
         )}
         
         {/**Bubble bot */}
-        <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className='relative w-full'>
-          <div ref={bubbleBotRef} className='absolute -top-40 left-full h-20 w-20 z-50 flex items-center justify-start scale-[1.6]'>
-            <RenderJsonLottie source={bubbleBot} />
+        <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className='relative w-full xs:w-[80%]'>
+          <div ref={bubbleBotRef} className='absolute -top-40 left-full h-20 w-20 z-50 flex flex-col items-center justify-start scale-[1.6]'
+              style={isMobile ? {} : {}}>
+                <BotBubbleDispatcher 
+                  message= {chatUsage >= chatLimit ? t.chat.hit_limit_2 : chat.length >= messageLimit ? t.chat.hit_limit_1 : '' }
+                  position={ isMobile ? 'top-start' : 'top-end' }
+                  timeout={4} 
+                  mirror='x'
+                  redraw={redrawCounter}
+                > 
+                  <RenderJsonLottie source={bubbleBot} />
+                </BotBubbleDispatcher>
           </div>
         </div>
 
@@ -261,7 +300,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
         <div className="flex items-center gap-2">
           <input
             type="text" 
-            placeholder="Preguntame algo sobre Isaac..."
+            placeholder={t.chat.askme_placeholder}
             className="flex-1 rounded-full px-2 py-1 text-sm text-white/90 bg-transparent border border-white"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -269,7 +308,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat , t, isVisible }) => {
           />
           <button
             onClick={() => handleSend(input)}
-            className="text-white hover:scale-110 transition border-0"
+            className="text-white hover:scale-110 transition border-0 animate-pulse"
             title="Enviar"
           >
             <BiSend className="text-white text-xl" />

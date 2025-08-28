@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import MainText from './MainText';
+import type { Translation } from '../types/types';
 
-const TimelineSpacer: React.FC = () => {
+interface Props {
+    t: Translation
+}
+const TimelineSpacer: React.FC<Props> = ({t}) => {
     const spacerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -10,6 +15,7 @@ const TimelineSpacer: React.FC = () => {
                     detail: entry.isIntersecting,
                 });
                 window.dispatchEvent(event);
+                
             },
             {
                 root: null,
@@ -27,8 +33,31 @@ const TimelineSpacer: React.FC = () => {
         };
     }, []);
 
+    useEffect(() => {
+        
+        const options = {
+            threshold: 0.2 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.scrollIntoView({ behavior: 'smooth' });
+            }
+            });
+        }, options);
+
+        document.querySelectorAll('.main-spacer').forEach(card => {
+            observer.observe(card);
+        });
+
+        return () => { observer.disconnect(); };
+    }, []);
+
     return (
-    <div ref={spacerRef} id='main-spacer' className="maincard h-screen text-white flex items-center justify-center"> &nbsp;</div>
+        <div ref={spacerRef} id='main-spacer' className="main-spacer h-screen text-white flex items-center justify-center">
+            <MainText  t={t} />
+        </div>
     );
 }
 export default TimelineSpacer;

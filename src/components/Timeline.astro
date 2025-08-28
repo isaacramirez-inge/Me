@@ -1,15 +1,17 @@
 ---
-import techs from '../assets/data/technologies.json';
-import jobs from '../assets/data/timeline.json';
+import TimelineEffectObserver from './TimelineEffectObserver';
+import {buyData} from '../lib/data/DataDealer';
 import type { JobRole, MainCardData, Technology,Project } from './_react/timeline/TimelineTypes';
 import TimelineMainCard from './TimelineMaincard';
 
 const { t, m } = Astro.props;
+
+const techs: Technology[] = await buyData('technologies', t._info.code) as Technology[];
+const jobs: MainCardData[] = (await buyData('timeline', t._info.code)).jobs_history as MainCardData[];
 const img_url_base = '/src/assets/img/';
 const img_company = img_url_base + 'company/';
 const img_card = img_url_base + 'company/card/';
 const img_tech = img_url_base + 'icon/';
-
 const PRIMARY_COLOR = 'text-sky-400';
 const SECONDARY_COLOR = 'text-neutral-400';
 const WBORDER = 'border-2 border-white';
@@ -43,22 +45,23 @@ const get_date = (roles: JobRole[], act: string): string => {
       timeZone: 'UTC' 
     });
 }
-
 ---
-{jobs.jobs_history.map((job: MainCardData, idx: number) => {
+{
+jobs.map((job: MainCardData, idx: number) => {
     const mobile_margin = `px[10px] pt-[20%] pb-[10px]`;
     const desktop_margin = `md:p-[3rem] md:pt-[5%]`;
     return (
         <>
-        <div id= 'maincard' class= {`maincard h-screen text-white flex items-center justify-center ${mobile_margin} ${desktop_margin}`} >
+        <div id='maincard' class= {`maincard h-screen text-white flex items-center justify-center ${mobile_margin} ${desktop_margin}`} >
             {/* Aca se debe mostrar el contenido de la tarjeta */}
-                <TimelineMainCard client:load
+                <TimelineMainCard client:only="react"
                     group={job} 
                     dates={`${get_date(job.job_roles, "min")} - ${get_date(job.job_roles, "max")}`}
                     techs={flat_techs(job)}
+                    techAll={techs}
                     index={idx}
-                />
-        </div>
+                />  
+            </div>
         </>
     )
 })}

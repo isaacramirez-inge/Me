@@ -68,7 +68,9 @@ const ImplementationTypePieChart: React.FC<ImplementationTypePieChartProps> = ({
         },
     };
 
-    return <Pie data={chartData} options={options} />;
+    return (
+ <Pie data={chartData} options={options} />
+    );
 };
 
 export default ImplementationTypePieChart;

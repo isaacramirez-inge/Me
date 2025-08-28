@@ -111,7 +111,7 @@ const RoleDurationBarChart: React.FC<RoleDurationBarChartProps> = ({ timelineDat
         }
     };
 
-    return <Bar data={chartData} options={options} />;
+ return (<Bar data={chartData} options={options} />)
 };
 
 export default RoleDurationBarChart;

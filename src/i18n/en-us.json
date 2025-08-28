@@ -1,6 +1,6 @@
 {
     "_info":{
-        "name":"Ingles",
+        "name":"English",
         "code":"en-us"
     },
     "common":{
@@ -13,7 +13,13 @@
     "home":{
         "welcome":{
             "title":"Isaac Sarceño",
-            "subtitle": "Developer / Just living an examined life",
+            "subtitle": "Developer / ",
+            "subttitle_lines": [
+                "Just living",
+                "Just Growing",
+                "Just Learning to living",
+                "Embracing technology"
+            ],
             "descriptions":[
                 "I am a person highly committed to each project in which I participate and passionate about creating high-impact technological solutions. I firmly believe that technology is a tool that is learned, but what is truly important is to thoroughly understand the problem and draw the most effective and efficient path towards its solution.",
                 "I have more than five years of experience developing creative fullstack solutions for complex challenges, using a broad technological stack and easily adapting to different environments. I have worked with clients from various sectors such as banking, health, telecommunications and government, each with unique objectives, restrictions and technological ecosystems. This diversity has given me a comprehensive vision and allows me to adapt quickly to new challenges.",
@@ -26,6 +32,47 @@
         }
     },
     "skills": {
-        "title": "My Skills"
+        "title": "Mis habilidades"
+    },
+    "profile":{
+        "title":"Sobre mí",
+        "tagline":"Abraza la tecnología"
+    },
+    "contact":{
+        "title":"Contáctame",
+        "name_field": "Nombre",
+        "email_field": "Correo electrónico",
+        "message_field": "Mensaje",
+        "message_placeholder": "Escribe tu mensaje aquí...",
+        "send_button": "Enviar",
+        "success_title": "Exito!",
+        "success_message":"Se ha enviado tu mensaje correctamente, Isaac responderá a la brevedad posible.",
+        "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
+        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde"
+    },
+    "chat":{
+        "bot_name": "ISA BOT",
+        "i_am_bot_message":"Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
+        "its_a_pleasure":"Es un placer ayudarte!",
+        "askme_placeholder":"Preguntame algo sobre Isaac",
+        "error_chatting":"Ups! ocurrio un error",
+        "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
+        "hit_limit_2": "Parece que has alcanzado el limite de chats",
+        "captcha_message":"Por favor marca la casilla para continuar"
+    },
+    "cookies": {
+        "message": "We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.",
+        "accept": "Accept",
+        "policy": "Privacy Policy"
+    },
+    "policy": {
+        "title": "Privacy Policy",
+        "last_updated": "Last updated: August 22, 2025",
+        "introduction_title": "Introduction",
+        "introduction_text": "This Privacy Policy describes how we collect, use, and disclose your information.",
+        "cookies_title": "Cookies",
+        "cookies_text": "We use cookies to operate and improve our services. A cookie is a small piece of data stored on your device. We use a 'lang' cookie to store your language preference, and a 'browser_id' cookie to uniquely identify your browser for analytics and security purposes.",
+        "data_title": "Data Collection and Use",
+        "data_text": "When you use our contact form or chat, we collect your name, email, and the content of your message, along with your 'browser_id' and 'lang' cookies. This data is used to respond to your inquiries and improve our services."
     }
 }

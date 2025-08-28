@@ -1,0 +1,147 @@
+---
+import faviconUrl from '../../public/favicon.svg?url';
+import Navbar from '../components/Navbar.astro';
+import SideBar from '../components/Sidebar.astro';
+import CookieConsent from '../components/CookieConsent.tsx';
+const { t, m, title } = Astro.props;
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{t.common.tabtitle}</title>
+	</head>
+	<body>
+		<canvas id="starfield"/>
+		<Navbar title={title} t={t} m={m}/>
+		<SideBar t={t} m={m}/>
+        <CookieConsent t={t} lang={t._info.code} client:load />
+		<main>
+			<slot />
+		</main>
+		<script define:vars={{}}>
+			const mainEl = document.querySelector('main');
+			if (mainEl) {
+				window.addEventListener("mainchat-visible", (e) => {
+					if (e.detail === true) {
+						mainEl.classList.add("ml-[20%]");
+					} else {
+						mainEl.classList.remove("ml-[20%]");
+					}
+				}
+				);
+			}
+		</script>
+		<script src="/src/assets/js/scroll.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const canvas = document.getElementById('starfield') as HTMLCanvasElement;
+				if (!canvas) return;
+				const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+				if (!ctx) return;
+				
+				let width = canvas.width = window.innerWidth;
+				let height = canvas.height = window.innerHeight;
+				
+				window.addEventListener('resize', () => {
+					width = canvas.width = window.innerWidth;
+					height = canvas.height = window.innerHeight;
+				});
+				
+				const layers = [
+					{ count: 500, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
+					{ count: 250, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
+					{ count: 100, speed: 0.5, colorRange: [140, 200], sizeFactor: 4 }
+				];
+				
+				interface Star {
+					x: number;
+					y: number;
+					z: number;
+					speed: number;
+					sizeFactor: number;
+					color: string;
+				}
+				
+				const stars: Star[] = [];
+				
+				for (let layer of layers) {
+					for (let i = 0; i < layer.count; i++) {
+						stars.push({
+							x: (Math.random() - 0.5) * width * 2,
+							y: (Math.random() - 0.5) * height * 2,
+							z: Math.random() * width,
+							speed: layer.speed,
+							sizeFactor: layer.sizeFactor,
+							color: `hsl(${Math.random() * (layer.colorRange[1] - layer.colorRange[0]) + layer.colorRange[0]}, 100%, ${Math.random() * 40 + 60}%)`
+						});
+					}
+				}
+				
+				const fov = 150;
+				
+				function draw() {
+					ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+					ctx.fillRect(0, 0, width, height);
+				
+					for (let star of stars) {
+						star.z -= star.speed;
+				
+						if (star.z <= 0) {
+							star.x = (Math.random() - 0.5) * width * 2;
+							star.y = (Math.random() - 0.5) * height * 2;
+							star.z = width;
+						}
+				
+						const k = fov / star.z;
+						const sx = star.x * k + width / 2;
+						const sy = star.y * k + height / 2;
+				
+						if (sx < 0 || sx >= width || sy < 0 || sy >= height) continue;
+				
+						const size = (1 - star.z / width) * star.sizeFactor * 2;
+						const alpha = (1 - star.z / width) * 0.9;
+				
+						ctx.beginPath();
+						ctx.fillStyle = star.color;
+						ctx.globalAlpha = alpha;
+						const gradient = ctx.createRadialGradient(sx, sy, 0, sx, sy, size);
+						gradient.addColorStop(0, star.color);
+						gradient.addColorStop(1, "transparent");
+				
+						ctx.fillStyle = gradient;
+						ctx.beginPath();
+						ctx.arc(sx, sy, size, 0, Math.PI * 2);
+						ctx.fill();
+					}
+				
+					ctx.globalAlpha = 1;
+					requestAnimationFrame(draw);
+				}
+				
+				draw();
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100dvw;
+	}
+	#starfield{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100dvw;
+		height: 100dvh;
+		z-index:-1;
+		background-color: black;
+	}
+</style>

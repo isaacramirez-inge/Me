@@ -78,8 +78,10 @@ const TechnologiesPerProjectBarChart: React.FC<TechnologiesPerProjectBarChartPro
     };
 
     return (
-        <div style={{ height: `${labels.length * 30}px`, position: 'relative' }}>
-            <Bar data={chartData} options={options} />
+        <div className="relative w-full" style={{ height: '600px', overflowY: 'auto' }}>
+            <div style={{ height: `${labels.length * 25}px`, position: 'relative' }}>
+                <Bar data={chartData} options={options} />
+            </div>
         </div>
     );
 };

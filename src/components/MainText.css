@@ -24,7 +24,8 @@
     align-items: center;
 }
 .indicator-item.active{
-    background-color: white;
+    background-color: #a855f7;
+    border-color: #a855f7;
 }
 .black-shadow {
 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
