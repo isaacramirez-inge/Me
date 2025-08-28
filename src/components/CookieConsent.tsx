@@ -20,13 +20,14 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ t, lang }) => {
     const handleAccept = () => {
         const uuid = crypto.randomUUID();
         setCookie('cookie_consent', 'true', { expires: 365 });
-        setCookie('browser_id', uuid, { expires: 365 });
+        setCookie('browser_id', "0", { expires: 365 });
+        setCookie('browser_uuid', uuid, { expires: 365 });
         setCookie('lang', lang, { expires: 365 });
         setIsVisible(false);
     };
 
     const handlePolicy = () => {
-        window.location.href = `/${lang}/policy-privacy`;
+        window.location.href = `policy-privacy`;
     };
 
     if (!isVisible) {

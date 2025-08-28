@@ -37,12 +37,8 @@ export interface ProfileData {
   extra_insights: ExtraInsight[];
 }
 
-const {
-  name,
-  tagline,
-  content,
-  extra_insights,
-} = await buyData('profile', lang) as ProfileData;
+const profileData = await buyData('profile', lang) as ProfileData;
+const { name, tagline, content, extra_insights } = profileData;
 
 ---
 <!-- /home/user/Me/src/pages/[lang]/profile.astro -->

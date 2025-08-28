@@ -1,15 +1,16 @@
 ---
-import MainLayout from "../../../layouts/MainLayout.astro";
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "../../../i18n";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getTranslation, getStaticPaths } from '../../i18n';
+import { metrics } from '../../assets/metrics/metrics.ts'
+export { getStaticPaths };
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
+const { lang } = Astro.params as { lang: string };
+const t = getTranslation(lang.toLocaleLowerCase());
 ---
 
-<MainLayout t={t}>
-    <div class="container mx-auto px-4 py-8 text-white">
-        <h1 class="text-3xl font-bold mb-4">{t.policy.title}</h1>
+<MainLayout path={`policy`} title={t.policy.title} m={metrics} t={t}>
+    <div class="container flex flex-col mx-auto px-4 py-8 text-white pt-[5%]">
+        <h1 class="hidden text-3xl font-bold mb-4">{t.policy.title}</h1>
         <p class="mb-4">{t.policy.last_updated}</p>
 
         <h2 class="text-2xl font-bold mb-2">{t.policy.introduction_title}</h2>
