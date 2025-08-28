@@ -11,7 +11,7 @@ interface Props{
 
 const ReactRenderBridge: React.FC<Props> = ({langs, defaultLocale}) => {
     const goto = (lang: string) => {
-        window.location.replace(`/${basePath}/${lang}/home`);
+        window.location.href = encodeURI(`/${basePath}/${lang}/home`);
     }
     const onComplete = () => {
         const userDetectedLanguages = [navigator.language, ...navigator.languages];

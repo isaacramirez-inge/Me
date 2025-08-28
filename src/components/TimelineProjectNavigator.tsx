@@ -2,6 +2,8 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Project, Technology } from './_react/timeline/TimelineTypes';
 
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
+
 interface TimelineProjectNavigatorProperties {
   projects: Project[];
   techAll: Technology[];
@@ -52,7 +54,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
             <div className="logo flex-shrink-0 w-12 h-12 md:w-16 md:h-16">
               <img
                 className="w-full h-full object-contain object-left-top"
-                src={`/src/assets/img/company/card/${project.company_logo_path}`}
+                src={`/${base_path}/img/company/card/${project.company_logo_path}`}
                 alt={project.company}
               />
             </div>
@@ -94,7 +96,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
               <div className="logo w-16 h-16 flex-shrink-0">
                 <img
                   className="w-full h-full object-contain"
-                  src={`/src/assets/img/company/card/${expandedProject.company_logo_path}`}
+                  src={`/${base_path}/img/company/card/${expandedProject.company_logo_path}`}
                   alt={expandedProject.company}
                 />
               </div>
@@ -109,7 +111,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                 {expandedProject.technologies.map((techId: number, index: number) => {
                   const tech = techAll.find(t => t.id === techId);
                   if (!tech) return null;
-                  const logoPath = `/src/assets/img/icon/${tech.logo_path}${tech.extension}`;
+                  const logoPath = `/${base_path}/img/icon/${tech.logo_path}${tech.extension}`;
                   return (
                     <div
                       key={index}

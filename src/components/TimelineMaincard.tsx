@@ -6,6 +6,8 @@ import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../styles/breakpoints';
 import TimelineEffectObserver from '../components/TimelineEffectObserver';
 
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
+
 type TabName = 'general' | 'projects' | 'resume';
 
 interface MainCardDataProps {
@@ -113,7 +115,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     const CompanyInfo = useMemo(() => (
         <div className="header-company-data flex flex-row w-full h-full items-center">
             <div className="image-company w-[25%] h-full">
-                <img className='h-full w-full object-contain object-center' src={`/src/assets/img/company/${group.logo_url}`} alt={group.company} />
+                <img className='h-full w-full object-contain object-center' src={`/${base_path}/img/company/${group.logo_url}`} alt={group.company} />
             </div>
             <div className="tv-company-info w-[75%] h-full px-4 md:px-10 flex flex-col justify-center">
                 <h2 className="tv-company-name font-bold sm:text-lg md:text-xl leading-relaxed">{group.company}</h2>

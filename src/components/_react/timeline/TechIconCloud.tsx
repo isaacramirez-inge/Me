@@ -7,6 +7,8 @@ const ICON_MARGIN = 10; // px
 const INITIAL_SPEED = 0.3; // px/frame (lento)
 const FINAL_SPEED = 0.2; // px/frame (más suave)
 
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
+
 function detectCollision(a: IconState, b: IconState) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
@@ -21,7 +23,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
       techList
         .filter(t => typeof t.logo_path === 'string' && t.logo_path)
         .map(t => [t.name, {
-          logo_path: `/src/assets/img/icon/${t.logo_path}${t.extension}`,
+          logo_path: `/${base_path}/img/icon/${t.logo_path}${t.extension}`,
           name: t.name
         }])
     ).values()
@@ -188,4 +190,4 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
   );
 };
 
-export default TechIconCloud; 
+export default TechIconCloud;
