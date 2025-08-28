@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import type { Translation } from '../../types/types';
-import { getCookie } from '../../utils/cookies';
+import { api } from '../../lib/axios';
 
 interface FormData {
   name: string;
@@ -16,6 +16,9 @@ interface Props {
 
 const ContactForm: React.FC<Props> = ({t}) => {
     const captcha = useRef<ReCAPTCHA>(null);
+    const [emptyCaptcha, setEmptyCaptcha] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -27,21 +30,68 @@ const ContactForm: React.FC<Props> = ({t}) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const browserId = getCookie('browser_id');
-    const lang = getCookie('lang');
-    const data = { ...formData, browserId, lang };
-    console.log('Form submitted:', data);
-    // Handle form submission logic (e.g., sending data to a backend)
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    const captchaToken = captcha.current?.getValue();
+    if (!captchaToken) {
+      setEmptyCaptcha(t.contact.empty_captcha);
+      return;
+    }
+
+    const userId = parseInt(localStorage.getItem('user_id') || '0');
+    const userUuid = localStorage.getItem('user_uuid') || crypto.randomUUID();
+    const data = { 
+      ...formData, 
+      intl: t._info.code,
+      userId: userId, 
+      userUuid: userUuid,
+      subject: t.contact.confirmation_subject,
+      confirmMessage: {
+        greeting: t.contact.confirmation_greeting,
+        botIntro: t.contact.confirmation_bot_intro,
+        messageReceived: t.contact.confirmation_message_received,
+        delivered: t.contact.confirmation_delivered,
+        thanks: t.contact.confirmation_thanks,
+        footer: t.contact.confirmation_footer
+      },
+    };
+    const headers = { 'x-captcha-token': captchaToken, 'x-captcha-version': '2' };
+    await api.post('/contact', data, { headers }).then((response) => {
+      const data = response.data;
+      setFormData({ name: '', email: '', message: '' });
+      setSuccessMessage(t.contact.success_message);
+      localStorage.setItem('user_id', data.userId.toString());
+      localStorage.setItem('user_uuid', data.userUuid);
+    }).catch((error) => {
+      console.log(error);
+      setErrorMessage(t.contact.error_message);
+    });
   };
+
+  useEffect(() => {
+    if (emptyCaptcha) {
+      setTimeout(() => {
+        setEmptyCaptcha('');
+      }, 3000);
+    }
+  }, [emptyCaptcha]);
 
   const bg = 'bg-gray-900 bg-opacity-50';
 
   return (
     <>
+    {successMessage ? (
+      <div id="success-message" className="text-center mt-8">
+        <h2 className="text-3xl font-bold text-white/80">{t.contact.success_title}</h2>
+        <p className="text-white/80">{t.contact.success_message} </p>
+      </div>
+    ) : errorMessage ? (
+      <div id="error-message" className="text-center mt-8">
+        <h2 className="text-3xl font-bold text-red-500">{t.contact.error_message}</h2>
+        <p className="text-white/80">{t.contact.error_message} </p>
+      </div> 
+    ) : (
+      
       <form id="contact-form" onSubmit={handleSubmit} className="w-full max-w-md p-8 xs:bg-transparent rounded shadow-md">
         <div className="mb-4">
           <label htmlFor="name" className="block mb-2">{t.contact.name_field}</label>
@@ -80,17 +130,22 @@ const ContactForm: React.FC<Props> = ({t}) => {
           ></textarea>
         </div>
         <div className="mb-4 flex flex-wrap justify-center">
-          <ReCAPTCHA ref={captcha} sitekey="6Lfea6krAAAAAHZwEwR92Yec--iRCQ4TPjfO7tMQ" size="compact" theme="dark" />
+          {emptyCaptcha && <p className="text-red-500">{emptyCaptcha}</p>}
+          <ReCAPTCHA 
+            ref={captcha} 
+            hl={t._info.code} 
+            sitekey="6Lfea6krAAAAAHZwEwR92Yec--iRCQ4TPjfO7tMQ" 
+            size="compact" 
+            theme="dark" 
+            onLoad={() => setEmptyCaptcha('')}
+            onExpired={() => setEmptyCaptcha(t.contact.empty_captcha)}
+          />
         </div>
         <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           {t.contact.send_button}
         </button>
       </form>
-        <input type="hidden" />
-      <div id="success-message" className="text-center mt-8" style={{ display: 'none' }}>
-        <h2 className="text-3xl font-bold text-green-400">{t.contact.success_title}</h2>
-        <p>{t.contact.success_message} </p>
-      </div> 
+    )}
     </>
   );
 };

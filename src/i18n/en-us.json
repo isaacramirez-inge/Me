@@ -48,7 +48,14 @@
         "success_title": "Exito!",
         "success_message":"Se ha enviado tu mensaje correctamente, Isaac responderá a la brevedad posible.",
         "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
-        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde"
+        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde",
+        "confirmation_subject": "Confirmación de envío de mensaje",
+        "confirmation_greeting": "Hola",
+        "confirmation_bot_intro": "Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
+        "confirmation_message_received": "Gracias por tu mensaje. Isaac responderá a la brevedad posible.",
+        "confirmation_delivered": "Tu mensaje ha sido enviado correctamente.",
+        "confirmation_thanks": "Gracias por tu mensaje.",
+        "confirmation_footer": "Atentamente, Isaac"
     },
     "chat":{
         "bot_name": "ISA BOT",
@@ -56,6 +63,7 @@
         "its_a_pleasure":"Es un placer ayudarte!",
         "askme_placeholder":"Preguntame algo sobre Isaac",
         "error_chatting":"Ups! ocurrio un error",
+        "error_response":"Ocurrio un error al obtener la respuesta, intentar nuevamente mas tarde",
         "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
         "hit_limit_2": "Parece que has alcanzado el limite de chats",
         "captcha_message":"Por favor marca la casilla para continuar"

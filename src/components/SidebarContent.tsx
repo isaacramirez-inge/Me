@@ -31,7 +31,7 @@ const SidebarContent: React.FC<Props> = ({ t, m }) => {
 
     return (
     <>
-        <Chat t={t} m={m} isVisible={viewChat} onCloseChat={onCloseChat}/>
+        <Chat t={t} m={m} isChatVisible={viewChat} onCloseChat={onCloseChat}/>
         <div className={`main-bothi xs:scale-75 cursor-pointer z-50 h-40 w-40 fixed -left-8 top-3/4 transform transition-transform duration-500 ${!viewChat ? 'translate-x-0' : '-translate-x-full'}`}>
             {(() => { return(
             <Lottie

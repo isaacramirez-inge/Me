@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import lottie from "astro-integration-lottie";
 import react from '@astrojs/react';
 
 export default defineConfig({

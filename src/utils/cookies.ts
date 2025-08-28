@@ -6,8 +6,8 @@ export const setCookie = (name: string, value: string, options?: Cookies.CookieA
 };
 
 // Get a cookie
-export const getCookie = (name: string): string | undefined => {
-  return Cookies.get(name);
+export const getCookie = (name: string): string => {
+  return Cookies.get(name) as string;
 };
 
 // Remove a cookie
