@@ -444,7 +444,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             }
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 xs:pb-2">
             <input
               type="text"
               placeholder={t.chat.askme_placeholder}
