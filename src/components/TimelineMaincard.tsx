@@ -5,7 +5,7 @@ import TimelineProjectNavigator from './TimelineProjectNavigator';
 import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../styles/breakpoints';
 import TimelineEffectObserver from '../components/TimelineEffectObserver';
-
+import type {Translation} from '../types/types';
 type TabName = 'general' | 'projects' | 'resume';
 
 interface MainCardDataProps {
@@ -15,15 +15,14 @@ interface MainCardDataProps {
     index: number;
     techAll: Technology[];
     base_path: string;
+    t: Translation;
 }
 
-// Subcomponente memoizado para la pestaña 'General'
 interface GeneralTabProps {
     roles: JobRole[];
 }
 const GeneralTab = memo(({ roles }: GeneralTabProps) => {
     const [selectedRole, setSelectedRole] = useState<number | null>(null);
-
     useEffect(() => {
         const have_selected = roles.some(r => r.show_first);
         const initialRole = have_selected ? roles.find(r => r.show_first)?.job_role_id : roles[0]?.job_role_id;
@@ -31,7 +30,6 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
     }, [roles]);
 
     if (!selectedRole) return null;
-
     const currentRole = roles.find(r => r.job_role_id === selectedRole);
 
     return (
@@ -61,7 +59,6 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
     );
 });
 
-// Subcomponente memoizado para la pestaña 'Projects'
 interface ProjectsTabProps {
     projects: Project[];
     techAll: Technology[];
@@ -71,14 +68,13 @@ const ProjectsTab = memo(({ projects, techAll, base_path }: ProjectsTabProps) =>
     return <TimelineProjectNavigator base_path={base_path} techAll={techAll} projects={projects} />;
 });
 
-// Subcomponente memoizado para la pestaña 'Resume'
 interface ResumeTabProps {
     resume: string;
 }
 const ResumeTab = memo(({ resume }: ResumeTabProps) => {
     return (
         <div className="tab-resume w-full h-full overflow-y-auto px-2 md:px-6 py-4 flex-wrap scrollbar-white flex justify-center items-center">
-            <p className="max-w-3xl mx-auto text-sm md:text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
+            <p className="max-w-3xl mx-auto text-sm xs:text-xl md:text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
                 {resume}
             </p>
         </div>
@@ -87,7 +83,7 @@ const ResumeTab = memo(({ resume }: ResumeTabProps) => {
 
 // ---
 
-const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, techAll, index , base_path}) => {
+const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, techAll, index ,t, base_path}) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [activeTab, setActiveTab] = useState<TabName>('general');
     const isMobile = useMediaQuery({ query: breakpoints.mobile });
@@ -95,7 +91,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
         const newTabs = [];
         const hasResume = !!(group.resume && group.resume.length > 0);
         if (group.job_roles && group.job_roles.length > 0) {
-            newTabs.push({ tabname: 'general' as TabName, tabtext: 'General' });
+            newTabs.push({ tabname: 'general' as TabName, tabtext: t.home.tabnames.roles });
         }
         if (group.projects && group.projects.length > 0) {
             newTabs.push({ tabname: 'projects' as TabName, tabtext: 'Proyectos' });
@@ -107,7 +103,6 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     }, [group]);
 
     useEffect(() => {
-        // Establecer la pestaña activa por defecto al cambiar el grupo
         const hasResume = !!(group.resume && group.resume.length > 0);
         setActiveTab(hasResume ? 'resume' : 'general');
     }, [group]);
@@ -119,7 +114,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                 loading="lazy"/>
             </div>
             <div className="tv-company-info w-[75%] h-full px-4 md:px-10 flex flex-col justify-center">
-                <h2 className="tv-company-name font-bold sm:text-lg md:text-xl leading-relaxed">{group.company}</h2>
+                <h2 className="tv-company-name font-bold sm:text-lg xs:text-xl leading-relaxed">{group.company}</h2>
                 <p className="tv-company-desc border-b-2 border-white text-sm md:text-base">{dates}</p>
             </div>
         </div>
@@ -134,19 +129,19 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     ), [techs, techAll]);
 
     const TabButtons = useMemo(() => (
-        tabs.length <= 1 ? null : // Return null if tabs array has 1 or fewer elements
-        <div className="tab-buttons xs:z-0 flex gap-1 md:gap-2 justify-center mt-2 md:mt-0">
+        tabs.length <= 1 ? null : 
+        <div className="tab-buttons flex gap-1 md:gap-2 justify-center mt-2 md:mt-0">
             {tabs.map((tab, idx) => (
                 <button
                     key={idx}
-                    className={`tab-button rounded-full z-50 ${activeTab === tab.tabname ? 'selected' : ''}`}
+                    className={`tab-button rounded-full z-10 ${activeTab === tab.tabname ? 'selected' : ''}`}
                     onClick={() => {
                         if (tabs.length > 1) {
                         setActiveTab(tab.tabname);
                         }
                     }}
                 >
-                    <span className="text-sm md:text-base">{tab.tabtext}</span>
+                    <span className="text-sm xs:text-l">{tab.tabtext}</span>
                 </button>
             ))}
         </div>
@@ -158,7 +153,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
 
             {isMobile ? (
                 <>
-                    <div className="flex-shrink-0 h-[20%] w-full">{CompanyInfo}</div>
+                    <div className="flex-shrink-0 h-[15%] w-full">{CompanyInfo}</div>
                     
                     <div className="flex-shrink-0">{TabButtons}</div>
                     <div className="flex-grow h-[30%] w-full relative">
@@ -173,8 +168,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.resume && <ResumeTab resume={group.resume} />}
                         </div>
                     </div>
-                    
-                    {techs.length > 0 && <div className="flex-grow h-[8%] w-full">{Technologies}</div>}
+                    {techs.length > 0 && <div className="flex-grow w-full">{Technologies}</div>}
                 </>
             ) : (
                 <>

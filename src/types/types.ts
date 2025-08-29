@@ -20,6 +20,12 @@ export type Translation = {
       subttitle_lines: string[],
       descriptions: string[],
     },
+    tabnames:{
+      roles: string,
+      projects: string,
+      resume: string,
+      charts: string
+    }
   },
   skills:{
     title: string,

@@ -166,7 +166,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
   }, [isVisible, iconStates.length]);
 
   return (
-    <div className="tech-icon-cloud dvd-cloud" ref={containerRef} style={{ position: 'relative', height: '100%', minHeight: 120 }}>
+    <div className="tech-icon-cloud dvd-cloud xs:p-l[15%]" ref={containerRef} style={{ position: 'relative', height: '100%', minHeight: 120 }}>
       {iconStates.length === uniqueTechs.length && uniqueTechs.map((tech, idx) => (
         <img
           key={tech.name + idx}

@@ -27,9 +27,11 @@
                 "Mi enfoque está orientado a resultados, con una combinación de pensamiento estratégico, habilidades técnicas y una fuerte capacidad de análisis, lo que me convierte en un aliado valioso para cualquier equipo o proyecto."
             ]
         },
-        "timeline":{
-            "title": "Timeline",
-            "descriptions": ""
+        "tabnames":{
+            "roles":"Roles",
+            "projects":"Proyectos",
+            "resume":"Resumen",
+            "charts": "Diagramas"
         }
     },
     "skills": {

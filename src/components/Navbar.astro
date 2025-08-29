@@ -4,6 +4,7 @@ import { supportedLanguages } from '../i18n';
 
 const { t, m, title } = Astro.props;
 const sup = await supportedLanguages();
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
 const links = [
   { show: true, name: 'Home', path: 'home' },
   { show: true, name: 'Skills', path: 'skills' },
@@ -11,9 +12,9 @@ const links = [
   { show: true, name: 'Profile', path: 'profile' },
   { show: false, name: 'Hobbies', path: 'hobbies' },
   { show: true, name: 'Contact', path: 'contact' },
-]
+];
 ---
 
 <nav class=`fixed top-0 z-50 w-full  text-white shadow-md h-[${m.navbar_height}] px-[5%] py-[20px]`>
-  <NavbarContent client:only="react" pageTitle={title} t={t} m={m} langs={sup} links={links}/>
+  <NavbarContent client:only="react" base_path={base_path} pageTitle={title} t={t} m={m} langs={sup} links={links}/>
 </nav>

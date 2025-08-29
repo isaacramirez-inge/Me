@@ -6,8 +6,6 @@ import type { MainCardData } from './_react/timeline/TimelineTypes';
 import MenuRender from '../components/navbar/MenuRender';
 import type { Translation } from '../types/types';
 
-const basePath = import.meta.env.PUBLIC_BASE_PATH || '';
-
 interface SupLang{
     code: string;
     name: string;
@@ -24,9 +22,10 @@ interface NavbarContentProps {
   m: Metrics;
   langs: SupLang[];
   links: link[];
+  base_path: string;
 }
 
-const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, langs }) => {
+const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, base_path, links, langs }) => {
   const [chatPlaceholder, setChatPlaceholder] = useState<string>('Ask ChatGPT about me...');
   const [inOutControl, setInOutControl] = useState<{in: number | null, out: number | null}>({in: null, out: null});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,7 +91,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
 
         {/* Menú desktop */}
         <div className="hidden md:flex gap-4">
-          <MenuRender links={links} base={basePath} lang={t._info.code} prefetch={false} />
+          <MenuRender links={links} base_path={base_path} lang={t._info.code} prefetch={false} />
           <SwitchLang actualCode={t._info.code} langs={langs} />
         </div>
       </div>
@@ -100,7 +99,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
       {/* Menú mobile oculto por defecto */}
       <div id="mobile-menu" className="absolute mt-4 text-center z-50 flex flex-col flex-wrap content-center justify-evenly pt-4 h-[85dvh] w-[90dvw] border border-purple-500 rounded-lg gap-2 bg-black hidden">
         <SwitchLang actualCode={t._info.code} langs={langs} />
-        <MenuRender links={links} base={basePath} lang={t._info.code} prefetch={false} />
+        <MenuRender links={links} base_path={base_path} lang={t._info.code} prefetch={false} />
       </div>
     </>
   );

@@ -74,7 +74,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
       <motion.div
         className={`absolute inset-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-2xl p-6 text-white overflow-y-auto scrollbar-white z-10 transition-opacity duration-300 
           ${expandedProjectId ? 'opacity-100 pointer-events-auto xs:fixed xs:z-50 xs:top-0 xs:left-0' : 'opacity-0 pointer-events-none'} 
-        xs:fixed xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-md xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white xs:pb-[50%] xs:mt-[50%] xs:rounded-[20px] xs:border-[1px] xs:border-solid xs:border-purple-500`}
+        xs:fixed xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-md xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white xs:pb-[50%] xs:mt-[50%] xs:rounded-[20px] xs:border-[3px] xs:border-solid xs:border-purple-500 xs:border-x-0`}
         initial={{ opacity: 0 }}
         animate={{ opacity: expandedProjectId ? 1 : 0 }}
         transition={{ duration: 0.3 }}

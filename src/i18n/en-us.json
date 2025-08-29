@@ -26,6 +26,12 @@
                 "My approach is results-oriented, with a combination of strategic thinking, technical skills and a strong analytical capacity, which makes me a valuable ally for any team or project."
             ]
         },
+        "tabnames":{
+            "roles":"Roles",
+            "projects":"Proyectos",
+            "resume":"Resumen",
+            "charts": "Diagramas"
+        },
         "timeline": {
             "title": "Timeline",
             "descriptions": ""

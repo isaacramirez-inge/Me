@@ -21,7 +21,7 @@ const base_path = import.meta.env.PUBLIC_BASE_PATH;
 
 const flat_techs = (job: MainCardData): number[] => Array.from(new Set(job.projects.flatMap((project: Project) => project.technologies)));
 const get_tech = (tech: number) => techs.find((t: Technology) => t.id === tech);
-const get_date = (roles: JobRole[], act: string): string => {
+const get_date = (roles: JobRole[], act: string, showDay?: boolean): string => {
     let dateStr;
     switch (act) {
         case "min":
@@ -41,11 +41,8 @@ const get_date = (roles: JobRole[], act: string): string => {
             break;
     }
     if (!dateStr || dateStr === "1900-01-01") return "Actualidad";
-    return new Date(dateStr).toLocaleDateString("es-ES", { 
-      month: 'short', 
-      year: 'numeric',
-      timeZone: 'UTC' 
-    });
+    const config: Intl.DateTimeFormatOptions = showDay ? { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' } : { month: 'short', year: 'numeric', timeZone: 'UTC' };
+    return new Date(dateStr).toLocaleDateString("es-ES", config);
 }
 ---
 {
@@ -55,7 +52,6 @@ jobs.map((job: MainCardData, idx: number) => {
     return (
         <>
         <div id='maincard' class= {`maincard h-screen text-white flex items-center justify-center ${mobile_margin} ${desktop_margin}`} >
-            {/* Aca se debe mostrar el contenido de la tarjeta */}
                 <TimelineMainCard client:only="react"
                     group={job} 
                     dates={`${get_date(job.job_roles, "min")} - ${get_date(job.job_roles, "max")}`}
@@ -63,6 +59,7 @@ jobs.map((job: MainCardData, idx: number) => {
                     techAll={techs}
                     index={idx}
                     base_path={base_path}
+                    t={t}
                 />  
             </div>
         </>

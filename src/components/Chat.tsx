@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../styles/breakpoints';
 import BotBubbleDispatcher from './bot/BotBubbleDispatcher';
 import ReCAPTCHA from "react-google-recaptcha";
+import hammer from 'hammerjs';
 import { api } from '../lib/axios';
 
 const V3_CAPTCHA = import.meta.env.PUBLIC_RECAPTCHA_V3_KEY;
@@ -35,7 +36,6 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   const [loading, setLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [initialSuggestions, setInitialSuggestions] = useState<string[]>([]);
   const [beforeDisplaySuggestions, setBeforeDisplaySuggestions] = useState<string[]>([]);
   const [fullResponseContent, setFullResponseContent] = useState<string>('');
   const [displayedResponseContent, setDisplayedResponseContent] = useState<string>('');
@@ -54,6 +54,9 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   const [pendingMessage, setPendingMessage] = useState<string>('');
   const [captcha2Node, setCaptcha2Node] = useState<React.ReactNode | null>(null);
   const [noticed, setNoticed] = useState<boolean>(false);
+  const mainchat = useRef<HTMLDivElement | null>(null);
+
+
 
   useEffect(() => {
     const savedChat = localStorage.getItem('chat_history');
@@ -65,6 +68,20 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       setMessagesUsage(chat.length);
     }
   }, []);
+
+  useEffect(() => {
+    const mainchatDiv = mainchat.current;
+    if (mainchatDiv) {
+      const mc = new Hammer.Manager(mainchatDiv);
+      mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL }));
+      mc.on('panleft', () => {
+        onCloseChat();
+      });
+      return () => {
+        mc.destroy();
+      };
+    }
+  }, [onCloseChat]);
 
   const onCaptcha2Resolved = () => {
     bubbleBotRef2.current?.classList.add('hidden');
@@ -277,7 +294,6 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
     setErrorChating('');
     const initialSuggestions = await fetchInitialSuggestions();
     setSuggestions(initialSuggestions);
-    setInitialSuggestions(initialSuggestions);
     localStorage.removeItem('chat_history');
     localStorage.removeItem('chat_id');
   };
@@ -344,6 +360,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       {captchaVersion === captchaVersion3 && captchaWidgetV3()}
       <div
         id="main-chat"
+        ref={mainchat}
         className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-full flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isChatVisible ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
