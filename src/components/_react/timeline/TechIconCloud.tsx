@@ -183,6 +183,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
             zIndex: 2,
             transition: 'box-shadow 0.2s',
           }}
+          loading="lazy"
         />
       ))}
     </div>

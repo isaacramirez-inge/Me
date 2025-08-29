@@ -351,7 +351,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             <div className="flex items-center gap-2 text-white/80 text-md font-bold">
               <span>{t.chat.bot_name}</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 text-2xl">
               <button
                 title=""
                 onClick={handleClear}

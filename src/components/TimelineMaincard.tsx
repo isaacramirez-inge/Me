@@ -115,7 +115,8 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     const CompanyInfo = useMemo(() => (
         <div className="header-company-data flex flex-row w-full h-full items-center">
             <div className="image-company w-[25%] h-full">
-                <img className='h-full w-full object-contain object-center' src={`/${base_path}/img/company/${group.logo_url}`} alt={group.company} />
+                <img className='h-full w-full object-contain object-center' src={`/${base_path}/img/company/${group.logo_url}`} alt={group.company} 
+                loading="lazy"/>
             </div>
             <div className="tv-company-info w-[75%] h-full px-4 md:px-10 flex flex-col justify-center">
                 <h2 className="tv-company-name font-bold sm:text-lg md:text-xl leading-relaxed">{group.company}</h2>
@@ -134,7 +135,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
 
     const TabButtons = useMemo(() => (
         tabs.length <= 1 ? null : // Return null if tabs array has 1 or fewer elements
-        <div className="tab-buttons flex gap-1 md:gap-2 justify-center mt-2 md:mt-0">
+        <div className="tab-buttons xs:z-0 flex gap-1 md:gap-2 justify-center mt-2 md:mt-0">
             {tabs.map((tab, idx) => (
                 <button
                     key={idx}
@@ -158,7 +159,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
             {isMobile ? (
                 <>
                     <div className="flex-shrink-0 h-[20%] w-full">{CompanyInfo}</div>
-                    {techs.length > 0 && <div className="flex-grow h-[8%] w-full">{Technologies}</div>}
+                    
                     <div className="flex-shrink-0">{TabButtons}</div>
                     <div className="flex-grow h-[30%] w-full relative">
                         {/* Renderizar todas las pestañas y usar CSS para mostrarlas/ocultarlas */}
@@ -172,6 +173,8 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.resume && <ResumeTab resume={group.resume} />}
                         </div>
                     </div>
+                    
+                    {techs.length > 0 && <div className="flex-grow h-[8%] w-full">{Technologies}</div>}
                 </>
             ) : (
                 <>

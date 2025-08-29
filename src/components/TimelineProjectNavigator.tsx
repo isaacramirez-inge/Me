@@ -55,6 +55,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                 className="w-full h-full object-contain object-left-top"
                 src={`/${base_path}/img/company/card/${project.company_logo_path}`}
                 alt={project.company}
+                loading="lazy"
               />
             </div>
             <div className="project-info overflow-hidden">
@@ -71,9 +72,9 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
 
       {/* 3. El componente de detalle se renderiza siempre, pero se oculta con CSS */}
       <motion.div
-        className={`absolute inset-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-2xl p-6 text-white overflow-y-auto scrollbar-white z-10 transition-opacity duration-300 ${
-          expandedProjectId ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        } xs:absolute xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-sm xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white`}
+        className={`absolute inset-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-2xl p-6 text-white overflow-y-auto scrollbar-white z-10 transition-opacity duration-300 
+          ${expandedProjectId ? 'opacity-100 pointer-events-auto xs:fixed xs:z-50 xs:top-0 xs:left-0' : 'opacity-0 pointer-events-none'} 
+        xs:fixed xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-md xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white xs:pb-[50%] xs:mt-[50%] xs:rounded-[20px] xs:border-[1px] xs:border-solid xs:border-purple-500`}
         initial={{ opacity: 0 }}
         animate={{ opacity: expandedProjectId ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -97,6 +98,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                   className="w-full h-full object-contain"
                   src={`/${base_path}/img/company/card/${expandedProject.company_logo_path}`}
                   alt={expandedProject.company}
+                  loading="lazy"
                 />
               </div>
               <div className="project-info">
@@ -120,6 +122,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                         src={logoPath}
                         alt={`${tech.name} icon`}
                         className="w-8 h-8 object-contain mb-1"
+                        loading="lazy"
                       />
                       <span>{tech.name}</span>
                     </div>

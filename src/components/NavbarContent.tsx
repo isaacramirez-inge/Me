@@ -71,7 +71,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
   
   return (
     <>
-      <div className="flex items-center justify-between relative z-10">
+      <div className="flex items-center justify-between relative " style={{zIndex:100}}>
       
         {/* Título o logo */}
         <div className="text-xl font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
@@ -98,7 +98,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
       </div>
 
       {/* Menú mobile oculto por defecto */}
-      <div id="mobile-menu" className="absolute mt-4 text-center flex flex-col flex-wrap content-center justify-evenly pt-4 h-[85dvh] w-[90dvw] border border-purple-500 rounded-lg gap-2 bg-black hidden">
+      <div id="mobile-menu" className="absolute mt-4 text-center z-50 flex flex-col flex-wrap content-center justify-evenly pt-4 h-[85dvh] w-[90dvw] border border-purple-500 rounded-lg gap-2 bg-black hidden">
         <SwitchLang actualCode={t._info.code} langs={langs} />
         <MenuRender links={links} base={basePath} lang={t._info.code} prefetch={false} />
       </div>
