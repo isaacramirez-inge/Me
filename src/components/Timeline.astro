@@ -17,6 +17,8 @@ const SECONDARY_COLOR = 'text-neutral-400';
 const WBORDER = 'border-2 border-white';
 const MARGIN_CARD = 'm-[5rem]';
 
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
+
 const flat_techs = (job: MainCardData): number[] => Array.from(new Set(job.projects.flatMap((project: Project) => project.technologies)));
 const get_tech = (tech: number) => techs.find((t: Technology) => t.id === tech);
 const get_date = (roles: JobRole[], act: string): string => {
@@ -60,6 +62,7 @@ jobs.map((job: MainCardData, idx: number) => {
                     techs={flat_techs(job)}
                     techAll={techs}
                     index={idx}
+                    base_path={base_path}
                 />  
             </div>
         </>

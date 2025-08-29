@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './TechIconCloud.css';
-import type { Technology, TechIconCloudProps, IconState } from './TimelineTypes';
+import type { TechIconCloudProps, IconState } from './TimelineTypes';
 
 const ICON_SIZE = 30; // px
 const ICON_MARGIN = 10; // px
 const INITIAL_SPEED = 0.3; // px/frame (lento)
 const FINAL_SPEED = 0.2; // px/frame (más suave)
 
-const base_path = import.meta.env.PUBLIC_BASE_PATH;
 
 function detectCollision(a: IconState, b: IconState) {
   const dx = a.x - b.x;
@@ -16,7 +15,7 @@ function detectCollision(a: IconState, b: IconState) {
   return dist < ICON_SIZE + ICON_MARGIN / 2;
 }
 
-const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) => {
+const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies, techAll }) => {
   const techList = techAll.filter(tech => technologies.includes(tech.id));
   const uniqueTechs = Array.from(
     new Map(

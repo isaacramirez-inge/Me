@@ -3,7 +3,7 @@ import ReactRenderBridge from '../components/_react/ReactRenderBridge';
 import {supportedLanguages, defaultTranslation} from '../i18n';
 const langs = await supportedLanguages();
 const defaultLocale = defaultTranslation;
-
+const base_path = import.meta.env.PUBLIC_BASE_PATH;
 ---
 
 <html lang="en">
@@ -30,6 +30,6 @@ const defaultLocale = defaultTranslation;
     </style>
   </head>
   <body>
-    <ReactRenderBridge client:only="react"  langs={langs} defaultLocale={defaultLocale}  /> 
+    <ReactRenderBridge client:only="react" base_path={base_path} langs={langs} defaultLocale={defaultLocale}  /> 
   </body>
 </html>

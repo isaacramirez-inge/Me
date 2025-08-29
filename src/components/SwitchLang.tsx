@@ -17,7 +17,6 @@ const SwitchLang: React.FC<SwitchLangProps> = ({ actualCode, langs }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value;
-    setCookie('lang', newLang, { expires: 365 });
     localStorage.removeItem('chat_history');
     localStorage.removeItem('chat_uuid');
     localStorage.removeItem('lastQuestions');

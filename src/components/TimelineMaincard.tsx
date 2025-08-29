@@ -6,8 +6,6 @@ import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../styles/breakpoints';
 import TimelineEffectObserver from '../components/TimelineEffectObserver';
 
-const base_path = import.meta.env.PUBLIC_BASE_PATH;
-
 type TabName = 'general' | 'projects' | 'resume';
 
 interface MainCardDataProps {
@@ -16,6 +14,7 @@ interface MainCardDataProps {
     techs: number[];
     index: number;
     techAll: Technology[];
+    base_path: string;
 }
 
 // Subcomponente memoizado para la pestaña 'General'
@@ -66,9 +65,10 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
 interface ProjectsTabProps {
     projects: Project[];
     techAll: Technology[];
+    base_path: string;
 }
-const ProjectsTab = memo(({ projects, techAll }: ProjectsTabProps) => {
-    return <TimelineProjectNavigator techAll={techAll} projects={projects} />;
+const ProjectsTab = memo(({ projects, techAll, base_path }: ProjectsTabProps) => {
+    return <TimelineProjectNavigator base_path={base_path} techAll={techAll} projects={projects} />;
 });
 
 // Subcomponente memoizado para la pestaña 'Resume'
@@ -87,7 +87,7 @@ const ResumeTab = memo(({ resume }: ResumeTabProps) => {
 
 // ---
 
-const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, techAll, index }) => {
+const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, techAll, index , base_path}) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [activeTab, setActiveTab] = useState<TabName>('general');
     const isMobile = useMediaQuery({ query: breakpoints.mobile });
@@ -127,7 +127,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     const Technologies = useMemo(() => (
         <div className="company-icons-container z-10 relative w-full h-full">
             <div className="company-icons-middle w-full h-full absolute right-0 bottom-0">
-                <TechIconCloud technologies={techs} techAll={techAll} />
+                <TechIconCloud base_path={base_path} technologies={techs} techAll={techAll} />
             </div>
         </div>
     ), [techs, techAll]);
@@ -166,7 +166,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.job_roles && <GeneralTab roles={group.job_roles} />}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'projects' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                            {group.projects && <ProjectsTab projects={group.projects} techAll={techAll} />}
+                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} />}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'resume' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                             {group.resume && <ResumeTab resume={group.resume} />}
@@ -186,7 +186,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.job_roles && <GeneralTab roles={group.job_roles} />}
                         </div>
                         <div className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${activeTab === 'projects' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                            {group.projects && <ProjectsTab projects={group.projects} techAll={techAll} />}
+                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} />}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'resume' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                             {group.resume && <ResumeTab resume={group.resume} />}

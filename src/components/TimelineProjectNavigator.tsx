@@ -2,14 +2,13 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Project, Technology } from './_react/timeline/TimelineTypes';
 
-const base_path = import.meta.env.PUBLIC_BASE_PATH;
-
 interface TimelineProjectNavigatorProperties {
   projects: Project[];
   techAll: Technology[];
+  base_path: string;
 }
 
-const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll }) => {
+const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll , base_path}) => {
   const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
