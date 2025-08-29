@@ -18,6 +18,14 @@ jobs:
         with:
           node-version: 22.13.0
           cache: 'npm'
+      
+      # Este paso crea el archivo .env en el entorno de build.
+      # Las variables se leen directamente desde las variables del repositorio de GitHub.
+      - name: Create .env file
+        run: |
+          echo "PUBLIC_BASE_PATH=${{ vars.PUBLIC_BASE_PATH }}" >> .env
+          echo "PUBLIC_API_URL=${{ vars.PUBLIC_API_URL }}" >> .env
+          echo "PUBLIC_API_KEY_AUTH=${{ vars.PUBLIC_API_KEY_AUTH }}" >> .env
 
       - name: Install dependencies
         run: npm ci
@@ -34,4 +42,4 @@ jobs:
           server-dir: /
           local-dir: ./dist/
           method: ftp
-          dangerous-clean-slate: true   
+          dangerous-clean-slate: true
