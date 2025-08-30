@@ -73,7 +73,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
     const mainchatDiv = mainchat.current;
     if (mainchatDiv) {
       const mc = new Hammer.Manager(mainchatDiv);
-      mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL }));
+      mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 50 }));
       mc.on('panleft', () => {
         onCloseChat();
       });
@@ -361,7 +361,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       <div
         id="main-chat"
         ref={mainchat}
-        className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-full flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isChatVisible ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-[100dvh] flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isChatVisible ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
           <div className="sticky top-0 z-10 bg-black/20 p-0 rounded-md flex items-center justify-between ">
@@ -404,7 +404,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             {chat.map((msg, index) => (
               <div
                 key={index}
-                className={`rounded px-3 py-2 text-sm max-w-[90%] ${msg.role === 'user'
+                className={`rounded px-3 py-2 text-lg max-w-[90%] ${msg.role === 'user'
                     ? 'bg-white/25 border-white/90 text-white/90 self-end ml-auto rounded-full rounded-br-none'
                     : 'text-white/90 border-l-2 self-start rounded-none border-purple-500'
                   }`}
@@ -432,7 +432,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             </div>
           )}
 
-          <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className=' h-[1px] bg-white/50 relative w-full xs:w-[80%]'>
+          <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className=' h-[0px] bg-white/50 relative w-full xs:w-[80%]'>
             <div ref={bubbleBotRef} className='absolute -top-40 left-full h-20 w-20 z-50 flex flex-col items-center justify-start scale-[1.6]'>
               <BotBubbleDispatcher
                 message={chatUsage >= chatLimit ? t.chat.hit_limit_2 : chat.length >= messagesLimit ? t.chat.hit_limit_1 : ''}
@@ -461,11 +461,11 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             }
           </div>
 
-          <div className="flex items-center gap-2 xs:pb-2">
+          <div className="flex items-center gap-2 xs:pb-2 h-[50px]">
             <input
               type="text"
               placeholder={t.chat.askme_placeholder}
-              className="flex-1 rounded-full px-2 py-1 text-sm text-white/90 bg-transparent border border-white"
+              className="flex-1 h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent border border-white"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}

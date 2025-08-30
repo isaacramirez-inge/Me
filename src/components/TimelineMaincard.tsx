@@ -33,14 +33,14 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
     const currentRole = roles.find(r => r.job_role_id === selectedRole);
 
     return (
-        <div className="tab-roles flex flex-col leading-relaxed justify-center items-center p-2 md:p-4 w-full h-full max-w-full max-h-full overflow-hidden">
+        <div className="tab-roles flex flex-col  justify-center items-center p-2 md:p-4 w-full h-full max-w-full max-h-full overflow-hidden">
             <div className=" bg-black/20 backdrop-blur-sm py-2 w-full z-10">
                 <div className="roles-titles flex justify-center items-center flex-wrap gap-2">
                     {roles.map((role, idx) => (
                         <button
                             type="button"
                             key={idx}
-                            className={`${selectedRole === role.job_role_id && 'selected'} text-xs md:text-base px-2 py-1 rounded-full shadow transition`}
+                            className={`${selectedRole === role.job_role_id && 'selected'} text-base xs:text-lg leading-relaxed text-white/90 px-2 py-1 rounded-full shadow transition`}
                             onClick={() => setSelectedRole(role.job_role_id)}
                         >
                             <span>{role.job_role}</span>

@@ -14,7 +14,6 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href={faviconUrl} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{t.common.tabtitle}</title>
-		{pagekey && pagekey === 'contact' && <script src="https://www.google.com/recaptcha/api.js" async defer></script>}
 	</head>
 	<body class="overflow-hidden">
 		<canvas id="starfield"/>
@@ -59,12 +58,34 @@ import '../styles/global.css';
 				});
 				
 				const layers = [
-					{ count: 500, speed: 0.1, colorRange: [180, 240], sizeFactor: 1.5 },
-					{ count: 250, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
-					{ count: 100, speed: 0.5, colorRange: [140, 200], sizeFactor: 4 },
-					{ count: 2, speed: 2.0, colorRange: [120, 180], sizeFactor: 100 }
+					{ count: 500, speed: 0.05, colorRange: [180, 240], sizeFactor: 1.2 },
+					{ count: 250, speed: 0.1, colorRange: [170, 230], sizeFactor: 1.5 },
+					{ count: 150, speed: 0.2, colorRange: [160, 220], sizeFactor: 2 },
+					{ count: 120, speed: 0.4, colorRange: [150, 210], sizeFactor: 3 },
+					{ count: 80, speed: 0.7, colorRange: [140, 200], sizeFactor: 3.5 },
+					{ count: 40, speed: 1.2, colorRange: [130, 190], sizeFactor: 4 },
+					{ count: 15, speed: 2.0, colorRange: [120, 180], sizeFactor: 6 },
+					{ count: 5, speed: 3.5, colorRange: [110, 170], sizeFactor: 8 },
+					{ count: 2, speed: 6.0, colorRange: [100, 160], sizeFactor: 10 },
 				];
 				
+				// const layers = [
+				// 	// Estrellas más lejanas: Rojas
+				// 	{ count: 500, speed: 0.05, colorRange: [0, 20], sizeFactor: 1.2 }, 
+				// 	{ count: 250, speed: 0.1, colorRange: [10, 40], sizeFactor: 1.5 },
+				// 	// Estrellas intermedias: Blancas y amarillentas (predominantes)
+				// 	{ count: 150, speed: 0.2, colorRange: [30, 80], sizeFactor: 2 },
+				// 	{ count: 120, speed: 0.4, colorRange: [60, 100], sizeFactor: 3 },
+				// 	// Estrellas más cercanas: Azules y violetas (las más comunes)
+				// 	{ count: 80, speed: 0.7, colorRange: [200, 240], sizeFactor: 5 },
+				// 	{ count: 40, speed: 1.2, colorRange: [210, 250], sizeFactor: 8 },
+				// 	{ count: 15, speed: 2.0, colorRange: [220, 260], sizeFactor: 12 },
+				// 	// Estrellas gigantes, muy brillantes y cercanas (Azules intensas)
+				// 	{ count: 5, speed: 3.5, colorRange: [230, 270], sizeFactor: 18 },
+				// 	// Estrella única y rojiza al frente para un contraste dramático
+				// 	{ count: 2, speed: 6.0, colorRange: [350, 10], sizeFactor: 20 },
+				// ];
+
 				interface Star {
 					x: number;
 					y: number;
@@ -89,7 +110,7 @@ import '../styles/global.css';
 					}
 				}
 				
-				const fov = 150;
+				const fov = 200;
 				
 				function draw() {
 					ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
