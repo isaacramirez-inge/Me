@@ -70,16 +70,13 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   }, []);
 
   useEffect(() => {
-    const mainchatDiv = mainchat.current;
-    if (mainchatDiv) {
-      const mc = new Hammer.Manager(mainchatDiv);
-      mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 50 }));
-      mc.on('panleft', () => {
+    if (mainchat.current) {
+      const hammer = new Hammer(mainchat?.current);
+      hammer.on('swipeleft', () => {
         onCloseChat();
       });
-      return () => {
-        mc.destroy();
-      };
+      
+      return () => hammer.destroy();
     }
   }, [onCloseChat]);
 

@@ -59,10 +59,10 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
               />
             </div>
             <div className="project-info overflow-hidden">
-              <h2 className="text-xl xs:text-lg leading-snug text-white font-bold break-words line-clamp-2">
+              <h2 className="text-lg leading-snug text-white font-bold break-words line-clamp-2">
                 {project.project_name}
               </h2>
-              <span className="text-white/70 text-base truncate block">
+              <span className="text-white/70 text-base ">
                 {project.company}
               </span>
             </div>

@@ -50,7 +50,7 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
             </div>
             <div className="h-auto overflow-auto scrollbar-white">
                 {currentRole && (
-                    <ul className="mx-auto text-sm md:text-base leading-relaxed text-white/90 font-light whitespace-pre-line list-disc pl-4 space-y-1 mt-2">
+                    <ul className="mx-auto text-base leading-relaxed text-white/90 font-light whitespace-pre-line list-disc pl-4 space-y-1 mt-2">
                         {currentRole.responsabilities.map((r, ridx) => <li key={ridx}>{r.description}</li>)}
                     </ul>
                 )}
@@ -74,7 +74,7 @@ interface ResumeTabProps {
 const ResumeTab = memo(({ resume }: ResumeTabProps) => {
     return (
         <div className="tab-resume w-full h-full overflow-y-auto px-2 md:px-6 py-4 flex-wrap scrollbar-white flex justify-center items-center">
-            <p className="max-w-3xl mx-auto text-sm xs:text-xl md:text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
+            <p className="max-w-3xl mx-auto text-base xs:text-xl text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
                 {resume}
             </p>
         </div>
@@ -137,11 +137,11 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                     className={`tab-button rounded-full z-10 ${activeTab === tab.tabname ? 'selected' : ''}`}
                     onClick={() => {
                         if (tabs.length > 1) {
-                        setActiveTab(tab.tabname);
+                            setActiveTab(tab.tabname);
                         }
                     }}
                 >
-                    <span className="text-sm xs:text-l">{tab.tabtext}</span>
+                    <span className="text-base">{tab.tabtext}</span>
                 </button>
             ))}
         </div>
@@ -154,10 +154,8 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
             {isMobile ? (
                 <>
                     <div className="flex-shrink-0 h-[15%] w-full">{CompanyInfo}</div>
-                    
                     <div className="flex-shrink-0">{TabButtons}</div>
                     <div className="flex-grow h-[30%] w-full relative">
-                        {/* Renderizar todas las pestañas y usar CSS para mostrarlas/ocultarlas */}
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'general' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                             {group.job_roles && <GeneralTab roles={group.job_roles} />}
                         </div>
