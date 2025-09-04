@@ -63,7 +63,8 @@ export type Translation = {
       error_response: string,
       hit_limit_1: string,
       hit_limit_2: string,
-      captcha_message: string
+      captcha_message: string,
+      mistakes: string
   },
   policy:{
     title: string,

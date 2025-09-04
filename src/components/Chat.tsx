@@ -459,22 +459,25 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
           </div>
 
           <div className="flex items-center gap-2 xs:pb-2 h-[50px]">
-            <input
-              type="text"
-              placeholder={t.chat.askme_placeholder}
-              className="flex-1 h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent border border-white"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}
-            />
-            <button
-              onClick={() => handleSend(input)}
-              className="text-white hover:scale-110 transition border-0 animate-pulse"
-              title="Enviar"
-            >
-              <BiSend className="text-white text-xl" />
-            </button>
+            <div className='flex items-center justify-center w-full h-full rounded-full w-full border'>
+              <input
+                type="text"
+                placeholder={t.chat.askme_placeholder}
+                className="flex-1 h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}
+              />
+              <button
+                onClick={() => handleSend(input)}
+                className="text-white hover:scale-110 transition border-0 animate-pulse"
+                title="Enviar"
+              >
+                <BiSend className="text-white text-xl" />
+              </button>
+            </div>
           </div>
+          <div className="flex pt-[3px] items-center text-white/80 justify-center text-xs">{t.chat.mistakes}</div>
         </div>
       </div>
     </>

@@ -1,29 +1,32 @@
 {
     "_info":{
-        "name":"English",
-        "code":"en-us"
+        "name": "English",
+        "code": "en-us"
     },
     "common":{
         "name": "Isaac Ramírez",
-        "tabtitle": "Isa Wild Developer"
+        "tabtitle": "Isaac | AI & Fullstack Engineer"
     },
     "navbar":{
-        "this_is_me":"This is me"
+        "this_is_me": "Mi linea del tiempo"
     },
     "home":{
+        "title":"Mi linea del tiempo",
         "welcome":{
-            "title":"Isaac Sarceño",
+            "title": "Isaac Sarceño",
             "subtitle": "Developer / ",
             "subttitle_lines": [
-                "Just living",
-                "Just Growing",
-                "Just Learning to living",
-                "Embracing technology"
+                "Desarrollador IA & Fullstack",
+                "Potenciado por inteligencia artificial",
+                "Creando soluciones empresariales",
+                "Aprendiendo a vivir",
+                "Abrazando la tecnología"
             ],
             "descriptions":[
-                "I am a person highly committed to each project in which I participate and passionate about creating high-impact technological solutions. I firmly believe that technology is a tool that is learned, but what is truly important is to thoroughly understand the problem and draw the most effective and efficient path towards its solution.",
-                "I have more than five years of experience developing creative fullstack solutions for complex challenges, using a broad technological stack and easily adapting to different environments. I have worked with clients from various sectors such as banking, health, telecommunications and government, each with unique objectives, restrictions and technological ecosystems. This diversity has given me a comprehensive vision and allows me to adapt quickly to new challenges.",
-                "My approach is results-oriented, with a combination of strategic thinking, technical skills and a strong analytical capacity, which makes me a valuable ally for any team or project."
+                "Apasionado por crear soluciones de alto impacto con agentes potenciados con inteligencia artificial e integraciones con datos mas allá de las APIs, creo firmemente que la tecnología es la herramienta, pero entender el problema a fondo es la clave. Mi enfoque combina pensamiento estratégico y habilidades técnicas para trazar el camino más eficiente hacia el resultado.",
+                "Llevo la IA más allá de las APIs, especializándome en la arquitectura y desarrollo de sistemas con frameworks multi agenticos y protocolos MCP/A2A. Mi enfoque es construir y desplegar soluciones de IA que resuelven desafíos de negocio complejos, transformando la creatividad y el código en optimización empresarial.",
+                "Con más de cinco años de experiencia, he desarrollado soluciones fullstack para desafíos complejos en sectores como banca, salud, telecomunicaciones y gobierno. Esta diversidad me permite adaptarme con agilidad a cualquier ecosistema tecnológico y entregar resultados consistentes.",
+                "Mi compromiso, honestidad y responsabilidad son los pilares de mi trabajo, convirtiéndome en un aliado valioso para cualquier equipo o proyecto."
             ]
         },
         "tabnames":{
@@ -31,10 +34,6 @@
             "projects":"Proyectos",
             "resume":"Resumen",
             "charts": "Diagramas"
-        },
-        "timeline": {
-            "title": "Timeline",
-            "descriptions": ""
         }
     },
     "skills": {
@@ -49,19 +48,22 @@
         "name_field": "Nombre",
         "email_field": "Correo electrónico",
         "message_field": "Mensaje",
+        "empty_captcha": "Por favor, completa el ReCAPTCHA antes de enviar el formulario.",
+        
+        "confirmation_subject": "Confirmación de envío de mensaje",
+        "confirmation_greeting": "Hola",
+        "confirmation_bot_intro": "soy Isa bot",
+        "confirmation_message_received": "Gracias por tu mensaje. Aquí está lo que nos enviaste:",
+        "confirmation_delivered": "He entregado tu mensaje correctamente a Isaac. Él se comunicará contigo a la brevedad posible.",
+        "confirmation_thanks": "¡Gracias por tu interés y por contactarlo!",
+        "confirmation_footer": "Este es un mensaje automático enviado por IsaBot. No respondas directamente a este correo.",
+
         "message_placeholder": "Escribe tu mensaje aquí...",
         "send_button": "Enviar",
         "success_title": "Exito!",
-        "success_message":"Se ha enviado tu mensaje correctamente, Isaac responderá a la brevedad posible.",
+        "success_message":"Gracias por tu mensaje, revisa tu bandeja de entrada, te enviamos un correo con la confirmacion de tu mensaje, si no lo recibes revisa la direccion ingresada :D",
         "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
-        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde",
-        "confirmation_subject": "Confirmación de envío de mensaje",
-        "confirmation_greeting": "Hola",
-        "confirmation_bot_intro": "Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
-        "confirmation_message_received": "Gracias por tu mensaje. Isaac responderá a la brevedad posible.",
-        "confirmation_delivered": "Tu mensaje ha sido enviado correctamente.",
-        "confirmation_thanks": "Gracias por tu mensaje.",
-        "confirmation_footer": "Atentamente, Isaac"
+        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde"
     },
     "chat":{
         "bot_name": "ISA BOT",
@@ -71,22 +73,23 @@
         "error_chatting":"Ups! ocurrio un error",
         "error_response":"Ocurrio un error al obtener la respuesta, intentar nuevamente mas tarde",
         "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
-        "hit_limit_2": "Parece que has alcanzado el limite de chats",
-        "captcha_message":"Por favor marca la casilla para continuar"
+        "hit_limit_2": "Parece que has alcanzado el limite de chats, puedes intentar nuevamente mañana",
+        "captcha_message":"Por favor marca la casilla para continuar",
+        "mistakes":"ISA BOT puede cometer errores"
     },
     "cookies": {
-        "message": "We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.",
-        "accept": "Accept",
-        "policy": "Privacy Policy"
+        "message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.",
+        "accept": "Aceptar",
+        "policy": "Política de Privacidad"
     },
     "policy": {
-        "title": "Privacy Policy",
-        "last_updated": "Last updated: August 22, 2025",
-        "introduction_title": "Introduction",
-        "introduction_text": "This Privacy Policy describes how we collect, use, and disclose your information.",
+        "title": "Política de Privacidad",
+        "last_updated": "Última actualización: agosto de 2025",
+        "introduction_title": "Introducción",
+        "introduction_text": "Esta Política de Privacidad describe cómo recopilamos, usamos y divulgamos su información.",
         "cookies_title": "Cookies",
-        "cookies_text": "We use cookies to operate and improve our services. A cookie is a small piece of data stored on your device. We use a 'lang' cookie to store your language preference, and a 'browser_id' cookie to uniquely identify your browser for analytics and security purposes.",
-        "data_title": "Data Collection and Use",
-        "data_text": "When you use our contact form or chat, we collect your name, email, and the content of your message, along with your 'browser_id' and 'lang' cookies. This data is used to respond to your inquiries and improve our services."
+        "cookies_text": "Utilizamos cookies para operar y mejorar nuestros servicios. Una cookie es un pequeño dato almacenado en su dispositivo. Usamos una cookie 'lang' para almacenar su preferencia de idioma y una cookie 'browser_id' para identificar de forma única su navegador con fines de análisis y seguridad.",
+        "data_title": "Recopilación y Uso de Datos",
+        "data_text": "Cuando utiliza nuestro formulario de contacto o chat, recopilamos su nombre, correo electrónico y el contenido de su mensaje, junto con sus cookies 'browser_id' y 'lang'. Estos datos se utilizan para responder a sus consultas y mejorar nuestros servicios."
     }
 }
