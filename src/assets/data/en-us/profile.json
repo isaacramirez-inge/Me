@@ -1,13 +1,12 @@
 {
   "locale": "en-us",
   "name": "Isaac Ramirez",
-  "tagline": "Innovating technological solutions for a connected future",
+  "tagline": "AI & Fullstack Engineer",
   "content": [
     {
       "title": "Personal Information",
       "details": [
         {"show": true, "type": "keyvalue", "key": "Email", "value": "hello@isawilddev.com"},
-        {"show": true, "type": "keyvalue", "key": "Phone", "value": "+50373120512"},
         {"show": true, "type": "keyvalue", "key": "Location", "value": "El Salvador"},
         {"show": true, "type": "keyvalue", "key": "Degree", "value": "Systems and Computer Engineering"},
         {"show": true, "type": "keyvalue", "key": "Age", "value": "25"},
@@ -17,7 +16,7 @@
     {
       "title": "Professional Summary",
       "details": [
-        {"show": true, "type": "text", "value": "Fullstack Developer with expertise in migrating monolithic applications to microservices, cloud implementation (Azure), and developing customer experience solutions. Experienced in leading technical teams and applying AI/ML, IoT, and Big Data in industrial contexts"}
+        {"show": true, "type": "text", "value": "AI Engineer and Full-Stack Developer with over 5 years of experience developing enterprise solutions. For more than a year, I've been focused on taking AI beyond simple APIs to tackle complex business challenges. My expertise lies in modernizing monolithic applications into microservices architectures and deploying solutions in the cloud (Azure). I specialize in building agentic systems with LLM frameworks like LangChain and Vercel AI SDK, and optimizing models using RAG (Retrieval-Augmented Generation) and fine-tuning techniques. My approach is to combine advanced programming skills with strategic thinking to design, build, and deploy innovative solutions that optimize business processes."}
       ]
     },
     {

@@ -1,12 +1,11 @@
 {
   "locale":"es-es",
   "name":"Isaac Ramirez",
-  "tagline":"Innovando soluciones tecnológicas para un futuro conectado",
+  "tagline":"AI & Fullstack Engineer",
   "content": [
   {"title": "Informacion personal",
     "details": [
       {"show": true, "type": "keyvalue", "key": "Correo", "value": "hello@isawilddev.com"},
-      {"show": true, "type": "keyvalue", "key": "Teléfono", "value": "+50373120512"},
       {"show": true, "type": "keyvalue", "key": "Ubicación", "value": "El Salvador"},
       {"show": true, "type": "keyvalue", "key": "Título", "value": "Ingeniería en Sistemas y Computación"},
       {"show": true, "type": "keyvalue", "key": "Edad", "value": "25"},
@@ -15,7 +14,7 @@
   },
   {"title": "Resumen profesional",
     "details": [
-      {"show": true, "type": "text", "value": "Desarrollador Fullstack con experiencia en la migración de aplicaciones monolíticas a microservicios, implementación en la nube (Azure) y desarrollo de soluciones de experiencia de cliente. Con experiencia en el liderazgo de equipos técnicos y la aplicación de IA/ML, IoT y Big Data en contextos industriales."}
+      {"show": true, "type": "text", "value": "Ingeniero AI y Desarrollador Fullstack con más de 5 años de experiencia desarrollando soluciones empresariales y mas de un año llevando la IA más allá de las APIs para resolver desafíos de negocio complejos. Especializado en la modernización de aplicaciones monolíticas a arquitecturas de microservicios y en el despliegue de soluciones en la nube (Azure). Experto en la construcción de sistemas agénticos con frameworks de LLMs (LangChain, Vercel AI SDK) y en la optimización de modelos con técnicas RAG y Fine-tuning. Mi enfoque es combinar la programación avanzada con un pensamiento estratégico para diseñar, construir y desplegar soluciones innovadoras que optimizan los procesos empresariales."}
     ]
   },
   {"title": "Idiomas",
