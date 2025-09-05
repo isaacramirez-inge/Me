@@ -5,17 +5,17 @@
   "content": [
   {"title": "Informacion personal",
     "details": [
-      {"show": true, "type": "keyvalue", "key": "Email", "value": "hello@isawilddev.com"},
-      {"show": true, "type": "keyvalue", "key": "Phone", "value": "+50373120512"},
-      {"show": true, "type": "keyvalue", "key": "Location", "value": "El Salvador"},
-      {"show": true, "type": "keyvalue", "key": "Degree", "value": "Ingeniería en Sistemas y Computación"},
-      {"show": true, "type": "keyvalue", "key": "Age", "value": "25"},
-      {"show": false, "type": "keyvalue", "key": "Date of Birth", "value": "2000-03-24"}
+      {"show": true, "type": "keyvalue", "key": "Correo", "value": "hello@isawilddev.com"},
+      {"show": true, "type": "keyvalue", "key": "Teléfono", "value": "+50373120512"},
+      {"show": true, "type": "keyvalue", "key": "Ubicación", "value": "El Salvador"},
+      {"show": true, "type": "keyvalue", "key": "Título", "value": "Ingeniería en Sistemas y Computación"},
+      {"show": true, "type": "keyvalue", "key": "Edad", "value": "25"},
+      {"show": false, "type": "keyvalue", "key": "Fecha de Nacimiento", "value": "2000-03-24"}
     ]
   },
   {"title": "Resumen profesional",
     "details": [
-      {"show": true, "type": "text", "value": "Fullstack Developer with expertise in migrating monolithic applications to microservices, cloud implementation (Azure), and developing customer experience solutions. Experienced in leading technical teams and applying AI/ML, IoT, and Big Data in industrial contexts"}
+      {"show": true, "type": "text", "value": "Desarrollador Fullstack con experiencia en la migración de aplicaciones monolíticas a microservicios, implementación en la nube (Azure) y desarrollo de soluciones de experiencia de cliente. Con experiencia en el liderazgo de equipos técnicos y la aplicación de IA/ML, IoT y Big Data en contextos industriales."}
     ]
   },
   {"title": "Idiomas",
@@ -35,13 +35,13 @@
     "details": [
       {"show": true, "type": "text", "value": "Frontend"},
       {"show": true, "type": "text", "value": "Backend"},
-      {"show": true, "type": "text", "value": "Database"},
-      {"show": true, "type": "text", "value": "AI"}
+      {"show": true, "type": "text", "value": "Base de datos"},
+      {"show": true, "type": "text", "value": "IA"}
     ]
   },
   {"title": "Intereses",
     "details": [
-      {"show": true, "type": "text", "value": "Entusiasta de IA"},
+      {"show": true, "type": "text", "value": "Entusiasta de la IA"},
       {"show": true, "type": "text", "value": "LLM RAG"},
       {"show": true, "type": "text", "value": "IoT"}
     ]

@@ -1,84 +1,88 @@
 {
-    "_info":{
-        "name": "Español(El Salvador)",
+    "_info": {
+        "name": "Español (Salvadoreño)",
         "code": "es-sv"
     },
-    "common":{
+    "common": {
         "name": "Isaac Ramírez",
         "tabtitle": "Isaac | AI & Fullstack Engineer"
     },
-    "navbar":{
-        "this_is_me": "Mi linea del tiempo"
+    "navbar": {
+        "this_is_me": "Mi recorrido"
     },
-    "home":{
-        "title":"Mi linea del tiempo",
-        "welcome":{
+    "nav": {
+        "home": "Inicio",
+        "skills": "Habilidades",
+        "profile": "Perfil",
+        "contact": "Contacto"
+    },
+    "home": {
+        "title": "Mi recorrido",
+        "welcome": {
             "title": "Isaac Sarceño",
             "subtitle": "Developer / ",
             "subttitle_lines": [
                 "Desarrollador IA & Fullstack",
                 "Potenciado por inteligencia artificial",
-                "Creando soluciones empresariales",
+                "Creando soluciones chivas",
                 "Aprendiendo a vivir",
-                "Abrazando la tecnología"
+                "Dándole a la tecnología"
             ],
-            "descriptions":[
+            "descriptions": [
                 "Apasionado por crear soluciones de alto impacto con agentes potenciados con inteligencia artificial e integraciones con datos mas allá de las APIs, creo firmemente que la tecnología es la herramienta, pero entender el problema a fondo es la clave. Mi enfoque combina pensamiento estratégico y habilidades técnicas para trazar el camino más eficiente hacia el resultado.",
                 "Llevo la IA más allá de las APIs, especializándome en la arquitectura y desarrollo de sistemas con frameworks multi agenticos y protocolos MCP/A2A. Mi enfoque es construir y desplegar soluciones de IA que resuelven desafíos de negocio complejos, transformando la creatividad y el código en optimización empresarial.",
                 "Con más de cinco años de experiencia, he desarrollado soluciones fullstack para desafíos complejos en sectores como banca, salud, telecomunicaciones y gobierno. Esta diversidad me permite adaptarme con agilidad a cualquier ecosistema tecnológico y entregar resultados consistentes.",
                 "Mi compromiso, honestidad y responsabilidad son los pilares de mi trabajo, convirtiéndome en un aliado valioso para cualquier equipo o proyecto."
             ]
         },
-        "tabnames":{
-            "roles":"Roles",
-            "projects":"Proyectos",
-            "resume":"Resumen",
-            "charts": "Diagramas"
+        "tabnames": {
+            "roles": "Roles",
+            "projects": "Proyectos",
+            "resume": "Resumen",
+            "charts": "Gráficos"
         }
     },
     "skills": {
         "title": "Mis habilidades"
     },
-    "profile":{
-        "title":"Sobre mí",
-        "tagline":"Abraza la tecnología"
+    "profile": {
+        "title": "Sobre mí",
+        "tagline": "Abraza la tecnología"
     },
-    "contact":{
-        "title":"Contáctame",
-        "name_field": "Nombre",
-        "email_field": "Correo electrónico",
-        "message_field": "Mensaje",
-        "empty_captcha": "Por favor, completa el ReCAPTCHA antes de enviar el formulario.",
-        
-        "confirmation_subject": "Confirmación de envío de mensaje",
-        "confirmation_greeting": "Hola",
-        "confirmation_bot_intro": "soy Isa bot",
-        "confirmation_message_received": "Gracias por tu mensaje. Aquí está lo que nos enviaste:",
-        "confirmation_delivered": "He entregado tu mensaje correctamente a Isaac. Él se comunicará contigo a la brevedad posible.",
-        "confirmation_thanks": "¡Gracias por tu interés y por contactarlo!",
-        "confirmation_footer": "Este es un mensaje automático enviado por IsaBot. No respondas directamente a este correo.",
-
-        "message_placeholder": "Escribe tu mensaje aquí...",
-        "send_button": "Enviar",
-        "success_title": "Exito!",
-        "success_message":"Gracias por tu mensaje, revisa tu bandeja de entrada, te enviamos un correo con la confirmacion de tu mensaje, si no lo recibes revisa la direccion ingresada :D",
-        "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
-        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde"
+    "contact": {
+        "title": "Escribime",
+        "name_field": "Tu nombre",
+        "email_field": "Tu correo",
+        "message_field": "Tu mensaje",
+        "empty_captcha": "Vaya, tenés que completar el ReCAPTCHA antes de mandar el mensaje.",
+        "confirmation_subject": "Confirmación de tu mensaje",
+        "confirmation_greeting": "Hey",
+        "confirmation_bot_intro": "soy Isa bot, el cipote de los mandados",
+        "confirmation_message_received": "¡Cabal! Recibí tu mensaje. Aquí está lo que mandaste:",
+        "confirmation_delivered": "Ya le di tu mensaje a Isaac. Él se pondrá en contacto con vos lo más pronto posible.",
+        "confirmation_thanks": "¡Gracias por tu interés y por escribirle!",
+        "confirmation_footer": "Este es un mensaje automático del IsaBot. No le respondás a este correo.",
+        "message_placeholder": "Escribí tu mensaje aquí...",
+        "send_button": "Mandar",
+        "success_title": "¡Chivo!",
+        "success_message": "Gracias por tu mensaje, revisá tu correo, te mandamos un email con la confirmación. Si no lo hallás, revisá bien la dirección que pusiste.",
+        "error_captcha": "¡Chis! Hubo un error, intentá de nuevo.",
+        "error_message": "Hubo un clavo al mandar tu mensaje, intentá más tarde."
     },
-    "chat":{
+    "chat": {
         "bot_name": "ISA BOT",
-        "i_am_bot_message":"Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
-        "its_a_pleasure":"Es un placer ayudarte!",
-        "askme_placeholder":"Preguntame algo sobre Isaac",
-        "error_chatting":"Ups! ocurrio un error",
-        "error_response":"Ocurrio un error al obtener la respuesta, intentar nuevamente mas tarde",
-        "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
-        "hit_limit_2": "Parece que has alcanzado el limite de chats, puedes intentar nuevamente mañana",
-        "captcha_message":"Por favor marca la casilla para continuar",
-        "mistakes":"ISA BOT puede cometer errores"
+        "i_am_bot_message": "Soy el asistente virtual de Isaac, ¿en qué te puedo ayudar?",
+        "its_a_pleasure": "¡Un gusto ayudarte!",
+        "askme_placeholder": "Preguntame algo sobre Isaac",
+        "error_chatting": "¡Chis! Hubo un error.",
+        "error_response": "Hubo un error al recibir la respuesta, intentá de nuevo más tarde.",
+        "hit_limit_1": "Parece que ya te acabaste las preguntas.",
+        "hit_limit_2": "Vaya, parece que ya no podés chatear más por hoy. Probá mañana.",
+        "captcha_message": "Porfa, marcá la casilla para seguir.",
+        "mistakes": "ISA BOT a veces se equivoca."
     },
     "cookies": {
-        "message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.",
+        "message": "Usamos cookies para que la página te funcione más chivo. Si seguís navegando, aceptás que las usemos.",
         "accept": "Aceptar",
         "policy": "Política de Privacidad"
     },

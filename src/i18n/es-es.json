@@ -10,6 +10,12 @@
     "navbar":{
         "this_is_me": "Mi linea del tiempo"
     },
+    "nav": {
+        "home": "Inicio",
+        "skills": "Habilidades",
+        "profile": "Perfil",
+        "contact": "Contacto"
+    },
     "home":{
         "title":"Mi linea del tiempo",
         "welcome":{

@@ -1,66 +1,72 @@
 {
-  "locale":"es-es",
-  "name":"Isaac Ramirez",
-  "tagline":"Innovando soluciones tecnológicas para un futuro conectado",
+  "locale": "en-us",
+  "name": "Isaac Ramirez",
+  "tagline": "Innovating technological solutions for a connected future",
   "content": [
-  {"title": "Informacion personal",
-    "details": [
-      {"show": true, "type": "keyvalue", "key": "Email", "value": "hello@isawilddev.com"},
-      {"show": true, "type": "keyvalue", "key": "Phone", "value": "+50373120512"},
-      {"show": true, "type": "keyvalue", "key": "Location", "value": "El Salvador"},
-      {"show": true, "type": "keyvalue", "key": "Degree", "value": "Ingeniería en Sistemas y Computación"},
-      {"show": true, "type": "keyvalue", "key": "Age", "value": "25"},
-      {"show": false, "type": "keyvalue", "key": "Date of Birth", "value": "2000-03-24"}
-    ]
-  },
-  {"title": "Resumen profesional",
-    "details": [
-      {"show": true, "type": "text", "value": "Fullstack Developer with expertise in migrating monolithic applications to microservices, cloud implementation (Azure), and developing customer experience solutions. Experienced in leading technical teams and applying AI/ML, IoT, and Big Data in industrial contexts"}
-    ]
-  },
-  {"title": "Idiomas",
-    "details": [
-      {"show": true, "type": "keyvalue", "key": "Español", "value": "Nativo"},
-      {"show": true, "type": "keyvalue", "key": "Inglés", "value": "Intermedio B1-B2"}
-    ]
-  },
-  {"title": "Redes sociales",
-    "details": [
-      {"show": true, "type": "link", "platform": "linkedin", "user": "isaacramirez-net"},
-      {"show": true, "type": "link", "platform": "github", "user": "isawilddev"}
-
-    ]
-  },
-  {"title": "Áreas fuertes",
-    "details": [
-      {"show": true, "type": "text", "value": "Frontend"},
-      {"show": true, "type": "text", "value": "Backend"},
-      {"show": true, "type": "text", "value": "Database"},
-      {"show": true, "type": "text", "value": "AI"}
-    ]
-  },
-  {"title": "Intereses",
-    "details": [
-      {"show": true, "type": "text", "value": "Entusiasta de IA"},
-      {"show": true, "type": "text", "value": "LLM RAG"},
-      {"show": true, "type": "text", "value": "IoT"}
-    ]
-  }
-],
-"extra_insights": [
     {
-      "show":false,
-      "title": "Enfoque en la Resolución de Problemas",
-      "description": "Mi enfoque para la resolución de problemas se caracteriza por la adaptabilidad y una mentalidad de 'nunca dejar de aprender'. No temo salir de mi zona de confort para abordar los desafíos, como lo demostré al pasar de la programación a la instalación física de infraestructura de red y cámaras en mi primer empleo. En mi segundo trabajo, contratado para implementar, rápidamente dominé el desarrollo de quioscos de autogestión, perfeccionando prácticas existentes y logrando la adaptabilidad en diversas pantallas, lo que me permitió liderar proyectos con grandes marcas. Esta capacidad de aprender sobre la marcha, como con la arquitectura SOA, es fundamental en mi metodología, siempre buscando soluciones efectivas y tangibles."
+      "title": "Personal Information",
+      "details": [
+        {"show": true, "type": "keyvalue", "key": "Email", "value": "hello@isawilddev.com"},
+        {"show": true, "type": "keyvalue", "key": "Phone", "value": "+50373120512"},
+        {"show": true, "type": "keyvalue", "key": "Location", "value": "El Salvador"},
+        {"show": true, "type": "keyvalue", "key": "Degree", "value": "Systems and Computer Engineering"},
+        {"show": true, "type": "keyvalue", "key": "Age", "value": "25"},
+        {"show": false, "type": "keyvalue", "key": "Date of Birth", "value": "2000-03-24"}
+      ]
     },
     {
-      "show":false,
-      "title": "Impacto de Mi Trabajo",
-      "description": "Busco que mi trabajo tenga un impacto positivo y medible. En mis roles, he contribuido directamente a: aumentar la productividad del equipo mediante la optimización de procesos; acelerar la entrega de software a través de mejoras en los ciclos de desarrollo; impulsar el crecimiento de capacidades de desarrollo dentro de la empresa; mejorar la percepción del cliente a través de soluciones robustas y eficientes, lo que llevó a clientes clave a solicitar mi asistencia específicamente (ACF, Datum); y simplificar la comunicación interna al convertirme en el punto de contacto técnico preferido por los empleados para soporte en mis roles."
+      "title": "Professional Summary",
+      "details": [
+        {"show": true, "type": "text", "value": "Fullstack Developer with expertise in migrating monolithic applications to microservices, cloud implementation (Azure), and developing customer experience solutions. Experienced in leading technical teams and applying AI/ML, IoT, and Big Data in industrial contexts"}
+      ]
     },
     {
-      "show":false,
-      "title": "Valores y Estilo de Trabajo",
-      "description": "Mi ética de trabajo está profundamente arraigada en mis valores de honestidad, bondad, responsabilidad y compromiso. Abordo cada proyecto con gran cuidado, especialmente cuando manejo datos sensibles de clientes. Mi experiencia previa en construcción me ha dotado de una perspectiva única para la resolución de problemas y una creatividad práctica en el desarrollo. Mi fe en Dios me inspira a utilizar mis habilidades para ayudar a los demás a través de la tecnología, buscando siempre construir soluciones que no solo funcionen, sino que también sirvan a un propósito mayor."
-    }]
-  }
+      "title": "Languages",
+      "details": [
+        {"show": true, "type": "keyvalue", "key": "Spanish", "value": "Native"},
+        {"show": true, "type": "keyvalue", "key": "English", "value": "Intermediate B1-B2"}
+      ]
+    },
+    {
+      "title": "Social Networks",
+      "details": [
+        {"show": true, "type": "link", "platform": "linkedin", "user": "isaacramirez-net"},
+        {"show": true, "type": "link", "platform": "github", "user": "isawilddev"}
+      ]
+    },
+    {
+      "title": "Strong Areas",
+      "details": [
+        {"show": true, "type": "text", "value": "Frontend"},
+        {"show": true, "type": "text", "value": "Backend"},
+        {"show": true, "type": "text", "value": "Database"},
+        {"show": true, "type": "text", "value": "AI"}
+      ]
+    },
+    {
+      "title": "Interests",
+      "details": [
+        {"show": true, "type": "text", "value": "AI Enthusiast"},
+        {"show": true, "type": "text", "value": "LLM RAG"},
+        {"show": true, "type": "text", "value": "IoT"}
+      ]
+    }
+  ],
+  "extra_insights": [
+    {
+      "show": false,
+      "title": "Problem-Solving Approach",
+      "description": "My approach to problem-solving is characterized by adaptability and a 'never stop learning' mindset. I am not afraid to step out of my comfort zone to tackle challenges, as demonstrated when I moved from programming to the physical installation of network infrastructure and cameras in my first job. In my second job, hired for implementation, I quickly mastered the development of self-service kiosks, perfecting existing practices and achieving adaptability across various screens, which allowed me to lead projects with major brands. This ability to learn on the fly, as with SOA architecture, is fundamental to my methodology, always seeking effective and tangible solutions."
+    },
+    {
+      "show": false,
+      "title": "Impact of My Work",
+      "description": "I strive for my work to have a positive and measurable impact. In my roles, I have directly contributed to: increasing team productivity by optimizing processes; accelerating software delivery through improvements in development cycles; driving the growth of development capabilities within the company; improving client perception through robust and efficient solutions, which led key clients to specifically request my assistance (ACF, Datum); and simplifying internal communication by becoming the preferred technical point of contact for employees for support in my roles."
+    },
+    {
+      "show": false,
+      "title": "Values and Work Style",
+      "description": "My work ethic is deeply rooted in my values of honesty, kindness, responsibility, and commitment. I approach each project with great care, especially when handling sensitive client data. My previous experience in construction has given me a unique perspective on problem-solving and practical creativity in development. My faith in God inspires me to use my skills to help others through technology, always seeking to build solutions that not only work but also serve a greater purpose."
+    }
+  ]
+}

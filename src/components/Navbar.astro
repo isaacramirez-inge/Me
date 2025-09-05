@@ -6,12 +6,12 @@ const { t, m, title } = Astro.props;
 const sup = await supportedLanguages();
 const base_path = import.meta.env.PUBLIC_BASE_PATH;
 const links = [
-  { show: true, name: 'Home', path: 'home' },
-  { show: true, name: 'Skills', path: 'skills' },
+  { show: true, name: t('nav.home'), path: 'home' },
+  { show: true, name: t('nav.skills'), path: 'skills' },
   { show: false, name: 'Top Projects', path: 'top-projects' },
-  { show: true, name: 'Profile', path: 'profile' },
+  { show: true, name: t('nav.profile'), path: 'profile' },
   { show: false, name: 'Hobbies', path: 'hobbies' },
-  { show: true, name: 'Contact', path: 'contact' },
+  { show: true, name: t('nav.contact'), path: 'contact' },
 ];
 ---
 

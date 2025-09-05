@@ -9,7 +9,7 @@
       "orden": 1,
       "job_roles": [
         {
-          "job_role": "Development Specialist",
+          "job_role": "Especialista en Desarrollo",
           "job_role_id": 4,
           "start_date": "2025-01-29",
           "end_date": null,
@@ -134,7 +134,7 @@
       "orden": 3,
       "job_roles": [
         {
-          "job_role": "Project Manager",
+          "job_role": "Gerente de Proyectos",
           "job_role_id": 3,
           "responsabilities": [
             {"description":"Levantamiento y planificación de proyectos"},
