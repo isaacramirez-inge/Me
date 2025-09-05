@@ -15,7 +15,7 @@
   },
   {"title": "Resumen profesional",
     "details": [
-      {"show": true, "type": "text", "value": "Fullstack Developer with expertise in migrating monolithic applications to microservices, cloud implementation (Azure), and developing customer experience solutions. Experienced in leading technical teams and applying AI/ML, IoT, and Big Data in industrial contexts"}
+      {"show": true, "type": "text", "value": "Desarrollador Fullstack con experiencia en la migración de aplicaciones monolíticas a microservicios, implementación en la nube (Azure) y desarrollo de soluciones de experiencia del cliente. Con experiencia en liderar equipos técnicos y aplicar IA/ML, IoT y Big Data en contextos industriales."}
     ]
   },
   {"title": "Idiomas",
@@ -35,8 +35,8 @@
     "details": [
       {"show": true, "type": "text", "value": "Frontend"},
       {"show": true, "type": "text", "value": "Backend"},
-      {"show": true, "type": "text", "value": "Database"},
-      {"show": true, "type": "text", "value": "AI"}
+      {"show": true, "type": "text", "value": "Base de datos"},
+      {"show": true, "type": "text", "value": "IA"}
     ]
   },
   {"title": "Intereses",

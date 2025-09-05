@@ -1,20 +1,26 @@
 {
-    "_info":{
+    "_info": {
         "name": "Español",
         "code": "es-es"
     },
-    "common":{
+    "common": {
         "name": "Isaac Ramírez",
-        "tabtitle": "Isaac | AI & Fullstack Engineer"
+        "tabtitle": "Isaac | Ingeniero IA & Fullstack"
     },
-    "navbar":{
-        "this_is_me": "Mi linea del tiempo"
+    "navbar": {
+        "this_is_me": "Mi línea de tiempo",
+        "home": "Inicio",
+        "skills": "Habilidades",
+        "top-projects": "Proyectos Destacados",
+        "profile": "Perfil",
+        "hobbies": "Pasatiempos",
+        "contact": "Contacto"
     },
-    "home":{
-        "title":"Mi linea del tiempo",
-        "welcome":{
+    "home": {
+        "title": "Mi línea de tiempo",
+        "welcome": {
             "title": "Isaac Sarceño",
-            "subtitle": "Developer / ",
+            "subtitle": "Desarrollador / ",
             "subttitle_lines": [
                 "Desarrollador IA & Fullstack",
                 "Potenciado por inteligencia artificial",
@@ -22,34 +28,33 @@
                 "Aprendiendo a vivir",
                 "Abrazando la tecnología"
             ],
-            "descriptions":[
-                "Apasionado por crear soluciones de alto impacto con agentes potenciados con inteligencia artificial e integraciones con datos mas allá de las APIs, creo firmemente que la tecnología es la herramienta, pero entender el problema a fondo es la clave. Mi enfoque combina pensamiento estratégico y habilidades técnicas para trazar el camino más eficiente hacia el resultado.",
-                "Llevo la IA más allá de las APIs, especializándome en la arquitectura y desarrollo de sistemas con frameworks multi agenticos y protocolos MCP/A2A. Mi enfoque es construir y desplegar soluciones de IA que resuelven desafíos de negocio complejos, transformando la creatividad y el código en optimización empresarial.",
+            "descriptions": [
+                "Apasionado por crear soluciones de alto impacto con agentes potenciados con inteligencia artificial e integraciones con datos más allá de las APIs, creo firmemente que la tecnología es la herramienta, pero entender el problema a fondo es la clave. Mi enfoque combina pensamiento estratégico y habilidades técnicas para trazar el camino más eficiente hacia el resultado.",
+                "Llevo la IA más allá de las APIs, especializándome en la arquitectura y desarrollo de sistemas con frameworks multi-agente y protocolos MCP/A2A. Mi enfoque es construir y desplegar soluciones de IA que resuelven desafíos de negocio complejos, transformando la creatividad y el código en optimización empresarial.",
                 "Con más de cinco años de experiencia, he desarrollado soluciones fullstack para desafíos complejos en sectores como banca, salud, telecomunicaciones y gobierno. Esta diversidad me permite adaptarme con agilidad a cualquier ecosistema tecnológico y entregar resultados consistentes.",
                 "Mi compromiso, honestidad y responsabilidad son los pilares de mi trabajo, convirtiéndome en un aliado valioso para cualquier equipo o proyecto."
             ]
         },
-        "tabnames":{
-            "roles":"Roles",
-            "projects":"Proyectos",
-            "resume":"Resumen",
-            "charts": "Diagramas"
+        "tabnames": {
+            "roles": "Roles",
+            "projects": "Proyectos",
+            "resume": "Resumen",
+            "charts": "Gráficos"
         }
     },
     "skills": {
         "title": "Mis habilidades"
     },
-    "profile":{
-        "title":"Sobre mí",
-        "tagline":"Abraza la tecnología"
+    "profile": {
+        "title": "Sobre mí",
+        "tagline": "Abraza la tecnología"
     },
-    "contact":{
-        "title":"Contáctame",
+    "contact": {
+        "title": "Contáctame",
         "name_field": "Nombre",
         "email_field": "Correo electrónico",
         "message_field": "Mensaje",
         "empty_captcha": "Por favor, completa el ReCAPTCHA antes de enviar el formulario.",
-        
         "confirmation_subject": "Confirmación de envío de mensaje",
         "confirmation_greeting": "Hola",
         "confirmation_bot_intro": "soy Isa bot",
@@ -57,25 +62,24 @@
         "confirmation_delivered": "He entregado tu mensaje correctamente a Isaac. Él se comunicará contigo a la brevedad posible.",
         "confirmation_thanks": "¡Gracias por tu interés y por contactarlo!",
         "confirmation_footer": "Este es un mensaje automático enviado por IsaBot. No respondas directamente a este correo.",
-
         "message_placeholder": "Escribe tu mensaje aquí...",
         "send_button": "Enviar",
-        "success_title": "Exito!",
-        "success_message":"Gracias por tu mensaje, revisa tu bandeja de entrada, te enviamos un correo con la confirmacion de tu mensaje, si no lo recibes revisa la direccion ingresada :D",
-        "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
-        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde"
+        "success_title": "¡Éxito!",
+        "success_message": "Gracias por tu mensaje, revisa tu bandeja de entrada, te enviamos un correo con la confirmación de tu mensaje, si no lo recibes revisa la dirección ingresada :D",
+        "error_captcha": "¡Ups! Ocurrió un error, inténtalo de nuevo.",
+        "error_message": "Ocurrió un error al enviar tu mensaje, inténtalo de nuevo más tarde."
     },
-    "chat":{
+    "chat": {
         "bot_name": "ISA BOT",
-        "i_am_bot_message":"Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
-        "its_a_pleasure":"Es un placer ayudarte!",
-        "askme_placeholder":"Preguntame algo sobre Isaac",
-        "error_chatting":"Ups! ocurrio un error",
-        "error_response":"Ocurrio un error al obtener la respuesta, intentar nuevamente mas tarde",
-        "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
-        "hit_limit_2": "Parece que has alcanzado el limite de chats, puedes intentar nuevamente mañana",
-        "captcha_message":"Por favor marca la casilla para continuar",
-        "mistakes":"ISA BOT puede cometer errores"
+        "i_am_bot_message": "Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
+        "its_a_pleasure": "¡Es un placer ayudarte!",
+        "askme_placeholder": "Pregúntame algo sobre Isaac",
+        "error_chatting": "¡Ups! Ocurrió un error.",
+        "error_response": "Ocurrió un error al obtener la respuesta, intenta de nuevo más tarde.",
+        "hit_limit_1": "Parece que has alcanzado el límite de preguntas.",
+        "hit_limit_2": "Parece que has alcanzado el límite de chats, puedes intentar de nuevo mañana.",
+        "captcha_message": "Por favor marca la casilla para continuar.",
+        "mistakes": "ISA BOT puede cometer errores."
     },
     "cookies": {
         "message": "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.",

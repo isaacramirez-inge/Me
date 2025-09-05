@@ -500,8 +500,8 @@
  "project_name": "Desarrollo de quiosco de auto gestion con multiples integraciones",
           "implementation_type": "On-premise",
           "company": "Santander México",
-          "company_logo_path": "santandermexico.png",
           "highlight": true,
+          "company_logo_path": "santandermexico.png",
           "project_description": {
             "description": "Desarrollo de un quiosco de autogestión altamente optimizado para más de 1000 sucursales en produccion, con parametrización según el tipo de sucursal (Café, Empresarial, Banca Personas). El proyecto incluyó integración con hardware de lectura de tarjetas y validación de identidad.",
             "bullet_points": [
