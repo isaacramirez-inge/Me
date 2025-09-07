@@ -146,7 +146,7 @@
  {"id":146,"name":"Qdrant","logo_path":"qdrant","extension":".svg","bg_color":"#AC1455","text_color":"#FFFFFF","border_color":"#7E0F3E","category":"Database","display_text":"Qdrant","type":"technology"},
  {"id":147,"name":"Weaviate","logo_path":"weaviate","extension":".svg","bg_color":"#12A56D","text_color":"#FFFFFF","border_color":"#0D7A50","category":"Database","display_text":"Weaviate","type":"technology"},
  {"id":148,"name":"Anyscale","logo_path":"anyscale","extension":".svg","bg_color":"#1A1A1A","text_color":"#FFFFFF","border_color":"#000000","category":"AIML","display_text":"Anyscale","type":"tool"},
- {"id":149,"name":"Replicate","logo_path":"replicate","extension":".svg","bg_color":"#000000","text_color":"#FFFFFF","border_color":"#333333","category":"AIML","display_text":"Replicate","type":"tool"},
+ {"id":149,"name":"Replicate","logo_path":"replicate","extension":".webp","bg_color":"#000000","text_color":"#FFFFFF","border_color":"#333333","category":"AIML","display_text":"Replicate","type":"tool"},
  {"id":150,"name":"LangChain","logo_path":"langchain","extension":".svg","bg_color":"#F1F1F1","text_color":"#333333","border_color":"#DCDCDC","category":"AIML","display_text":"LangChain","type":"technology"},
  {"id":151,"name":"Docker","logo_path":"docker","extension":".png","bg_color":"#2496ED","text_color":"#FFFFFF","border_color":"#1D75BB","category":"DevOps","display_text":"Docker","type":"tool"},
  {"id":152,"name":"MongoDB","logo_path":"mongodb","extension":".svg","bg_color":"#47A248","text_color":"#FFFFFF","border_color":"#337334","category":"Database","display_text":"MongoDB","type":"technology"},
