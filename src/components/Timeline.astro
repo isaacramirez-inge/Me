@@ -46,7 +46,11 @@ const get_date = (roles: JobRole[], act: string, showDay?: boolean): string => {
 }
 ---
 {
-jobs.map((job: MainCardData, idx: number) => {
+jobs.sort((a, b) => {
+  const ordenA = a.orden ? a.orden : 0;
+  const ordenB = b.orden ? b.orden : 0;
+  return ordenA - ordenB;
+}).map((job: MainCardData, idx: number) => {
     const mobile_margin = `px[10px] pt-[20%] pb-[10px]`;
     const desktop_margin = `md:p-[3rem] md:pt-[5%]`;
     return (
@@ -55,7 +59,7 @@ jobs.map((job: MainCardData, idx: number) => {
                 <TimelineMainCard client:only="react"
                     group={job} 
                     dates={`${get_date(job.job_roles, "min")} - ${get_date(job.job_roles, "max")}`}
-                    techs={flat_techs(job)}
+                    techs={flat_techs(job).concat(job?.skills ? job.skills : [])}
                     techAll={techs}
                     index={idx}
                     base_path={base_path}

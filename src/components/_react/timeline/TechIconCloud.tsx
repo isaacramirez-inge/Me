@@ -21,6 +21,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
     new Map(
       techList
         .filter(t => typeof t.logo_path === 'string' && t.logo_path)
+        .sort(() => Math.random() - 0.5) // aleatory sorting
         .map(t => [t.name, {
           logo_path: `/${base_path}/img/icon/${t.logo_path}${t.extension}`,
           name: t.name
@@ -173,7 +174,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
           src={tech.logo_path}
           alt={tech.name}
           className="tech-icon-cloud-img dvd-icon"
-          title={tech.name}
+          title={`${tech.name} + ${/*techAll.find(t => t.name === tech.name)?.id || */''}`}
           style={{
             position: 'absolute',
             transform: `translate3d(${iconStates[idx]?.x ?? 0}px, ${iconStates[idx]?.y ?? 0}px, 0)`,

@@ -64,7 +64,7 @@
           "project_name": "Migración de Control de saldos de cuentas bancarias",
           "implementation_type": "On-premise",
           "company": "Dirección General de Tesorería (DGT) - Ministerio de Hacienda El Salvador",
-          "company_logo_path": "escudoelsalvador.png",  
+          "company_logo_path": "datum-dgt.png",  
           "highlight": true,
           "project_description": {
             "description": "Modernización de los procesos de integración bancaria para el control de saldos de cuentas de instituciones gubernamentales, migrando de procesos FTP tradicionales a una arquitectura moderna basada en APIs, mensajería y orquestación SOA.\n\nFase 1: Rediseño y desarrollo de los procesos de integración para las tramas 6, 7 y 8, con APIs de encolamiento y procesamiento, integración con SOA BPEL, validaciones avanzadas y notificaciones automáticas.\nFase 2: Preparación de la arquitectura y procesos para futura migración a OpenShift.",
@@ -99,7 +99,7 @@
   "project_name": "SIERO - Sistema de Evaluación de Riesgos Ocupacionales",
   "implementation_type": "On-premise",
   "company": "Secretaría de Estado (SEDE) - Ministerio de Hacienda",
-  "company_logo_path": "escudoelsalvador.png",
+  "company_logo_path": "datum-siero.png",
   "highlight": true,
   "project_description": {
     "description": "Consultoría y desarrollo en la creación del Sistema de Evaluación de Riesgos Ocupacionales (SIERO). Mi participación se centra en la definición de la arquitectura para el versionamiento de las evaluaciones, que se estructuran jerárquicamente por edificio, unidad y puesto. Además, estoy co-desarrollando los módulos para el ciclo de vida completo de una evaluación, desde su creación y verificación hasta su versionamiento final.",
@@ -131,7 +131,7 @@
       "description": "Mejora la experiencia del cliente mediante soluciones personalizadas de gestión de citas, atención y flujos de servicio para diferentes clientes de distintas industrias.",
       "logo_url": "acftechnologieslatam.png",
       "resume":"Especializado en el desarrollo e implementación de soluciones a medida, con con enfasis en la mejora de atención al cliente, gestión de citas, colas y procesos de trabajo empresariales. Desarrollé soluciones de integracion entre plataformas empresariales y de terceros, asi como con fuentes de datos. Resultando para las empresas un flujo de trabajo más eficiente y productivo, con mayor satisfacción del cliente y mayor rentabilidad de los procesos empresariales.",
-      "orden": 3,
+      "orden": 4,
       "job_roles": [
         {
           "job_role": "Gerente de Proyectos",
@@ -771,7 +771,7 @@
       "description": "Grupo LS El Salvador ofrece soluciones financieras innovadoras, incluyendo leasing vehicular, compra y venta de vehículos, y servicios de financiamiento flexibles. Facilita el acceso a vehículos mediante arrendamiento con opción a compra, préstamos inmediatos con respaldo vehicular y opciones de financiamiento accesibles, adaptándose a las necesidades de sus clientes tanto particulares como empresariales en El Salvador.",
       "logo_url": "glssv.png",
       "resume":"Responsable del desarrollo y mantenimiento de soluciones tecnológicas, con enfoque en la mejora de procesos. Finalicé proyectos clave de transformación digital de la empresa, incluyendo la integración de sistemas GPS para flota vehicular y el desarrollo de soluciones personalizadas para la gestión de activos y servicios financieros así como la ampliacion de procesos cubiertos por el sistema principal de la empresa. Brindar soporte tecnico informatico a todo el personal de la empresa.",
-      "orden": 5,
+      "orden": 6,
       "job_roles": [
         {
           "job_role": "Analista desarrollador",
@@ -828,7 +828,7 @@
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "highlight": true,
-          "company_logo_path": "grupolselsalvador.png",
+          "company_logo_path": "gls-dondolar.png",
           "project_description": {
             "description": "Proyecto de mantenimiento, mejora continua y expansión funcional del sistema principal de Grupo LS El Salvador, abarcando desde la toma de requerimientos hasta la entrega de módulos completos y reportes para la gestión de negocios y clientes. Incluyó implementacion, capacitacion de usuarios y soporte tecnico a los usuarios finales",
             "bullet_points": [
@@ -865,7 +865,7 @@
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "highlight": false,
-          "company_logo_path": "grupolselsalvador.png",
+          "company_logo_path": "gls-autosale.png",
           "project_description": {
             "description": "Integración de los datos recogidos por dispositivos GPS instalados en los vehículos de la empresa, permitiendo la visualización y análisis interno de la información de localización y recorridos.",
             "bullet_points": [
@@ -891,7 +891,7 @@
  "project_name": "Sitio Web Prestauto",
           "implementation_type": "Web Hosting",
           "company": "Grupo LS El Salvador - Prestauto",
-          "company_logo_path": "grupolselsalvador.png",
+          "company_logo_path": "gls-prestauto.png",
           "project_description": {
             "description": "Desarrollo y despliegue de un sitio web estático para la marca Prestauto, orientado a la promoción de servicios de leasing y financiamiento vehicular con integracion de canales de comunicacion y redes sociales.",
             "bullet_points": [
@@ -924,6 +924,7 @@
       "logo_url": "logopersonal.png",
       "resume":"He llevado la IA más allá de las APIs. Mi foco es crear sistemas agénticos con acceso a herramientas MCP y A2A (LangChain, Google & Vercel AI SDK) y optimizar LLMs con generacion por recuperacion aumentada (Qdrant, RAG, Embeddings) y Fine-tuning (Unsloth, Google Colab, Anyscale). Automatizar su ciclo de vida en la nube con CI/CD, Github Actions, Docker y Serverless. Mi objetivo es construir y desplegar soluciones de IA que resuelvan desafíos de negocio complejos",
       "orden": 2,
+      "skills":[164,165,166],
       "job_roles": [
         {
           "job_role": "AI Engineer",
@@ -977,7 +978,7 @@
   "project_name": "Portafolio Personal con Asistente de IA",
   "implementation_type": "Cloud",
   "company": "Proyecto Personal",
-  "company_logo_path": "logopersonal.png",
+  "company_logo_path": "isabot.png",
   "highlight": true,
   "project_description": {
     "description": "Desarrollo de un portafolio web moderno y de alto rendimiento, enfocado en la experiencia de usuario. Integra un asistente virtual conversacional para ofrecer una interacción dinámica y proporcionar información sobre mi trayectoria profesional, proyectos y habilidades técnicas de manera intuitiva.",
@@ -1010,7 +1011,7 @@
   "project_name": "Ecosistema de Agentes y Servidor de Cómputo Personal (MCP)",
   "implementation_type": "Cloud",
   "company": "Proyecto Personal / R&D",
-  "company_logo_path": "logopersonal.png",
+  "company_logo_path": "isamcp.png",
   "highlight": true,
   "project_description": {
     "description": "Diseño y construcción de un Servidor de Cómputo Personal (MCP) para la orquestación de un ecosistema avanzado de agentes de IA. Este proyecto se enfoca en la creación de herramientas agenticas (A2A) capaces de interactuar con servicios externos, procesar y enriquecer datos para bases de datos vectoriales y automatizar tareas complejas, sentando las bases para futuras integraciones con asistentes inteligentes como Google Gemini.",
@@ -1041,7 +1042,7 @@
   "project_name": "Aplicación de Control de Gastos Personales",
   "implementation_type": "On-premise",
   "company": "Proyecto Personal",
-  "company_logo_path": "logopersonal.png",
+  "company_logo_path": "isamoneycontrol.png",
   "highlight": false,
   "project_description": {
     "description": "Desarrollo de una aplicación web full-stack para el control de finanzas personales, utilizando el stack MERN (MongoDB, Express, React, Node.js) con TypeScript. La aplicación está diseñada para un registro de transacciones simple y sin fricción, y cuenta con dashboards interactivos construidos con ECharts para visualizar el comportamiento financiero y obtener resúmenes mensuales claros.",
@@ -1069,7 +1070,7 @@
   "project_name": "Aplicación de Gestión de Metas y Tiempo",
   "implementation_type": "On-premise",
   "company": "Proyecto Personal",
-  "company_logo_path": "logopersonal.png",
+  "company_logo_path": "isagoaltracking.png",
   "highlight": false,
   "project_description": {
     "description": "Construcción de una aplicación web full-stack para la gestión de objetivos y productividad personal utilizando el ecosistema .NET. El backend se desarrolló con ASP.NET Core para crear una API RESTful robusta, mientras que el frontend se implementó con Blazor, permitiendo una interfaz de usuario interactiva y moderna con C#. Se utilizó Entity Framework para el acceso a datos contra una base de SQL Server.",
@@ -1097,7 +1098,7 @@
   "project_name": "Sistema de Gestión para Iglesia Adventista",
   "implementation_type": "Cloud",
   "company": "Iglesia Adventista del Séptimo Día (Voluntariado)",
-  "company_logo_path": "adventistlogo.png",
+  "company_logo_path": "iasd7logo.png",
   "highlight": false,
   "project_description": {
     "description": "Desarrollo de una solución integral para la administración y comunicación de la congregación local. El sistema consta de una aplicación móvil (React Native) y un backend (Node.js) para automatizar el envío de mensajes a grupos de WhatsApp, distribuir anuncios y gestionar campañas de recolección de fondos. La arquitectura está completamente contenerizada con Docker y utiliza Clerk para una gestión de usuarios y autenticación moderna y segura.",
@@ -1128,7 +1129,7 @@
       "company": "Universidad Tecnológica de El Salvador",
       "description": "Carrera de Ingeniería en Sistemas y Computación",
       "logo_url": "utec.png",
-      "orden": 8,
+      "orden": 7,
       "skills": [121, 122, 123, 124, 125, 127, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144],
       "job_roles": [
         {
@@ -1155,7 +1156,7 @@
           "project_name": "Proyectos Académicos UTEC",
           "implementation_type": "Académico",
           "company": "Universidad Tecnológica de El Salvador",
-          "company_logo_path": "utec.png",
+          "company_logo_path": "utecprojects.png",
           "highlight": true,
           "project_description": {
             "description": "Conjunto de proyectos desarrollados durante la carrera de Ingeniería en Sistemas y Computación, abarcando diversas tecnologías y metodologías de desarrollo para resolver problemas reales y aplicar los conocimientos adquiridos en las diferentes materias.",
@@ -1192,8 +1193,7 @@
       "description": "Trabajo de graduación y especialización en industria 4.0.",
       "logo_url": "utec.png",
       "resume": "Especializado en tecnologías clave de la Cuarta Revolución Industrial, con experiencia práctica en inteligencia artificial, big data, IoT, robótica, computación en la nube y ciberseguridad. He desarrollado proyectos que integran análisis de datos avanzados, visualización de información y soluciones en la nube, aplicando principios de liderazgo y trabajo en equipo para implementar innovaciones tecnológicas en entornos industriales.",
-      "orden": 2,
-      "skills": [121, 122, 123, 124, 125, 127, 135, 137, 139, 140, 142],
+      "orden": 5,
       "job_roles": [
         {
           "job_role": "Inteligencia Artificial para la Industria 4.0",
@@ -1265,7 +1265,7 @@
  "project_name": "Redes Neuronales y Visión Computadora",
           "implementation_type": "Proyecto académico / Investigación aplicada",
           "company": "Universidad Tecnológica de El Salvador",
-          "company_logo_path": "utec.png",
+          "company_logo_path": "pro-neural.png",
           "highlight": true,
           "project_description": {
             "description": "Desarrollo y entrenamiento de una red neuronal pequeña, multicapa utilizando Keras y PyTorch, con un enfoque académico y experimental. El proyecto incluyó la resolución de un problema matemático sencillo mediante una red de cuatro capas (entrada de dos neuronas, dos ocultas de dos neuronas y salida de tres neuronas), así como la experimentación con modelos de visión por computadora para la identificación de objetos en imágenes y la inferencia en video y cámara en tiempo real. Se emplearon herramientas como Pandas para el manejo de datos, Matplotlib para visualización, OpenCV para procesamiento de imágenes y Google Colab como entorno de desarrollo en la nube.",
@@ -1296,7 +1296,7 @@
  "project_name": "Dashboards Análisis/Decisiones",
           "implementation_type": "Proyecto académico / Visualización de datos",
           "company": "Universidad Tecnológica de El Salvador",
-          "company_logo_path": "utec.png",
+          "company_logo_path": "pro-dash.png",
           "highlight": true,
           "project_description": {
             "description": "Desarrollo de dashboards interactivos utilizando Power BI y Looker Studio (Google) para el análisis de bancos de datos proporcionados por la universidad. El objetivo principal fue extraer información relevante y visual para apoyar la toma de decisiones, aplicando técnicas de integración, limpieza y transformación de datos con Python y librerías especializadas. El proyecto permitió comparar las capacidades de ambas herramientas y comprender el impacto de la visualización en el proceso de análisis de datos.",
@@ -1325,7 +1325,7 @@
  "project_name": "Simulación IoT con Node-RED/Python",
           "implementation_type": "Proyecto académico / IoT y automatización",
           "company": "Universidad Tecnológica de El Salvador",
-          "company_logo_path": "utec.png",
+          "company_logo_path": "pro-iot.png",
           "highlight": true,
           "project_description": {
             "description": "Desarrollo de scripts en Python para simular sensores IoT, configuración de Node-RED para procesar y visualizar mensajes, almacenamiento de datos simulados en SQL Server y exploración educativa de la programación de un brazo robótico PLC. Se utilizó el protocolo MQTT para la comunicación de mensajes y se analizaron diferentes protocolos y redes de bajo consumo para IoT, comprendiendo su aplicabilidad según el entorno y los requerimientos de consumo energético.",
@@ -1355,7 +1355,7 @@
   "project_name": "Infraestructura Segura en la Nube con Azure",
   "implementation_type": "Proyecto académico / Administración en la Nube y Ciberseguridad",
   "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "utec.png",
+  "company_logo_path": "pro-azure-infra.png",
   "highlight": true,
   "project_description": {
     "description": "Diseño y despliegue de una infraestructura de nube segura y escalable en Microsoft Azure, utilizando créditos de estudiante para la provisión de recursos. El proyecto consistió en la configuración de servidores Windows y Linux, la implementación de balanceadores de carga para distribuir el tráfico y la creación de redes virtuales (VNets) para aislar los recursos. Se aplicaron técnicas de autenticación y se configuraron grupos de seguridad de red para proteger la infraestructura, culminando con el despliegue de una aplicación de prueba para validar la arquitectura y su funcionamiento.",
@@ -1390,7 +1390,7 @@
   "project_name": "Aplicación Serverless de Gestión de Archivos en Azure",
   "implementation_type": "Proyecto académico / Desarrollo en la Nube (PaaS y Serverless)",
   "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "utec.png",
+  "company_logo_path": "pro-files.png",
   "highlight": true,
   "project_description": {
     "description": "Desarrollo de una aplicación web utilizando Python y FastAPI para la gestión de archivos en la nube de Azure. La solución integra autenticación segura con Microsoft Entra ID (Azure AD), permitiendo a los usuarios iniciar sesión y cargar archivos que se almacenan de forma segura y escalable en Azure Blob Storage. La arquitectura combina servicios PaaS, con la aplicación principal desplegada en Azure App Service, y componentes Serverless a través de Azure Functions para procesar tareas en segundo plano. El despliegue se automatizó completamente mediante un pipeline de CI/CD con Azure Pipelines, conectado a un repositorio de GitHub.",
@@ -1420,7 +1420,7 @@
   "project_name": "Sistema de Gestión Inteligente de Parqueos (Proyecto de Graduación)",
   "implementation_type": "Proyecto de Graduación / Solución Integral IoT Edge",
   "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "utec.png",
+  "company_logo_path": "pro-gra.png",
   "highlight": true,
   "project_description": {
     "description": "Proyecto de tesis para la obtención del grado de Especialista en Innovación Tecnológica en la Industria 4.0. Se desarrolló una solución completa para el control y gestión electrónica de los parqueos de la universidad. El proyecto piloto consistió en la instalación de sensores ultrasónicos en 5 estacionamientos, conectados a una unidad de procesamiento (Arduino y Raspberry Pi con un ESP32) para capturar y transmitir datos en tiempo real. La información sobre la ocupación de los espacios se enviaba a un broker MQTT en Azure IoT Hub, se procesaba y encolaba en Azure Service Bus para ser almacenada finalmente en una base de datos SQL Server. El sistema culminó con un dashboard interactivo en Power BI para la visualización en tiempo real, la gestión inteligente y la recolección de datos históricos, sentando las bases para futuras implementaciones de IA para el análisis predictivo.",
@@ -1469,7 +1469,7 @@
       "company": "Graduación de Ingeniería en Sistemas y Computación",
       "description": "",
       "logo_url": "utec.png",
-      "orden": 4,
+      "orden": 3,
       "job_roles": [
         {
           "job_role": "Grado de Ingeniero en Sistemas y Computación",
@@ -1487,7 +1487,7 @@
       "company": "Ministerios Juveniles Adventistas, División Interamericana",
       "description": "Currículo de Liderazgo para Embajadores y Líderes de Jóvenes Adultos",
       "logo_url": "liderjuvenil.png",
-      "orden": 7,
+      "orden": 8,
       "skills": [107, 108, 109, 110, 111, 112, 113],
       "job_roles": [
         {

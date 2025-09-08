@@ -111,10 +111,10 @@ const MainText: React.FC<Props> = ({ t }) => {
       <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-end`} >
         <div className="text-left relative flex flex-wrap  "
               style={isMobile ? {alignContent: 'end'} : {alignContent: 'center'}}>
-          <h2 className="text-white/80 text-6xl xs:text-2xl w-full black-shadow  mt-2 raleway">
+          <h2 className="text-white/60 text-6xl xs:text-2xl w-full black-shadow  mt-2 raleway ">
             {t.common.name}
           </h2>
-          <p className="text-white/80 text-3xl xs:text-xl w-full raleway2 mt-3 black-shadow">
+          <p className="text-white/60 text-3xl xs:text-xl w-full raleway2 mt-3 black-shadow">
             Developer / Just living
           </p>
 
@@ -142,7 +142,7 @@ const MainText: React.FC<Props> = ({ t }) => {
                   id={index === descriptions.length - 1 ? 'last' : undefined}
                   className="slider-item min-w-full"
                 >
-                  <p className="text-white/80 font-serif leading-relaxed md:text-xl text-m raleway3 black-shadow">
+                  <p className="text-white/70 font-serif leading-relaxed md:text-xl text-m raleway3 black-shadow ">
                     {description}
                   </p>
                 </div>

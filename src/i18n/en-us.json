@@ -40,6 +40,9 @@
             "projects": "Projects",
             "resume": "Resume",
             "charts": "Charts"
+        },
+        "project":{
+            "used_techs":"Used Technologies"
         }
     },
     "skills": {

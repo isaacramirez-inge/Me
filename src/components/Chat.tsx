@@ -362,7 +362,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       >
         <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
           <div className="sticky top-0 z-10 bg-black/20 p-0 rounded-md flex items-center justify-between ">
-            <div className="flex items-center gap-2 text-white/80 text-md font-bold">
+            <div className="flex items-center raleway gap-2 text-white/80 text-md font-bold">
               <span>{t.chat.bot_name}</span>
             </div>
             <div className="flex items-center gap-3 text-2xl">
@@ -383,11 +383,11 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             </div>
           </div>
 
-          <div className="mx-auto text-white/80 text-center flex items-center justify-between">
+          <div className="mx-auto raleway3 anim-metal text-white/80 text-center flex items-center justify-between">
             <div className={`catbot h-20 ${chat.length === 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>
               <RenderJsonLottie source={botAnim} height={100} width={100} />
             </div>
-            <p className={`font-bold ${chat.length > 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.i_am_bot_message}</p>
+            <p className={` ${chat.length > 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.i_am_bot_message}</p>
             <p className={`font-bold ${chat.length === 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.its_a_pleasure}</p>
           </div>
 
@@ -401,7 +401,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             {chat.map((msg, index) => (
               <div
                 key={index}
-                className={`rounded px-3 py-2 text-lg max-w-[90%] ${msg.role === 'user'
+                className={`raleway4 rounded px-3 py-2 text-sm max-w-[90%] ${msg.role === 'user'
                     ? 'bg-white/25 border-white/90 text-white/90 self-end ml-auto rounded-full rounded-br-none'
                     : 'text-white/90 border-l-2 self-start rounded-none border-purple-500'
                   }`}
@@ -410,8 +410,8 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
                 <div ref={messagesEndRef} />
               </div>))
             }
-            {loading && <div className="text-white text-xs animate-pulse">...</div>}
-            {errorChating && <div className="text-white text-xs animate-pulse">{t.chat.error_chatting}</div>}
+            {loading && <div className="text-white text-2xl animate-pulse raleway ">...</div>}
+            {errorChating && <div className="text-white text-xs animate-pulse raleway2">{t.chat.error_chatting}</div>}
           </div>
           {suggestions && (
             <div className="mt-1 mb-2 max-h-[100px] overflow-y-auto scrollbar-white">
@@ -419,7 +419,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
                 {suggestions.map((q, idx) => (
                   <button
                     key={idx}
-                    className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay"
+                    className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay raleway3"
                     onClick={() => handleSend(q)}
                   >
                     {q}
@@ -463,7 +463,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
               <input
                 type="text"
                 placeholder={t.chat.askme_placeholder}
-                className="flex-1 h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent"
+                className="flex-1 raleway2  focus:outline-none h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}
@@ -477,7 +477,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
               </button>
             </div>
           </div>
-          <div className="flex pt-[3px] items-center text-white/80 justify-center text-xs">{t.chat.mistakes}</div>
+          <div className="flex raleway4 pt-[3px] items-center text-white/80 justify-center text-xs">{t.chat.mistakes}</div>
         </div>
       </div>
     </>

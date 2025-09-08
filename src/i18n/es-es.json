@@ -40,6 +40,9 @@
             "projects":"Proyectos",
             "resume":"Resumen",
             "charts": "Diagramas"
+        },
+        "project":{
+            "used_techs":"Tecnologias utilizadas"
         }
     },
     "skills": {

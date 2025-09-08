@@ -1,14 +1,16 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Project, Technology } from './_react/timeline/TimelineTypes';
+import type { Translation } from '../types/types';
 
 interface TimelineProjectNavigatorProperties {
   projects: Project[];
   techAll: Technology[];
   base_path: string;
+  t: Translation;
 }
 
-const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll , base_path}) => {
+const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll , base_path, t}) => {
   const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
@@ -52,17 +54,17 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
           >
             <div className="logo flex-shrink-0 w-12 h-12 md:w-16 md:h-16">
               <img
-                className="w-full h-full object-contain object-left-top"
+                className="w-full h-full object-contain"
                 src={`/${base_path}/img/company/card/${project.company_logo_path}`}
                 alt={project.company}
                 loading="lazy"
               />
             </div>
             <div className="project-info overflow-hidden">
-              <h2 className="text-lg leading-snug text-white font-bold break-words line-clamp-2">
+              <h2 className="text-lg leading-snug text-white/80 font-bold break-words line-clamp-2 raleway">
                 {project.project_name}
               </h2>
-              <span className="text-white/70 text-base ">
+              <span className="text-white/70 raleway4 text-base ">
                 {project.company}
               </span>
             </div>
@@ -102,12 +104,12 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                 />
               </div>
               <div className="project-info">
-                <h2 className="text-2xl font-bold mb-1">{expandedProject.project_name}</h2>
-                <span className="text-white/70 text-sm md:text-base truncate block">{expandedProject.company}</span>
+                <h2 className="text-2xl raleway mb-1">{expandedProject.project_name}</h2>
+                <span className="text-white/70 text-sm md:text-base truncate raleway4 block">{expandedProject.company}</span>
               </div>
             </div>
             <div className="mt-6 mb-4 w-full border-b-2 border-purple-500">
-              <h3 className="text-lg font-semibold mb-2">Tecnologías utilizadas</h3>
+              <h3 className="text-lg raleway3 mb-2">{t.home.project.used_techs}</h3>
               <div className="flex flex-wrap justify-center gap-4">
                 {expandedProject.technologies.map((techId: number, index: number) => {
                   const tech = techAll.find(t => t.id === techId);
@@ -116,7 +118,7 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
                   return (
                     <div
                       key={index}
-                      className="tech-icon flex flex-col items-center text-xs text-white/80"
+                      className="tech-icon raleway4 flex flex-col items-center text-xs text-white/80"
                     >
                       <img
                         src={logoPath}
@@ -131,10 +133,10 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
               </div>
             </div>
             <div className="mb-6">
-              <p className="text-white/90 mb-3 leading-relaxed whitespace-pre-line">
+              <p className="text-white/80 text-lg mb-3 leading-relaxed whitespace-pre-line raleway4">
                 {expandedProject.project_description.description}
               </p>
-              <ul className="list-disc list-inside space-y-2 text-white/80 text-sm pl-4">
+              <ul className="list-disc raleway4 list-inside space-y-2 text-white/70 text-lg pl-4">
                 {expandedProject.project_description.bullet_points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}

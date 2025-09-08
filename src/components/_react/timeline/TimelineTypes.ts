@@ -38,6 +38,7 @@ export interface ProjectRoleTimeline {
     resume?: string;
     logo_url: string;
     orden: number;
+    skills?: number[];
     job_roles: JobRole[];
     projects: Project[];
   }

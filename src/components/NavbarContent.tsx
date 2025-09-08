@@ -73,7 +73,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, base_pat
       <div className="flex items-center justify-between relative " style={{zIndex:100}}>
       
         {/* Título o logo */}
-        <div className="text-xl font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
+        <div className="text-xl raleway font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
        
         {/* Botón "Menu" visible solo en mobile */}
         <button

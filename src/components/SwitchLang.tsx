@@ -27,7 +27,7 @@ const SwitchLang: React.FC<SwitchLangProps> = ({ actualCode, langs }) => {
   return (
     <select
       name="lang"
-      className="bg-transparent flex justify-end font-bold text-white/80 cursor-pointer" style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}
+      className="bg-transparent raleway flex justify-end font-bold text-white/80 cursor-pointer" style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}
       value={actualCode}
       onChange={handleChange}
     >

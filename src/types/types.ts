@@ -25,6 +25,9 @@ export type Translation = {
       projects: string,
       resume: string,
       charts: string
+    },
+    project:{
+      used_techs: string,
     }
   },
   skills:{

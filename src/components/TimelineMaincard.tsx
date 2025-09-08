@@ -40,7 +40,7 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
                         <button
                             type="button"
                             key={idx}
-                            className={`${selectedRole === role.job_role_id && 'selected'} text-base xs:text-lg leading-relaxed text-white/90 px-2 py-1 rounded-full shadow transition`}
+                            className={`${selectedRole === role.job_role_id ? 'selected raleway' : 'raleway4'} text-base  xs:text-lg leading-relaxed text-white/90 px-2 py-1 rounded-full shadow transition`}
                             onClick={() => setSelectedRole(role.job_role_id)}
                         >
                             <span>{role.job_role}</span>
@@ -50,7 +50,7 @@ const GeneralTab = memo(({ roles }: GeneralTabProps) => {
             </div>
             <div className="h-auto overflow-auto scrollbar-white">
                 {currentRole && (
-                    <ul className="mx-auto text-base leading-relaxed text-white/90 font-light whitespace-pre-line list-disc pl-4 space-y-1 mt-2">
+                    <ul className="mx-auto text-xl leading-relaxed text-white/80 font-light whitespace-pre-line list-disc pl-4 raleway4 space-y-1 mt-2">
                         {currentRole.responsabilities.map((r, ridx) => <li key={ridx}>{r.description}</li>)}
                     </ul>
                 )}
@@ -63,9 +63,10 @@ interface ProjectsTabProps {
     projects: Project[];
     techAll: Technology[];
     base_path: string;
+    t: Translation;
 }
-const ProjectsTab = memo(({ projects, techAll, base_path }: ProjectsTabProps) => {
-    return <TimelineProjectNavigator base_path={base_path} techAll={techAll} projects={projects} />;
+const ProjectsTab = memo(({ projects, techAll, base_path, t }: ProjectsTabProps) => {
+    return <TimelineProjectNavigator base_path={base_path} techAll={techAll} projects={projects} t={t} />;
 });
 
 interface ResumeTabProps {
@@ -74,7 +75,7 @@ interface ResumeTabProps {
 const ResumeTab = memo(({ resume }: ResumeTabProps) => {
     return (
         <div className="tab-resume w-full h-full overflow-y-auto px-2 md:px-6 py-4 flex-wrap scrollbar-white flex justify-center items-center">
-            <p className="max-w-3xl mx-auto text-base xs:text-xl text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
+            <p className="max-w-3xl mx-auto raleway4 text-2xl xs:text-xl text-2xl leading-relaxed text-white/90 font-light whitespace-pre-line">
                 {resume}
             </p>
         </div>
@@ -109,13 +110,13 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
 
     const CompanyInfo = useMemo(() => (
         <div className="header-company-data flex flex-row w-full h-full items-center">
-            <div className="image-company w-[25%] h-full">
+            <div className="image-company w-[25%] h-full rounded">
                 <img className='h-full w-full object-contain object-center' src={`/${base_path}/img/company/${group.logo_url}`} alt={group.company} 
                 loading="lazy"/>
             </div>
             <div className="tv-company-info w-[75%] h-full px-4 md:px-10 flex flex-col justify-center">
-                <h2 className="tv-company-name font-bold sm:text-lg xs:text-xl leading-relaxed">{group.company}</h2>
-                <p className="tv-company-desc border-b-2 border-white text-sm md:text-base">{dates}</p>
+            <h2 className="tv-company-name raleway text-2xl xs:text-xl overflow-y-auto scrollbar-white leading-relaxed">{group.company}</h2>
+                <p className="tv-company-desc border-b-2 border-white text-sm md:text-base raleway4">{dates}</p>
             </div>
         </div>
     ), [group, dates]);
@@ -134,7 +135,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
             {tabs.map((tab, idx) => (
                 <button
                     key={idx}
-                    className={`tab-button rounded-full z-10 ${activeTab === tab.tabname ? 'selected' : ''}`}
+                    className={`tab-button rounded-full z-10 ${activeTab === tab.tabname ? 'selected raleway' : 'raleway4'}`}
                     onClick={() => {
                         if (tabs.length > 1) {
                             setActiveTab(tab.tabname);
@@ -160,7 +161,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.job_roles && <GeneralTab roles={group.job_roles} />}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'projects' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} />}
+                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} t={t} />}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'resume' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                             {group.resume && <ResumeTab resume={group.resume} />}
@@ -181,7 +182,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
                             {group.job_roles && <GeneralTab roles={group.job_roles} />}
                         </div>
                         <div className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${activeTab === 'projects' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} />}
+                            {group.projects && <ProjectsTab base_path={base_path} projects={group.projects} techAll={techAll} t={t}/>}
                         </div>
                         <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === 'resume' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                             {group.resume && <ResumeTab resume={group.resume} />}

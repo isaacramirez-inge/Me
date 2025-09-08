@@ -53,6 +53,12 @@ body{
     font-weight: 400;
     font-style: normal;
   }
+  .raleway4 {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
 }
   
 
@@ -92,3 +98,24 @@ button.selected{
     }
   }
 
+  .anim-metal {
+    background: linear-gradient(
+        to right,
+        #888888 0%, 
+        #ffffff 20%, 
+        #888888 40%, 
+        #888888 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    animation: metallic-shine 3s linear infinite;
+}
+
+@keyframes metallic-shine {
+    to {
+        background-position: 200% 0;
+    }
+}

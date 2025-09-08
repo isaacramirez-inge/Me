@@ -160,5 +160,8 @@
  {"id":160,"name":"Primefaces","logo_path":"primefaces","extension":".png","bg_color":"#0073B6","text_color":"#FFFFFF","border_color":"#005A8E","category":"Frontend","display_text":"Primefaces","type":"technology"},
  {"id":161,"name":"OpenShift","logo_path":"openshift","extension":".png","bg_color":"#EE0000","text_color":"#FFFFFF","border_color":"#BB0000","category":"Nube","display_text":"OpenShift","type":"technology"},
  {"id":162,"name":"JSON","logo_path":"json","extension":".png","bg_color":"#000000","text_color":"#FFFFFF","border_color":"#333333","category":"Formato de Datos","display_text":"JSON","type":"technology"},
- {"id":163,"name":"FTP","logo_path":"ftp","extension":".png","bg_color":"#FFC107","text_color":"#000000","border_color":"#FFA000","category":"Redes","display_text":"FTP","type":"technology"}
+ {"id":163,"name":"FTP","logo_path":"ftp","extension":".png","bg_color":"#FFC107","text_color":"#000000","border_color":"#FFA000","category":"Redes","display_text":"FTP","type":"technology"},
+ {"id":164,"name": "Google ADK","logo_path":"google-adk","extension":".png","category":"Tecnología","type":"technology","display_text":"Google ADK"},
+ {"id":165,"name": "MCP","logo_path":"mcp","extension":".png","category":"Tecnología","type":"technology","display_text":"Model Context Protocol"},
+ {"id":166,"name": "A2A","logo_path":"a2a-google","extension":".svg","category":"Tecnología","type":"technology","display_text":"Agent to Agent Protocol"}
 ]
