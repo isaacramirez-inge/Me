@@ -29,9 +29,9 @@
                 "Embracing technology"
             ],
             "descriptions": [
-                "+5 years creating high-impact solutions, with AI-powered agents and data integrations beyond APIs, I firmly believe that technology is the tool, but deeply understanding the problem is the key. My approach combines strategic thinking and technical skills to chart the most efficient path to the result.",
-                "I take AI beyond APIs, specializing in the architecture and development of systems with multi-agent frameworks and MCP/A2A protocols. My focus is to build and deploy AI solutions that solve complex business challenges, transforming creativity and code into business optimization.",
-                "With over five years of experience, I have developed fullstack solutions for complex challenges in sectors such as banking, healthcare, telecommunications, and government. This diversity allows me to adapt with agility to any technological ecosystem and deliver consistent results.",
+                "+5 years creating high-impact solutions, AI-powered agents, and data integrations beyond APIs. I firmly believe that technology is the tool, but a deep understanding of the problem is the key. My approach combines strategic thinking and technical skills to chart the most efficient path to the desired result.",
+                "I take AI beyond APIs, specializing in the architecture and development of systems with multi-agent frameworks and MCP/A2A protocols. My focus is on building and deploying AI solutions that solve complex business challenges, transforming creativity and code into business optimization.",
+                "With over five years of experience, I have developed full-stack solutions for complex challenges in sectors such as banking, healthcare, telecommunications, and government. This diversity allows me to adapt with agility to any technological ecosystem and deliver consistent results.",
                 "My commitment, honesty, and responsibility are the pillars of my work, making me a valuable ally for any team or project."
             ]
         },
@@ -68,21 +68,21 @@
         "message_placeholder": "Write your message here...",
         "send_button": "Send",
         "success_title": "Success!",
-        "success_message": "Thank you for your message, please check your inbox, we sent you an email with the confirmation of your message, if you do not receive it check the address entered :D",
-        "error_captcha": "Oops! an error occurred, please try again",
-        "error_message": "An error occurred while sending your message, please try again later"
+        "success_message": "Thank you for your message. Please check your inbox; we've sent a confirmation email. If you don't see it, please verify the email address you entered.",
+        "error_captcha": "Oops! An error occurred. Please try again.",
+        "error_message": "An error occurred while sending your message. Please try again later."
     },
     "chat": {
         "bot_name": "ISA BOT",
-        "i_am_bot_message": "I am Isaac's virtual assistant, how can I help you today?",
+        "i_am_bot_message": "I am Isaac's virtual assistant. How can I help you today?",
         "its_a_pleasure": "It's a pleasure to help you!",
         "askme_placeholder": "Ask me something about Isaac",
-        "error_chatting": "Oops! an error occurred",
-        "error_response": "An error occurred while getting the response, please try again later",
-        "hit_limit_1": "It seems you have reached the question limit",
-        "hit_limit_2": "It seems you have reached the chat limit, you can try again tomorrow",
-        "captcha_message": "Please check the box to continue",
-        "mistakes": "ISA BOT can make mistakes"
+        "error_chatting": "Oops! An error occurred.",
+        "error_response": "An error occurred while getting the response. Please try again later.",
+        "hit_limit_1": "It seems you have reached the question limit.",
+        "hit_limit_2": "It seems you have reached the chat limit. You can try again tomorrow.",
+        "captcha_message": "Please check the box to continue.",
+        "mistakes": "ISA BOT can make mistakes."
     },
     "cookies": {
         "message": "We use cookies to improve your experience. By continuing to browse, you agree to our use of cookies.",
