@@ -17,7 +17,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
   
 
   const isMobile = useMediaQuery({ query: breakpoints.mobile });
-  const ICON_SIZE = isMobile ? 20 : 30; // px
+  const ICON_SIZE = isMobile ? 30 : 30; // px
   const ICON_MARGIN = 10; // px
   const INITIAL_SPEED = 0.3; // px/frame (lento)
   const FINAL_SPEED = 0.2; // px/frame (más suave)
