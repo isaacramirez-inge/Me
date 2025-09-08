@@ -49,7 +49,7 @@ const { name, tagline, content, extra_insights } = profileData;
 
     {content.map((section) => (
       <section class="mb-8 leading-relaxed">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{section.title}</h2>
+        <h2 class="text-2xl md:text-3xl relaway3 mb-4">{section.title}</h2>
         {section.details.map((detail) => (
           detail.show && (
             <div class="mb-2">
@@ -60,7 +60,7 @@ const { name, tagline, content, extra_insights } = profileData;
                 <p>{detail.value}</p>
               )}
               {detail.type === "link" && detail.platform && detail.user && (
-                <p>{detail.platform}: <a href={`https://${detail.platform}.com/${detail.user}`} target="_blank" class="text-blue-400 hover:underline">{detail.user}</a></p>
+                <p>{detail.platform}: <a href={`https://${detail.platform}.com/in/${detail.user}`} target="_blank" class="text-blue-400 hover:underline">{detail.user}</a></p>
               )}
             </div>
           )

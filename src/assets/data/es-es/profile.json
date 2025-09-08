@@ -25,8 +25,7 @@
   },
   {"title": "Redes sociales",
     "details": [
-      {"show": true, "type": "link", "platform": "linkedin", "user": "isaacramirez-net"},
-      {"show": true, "type": "link", "platform": "github", "user": "isawilddev"}
+      {"show": true, "type": "link", "platform": "linkedin", "user": "isaacramirez-net"}
 
     ]
   },
