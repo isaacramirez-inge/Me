@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import img_me_just_living from '../assets/img/me/me-just-living-trbg.png';
+import img_me_just_living from '../assets/img/me/me-just-living-rounded.png';
 import Hammer from 'hammerjs';
 import gsap from 'gsap';
 import './MainText.css';
@@ -111,7 +111,7 @@ const MainText: React.FC<Props> = ({ t }) => {
       <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-start`} >
       
         <div className="text-left relative flex flex-wrap xs:w-full "
-              style={isMobile ? {alignContent: 'end'} : {alignContent: 'center'}}>
+              style={isMobile ? {alignContent: 'center'} : {alignContent: 'center'}}>
                 
           {isMobile && 
             <div id="main-image-mobile" className="w-full h-[30%] rounded-full">
