@@ -124,7 +124,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     const Technologies = useMemo(() => (
         <div className="company-icons-container z-10 relative w-full h-full">
             <div className="company-icons-middle w-full h-full absolute right-0 bottom-0">
-                <TechIconCloud base_path={base_path} technologies={techs} techAll={techAll} />
+                <TechIconCloud base_path={base_path} technologies={techs.sort(() => Math.random() - 0.5) } techAll={techAll} />
             </div>
         </div>
     ), [techs, techAll]);

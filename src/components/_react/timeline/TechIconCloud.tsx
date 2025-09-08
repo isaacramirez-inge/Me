@@ -1,27 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './TechIconCloud.css';
 import type { TechIconCloudProps, IconState } from './TimelineTypes';
-
-const ICON_SIZE = 30; // px
-const ICON_MARGIN = 10; // px
-const INITIAL_SPEED = 0.3; // px/frame (lento)
-const FINAL_SPEED = 0.2; // px/frame (más suave)
+import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '../../../styles/breakpoints';
 
 
-function detectCollision(a: IconState, b: IconState) {
+function detectCollision(a: IconState, b: IconState, ICON_SIZE: number, ICON_MARGIN: number) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
   const dist = Math.sqrt(dx * dx + dy * dy);
   return dist < ICON_SIZE + ICON_MARGIN / 2;
+  
 }
 
 const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies, techAll }) => {
+  
+
+  const isMobile = useMediaQuery({ query: breakpoints.mobile });
+  const ICON_SIZE = isMobile ? 20 : 30; // px
+  const ICON_MARGIN = 10; // px
+  const INITIAL_SPEED = 0.3; // px/frame (lento)
+  const FINAL_SPEED = 0.2; // px/frame (más suave)
+
+
   const techList = techAll.filter(tech => technologies.includes(tech.id));
   const uniqueTechs = Array.from(
     new Map(
       techList
         .filter(t => typeof t.logo_path === 'string' && t.logo_path)
-        .sort(() => Math.random() - 0.5) // aleatory sorting
         .map(t => [t.name, {
           logo_path: `/${base_path}/img/icon/${t.logo_path}${t.extension}`,
           name: t.name
@@ -146,7 +152,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
         // Colisiones entre iconos (perfect elastic mode)
         for (let i = 0; i < newStates.length; i++) {
           for (let j = i + 1; j < newStates.length; j++) {
-            if (detectCollision(newStates[i], newStates[j])) {
+            if (detectCollision(newStates[i], newStates[j], ICON_SIZE, ICON_MARGIN)) {
               // Intercambiar vectores de velocidad (dx, dy)
               const tempDx = newStates[i].dx;
               const tempDy = newStates[i].dy;

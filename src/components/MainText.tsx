@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import img_me_just_living from '../assets/img/me/me-just-living-rounded.png';
+import img_me_just_living from '../assets/img/me/me-just-living-squared.png';
 import Hammer from 'hammerjs';
 import gsap from 'gsap';
 import './MainText.css';
@@ -17,8 +17,6 @@ const MainText: React.FC<Props> = ({ t }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [descriptions] = useState<string[]>(t.home.welcome.descriptions as string[]);
-
-  const itemRefs = useRef<Array<HTMLDivElement | null >>([]);
 
   useEffect(() => {
     const handleChatVisibility = (event: CustomEvent) => {
@@ -110,11 +108,11 @@ const MainText: React.FC<Props> = ({ t }) => {
     <div className='relative  h-full w-full flex gap-1 items-center justify-center'>
       <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-start`} >
       
-        <div className="text-left relative flex flex-wrap xs:w-full "
+        <div className="text-left relative flex justify-center  flex-wrap xs:w-full "
               style={isMobile ? {alignContent: 'center'} : {alignContent: 'center'}}>
                 
           {isMobile && 
-            <div id="main-image-mobile" className="w-full h-[30%] rounded-full">
+            <div id="main-image" className="w-[80%] h-[20%] rounded-full -z-50 ">
                 <img src={`${img_me_just_living.src}`}  alt="Isaac just living" className='rounded-full object-contain'/>
             </div>
           }

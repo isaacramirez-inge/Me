@@ -77,7 +77,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, base_pat
        
         {/* Botón "Menu" visible solo en mobile */}
         <button
-          className="md:hidden text-sm border px-3 py-1 rounded"
+          className="md:hidden raleway  text-lg border px-3 py-1 rounded"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             const button = document.getElementById('menu-toggle');
@@ -85,6 +85,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, base_pat
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
           }}
+          style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}
         >
           Menu
         </button>
