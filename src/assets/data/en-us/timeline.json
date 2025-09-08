@@ -3,50 +3,50 @@
     {
       "type": "empresa",
       "company": "Datum Redsoft SV",
-      "description": "Ofrece soluciones innovadoras de consultoría, soporte técnico y transformación digital para múltiples industrias en Centroamérica, respaldadas por alianzas estratégicas como partner oficial de Red Hat y Oracle",
+      "description": "Offers innovative consulting, technical support, and digital transformation solutions for multiple industries in Central America, backed by strategic alliances as an official partner of Red Hat and Oracle.",
       "logo_url": "datumredsoftsv.png",
-      "resume":"Experto en arquitectura y desarrollo de soluciones tecnológicas, especializado en el desarrollo y migración de aplicaciones monolíticas a microservicios y otras arquitecturas. Brindo consultoria al equipo de desarrollo del cliente, enfocado en la mejora y optimizacion de procesos y la adopcion de nuevas tecnologias y tecnicas modernas para agilizar la transformacion digital y modernizacion de la infraestructura gubernamental de El Salvador aprovechando al maximo los recursos en su alianza con Google",
+      "resume": "Expert in the architecture and development of technological solutions, specializing in the development and migration of monolithic applications to microservices and other architectures. I provide consulting to the client's development team, focused on process improvement and optimization, and the adoption of new technologies and modern techniques to accelerate the digital transformation and modernization of El Salvador's governmental infrastructure, making the most of the resources in its alliance with Google.",
       "orden": 1,
       "job_roles": [
         {
-          "job_role": "Especialista en Desarrollo",
+          "job_role": "Development Specialist",
           "job_role_id": 4,
           "start_date": "2025-01-29",
           "end_date": null,
           "actually": true,
           "responsabilities": [
-            {"description":"Consultoria en arquitectura y desarrollo de soluciones tecnológicas"},
-            {"description":"Diseño de arquitecturas de software escalables y eficientes"},
-            {"description":"Desarrollo e implementación de soluciones tecnológicas"},
-            {"description":"Migrar aplicaciones monoliticas hacia microservicios"},
-            {"description":"Configurar servidores y ambientes para despliegues"},
-            {"description":"Configurar y mantener pipelines de CI/CD"},
-            {"description":"Monitoreo y control de despliegues y operaciones"}
+            {"description": "Consulting in architecture and development of technological solutions."},
+            {"description": "Design of scalable and efficient software architectures."},
+            {"description": "Development and implementation of technological solutions."},
+            {"description": "Migrate monolithic applications to microservices."},
+            {"description": "Configure servers and environments for deployments."},
+            {"description": "Configure and maintain CI/CD pipelines."},
+            {"description": "Monitoring and control of deployments and operations."}
           ]
         }
       ],
       "projects": [
         {
-          "project_name": "Migración de módulo PAGOS",
+          "project_name": "Migration of PAYMENTS module",
           "implementation_type": "On-premise",
-          "company": "Secretaría de Estado (SEDE) - Ministerio de Hacienda",
+          "company": "Secretary of State (SEDE) - Ministry of Finance",
           "company_logo_path": "escudoelsalvador.png",
           "highlight": true,
           "project_description": {
-            "description": "Migración y modernización del módulo de pagos de una aplicación monolítica Java 8/Primefaces a una arquitectura moderna basada en microservicios y frontend desacoplado.",
+            "description": "Migration and modernization of the payment module of a monolithic Java 8/Primefaces application to a modern architecture based on microservices and a decoupled frontend.",
             "bullet_points": [
-              "Análisis preliminar de la aplicación monolítica original (Java 8, Primefaces)",
-              "Diseño y estructuración de la nueva arquitectura basada en microservicios",
-              "Migración del backend a Java 17 con Spring Boot (tres capas)",
-              "Desarrollo de frontend desacoplado con React y Bootstrap",
-              "Implementación de un backend adicional para reportería",
-              "Uso de JBoss EAP 8 como servidor de aplicaciones",
-              "Integración de Axios para consumo de APIs REST",
-              "Recreación y migración de objetos en Oracle SQL Database",
-              "Comunicación entre servicios mediante REST",
-              "Gestión de versiones y CI/CD con Tuleap, Jenkins y Gerrit",
-              "Acceso y despliegue seguro mediante SSH",
-              "Pruebas unitarias con JUnit (backend) y Jest (frontend)"
+              "Preliminary analysis of the original monolithic application (Java 8, Primefaces).",
+              "Design and structuring of the new microservices-based architecture.",
+              "Backend migration to Java 17 with Spring Boot (three layers).",
+              "Development of a decoupled frontend with React and Bootstrap.",
+              "Implementation of an additional backend for reporting.",
+              "Use of JBoss EAP 8 as an application server.",
+              "Integration of Axios for REST API consumption.",
+              "Recreation and migration of objects in Oracle SQL Database.",
+              "Communication between services via REST.",
+              "Version management and CI/CD with Tuleap, Jenkins, and Gerrit.",
+              "Secure access and deployment via SSH.",
+              "Unit tests with JUnit (backend) and Jest (frontend)."
             ]
           },
           "technologies": [21, 22, 23, 1, 2, 29, 24, 34, 35, 36, 37, 13, 38, 39, 46, 62, 64],
@@ -61,27 +61,27 @@
           "project_id": 20
         },
         {
-          "project_name": "Migración de Control de saldos de cuentas bancarias",
+          "project_name": "Migration of Bank Account Balance Control",
           "implementation_type": "On-premise",
-          "company": "Dirección General de Tesorería (DGT) - Ministerio de Hacienda El Salvador",
-          "company_logo_path": "datum-dgt.png",  
+          "company": "General Directorate of the Treasury (DGT) - Ministry of Finance El Salvador",
+          "company_logo_path": "datum-dgt.png",
           "highlight": true,
           "project_description": {
-            "description": "Modernización de los procesos de integración bancaria para el control de saldos de cuentas de instituciones gubernamentales, migrando de procesos FTP tradicionales a una arquitectura moderna basada en APIs, mensajería y orquestación SOA.\n\nFase 1: Rediseño y desarrollo de los procesos de integración para las tramas 6, 7 y 8, con APIs de encolamiento y procesamiento, integración con SOA BPEL, validaciones avanzadas y notificaciones automáticas.\nFase 2: Preparación de la arquitectura y procesos para futura migración a OpenShift.",
+            "description": "Modernization of banking integration processes for controlling the account balances of government institutions, migrating from traditional FTP processes to a modern architecture based on APIs, messaging, and SOA orchestration.\n\nPhase 1: Redesign and development of integration processes for frames 6, 7, and 8, with queuing and processing APIs, integration with SOA BPEL, advanced validations, and automatic notifications.\nPhase 2: Preparation of the architecture and processes for future migration to OpenShift.",
             "bullet_points": [
-              "Diseño de la nueva arquitectura considerando futura migración a OpenShift",
-              "Identificación y rediseño de los procesos de integración para tramas 6 (cargos/abonos), 7 (apertura/cierre de cuentas) y 8 (análisis de rentabilidades)",
-              "Desarrollo de APIs de encolamiento y procesamiento de mensajes para cada trama",
-              "Implementación de API intermedia para escucha y ruteo de mensajes de cola",
-              "Integración con SOA BPEL para validación granular y procesamiento de datos",
-              "Automatización de inserción de datos en Oracle SQL Database mediante BPEL",
-              "Desarrollo de lógica para manejo de resultados: éxito (envío de email vía REST/SMTP) e inconsistencias (generación de archivo JSON y envío por FTP)",
-              "Desarrollo de servicios REST para notificaciones automáticas",
-              "Configuración y despliegue de APIs en WebLogic y SOA BPEL en EM",
-              "Creación y migración de objetos necesarios en Oracle SQL Database",
-              "Uso de Spring Boot, Java Middleware, JMS, XML, JSON, REST y SOAP",
-              "Gestión de versiones y colaboración con Tuleap y Gerrit",
-              "Desarrollo y pruebas en entornos Linux Server, uso de herramientas como JDeveloper, Gemini CLI, Cursor, VSCode, Codex (OpenAI) y MobaXterm SSH"
+              "Design of the new architecture considering future migration to OpenShift.",
+              "Identification and redesign of integration processes for frames 6 (charges/credits), 7 (account opening/closing), and 8 (profitability analysis).",
+              "Development of queuing and message processing APIs for each frame.",
+              "Implementation of an intermediate API for listening and routing queue messages.",
+              "Integration with SOA BPEL for granular validation and data processing.",
+              "Automation of data insertion into Oracle SQL Database through BPEL.",
+              "Development of logic for handling results: success (sending email via REST/SMTP) and inconsistencies (generating a JSON file and sending it via FTP).",
+              "Development of REST services for automatic notifications.",
+              "Configuration and deployment of APIs in WebLogic and SOA BPEL in EM.",
+              "Creation and migration of necessary objects in Oracle SQL Database.",
+              "Use of Spring Boot, Java Middleware, JMS, XML, JSON, REST, and SOAP.",
+              "Version management and collaboration with Tuleap and Gerrit.",
+              "Development and testing in Linux Server environments, using tools like JDeveloper, Gemini CLI, Cursor, VSCode, Codex (OpenAI), and MobaXterm SSH."
             ]
           },
           "technologies": [22, 24, 34, 40, 41, 42, 43, 44, 13, 35, 37, 45, 46, 47, 48, 49, 50, 51, 52, 1, 2, 62, 64],
@@ -96,77 +96,77 @@
           "project_id": 21
         },
         {
-  "project_name": "SIERO - Sistema de Evaluación de Riesgos Ocupacionales",
-  "implementation_type": "On-premise",
-  "company": "Secretaría de Estado (SEDE) - Ministerio de Hacienda",
-  "company_logo_path": "datum-siero.png",
-  "highlight": true,
-  "project_description": {
-    "description": "Consultoría y desarrollo en la creación del Sistema de Evaluación de Riesgos Ocupacionales (SIERO). Mi participación se centra en la definición de la arquitectura para el versionamiento de las evaluaciones, que se estructuran jerárquicamente por edificio, unidad y puesto. Además, estoy co-desarrollando los módulos para el ciclo de vida completo de una evaluación, desde su creación y verificación hasta su versionamiento final.",
-    "bullet_points": [
-      "Consultoría en la arquitectura para el versionamiento de evaluaciones complejas.",
-      "Diseño del ciclo de vida de las evaluaciones de riesgo (creación, verificación, versionado).",
-      "Desarrollo de los formularios y la lógica de negocio para la gestión de evaluaciones.",
-      "Implementación del backend con Spring Boot.",
-      "Desarrollo de la interfaz de usuario con React y Bootstrap.",
-      "Estructuración de la lógica para manejar la jerarquía de edificio, unidad y puesto."
-    ]
-  },
-  "technologies": [21, 22, 23, 1, 2, 29, 24, 34, 35, 36, 37, 13, 38, 39, 46, 62, 64, 160],
-  "project_role_timeline": [
-    {
-      "role": 4,
-      "start_date": "2025-07-01",
-      "end_date": null
-    }
-  ],
-  "orden": 20250701,
-  "project_id": 22
-}
+          "project_name": "SIERO - Occupational Risk Assessment System",
+          "implementation_type": "On-premise",
+          "company": "Secretary of State (SEDE) - Ministry of Finance",
+          "company_logo_path": "datum-siero.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Consulting and development in the creation of the Occupational Risk Assessment System (SIERO). My participation focuses on defining the architecture for versioning the assessments, which are structured hierarchically by building, unit, and position. Additionally, I am co-developing the modules for the complete lifecycle of an assessment, from its creation and verification to its final versioning.",
+            "bullet_points": [
+              "Consulting on the architecture for versioning complex assessments.",
+              "Design of the risk assessment lifecycle (creation, verification, versioning).",
+              "Development of forms and business logic for assessment management.",
+              "Implementation of the backend with Spring Boot.",
+              "Development of the user interface with React and Bootstrap.",
+              "Structuring the logic to handle the hierarchy of building, unit, and position."
+            ]
+          },
+          "technologies": [21, 22, 23, 1, 2, 29, 24, 34, 35, 36, 37, 13, 38, 39, 46, 62, 64, 160],
+          "project_role_timeline": [
+            {
+              "role": 4,
+              "start_date": "2025-07-01",
+              "end_date": null
+            }
+          ],
+          "orden": 20250701,
+          "project_id": 22
+        }
       ]
     },
     {
       "type": "empresa",
       "company": "ACF Technologies LATAM",
-      "description": "Mejora la experiencia del cliente mediante soluciones personalizadas de gestión de citas, atención y flujos de servicio para diferentes clientes de distintas industrias.",
+      "description": "Improves the customer experience through customized solutions for appointment management, service, and workflows for different clients in various industries.",
       "logo_url": "acftechnologieslatam.png",
-      "resume":"Especializado en el desarrollo e implementación de soluciones a medida, con con enfasis en la mejora de atención al cliente, gestión de citas, colas y procesos de trabajo empresariales. Desarrollé soluciones de integracion entre plataformas empresariales y de terceros, asi como con fuentes de datos. Resultando para las empresas un flujo de trabajo más eficiente y productivo, con mayor satisfacción del cliente y mayor rentabilidad de los procesos empresariales.",
+      "resume": "Specialized in the development and implementation of tailored solutions, with an emphasis on improving customer service, appointment management, queues, and business work processes. I developed integration solutions between business and third-party platforms, as well as with data sources. This resulted in a more efficient and productive workflow for companies, with greater customer satisfaction and increased profitability of business processes.",
       "orden": 4,
       "job_roles": [
         {
-          "job_role": "Gerente de Proyectos",
+          "job_role": "Project Manager",
           "job_role_id": 3,
           "responsabilities": [
-            {"description":"Levantamiento y planificación de proyectos"},
-            {"description":"Gestión de proyectos y seguimiento de resultados"},
-            {"description":"Coordinacion de reuniones con el cliente para distintos objetivos "}
+            {"description": "Project planning and requirements gathering."},
+            {"description": "Project management and results tracking."},
+            {"description": "Coordination of client meetings for various objectives."}
           ],
           "start_date": "2024-08-18",
           "end_date": "2025-01-24"
         },
         {
-          "job_role": "Ingeniero desarrollador",
+          "job_role": "Development Engineer",
           "show_first": true,
           "job_role_id": 2,
           "responsabilities": [
-            {"description":"Arquitectura y desarrollo de soluciones tecnológicas orientadas a la optimización de procesos de atención al cliente y mejora de la experiencia del usuario final."},
-            {"description": "Desarrollo de aplicaciones frontend y backend."},
-            {"description": "Desarrollo de integraciones con sistemas empresariales y de terceros (SSO, ERP, CRM, etc.)."},
-            {"description": "Diseño y desarrollo de modulos de bases de datos"},
-            {"description": "Desarrollo de scripts de integracion y bases de datos"},
-            {"description": "Creacion y mantenimiento de infraestructura en la nube Azure para clientes de ACF"}
+            {"description": "Architecture and development of technological solutions aimed at optimizing customer service processes and improving the end-user experience."},
+            {"description": "Development of frontend and backend applications."},
+            {"description": "Development of integrations with business and third-party systems (SSO, ERP, CRM, etc.)."},
+            {"description": "Design and development of database modules."},
+            {"description": "Development of integration and database scripts."},
+            {"description": "Creation and maintenance of cloud infrastructure in Azure for ACF clients."}
           ],
           "start_date": "2023-07-18",
           "end_date": "2025-01-24"
         },
         {
-          "job_role": "Ingeniero implementador",
+          "job_role": "Implementation Engineer",
           "job_role_id": 1,
           "responsabilities": [
-            { "description": "Análisis y recopilación de requerimientos técnicos y funcionales en colaboración con el Project Manager para la definición del alcance del proyecto." },
-            { "description": "Gestión e implementación de soluciones en múltiples entornos de infraestructura, incluyendo on-premise, cloud y modelos SaaS, garantizando la correcta integración y funcionamiento." },
-            { "description": "Capacitar a los usuarios finales en el uso de las soluciones implementadas." },
-            { "description": "Monitoreo y mantenimiento continuo de las soluciones implementadas para garantizar su correcto funcionamiento y optimización continua." }
+            {"description": "Analysis and collection of technical and functional requirements in collaboration with the Project Manager to define the project scope."},
+            {"description": "Management and implementation of solutions in multiple infrastructure environments, including on-premise, cloud, and SaaS models, ensuring correct integration and operation."},
+            {"description": "Train end-users in the use of the implemented solutions."},
+            {"description": "Continuous monitoring and maintenance of the implemented solutions to ensure their proper functioning and continuous optimization."}
           ],
           "start_date": "2023-03-18",
           "end_date": "2024-08-24"
@@ -174,16 +174,16 @@
       ],
       "projects": [
         {
-          "project_name": "Implementacion piloto Qflow",
+          "project_name": "Qflow Pilot Implementation",
           "implementation_type": "ACF Cloud hosted",
           "company": "Emcali Colombia",
           "company_logo_path": "emcalicolombia.png",
           "project_description": {
-            "description": "Implementación piloto del sistema de gestión de colas Q-flow. Se realizó la configuración de servidores en la nube de Azure de ACF y el despliegue de la plataforma.",
+            "description": "Pilot implementation of the Q-flow queue management system. Configuration of servers in the ACF Azure cloud and deployment of the platform were carried out.",
             "bullet_points": [
-              "Configuración de servidores Windows Server en Azure.",
-              "Configuración de instancia de SQL Server en Azure.",
-              "Despliegue de la plataforma Q-flow."
+              "Configuration of Windows Server servers in Azure.",
+              "Configuration of SQL Server instance in Azure.",
+              "Deployment of the Q-flow platform."
             ]
           },
           "technologies": [17, 11, 9, 4, 12, 13, 14, 48, 63],
@@ -198,19 +198,19 @@
           "project_id": 1
         },
         {
-          "project_name": "Integracion de Qflow con Microsoft Dynamics 365",
+          "project_name": "Qflow Integration with Microsoft Dynamics 365",
           "implementation_type": "ACF Cloud hosted",
-          "company":"Asesuisa El Salvador",
+          "company": "Asesuisa El Salvador",
           "company_logo_path": "asesuisaelsalvador.png",
           "project_description": {
-            "description":"Asesuisa necesitaba mejorar los procesos de atención al cliente y mejorar la experiencia del usuario final. Para ello, se implementó un sistema de gestión de colas que permitía la optimización de los flujos de atención y la mejora de la experiencia del usuario final",
+            "description": "Asesuisa needed to improve customer service processes and enhance the end-user experience. To achieve this, a queue management system was implemented to optimize service flows and improve the end-user experience.",
             "bullet_points": [
-              "Optimización de los flujos de atención al cliente",
-              "Desarrollo de scripts de integracion entre plataformas",
-              "Configuracion de servidores IIS en la nube de ACF en Azure",
-              "Implementacion de quiosco de autogestion de filas y citas",
-              "Implementacion de modulo \"Infopage\"",
-              "Capacitacion al usuario final en el uso del sistema."
+              "Optimization of customer service flows.",
+              "Development of integration scripts between platforms.",
+              "Configuration of IIS servers in the ACF cloud on Azure.",
+              "Implementation of a self-service kiosk for queue and appointment management.",
+              "Implementation of the 'Infopage' module.",
+              "Training for end-users on the use of the system."
             ]
           },
           "technologies": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 48, 63],
@@ -225,19 +225,19 @@
           "project_id": 2
         },
         {
-          "project_name": "Migración de version 5.7 a 6.2 Sistema Colas",
+          "project_name": "Queue System Version Migration 5.7 to 6.2",
           "implementation_type": "On-premise",
-          "company":"Tigo Bolivia",
+          "company": "Tigo Bolivia",
           "company_logo_path": "tigobolivia.png",
-          "project_description": {  
-            "description":"Migracion de version de sistema de gestion de colas de Tigo Bolivia, de la version 5.7 a la version 6.2, lo que requeria exhaustiva evaluacion de la compatibilidad entre componentes del sistema y sus integraciones.",
+          "project_description": {
+            "description": "Version migration of Tigo Bolivia's queue management system from version 5.7 to 6.2, which required an exhaustive evaluation of compatibility between system components and their integrations.",
             "bullet_points": [
-              "Configuracion de servidores IIS windows Server en infraestructura del cliente",
-              "Configuracion de balanceadores de carga en infraestructura del cliente",
-              "Migracion de version componentes de integraciones 5.7 a 6.2",
-              "Migracion de version de sistema de gestion de colas e integraciones asociadas",
-              "Migracion de version de motor de la base de datos SQL Server",
-              "Capacitacion al usuario final en el uso de la nueva version del sistema."
+              "Configuration of IIS Windows Server servers in the client's infrastructure.",
+              "Configuration of load balancers in the client's infrastructure.",
+              "Migration of integration components version 5.7 to 6.2.",
+              "Migration of the queue management system version and associated integrations.",
+              "Migration of the SQL Server database engine version.",
+              "Training for end-users on the use of the new version of the system."
             ]
           },
           "technologies": [17, 10, 11, 12, 13, 14, 48, 63],
@@ -252,18 +252,18 @@
           "project_id": 3
         },
         {
-          "project_name": "Rediseño responsivo de pagina de informacion",
+          "project_name": "Responsive Redesign of Information Page",
           "implementation_type": "On-premise",
           "company": "Veterinaria los Heroes El Salvador",
           "company_logo_path": "veterinarialosheroeselsalvador.png",
           "project_description": {
-            "description": "Rediseño completo de la aplicación Infopage para mejorar la experiencia del usuario con un diseño totalmente responsivo.",
+            "description": "Complete redesign of the Infopage application to improve the user experience with a fully responsive design.",
             "bullet_points": [
-              "Rediseño completo de la interfaz del Infopage utilizando React",
-              "Implementación de diseño responsivo con CSS",
-              "Desarrollo de transformaciones XSLT para el procesamiento de datos",
-              "Desarrollo de scripts backend en .NET",
-              "Implementación en servidores IIS del cliente"
+              "Complete redesign of the Infopage interface using React.",
+              "Implementation of responsive design with CSS.",
+              "Development of XSLT transformations for data processing.",
+              "Development of backend scripts in .NET.",
+              "Implementation on the client's IIS servers."
             ]
           },
           "technologies": [1, 3, 8, 5, 10, 12, 13, 14, 48, 63],
@@ -278,18 +278,18 @@
           "project_id": 4
         },
         {
- "project_name": "Quiosco de autogestion con Cámara BAC",
+          "project_name": "Self-service Kiosk with BAC Camera",
           "implementation_type": "On-premise",
           "company": "BAC Guatemala",
           "company_logo_path": "bacguatemala.png",
           "project_description": {
-            "description": "Desarrollo de un quiosco de autogestión con integración de cámara de Windows para captura de fotos en flujos específicos. La solución incluyó una aplicación Windows Forms para la integración con hardware y una interfaz web moderna para la interacción del usuario.",
+            "description": "Development of a self-service kiosk with Windows camera integration for photo capture in specific flows. The solution included a Windows Forms application for hardware integration and a modern web interface for user interaction.",
             "bullet_points": [
-              "Desarrollo de aplicación Windows Forms para integración con cámara.",
-              "Desarrollo de interfaz de quiosco con React.",
-              "Desarrollo de scripts en .NET para manejo de archivos.",
-              "Creación de objetos en SQL Server para almacenamiento de datos.",
-              "Implementación remota en servidores del cliente."
+              "Development of a Windows Forms application for camera integration.",
+              "Development of a kiosk interface with React.",
+              "Development of scripts in .NET for file handling.",
+              "Creation of objects in SQL Server for data storage.",
+              "Remote implementation on the client's servers."
             ]
           },
           "technologies": [1, 5, 27, 11, 18, 48, 63],
@@ -304,20 +304,20 @@
           "project_id": 5
         },
         {
- "project_name": "Actualización plataforma Sense",
+          "project_name": "Sense Platform Update",
           "implementation_type": "On-premise",
           "company": "Claro El Salvador",
           "company_logo_path": "claroelsalvador.png",
           "project_description": {
-            "description": "Actualización del sistema Sense y su integración con Q-flow. El proyecto incluyó la recopilación de requerimientos, coordinación con el equipo de desarrollo, y la implementación de mejoras en el sistema existente.",
+            "description": "Update of the Sense system and its integration with Q-flow. The project included requirements gathering, coordination with the development team, and implementation of improvements to the existing system.",
             "bullet_points": [
-              "Análisis y recopilación de requerimientos de mejora del sistema.",
-              "Coordinación con el equipo de desarrollo para la implementación de mejoras.",
-              "Instalación de nueva versión de la aplicación en Windows Server.",
-              "Ejecución de scripts de actualización en SQL Server.",
-              "Implementación remota de mejoras en el sistema.",
-              "Verificación y pruebas del sistema actualizado.",
-              "Certificar integraciones con QFlow"
+              "Analysis and gathering of system improvement requirements.",
+              "Coordination with the development team for the implementation of improvements.",
+              "Installation of a new version of the application on Windows Server.",
+              "Execution of update scripts in SQL Server.",
+              "Remote implementation of system improvements.",
+              "Verification and testing of the updated system.",
+              "Certify integrations with QFlow."
             ]
           },
           "technologies": [5, 17, 11, 18, 48, 63],
@@ -332,17 +332,17 @@
           "project_id": 6
         },
         {
- "project_name": "Actualización de aplicacion Quiosco de autogestion",
+          "project_name": "Self-service Kiosk Application Update",
           "implementation_type": "On-premise",
           "company": "Promerica El Salvador",
           "company_logo_path": "promericaelsalvador.svg",
           "project_description": {
-            "description": "Actualización de la interfaz visual del quiosco de autogestión, incluyendo cambios en la tipografía y elementos visuales. La aplicación es utilizada en todas las sucursales del banco en el país.",
+            "description": "Update of the visual interface of the self-service kiosk, including changes in typography and visual elements. The application is used in all bank branches in the country.",
             "bullet_points": [
-              "Implementación de nueva tipografía en la interfaz del quiosco.",
-              "Actualización de elementos visuales para mejorar la experiencia del usuario.",
-              "Despliegue de cambios en servidores IIS del cliente.",
-              "Implementación en todas las sucursales del banco a nivel nacional."
+              "Implementation of new typography in the kiosk interface.",
+              "Update of visual elements to improve the user experience.",
+              "Deployment of changes on the client's IIS servers.",
+              "Implementation in all bank branches nationwide."
             ]
           },
           "technologies": [7, 16, 8, 10, 12, 13, 14, 48, 63],
@@ -357,20 +357,20 @@
           "project_id": 7
         },
         {
- "project_name": "Implementacion de plataforma Qflow y componentes",
+          "project_name": "Implementation of Qflow Platform and Components",
           "implementation_type": "On-premise",
           "company": "Microlab Honduras",
           "company_logo_path": "microlabhonduras.png",
           "project_description": {
-            "description": "Implementación de sistema de gestión de colas Q-flow y sistema de monitoreo de audio Sense para el laboratorio clínico Microlab en Honduras. El proyecto incluyó el desarrollo de un quiosco de autogestión, una pantalla informativa (infopage), y la integración entre ambas plataformas.",
+            "description": "Implementation of the Q-flow queue management system and Sense audio monitoring system for the Microlab clinical laboratory in Honduras. The project included the development of a self-service kiosk, an information screen (infopage), and the integration between both platforms.",
             "bullet_points": [
-              "Desarrollo de quiosco de autogestión con Angular.",
-              "Desarrollo de módulo \"Infopage\" con React y WebSockets.",
-              "Análisis de requerimientos y diseño de flujos de atención al cliente.",
-              "Configuración de servidor Windows y base de datos SQL Server.",
-              "Desarrollo de scripts en .NET para la integración con el sistema de monitoreo de audio Sense.",
-              "Instalación de hardware y software en sitio en Tegucigalpa.",
-              "Capacitación a personal y jefaturas sobre el uso de las nuevas herramientas."
+              "Development of a self-service kiosk with Angular.",
+              "Development of an 'Infopage' module with React and WebSockets.",
+              "Analysis of requirements and design of customer service flows.",
+              "Configuration of Windows server and SQL Server database.",
+              "Development of scripts in .NET for integration with the Sense audio monitoring system.",
+              "On-site installation of hardware and software in Tegucigalpa.",
+              "Training for staff and managers on the use of the new tools."
             ]
           },
           "technologies": [15, 1, 4, 5, 17, 11, 12, 13, 14, 48, 63],
@@ -390,17 +390,17 @@
           "project_id": 8
         },
         {
- "project_name": "Mantenimiento Quiosco de autogestion",
+          "project_name": "Self-service Kiosk Maintenance",
           "implementation_type": "On-premise",
           "company": "Aguas de Saltillo México",
           "company_logo_path": "aguasdesaltillomexico.png",
           "project_description": {
-            "description": "Resolución de problemas de funcionamiento en el quiosco de autogestión heredado de un desarrollador anterior. El proyecto incluyó la actualización del sistema operativo del cliente y mejoras en el diseño funcional de la aplicación.",
+            "description": "Resolution of operational problems in the self-service kiosk inherited from a previous developer. The project included updating the client's operating system and improvements in the functional design of the application.",
             "bullet_points": [
-              "Diagnóstico y resolución de problemas en flujos específicos del quiosco.",
-              "Actualización del sistema operativo de Windows 7 a Windows 10.",
-              "Instalación de librerías faltantes en el sistema.",
-              "Mejoras en el diseño funcional de la aplicación."
+              "Diagnosis and resolution of problems in specific kiosk flows.",
+              "Update of the operating system from Windows 7 to Windows 10.",
+              "Installation of missing libraries in the system.",
+              "Improvements in the functional design of the application."
             ]
           },
           "technologies": [7, 16, 8, 17, 12, 13, 14, 48, 63],
@@ -415,18 +415,18 @@
           "project_id": 9
         },
         {
- "project_name": "Implementacion nacional Qflow e integraciones CNR",
+          "project_name": "National Implementation of Qflow and CNR Integrations",
           "implementation_type": "On-premise",
-          "company": "Centro Nacional de Registros El Salvador",
+          "company": "National Registry Center El Salvador",
           "company_logo_path": "cnrelsalvador.png",
           "project_description": {
-            "description": "Implementacion de sistema de gestión de colas Q-flow para el Centro Nacional de Registros (CNR) de El Salvador. Se implementaron quioscos de autogestion, pantallas informativas (infopages) y se diseñaron los flujos de atencion para optimizar los procesos de atencion al cliente en las 14 sedes a nivel nacional.",
+            "description": "Implementation of the Q-flow queue management system for the National Registry Center (CNR) of El Salvador. Self-service kiosks and information screens (infopages) were implemented, and service flows were designed to optimize customer service processes in the 14 branches nationwide.",
             "bullet_points": [
-              "Desarrollo de quiosco de autogestion de filas y citas.",
-              "Desarrollo de modulo \"Infopage\".",
-              "Diseño y adecuacion de flujos de atencion.",
-              "Instalacion y configuracion de sistema en las 14 sedes a nivel nacional.",
-              "Capacitacion al personal de las 14 sedes a nivel nacional."
+              "Development of a self-service kiosk for queues and appointments.",
+              "Development of the 'Infopage' module.",
+              "Design and adaptation of service flows.",
+              "Installation and configuration of the system in the 14 branches nationwide.",
+              "Training for the staff of the 14 branches nationwide."
             ]
           },
           "technologies": [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 48, 63],
@@ -446,17 +446,17 @@
           "project_id": 10
         },
         {
- "project_name": "Rediseño Flujo Atención quiosco de auto gestion",
+          "project_name": "Redesign of Self-service Kiosk Service Flow",
           "implementation_type": "On-premise",
           "company": "Banpais Honduras",
           "company_logo_path": "banpaisonduras.png",
           "project_description": {
-            "description": "Rediseño de la interfaz del quiosco de autogestión y los flujos de encolamiento para optimizar la atención al cliente. La implementación se realizó de forma remota en los servidores del cliente.",
+            "description": "Redesign of the self-service kiosk interface and queuing flows to optimize customer service. The implementation was carried out remotely on the client's servers.",
             "bullet_points": [
-              "Rediseño de la interfaz del quiosco con React.",
-              "Desarrollo de nuevo flujo de atención con cambio en la priorización de encolamiento.",
-              "Creación de script en .NET para la lógica del nuevo flujo.",
-              "Implementación remota en servidores del cliente utilizando Remote Desktop y IIS."
+              "Redesign of the kiosk interface with React.",
+              "Development of a new service flow with a change in queuing prioritization.",
+              "Creation of a script in .NET for the logic of the new flow.",
+              "Remote implementation on the client's servers using Remote Desktop and IIS."
             ]
           },
           "technologies": [1, 5, 10, 18, 12, 13, 14, 48, 63],
@@ -471,18 +471,18 @@
           "project_id": 11
         },
         {
- "project_name": "Integracion de Identificación Clientes",
+          "project_name": "Customer Identification Integration",
           "implementation_type": "On-premise",
           "company": "Davivienda Honduras",
           "company_logo_path": "daviviendahonduras.png",
           "project_description": {
-            "description": "Desarrollo e integración de una nueva funcionalidad para identificar clientes mediante documento o pasaporte en el quiosco de autogestión, incluyendo el diseño de una interfaz con teclado alfanumérico y la integración con servicios REST del cliente.",
+            "description": "Development and integration of a new functionality to identify customers by document or passport at the self-service kiosk, including the design of an alphanumeric keyboard interface and integration with the client's REST services.",
             "bullet_points": [
-              "Diseño e implementación de interfaz con teclado alfanumérico para ingreso de documentos.",
-              "Integración con servicios REST proporcionados por el cliente.",
-              "Desarrollo de backend con Java y Spring Boot.",
-              "Implementación remota en servidor JBoss del cliente.",
-              "Actualización de la aplicación del quiosco de autogestión."
+              "Design and implementation of an interface with an alphanumeric keyboard for document entry.",
+              "Integration with REST services provided by the client.",
+              "Backend development with Java and Spring Boot.",
+              "Remote implementation on the client's JBoss server.",
+              "Update of the self-service kiosk application."
             ]
           },
           "technologies": [1, 2, 21, 22, 23, 24, 25, 12, 13, 14, 48, 63],
@@ -497,20 +497,20 @@
           "project_id": 12
         },
         {
- "project_name": "Desarrollo de quiosco de auto gestion con multiples integraciones",
+          "project_name": "Development of Self-service Kiosk with Multiple Integrations",
           "implementation_type": "On-premise",
           "company": "Santander México",
           "company_logo_path": "santandermexico.png",
           "highlight": true,
           "project_description": {
-            "description": "Desarrollo de un quiosco de autogestión altamente optimizado para más de 1000 sucursales en produccion, con parametrización según el tipo de sucursal (Café, Empresarial, Banca Personas). El proyecto incluyó integración con hardware de lectura de tarjetas y validación de identidad.",
+            "description": "Development of a highly optimized self-service kiosk for more than 1000 branches in production, with parameterization according to the type of branch (Café, Business, Personal Banking). The project included integration with card reading hardware and identity validation.",
             "bullet_points": [
-              "Desarrollo de interfaz parametrizable según tipo de sucursal con React y Tailwind.",
-              "Implementación de integraciones REST y SOAP con servicios bancarios.",
-              "Desarrollo de aplicación Windows Forms para integración con lector de tarjetas.",
-              "Optimización de rendimiento para despliegue masivo.",
-              "Desarrollo de backend con .NET para scripts de integración.",
-              "Implementación de validación de identidad y seguridad bancaria."
+              "Development of a parameterizable interface according to branch type with React and Tailwind.",
+              "Implementation of REST and SOAP integrations with banking services.",
+              "Development of a Windows Forms application for integration with a card reader.",
+              "Performance optimization for massive deployment.",
+              "Backend development with .NET for integration scripts.",
+              "Implementation of identity validation and banking security."
             ]
           },
           "technologies": [1, 26, 8, 4, 29, 5, 10, 24, 33, 12, 13, 14, 48, 63],
@@ -525,18 +525,18 @@
           "project_id": 13
         },
         {
- "project_name": "Quiosco de autogestion e Infopage RNPN",
+          "project_name": "Self-service Kiosk and Infopage RNPN",
           "implementation_type": "On-premise",
-          "company": "Registro Nacional de Personas Naturales El Salvador",
+          "company": "National Registry of Natural Persons El Salvador",
           "company_logo_path": "rnpnelsalvador.png",
           "project_description": {
-            "description": "Desarrollo desde cero del quiosco de autogestión e Infopage para el Registro Nacional de Personas Naturales (RNPN). El desarrollo se realizó siguiendo las especificaciones y reglas de negocio proporcionadas a través de tickets de Jira.",
+            "description": "Development from scratch of the self-service kiosk and Infopage for the National Registry of Natural Persons (RNPN). The development was carried out following the specifications and business rules provided through Jira tickets.",
             "bullet_points": [
-              "Desarrollo de quiosco de autogestión con React y Tailwind.",
-              "Desarrollo de Infopage con React y Tailwind.",
-              "Desarrollo de scripts de integración con Q-flow en .NET.",
-              "Implementación de reglas de negocio según especificaciones de Jira.",
-              "Preparación del paquete de instalación para el equipo de implementación."
+              "Development of a self-service kiosk with React and Tailwind.",
+              "Development of an Infopage with React and Tailwind.",
+              "Development of integration scripts with Q-flow in .NET.",
+              "Implementation of business rules according to Jira specifications.",
+              "Preparation of the installation package for the implementation team."
             ]
           },
           "technologies": [1, 26, 5, 12, 13, 14, 48, 63],
@@ -551,19 +551,19 @@
           "project_id": 14
         },
         {
- "project_name": "Mentoría Desarrollo Quioscos/Infopages",
-          "implementation_type": "Capacitación interna / Mentoría técnica",
+          "project_name": "Kiosk/Infopage Development Mentorship",
+          "implementation_type": "Internal training / Technical mentorship",
           "company": "ACF Technologies LATAM",
           "highlight": false,
           "company_logo_path": "acftechnologieslatam.png",
           "project_description": {
-            "description": "Mentoría y capacitación dirigida a nuevos desarrolladores del equipo, enfocada en el desarrollo, estructura e integración de quioscos de autogestión e infopages, así como en las mejores prácticas para la integración con Q-flow y la extensión de funcionalidades.",
+            "description": "Mentorship and training for new developers on the team, focused on the development, structure, and integration of self-service kiosks and infopages, as well as best practices for integration with Q-flow and extending functionalities.",
             "bullet_points": [
-              "Preparación de material didáctico y documentación técnica sobre la arquitectura y desarrollo de quioscos de autogestión e infopages.",
-              "Sesiones prácticas y teóricas sobre la estructura de los proyectos, integración con Q-flow y flujos de atención.",
-              "Explicación de la extensibilidad y personalización de los módulos según requerimientos de clientes.",
-              "Mentoría personalizada para resolver dudas técnicas y acelerar el onboarding de los nuevos integrantes.",
-              "Transferencia de buenas prácticas de desarrollo, despliegue y mantenimiento de los sistemas."
+              "Preparation of educational material and technical documentation on the architecture and development of self-service kiosks and infopages.",
+              "Practical and theoretical sessions on project structure, integration with Q-flow, and service flows.",
+              "Explanation of the extensibility and customization of modules according to client requirements.",
+              "Personalized mentorship to resolve technical doubts and accelerate the onboarding of new members.",
+              "Transfer of best practices for development, deployment, and maintenance of the systems."
             ]
           },
           "technologies": [5, 1, 11, 4, 24, 48, 63],
@@ -578,18 +578,18 @@
           "project_id": 26
         },
         {
- "project_name": "Online Appointment Booking System (OABS)",
+          "project_name": "Online Appointment Booking System (OABS)",
           "implementation_type": "Client Cloud hosted",
           "company": "SURA México",
           "highlight": true,
           "company_logo_path": "suramexico.png",
           "project_description": {
-            "description": "Desarrollo de un sistema de reserva de citas en línea (OABS) para SURA México. El proyecto incluyó la integración con servicios de terceros para la validación de CURP y tecnología OCR, así como la implementación de flujos de encolamiento y priorización complejos.",
+            "description": "Development of an online appointment booking system (OABS) for SURA México. The project included integration with third-party services for CURP validation and OCR technology, as well as the implementation of complex queuing and prioritization flows.",
             "bullet_points": [
-              "Análisis de requerimientos del cliente.",
-              "Desarrollo de la aplicación con Angular y .NET.",
-              "Integración con servicios de terceros para validación de CURP y OCR.",
-              "Diseño e implementación de flujos de encolamiento y priorización basados en datos de entrada."
+              "Analysis of client requirements.",
+              "Development of the application with Angular and .NET.",
+              "Integration with third-party services for CURP validation and OCR.",
+              "Design and implementation of queuing and prioritization flows based on input data."
             ]
           },
           "technologies": [15, 5, 9, 19, 12, 13, 14, 48, 63],
@@ -604,19 +604,19 @@
           "project_id": 15
         },
         {
- "project_name": "Implementacion Q-flow en Nuevas Sucursales ",
+          "project_name": "Q-flow Implementation in New Branches",
           "implementation_type": "On-premise",
           "company": "Banco Cuscatlán El Salvador",
           "company_logo_path": "bancocuscatlanelsalvador.png",
           "project_description": {
-            "description": "Implementación del sistema Q-flow en nuevas sucursales del banco. El proyecto incluyó la configuración del sistema, revisión de integraciones, pruebas funcionales de encolamiento y certificación del funcionamiento en cada sucursal.",
+            "description": "Implementation of the Q-flow system in new bank branches. The project included system configuration, integration review, functional testing of queuing, and certification of operation in each branch.",
             "bullet_points": [
-              "Configuración de nuevas sucursales en la plataforma Q-flow.",
-              "Revisión y validación de scripts de integración.",
-              "Pruebas funcionales de encolamiento en quioscos de autogestión.",
-              "Verificación de visualización en pantallas informativas (Infopage).",
-              "Pruebas de atención en Q-flow.",
-              "Certificación del funcionamiento integral del sistema."
+              "Configuration of new branches on the Q-flow platform.",
+              "Review and validation of integration scripts.",
+              "Functional testing of queuing on self-service kiosks.",
+              "Verification of display on information screens (Infopage).",
+              "Service testing in Q-flow.",
+              "Certification of the integral functioning of the system."
             ]
           },
           "technologies": [17, 11, 20, 10, 5, 12, 13, 14, 48, 63],
@@ -631,24 +631,24 @@
           "project_id": 16
         },
         {
- "project_name": "Quiosco Autogestión en Azure",
+          "project_name": "Self-service Kiosk in Azure",
           "implementation_type": "ACF Cloud hosted",
           "company": "BBVA México",
           "highlight": true,
           "company_logo_path": "bbvamexico.png",
           "project_description": {
-            "description": "Desarrollo de aplicación de quiosco de autogestión para BBVA México con integraciones avanzadas incluyendo WhatsApp, lectura de tarjetas y validación de identidad. El proyecto incluyó configuración de infraestructura en la nube y despliegue con Cloudflare.",
+            "description": "Development of a self-service kiosk application for BBVA México with advanced integrations including WhatsApp, card reading, and identity validation. The project included cloud infrastructure configuration and deployment with Cloudflare.",
             "bullet_points": [
-              "Desarrollo de aplicación de quiosco de autogestión con React, Axios y Bootstrap.",
-              "Implementación de integración con WhatsApp para notificaciones.",
-              "Desarrollo de integración con Windows Forms para lectura de tarjetas.",
-              "Implementación de autenticación JWT para seguridad en la nube.",
-              "Configuración de Cloudflare para protección y optimización del frontend.",
-              "Implementación de captcha para validación de usuarios.",
-              "Desarrollo de integraciones REST para comunicación con servicios externos.",
-              "Configuración de servidores Windows Server en la nube de ACF.",
-              "Configuración de instancias de base de datos en la infraestructura cloud.",
-              "Desarrollo de backend con .NET para scripts de integración."
+              "Development of a self-service kiosk application with React, Axios, and Bootstrap.",
+              "Implementation of WhatsApp integration for notifications.",
+              "Development of integration with Windows Forms for card reading.",
+              "Implementation of JWT authentication for cloud security.",
+              "Configuration of Cloudflare for frontend protection and optimization.",
+              "Implementation of captcha for user validation.",
+              "Development of REST integrations for communication with external services.",
+              "Configuration of Windows Server servers in the ACF cloud.",
+              "Configuration of database instances in the cloud infrastructure.",
+              "Backend development with .NET for integration scripts."
             ]
           },
           "technologies": [1, 29, 2, 4, 30, 31, 32, 10, 24, 12, 13, 14, 48, 63],
@@ -663,18 +663,18 @@
           "project_id": 17
         },
         {
- "project_name": "Desarrollo de nuevo Quiosco Autogestión",
+          "project_name": "Development of a new Self-service Kiosk",
           "implementation_type": "Client Cloud hosted",
           "company": "BAC Regional (GT, SV, HN, CR, PA)",
           "company_logo_path": "bacguatemala.png",
           "project_description": {
-            "description": "Desarrollo de una nueva aplicación de quiosco de autogestión para todas las sucursales de BAC en Centroamérica. El proyecto incluyó el rediseño de flujos para validación de tickets externos, identificación de usuarios mediante integración REST con AS-400, y despliegue en la infraestructura cloud del cliente.",
+            "description": "Development of a new self-service kiosk application for all BAC branches in Central America. The project included redesigning flows for external ticket validation, user identification through REST integration with AS-400, and deployment on the client's cloud infrastructure.",
             "bullet_points": [
-              "Levantamiento de requerimientos a nivel regional.",
-              "Rediseño de flujos de atención y validación de tickets.",
-              "Desarrollo de integración REST con AS-400 para identificación de usuarios.",
-              "Desarrollo de backend con .NET y creación de objetos en SQL Server.",
-              "Implementación en servidores Azure del cliente."
+              "Regional requirements gathering.",
+              "Redesign of service and ticket validation flows.",
+              "Development of REST integration with AS-400 for user identification.",
+              "Backend development with .NET and creation of objects in SQL Server.",
+              "Implementation on the client's Azure servers."
             ]
           },
           "technologies": [5, 11, 9, 24, 28, 14, 48, 63],
@@ -689,19 +689,19 @@
           "project_id": 18
         },
         {
- "project_name": "Rediseño de aplicacion Pagina de informacion",
+          "project_name": "Redesign of Information Page Application",
           "implementation_type": "On-premise",
           "company": "Banco Agrícola El Salvador",
           "company_logo_path": "bancoagricolaelsalvador.png",
           "project_description": {
-            "description": "Rediseño completo de la aplicación Infopage para todas las sucursales del banco, implementando un diseño responsivo adaptable a cualquier tamaño de televisor y un sistema de gestión de contenido multimedia personalizado por ubicación y horario.",
+            "description": "Complete redesign of the Infopage application for all bank branches, implementing a responsive design adaptable to any TV size and a customized multimedia content management system by location and schedule.",
             "bullet_points": [
-              "Levantamiento de requerimientos específicos para la personalización de campañas publicitarias.",
-              "Desarrollo de sistema de configuración de multimedia por ubicación.",
-              "Implementación de programación horaria para contenido multimedia.",
-              "Diseño e implementación de interfaz responsiva con React y Bootstrap.",
-              "Desarrollo de lógica de negocio con RxJS para manejo de estados y eventos.",
-              "Despliegue remoto en servidores del cliente para todas las sucursales."
+              "Gathering of specific requirements for the customization of advertising campaigns.",
+              "Development of a multimedia configuration system by location.",
+              "Implementation of time scheduling for multimedia content.",
+              "Design and implementation of a responsive interface with React and Bootstrap.",
+              "Development of business logic with RxJS for state and event management.",
+              "Remote deployment on the client's servers for all branches."
             ]
           },
           "technologies": [1, 2, 6, 8, 10, 12, 13, 14, 48, 63],
@@ -716,16 +716,16 @@
           "project_id": 19
         },
         {
-          "project_name": "Desarrollo de aplicacion Quiosco de Autogestion",
+          "project_name": "Development of Self-service Kiosk Application",
           "implementation_type": "ACF Cloud hosted",
           "company": "Siman El Salvador",
           "company_logo_path": "siman.png",
           "project_description": {
-            "description": "Desarrollo de una nueva aplicación de quiosco de autogestión para Siman El Salvador, implementando un diseño responsivo adaptable a cualquier tamaño de monitor con integraciones de validaciones de entregas de paquetes",
+            "description": "Development of a new self-service kiosk application for Siman El Salvador, implementing a responsive design adaptable to any monitor size with integrations for package delivery validations.",
             "bullet_points": [
-              "Desarrollo de aplicación de quiosco de autogestión con React, Axios y Bootstrap.",
-              "Desarrollo de integraciones con sistemas internos salesforce y tracking de entregas.",
-              "Diseño e implementación de interfaz responsiva con React y Bootstrap."
+              "Development of a self-service kiosk application with React, Axios, and Bootstrap.",
+              "Development of integrations with internal Salesforce and delivery tracking systems.",
+              "Design and implementation of a responsive interface with React and Bootstrap."
             ]
           },
           "technologies": [1, 2, 6, 8, 10, 12, 13, 14, 48, 63],
@@ -740,16 +740,16 @@
           "project_id": 20
         },
         {
-          "project_name": "Diseño de Quiosco de Autogestion e Infopage",
+          "project_name": "Design of Self-service Kiosk and Infopage",
           "implementation_type": "ACF Cloud hosted",
-          "company": "Gobierno de Zapopan Mexico",
+          "company": "Government of Zapopan Mexico",
           "company_logo_path": "zapopan.png",
           "project_description": {
-            "description": "Desarrollo de una nueva aplicación de quiosco de autogestión para Gobierno de Zapopan Mexico, implementando un diseño responsivo adaptable a cualquier tamaño de monitor con integraciones de validaciones de entregas de paquetes",
+            "description": "Development of a new self-service kiosk application for the Government of Zapopan Mexico, implementing a responsive design adaptable to any monitor size with package delivery validation integrations.",
             "bullet_points": [
-              "Desarrollo de aplicación de quiosco de autogestión con React, Axios y Bootstrap.",
-              "Diseño e implementación de interfaz responsiva con React y Bootstrap.",
-              "Diseño de aplicacion de pagina de informacion con plantillas responsivas"
+              "Development of a self-service kiosk application with React, Axios, and Bootstrap.",
+              "Design and implementation of a responsive interface with React and Bootstrap.",
+              "Design of an information page application with responsive templates."
             ]
           },
           "technologies": [1, 2, 6, 8, 10, 12, 13, 14, 48, 63],
@@ -768,48 +768,48 @@
     {
       "type": "empresa",
       "company": "Grupo LS EL Salvador",
-      "description": "Grupo LS El Salvador ofrece soluciones financieras innovadoras, incluyendo leasing vehicular, compra y venta de vehículos, y servicios de financiamiento flexibles. Facilita el acceso a vehículos mediante arrendamiento con opción a compra, préstamos inmediatos con respaldo vehicular y opciones de financiamiento accesibles, adaptándose a las necesidades de sus clientes tanto particulares como empresariales en El Salvador.",
+      "description": "Grupo LS El Salvador offers innovative financial solutions, including vehicle leasing, vehicle purchase and sale, and flexible financing services. It facilitates access to vehicles through leasing with a purchase option, immediate loans with vehicle collateral, and accessible financing options, adapting to the needs of its individual and business clients in El Salvador.",
       "logo_url": "glssv.png",
-      "resume":"Responsable del desarrollo y mantenimiento de soluciones tecnológicas, con enfoque en la mejora de procesos. Finalicé proyectos clave de transformación digital de la empresa, incluyendo la integración de sistemas GPS para flota vehicular y el desarrollo de soluciones personalizadas para la gestión de activos y servicios financieros así como la ampliacion de procesos cubiertos por el sistema principal de la empresa. Brindar soporte tecnico informatico a todo el personal de la empresa.",
+      "resume": "Responsible for the development and maintenance of technological solutions, with a focus on process improvement. I completed key digital transformation projects for the company, including the integration of GPS systems for the vehicle fleet and the development of customized solutions for asset management and financial services, as well as expanding the processes covered by the company's main system. Provide technical IT support to all company personnel.",
       "orden": 6,
       "job_roles": [
         {
-          "job_role": "Analista desarrollador",
+          "job_role": "Developer Analyst",
           "job_role_id": 5,
           "start_date": "2021-04-21",
           "end_date": "2023-03-16",
           "actually": false,
           "responsabilities": [
-            { "description": "Levantamiento y análisis de requerimientos con dueños del negocio para nuevos desarrollos y mejoras." },
-            { "description": "Diseño y desarrollo de módulos y funcionalidades en PowerBuilder y Windows Forms." },
-            { "description": "Mantenimiento, mejora continua y soporte del sistema principal de gestión de negocios y clientes." },
-            { "description": "Creación y optimización de objetos de base de datos: triggers, stored procedures y funciones en SQL Server." },
-            { "description": "Desarrollo de integraciones entre sistemas internos y externos (por ejemplo, integración de datos GPS con MySQL y SQL Server)." },
-            { "description": "Desarrollo y despliegue de sitios web estáticos en PHP, HTML, CSS y JS para marcas de la empresa." },
-            { "description": "Implementación y soporte de infraestructura tecnológica: cableado estructurado, redes, servidores, cámaras de seguridad y telefonía." },
-            { "description": "Capacitación a usuarios finales en el uso de nuevos módulos y sistemas desarrollados." },
-            { "description": "Soporte técnico a usuarios ante problemas informáticos y de sistemas." }
+            {"description": "Gathering and analysis of requirements with business owners for new developments and improvements."},
+            {"description": "Design and development of modules and functionalities in PowerBuilder and Windows Forms."},
+            {"description": "Maintenance, continuous improvement, and support of the main business and customer management system."},
+            {"description": "Creation and optimization of database objects: triggers, stored procedures, and functions in SQL Server."},
+            {"description": "Development of integrations between internal and external systems (e.g., integration of GPS data with MySQL and SQL Server)."},
+            {"description": "Development and deployment of static websites in PHP, HTML, CSS, and JS for the company's brands."},
+            {"description": "Implementation and support of technological infrastructure: structured cabling, networks, servers, security cameras, and telephony."},
+            {"description": "Training end-users in the use of new developed modules and systems."},
+            {"description": "Technical support to users with IT and system problems."}
           ]
         }
       ],
       "projects": [
         {
- "project_name": "Instalacion de infraestructura de redes en nueva sede",
+          "project_name": "Installation of network infrastructure in new headquarters",
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "company_logo_path": "grupolselsalvador.png",
           "project_description": {
-            "description": "Proyecto de instalación, configuración y puesta en marcha de la infraestructura tecnológica y de seguridad en el nuevo edificio de Grupo LS El Salvador, asegurando la conectividad, seguridad y operatividad de todas las áreas durante la mudanza y adecuación de las instalaciones. Incluyó el montaje y configuración de servidores en rack y la instalacion de cableado estructurado de red para internet y telefonía.",
+            "description": "Project for the installation, configuration, and commissioning of the technological and security infrastructure in the new Grupo LS El Salvador building, ensuring connectivity, security, and operation of all areas during the move and adaptation of the facilities. It included the assembly and configuration of rack servers and the installation of structured network cabling for internet and telephony.",
             "bullet_points": [
-              "Instalación de cableado estructurado para red de datos, líneas telefónicas y cámaras de seguridad en todo el edificio.",
-              "Configuración y puesta en marcha de switches Cisco, routers y repetidores.",
-              "Instalación física y configuración de cámaras de videovigilancia (CCTV/IP), incluyendo cableado y ubicación estratégica.",
-              "Crimpado y armado de cables RJ45 (directos y cruzados) según necesidades de la red.",
-              "Diseño y configuración lógica de la topología de red, incluyendo subneteo y segmentación de redes.",
-              "Montaje y configuración de servidores en rack, asegurando su conectividad y funcionamiento.",
-              "Gestión y configuración de la conectividad con proveedores de internet y telefonía para la operación del edificio.",
-              "Pruebas de conectividad, seguridad y funcionamiento de la red y sistemas instalados.",
-              "Resolución de problemas técnicos en campo y soporte durante la adecuación de las instalaciones."
+              "Installation of structured cabling for data network, telephone lines, and security cameras throughout the building.",
+              "Configuration and commissioning of Cisco switches, routers, and repeaters.",
+              "Physical installation and configuration of video surveillance cameras (CCTV/IP), including cabling and strategic location.",
+              "Crimping and assembly of RJ45 cables (straight and crossed) according to network needs.",
+              "Design and logical configuration of the network topology, including subnetting and network segmentation.",
+              "Assembly and configuration of rack servers, ensuring their connectivity and operation.",
+              "Management and configuration of connectivity with internet and telephony providers for the building's operation.",
+              "Connectivity, security, and operation tests of the installed network and systems.",
+              "Resolution of technical problems in the field and support during the adaptation of the facilities."
             ]
           },
           "technologies": [56, 57, 58, 59, 60, 61],
@@ -824,29 +824,29 @@
           "project_id": 25
         },
         {
- "project_name": "Desarrollo de nuevas funcionalidades en el sistema de gestión de negocios",
+          "project_name": "Development of new functionalities in the business management system",
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "highlight": true,
           "company_logo_path": "gls-dondolar.png",
           "project_description": {
-            "description": "Proyecto de mantenimiento, mejora continua y expansión funcional del sistema principal de Grupo LS El Salvador, abarcando desde la toma de requerimientos hasta la entrega de módulos completos y reportes para la gestión de negocios y clientes. Incluyó implementacion, capacitacion de usuarios y soporte tecnico a los usuarios finales",
+            "description": "Project of maintenance, continuous improvement, and functional expansion of the main system of Grupo LS El Salvador, covering from requirements gathering to the delivery of complete modules and reports for business and customer management. It included implementation, user training, and technical support to end-users.",
             "bullet_points": [
-              "Levantamiento de requerimientos y análisis de procesos de negocio con dueños del negocio.",
-              "Diseño de flujos de datos y arquitectura de nuevos módulos y funcionalidades.",
-              "Creación y optimización de objetos de base de datos: triggers, stored procedures y funciones.",
-              "Desarrollo del módulo de cotizaciones según reglas de negocio específicas.",
-              "Implementación de captura y registro de datos de clientes, generación y gestión de expedientes virtuales.",
-              "Automatización de identificación de datos pre-negocio y clasificación según tipo de negocio.",
-              "Desarrollo de flujo de traslado de expedientes al área legal para verificación.",
-              "Implementación de sistema de aprobación de negocios con panel para jefaturas.",
-              "Generación automática de documentos para firma con datos recolectados.",
-              "Desarrollo de módulo de recepción para toma de datos preliminares y asignación equitativa de clientes a vendedores.",
-              "Implementación de lógica de colas para atención y balanceo de carga entre vendedores.",
-              "Creación de múltiples stored procedures para generación de reportes personalizados.",
-              "Entrega continua de mejoras, renovaciones y nuevas funcionalidades según necesidades del negocio.",
-              "Capacitación al personal en el uso correcto de los nuevos módulos desarrollados.",
-              "Soporte técnico a usuarios ante cualquier problema informático relacionado con el sistema o el entorno de trabajo."
+              "Gathering of requirements and analysis of business processes with business owners.",
+              "Design of data flows and architecture for new modules and functionalities.",
+              "Creation and optimization of database objects: triggers, stored procedures, and functions.",
+              "Development of the quotation module according to specific business rules.",
+              "Implementation of customer data capture and registration, generation, and management of virtual files.",
+              "Automation of pre-business data identification and classification according to business type.",
+              "Development of a workflow for transferring files to the legal area for verification.",
+              "Implementation of a business approval system with a panel for managers.",
+              "Automatic generation of documents for signature with collected data.",
+              "Development of a reception module for preliminary data collection and equitable assignment of clients to salespeople.",
+              "Implementation of queue logic for service and load balancing among salespeople.",
+              "Creation of multiple stored procedures for generating customized reports.",
+              "Continuous delivery of improvements, renewals, and new functionalities according to business needs.",
+              "Training of staff in the correct use of the new developed modules.",
+              "Technical support to users for any IT problem related to the system or work environment."
             ]
           },
           "technologies": [53, 27, 11, 17],
@@ -861,19 +861,19 @@
           "project_id": 22
         },
         {
- "project_name": "Integración GPS Vehicular",
+          "project_name": "Vehicle GPS Integration",
           "implementation_type": "On-premise",
           "company": "Grupo LS El Salvador",
           "highlight": false,
           "company_logo_path": "gls-autosale.png",
           "project_description": {
-            "description": "Integración de los datos recogidos por dispositivos GPS instalados en los vehículos de la empresa, permitiendo la visualización y análisis interno de la información de localización y recorridos.",
+            "description": "Integration of data collected by GPS devices installed in the company's vehicles, allowing for internal visualization and analysis of location and route information.",
             "bullet_points": [
-              "Desarrollo de scripts en .NET ejecutados por cron en el servidor para la recolección periódica de datos desde una base de datos externa MySQL.",
-              "Transformación y normalización de los datos GPS para su integración con los sistemas internos.",
-              "Implementación de funciones y procedimientos en SQL Server para el procesamiento y almacenamiento de los datos transformados.",
-              "Desarrollo de un módulo en PowerBuilder para la visualización y análisis de la información de localización de vehículos.",
-              "Automatización del flujo de integración para asegurar la actualización continua de los datos GPS en la base interna."
+              "Development of scripts in .NET executed by cron on the server for the periodic collection of data from an external MySQL database.",
+              "Transformation and normalization of GPS data for integration with internal systems.",
+              "Implementation of functions and procedures in SQL Server for the processing and storage of transformed data.",
+              "Development of a module in PowerBuilder for the visualization and analysis of vehicle location information.",
+              "Automation of the integration flow to ensure continuous updating of GPS data in the internal database."
             ]
           },
           "technologies": [5, 53, 11, 55],
@@ -888,20 +888,20 @@
           "project_id": 24
         },
         {
- "project_name": "Sitio Web Prestauto",
+          "project_name": "Prestauto Website",
           "implementation_type": "Web Hosting",
           "company": "Grupo LS El Salvador - Prestauto",
           "company_logo_path": "gls-prestauto.png",
           "project_description": {
-            "description": "Desarrollo y despliegue de un sitio web estático para la marca Prestauto, orientado a la promoción de servicios de leasing y financiamiento vehicular con integracion de canales de comunicacion y redes sociales.",
+            "description": "Development and deployment of a static website for the Prestauto brand, aimed at promoting vehicle leasing and financing services with integration of communication channels and social networks.",
             "bullet_points": [
-              "Levantamiento de requerimientos y definición de estructura de contenidos para la marca Prestauto.",
-              "Diseño y maquetación de sitio web estático responsivo.",
-              "Desarrollo en PHP para manejo de formularios y estructura básica.",
-              "Implementación de estilos personalizados con CSS y funcionalidades interactivas con JavaScript.",
-              "Uso de HTML para la estructura y presentación del contenido.",
-              "Despliegue y configuración del sitio en hosting GoDaddy mediante cPanel.",
-              "Optimización para navegadores modernos y dispositivos móviles."
+              "Gathering of requirements and definition of content structure for the Prestauto brand.",
+              "Design and layout of a responsive static website.",
+              "Development in PHP for handling forms and basic structure.",
+              "Implementation of custom styles with CSS and interactive functionalities with JavaScript.",
+              "Use of HTML for content structure and presentation.",
+              "Deployment and configuration of the site on GoDaddy hosting via cPanel.",
+              "Optimization for modern browsers and mobile devices."
             ]
           },
           "technologies": [54, 16, 8, 7],
@@ -919,10 +919,10 @@
     },
     {
       "type": "work",
-      "company": "Proyectos personales",
-      "description": "Bloque dedicado a la creación y desarrollo de proyectos personales y prácticas tecnológicas, demostrando iniciativa, aprendizaje continuo y actualización profesional para destacar ante reclutadores.",
+      "company": "Personal Projects",
+      "description": "Block dedicated to the creation and development of personal projects and technological practices, demonstrating initiative, continuous learning, and professional updating to stand out to recruiters.",
       "logo_url": "logopersonal.png",
-      "resume":"He llevado la IA más allá de las APIs. Mi foco es crear sistemas agénticos con acceso a herramientas MCP y A2A (LangChain, Google & Vercel AI SDK) y optimizar LLMs con generacion por recuperacion aumentada (Qdrant, RAG, Embeddings) y Fine-tuning (Unsloth, Google Colab, Anyscale). Automatizar su ciclo de vida en la nube con CI/CD, Github Actions, Docker y Serverless. Mi objetivo es construir y desplegar soluciones de IA que resuelvan desafíos de negocio complejos",
+      "resume": "I have taken AI beyond APIs. My focus is on creating agentic systems with access to MCP and A2A tools (LangChain, Google & Vercel AI SDK) and optimizing LLMs with retrieval-augmented generation (Qdrant, RAG, Embeddings) and Fine-tuning (Unsloth, Google Colab, Anyscale). Automating their lifecycle in the cloud with CI/CD, Github Actions, Docker, and Serverless. My goal is to build and deploy AI solutions that solve complex business challenges.",
       "orden": 2,
       "skills":[164,165,166],
       "job_roles": [
@@ -935,65 +935,65 @@
           "actually": true,
           "responsabilities": [
             {
-              "description": "Desarrollo aplicaciones de IA end-to-end, construyendo prototipos funcionales con sistemas agénticos y RAG para validar tecnologías de vanguardia en la nube."
+              "description": "Develop end-to-end AI applications, building functional prototypes with agentic systems and RAG to validate cutting-edge technologies in the cloud."
             },
             {
-              "description": "Programacion de soluciones agenticas con acceso a herramientas MCP y A2A (LangChain, Google & Vercel AI SDK) y optimización LLMs con RAG (Embeddings) y Fine-tuning (Unsloth, colab)."
+              "description": "Programming of agentic solutions with access to MCP and A2A tools (LangChain, Google & Vercel AI SDK) and optimization of LLMs with RAG (Embeddings) and Fine-tuning (Unsloth, colab)."
             },
             {
-              "description": "Especialista en la personalización de modelos de lenguaje (LLMs) mediante técnicas de Fine-tuning, adaptando modelos base para mejorar drásticamente su precisión."
+              "description": "Specialist in the customization of language models (LLMs) through Fine-tuning techniques, adapting base models to drastically improve their accuracy."
             },
             {
-              "description": "Gestión y orquestación avanzada de infraestructuras en la nube (MCPs), optimizando recursos para garantizar la máxima escalabilidad y eficiencia de costos."
+              "description": "Advanced management and orchestration of cloud infrastructures (MCPs), optimizing resources to ensure maximum scalability and cost efficiency."
             },
             {
-              "description": "Impulsado por la visión de utilizar la IA como catalizador de innovación, enfocado en resolver problemas a gran escala y crear soluciones que definan el futuro."
+              "description": "Driven by the vision of using AI as a catalyst for innovation, focused on solving large-scale problems and creating solutions that define the future."
             }
           ]
         },
         {
-          "job_role": "Desarrollador Fullstack",
+          "job_role": "Fullstack Developer",
           "job_role_id": 2001,
           "start_date": "2019-01-01", 
           "end_date": null,
           "actually": true,
           "responsabilities": [
             {
-              "description": "Dominio del desarrollo full-stack para crear soluciones cohesivas, integrando interfaces de usuario intuitivas con robustos servicios en el backend."
+              "description": "Mastery of full-stack development to create cohesive solutions, integrating intuitive user interfaces with robust backend services."
             },
             {
-              "description": "Gestión del ciclo de vida completo del software (SDLC), automatizando el despliegue en la nube (Cloud) con CI/CD, Github Actions y Docker o serverless."
+              "description": "Management of the complete software development life cycle (SDLC), automating deployment to the cloud (Cloud) with CI/CD, Github Actions, and Docker or serverless."
             },
             {
-              "description": "Implementación de arquitecturas de software robustas aplicando principios de código limpio y seguridad, garantizando soluciones de alta calidad y una UX intuitiva."
+              "description": "Implementation of robust software architectures applying principles of clean code and security, ensuring high-quality solutions and an intuitive UX."
             },
             {
-              "description": "Aplicación de una cultura DevOps para acelerar la entrega de soluciones, enfocándome en la integración continua, automatización y monitoreo de producción."
+              "description": "Application of a DevOps culture to accelerate the delivery of solutions, focusing on continuous integration, automation, and production monitoring."
             }
           ]
         }
       ],
       "projects": [
         {
-  "project_name": "Portafolio Personal con Asistente de IA",
+  "project_name": "Personal Portfolio with AI Assistant",
   "implementation_type": "Cloud",
-  "company": "Proyecto Personal",
+  "company": "Personal Project",
   "company_logo_path": "isabot.png",
   "highlight": true,
   "project_description": {
-    "description": "Desarrollo de un portafolio web moderno y de alto rendimiento, enfocado en la experiencia de usuario. Integra un asistente virtual conversacional para ofrecer una interacción dinámica y proporcionar información sobre mi trayectoria profesional, proyectos y habilidades técnicas de manera intuitiva.",
+    "description": "Development of a modern, high-performance web portfolio focused on user experience. It integrates a conversational virtual assistant to offer dynamic interaction and provide information about my professional career, projects, and technical skills in an intuitive way.",
     "bullet_points": [
-      "Desarrollo de frontend de alta performance con Astro y React para una interfaz fluida y moderna.",
-      "Implementación de backend robusto con Node.js y Express para la lógica de servidor y API.",
-      "Integración de Prisma como ORM para una interacción segura y eficiente con la base de datos.",
-      "Uso de Supabase y PostgreSQL para el almacenamiento persistente y escalable de datos.",
-      "Implementación de funcionalidades de IA conversacional con Vercel AI SDK y Google Genai.",
-      "Aseguramiento de APIs públicas con estrategias de RateLimit, CORS y Google Captcha.",
-      "Integración con el servicio de correo Brevo para la funcionalidad de contacto.",
-      "Despliegue serverless continuo en la nube utilizando Vercel.",
-      "Configuración avanzada de DNS y CNAME para la gestión del dominio personalizado.",
-      "Automatización completa del ciclo de vida de desarrollo (CI/CD) con GitHub Actions.",
-      "Control de versiones y colaboración de código gestionado a través de Git y GitHub."
+      "Development of a high-performance frontend with Astro and React for a fluid and modern interface.",
+      "Implementation of a robust backend with Node.js and Express for server logic and API.",
+      "Integration of Prisma as an ORM for secure and efficient interaction with the database.",
+      "Use of Supabase and PostgreSQL for persistent and scalable data storage.",
+      "Implementation of conversational AI functionalities with Vercel AI SDK and Google Genai.",
+      "Securing public APIs with RateLimit, CORS, and Google Captcha strategies.",
+      "Integration with the Brevo email service for contact functionality.",
+      "Continuous serverless deployment in the cloud using Vercel.",
+      "Advanced DNS and CNAME configuration for custom domain management.",
+      "Complete automation of the development life cycle (CI/CD) with GitHub Actions.",
+      "Version control and code collaboration managed through Git and GitHub."
     ]
   },
   "technologies": [77, 1, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 32],
@@ -1008,23 +1008,23 @@
   "project_id": 25
 },
 {
-  "project_name": "Ecosistema de Agentes y Servidor de Cómputo Personal (MCP)",
+  "project_name": "Agent Ecosystem and Personal Compute Server (MCP)",
   "implementation_type": "Cloud",
-  "company": "Proyecto Personal / R&D",
+  "company": "Personal Project / R&D",
   "company_logo_path": "isamcp.png",
   "highlight": true,
   "project_description": {
-    "description": "Diseño y construcción de un Servidor de Cómputo Personal (MCP) para la orquestación de un ecosistema avanzado de agentes de IA. Este proyecto se enfoca en la creación de herramientas agenticas (A2A) capaces de interactuar con servicios externos, procesar y enriquecer datos para bases de datos vectoriales y automatizar tareas complejas, sentando las bases para futuras integraciones con asistentes inteligentes como Google Gemini.",
+    "description": "Design and construction of a Personal Compute Server (MCP) for the orchestration of an advanced ecosystem of AI agents. This project focuses on the creation of agentic tools (A2A) capable of interacting with external services, processing and enriching data for vector databases, and automating complex tasks, laying the groundwork for future integrations with intelligent assistants like Google Gemini.",
     "bullet_points": [
-      "Desarrollo de un servidor con FastAPI para orquestar flujos de trabajo de IA y exponer herramientas agenticas.",
-      "Creación de sistemas agénticos con LangChain y Google GenAI con acceso a herramientas personalizadas (A2A).",
-      "Experimentación con plataformas de consumo de modelos de IA como Anyscale y Replicate.",
-      "Ingeniería de datos para procesar y formatear información para su ingesta en bases de datos vectoriales como Qdrant y Weaviate.",
-      "Desarrollo de herramientas de IA generativa para la creación de imágenes y video.",
-      "Creación de prototipos de agentes para interactuar y actualizar aplicaciones externas (control de gastos, gestión de tiempo).",
-      "Integración con servicios externos como Brevo para notificaciones y comunicación automatizada.",
-      "Contenerización de servicios y herramientas de IA utilizando Docker para portabilidad y escalabilidad.",
-      "Gestión del ciclo de vida y despliegue automatizado de las herramientas de IA con GitHub Actions."
+      "Development of a server with FastAPI to orchestrate AI workflows and expose agentic tools.",
+      "Creation of agentic systems with LangChain and Google GenAI with access to custom tools (A2A).",
+      "Experimentation with AI model consumption platforms like Anyscale and Replicate.",
+      "Data engineering to process and format information for ingestion into vector databases like Qdrant and Weaviate.",
+      "Development of generative AI tools for creating images and video.",
+      "Creation of agent prototypes to interact with and update external applications (expense tracking, time management).",
+      "Integration with external services like Brevo for notifications and automated communication.",
+      "Containerization of AI services and tools using Docker for portability and scalability.",
+      "Lifecycle management and automated deployment of AI tools with GitHub Actions."
     ]
   },
   "technologies": [95, 68, 83, 150, 148, 149, 146, 147, 87, 151, 88, 89, 67],
@@ -1039,20 +1039,20 @@
   "project_id": 26
 },
 {
-  "project_name": "Aplicación de Control de Gastos Personales",
+  "project_name": "Personal Expense Tracking Application",
   "implementation_type": "On-premise",
-  "company": "Proyecto Personal",
+  "company": "Personal Project",
   "company_logo_path": "isamoneycontrol.png",
   "highlight": false,
   "project_description": {
-    "description": "Desarrollo de una aplicación web full-stack para el control de finanzas personales, utilizando el stack MERN (MongoDB, Express, React, Node.js) con TypeScript. La aplicación está diseñada para un registro de transacciones simple y sin fricción, y cuenta con dashboards interactivos construidos con ECharts para visualizar el comportamiento financiero y obtener resúmenes mensuales claros.",
+    "description": "Development of a full-stack web application for personal finance tracking, using the MERN stack (MongoDB, Express, React, Node.js) with TypeScript. The application is designed for simple and frictionless transaction logging, and features interactive dashboards built with ECharts to visualize financial behavior and get clear monthly summaries.",
     "bullet_points": [
-      "Implementación de un backend robusto con Node.js y Express, utilizando TypeScript para un código tipado y escalable.",
-      "Diseño de una interfaz de usuario reactiva y eficiente con React para el registro de ingresos y gastos.",
-      "Uso de MongoDB como base de datos NoSQL para almacenar transacciones de forma flexible.",
-      "Creación de dashboards y reportes visuales con gráficas (circulares y de barras) usando la librería ECharts.",
-      "Funcionalidad para visualizar el balance total, filtrar el historial de movimientos y generar resúmenes mensuales.",
-      "Proyecto base con planes de ser retomado para integrar futuras funcionalidades de IA para análisis predictivo de gastos."
+      "Implementation of a robust backend with Node.js and Express, using TypeScript for typed and scalable code.",
+      "Design of a reactive and efficient user interface with React for logging income and expenses.",
+      "Use of MongoDB as a NoSQL database to store transactions flexibly.",
+      "Creation of dashboards and visual reports with charts (pie and bar) using the ECharts library.",
+      "Functionality to view the total balance, filter the transaction history, and generate monthly summaries.",
+      "Base project with plans to be revisited to integrate future AI functionalities for predictive expense analysis."
     ]
   },
   "technologies": [1, 78, 79, 89, 152, 153, 154],
@@ -1067,20 +1067,20 @@
   "project_id": 27
 },
 {
-  "project_name": "Aplicación de Gestión de Metas y Tiempo",
+  "project_name": "Goal and Time Management Application",
   "implementation_type": "On-premise",
-  "company": "Proyecto Personal",
+  "company": "Personal Project",
   "company_logo_path": "isagoaltracking.png",
   "highlight": false,
   "project_description": {
-    "description": "Construcción de una aplicación web full-stack para la gestión de objetivos y productividad personal utilizando el ecosistema .NET. El backend se desarrolló con ASP.NET Core para crear una API RESTful robusta, mientras que el frontend se implementó con Blazor, permitiendo una interfaz de usuario interactiva y moderna con C#. Se utilizó Entity Framework para el acceso a datos contra una base de SQL Server.",
+    "description": "Construction of a full-stack web application for personal goal and productivity management using the .NET ecosystem. The backend was developed with ASP.NET Core to create a robust RESTful API, while the frontend was implemented with Blazor, allowing for an interactive and modern user interface with C#. Entity Framework was used for data access against a SQL Server database.",
     "bullet_points": [
-      "Desarrollo de una API REST utilizando ASP.NET Core para gestionar la lógica de negocio.",
-      "Creación de una interfaz de usuario dinámica (SPA) con el framework Blazor.",
-      "Mapeo objeto-relacional (ORM) implementado con Entity Framework para interactuar con la base de datos.",
-      "Diseño de una base de datos en SQL Server para almacenar metas, progreso y notas.",
-      "Implementación de funcionalidades clave como creación de objetivos, seguimiento de progreso y recordatorios.",
-      "Sección dedicada para la anotación rápida de ideas y futuros proyectos."
+      "Development of a REST API using ASP.NET Core to manage business logic.",
+      "Creation of a dynamic user interface (SPA) with the Blazor framework.",
+      "Object-relational mapping (ORM) implemented with Entity Framework to interact with the database.",
+      "Design of a database in SQL Server to store goals, progress, and notes.",
+      "Implementation of key functionalities such as goal creation, progress tracking, and reminders.",
+      "Dedicated section for quick annotation of ideas and future projects."
     ]
   },
   "technologies": [5, 11, 24, 89, 116, 155, 156],
@@ -1095,20 +1095,20 @@
   "project_id": 28
 },
 {
-  "project_name": "Sistema de Gestión para Iglesia Adventista",
+  "project_name": "Management System for Adventist Church",
   "implementation_type": "Cloud",
-  "company": "Iglesia Adventista del Séptimo Día (Voluntariado)",
+  "company": "Seventh-day Adventist Church (Volunteering)",
   "company_logo_path": "iasd7logo.png",
   "highlight": false,
   "project_description": {
-    "description": "Desarrollo de una solución integral para la administración y comunicación de la congregación local. El sistema consta de una aplicación móvil (React Native) y un backend (Node.js) para automatizar el envío de mensajes a grupos de WhatsApp, distribuir anuncios y gestionar campañas de recolección de fondos. La arquitectura está completamente contenerizada con Docker y utiliza Clerk para una gestión de usuarios y autenticación moderna y segura.",
+    "description": "Development of a comprehensive solution for the administration and communication of the local congregation. The system consists of a mobile application (React Native) and a backend (Node.js) to automate sending messages to WhatsApp groups, distribute announcements, and manage fundraising campaigns. The architecture is fully containerized with Docker and uses Clerk for modern and secure user management and authentication.",
     "bullet_points": [
-      "Desarrollo de una aplicación móvil multiplataforma con React Native.",
-      "Implementación de un backend con Node.js y TypeScript, usando Prisma como ORM para la interacción con la base de datos PostgreSQL.",
-      "Integración directa con la API de WhatsApp Business para la automatización de comunicaciones y anuncios.",
-      "Módulo específico para el control y seguimiento de donaciones en campañas de recolección.",
-      "Implementación de un sistema de autenticación y gestión de usuarios robusto y seguro con Clerk.",
-      "Toda la infraestructura de la aplicación está contenerizada con Docker para un despliegue y escalabilidad consistentes."
+      "Development of a cross-platform mobile application with React Native.",
+      "Implementation of a backend with Node.js and TypeScript, using Prisma as an ORM for interaction with the PostgreSQL database.",
+      "Direct integration with the WhatsApp Business API for automating communications and announcements.",
+      "Specific module for controlling and tracking donations in fundraising campaigns.",
+      "Implementation of a robust and secure user authentication and management system with Clerk.",
+      "The entire application infrastructure is containerized with Docker for consistent deployment and scalability."
     ]
   },
   "technologies": [78, 81, 85, 89, 151, 153, 157, 158, 159],
@@ -1126,52 +1126,52 @@
     },
     {
       "type": "estudio",
-      "company": "Universidad Tecnológica de El Salvador",
-      "description": "Carrera de Ingeniería en Sistemas y Computación",
+      "company": "Technological University of El Salvador",
+      "description": "Degree in Systems and Computer Engineering",
       "logo_url": "utec.png",
       "orden": 7,
       "skills": [121, 122, 123, 124, 125, 127, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144],
       "job_roles": [
         {
-          "job_role": "Estudiante de Ingeniería en Sistemas y Computación",
+          "job_role": "Student of Systems and Computer Engineering",
           "job_role_id": 1001,
           "start_date": "2018-01-01",
           "end_date": "2023-12-31",
           "actually": false,
           "responsabilities": [
-            {"description": "Durante tres años, impartí tutorías de algoritmos, POO y lógica computacional a estudiantes de nuevo ingreso, lo que me permitio potenciar mis habilidades tecnicas y de liderazgo con grupos de mas de 50 estudiantes."},
-            {"description": "Desarrollo de habilidades técnicas en programación, estructuras de datos, algoritmos y arquitectura de computadoras."},
-            {"description": "Aprendizaje de diseño y gestión de bases de datos, sistemas operativos y redes de computadoras."},
-            {"description": "Desarrollo de software siguiendo metodologías ágiles y buenas prácticas de ingeniería de software."},
-            {"description": "Trabajo en equipo, comunicación efectiva y resolución de problemas complejos."},
-            {"description": "Gestión de proyectos, planificación y organización del tiempo eficientemente."},
-            {"description": "Pensamiento crítico y capacidad de análisis para la toma de decisiones técnicas."},
-            {"description": "Aprendizaje continuo y adaptación a nuevas tecnologías y lenguajes de programación."},
-            {"description": "Investigación y aplicación de buenas prácticas de desarrollo, seguridad y experiencia de usuario."}
+            {"description": "For three years, I tutored new students in algorithms, OOP, and computational logic, which allowed me to enhance my technical and leadership skills with groups of more than 50 students."},
+            {"description": "Development of technical skills in programming, data structures, algorithms, and computer architecture."},
+            {"description": "Learning database design and management, operating systems, and computer networks."},
+            {"description": "Software development following agile methodologies and good software engineering practices."},
+            {"description": "Teamwork, effective communication, and complex problem-solving."},
+            {"description": "Project management, planning, and efficient time organization."},
+            {"description": "Critical thinking and analytical skills for technical decision-making."},
+            {"description": "Continuous learning and adaptation to new technologies and programming languages."},
+            {"description": "Research and application of best practices in development, security, and user experience."}
           ]
         }
       ],
       "projects": [
         {
-          "project_name": "Proyectos Académicos UTEC",
-          "implementation_type": "Académico",
-          "company": "Universidad Tecnológica de El Salvador",
+          "project_name": "UTEC Academic Projects",
+          "implementation_type": "Academic",
+          "company": "Technological University of El Salvador",
           "company_logo_path": "utecprojects.png",
           "highlight": true,
           "project_description": {
-            "description": "Conjunto de proyectos desarrollados durante la carrera de Ingeniería en Sistemas y Computación, abarcando diversas tecnologías y metodologías de desarrollo para resolver problemas reales y aplicar los conocimientos adquiridos en las diferentes materias.",
+            "description": "Set of projects developed during the Systems and Computer Engineering degree, covering various technologies and development methodologies to solve real problems and apply the knowledge acquired in different subjects.",
             "bullet_points": [
-              "Blog de noticias programado en PHP utilizando HTML, JavaScript y CSS3, implementando un sistema de gestión de contenidos con funcionalidades de publicación, edición y eliminación de artículos.",
-              "Sistema de gestión de notas de alumnos para el INFRAMEN de San Salvador, desarrollado en C# con SQL Server y Entity Framework, permitiendo el registro, consulta y actualización de calificaciones.",
-              "Diseño e implementación de arquitectura de redes y servidores en los laboratorios de la universidad, configurando equipos de red, servidores y estaciones de trabajo.",
-              "Aplicación Android para gestión de pedidos de un restaurante, que mostraba en tiempo real los pedidos pendientes, en cola y completados, facilitando la comunicación entre cocina y meseros.",
-              "Aplicación iOS desarrollada con Swift para la gestión y control de gastos personales, con funcionalidades de registro, categorización y visualización de gastos mediante gráficos.",
-              "Tutorías por más de tres años a estudiantes de nuevo ingreso, enseñando programación orientada a objetos y algoritmos con PSeInt, desarrollando material didáctico y ejercicios prácticos.",
-              "Diseño y modelado de bases de datos relacionales utilizando UML y diagramas entidad-relación, implementando soluciones en SQL Server y MySQL.",
-              "Desarrollo de aplicaciones con interfaces gráficas para sistemas operativos Windows y Linux, aplicando principios de usabilidad y experiencia de usuario.",
-              "Implementación de sistemas digitales y circuitos electrónicos básicos para control de dispositivos, incluyendo prácticas de laboratorio con componentes reales.",
-              "Configuración y administración de centros de cómputo, incluyendo instalación de software, mantenimiento de hardware y gestión de usuarios.",
-              "Análisis estadístico de datos para la toma de decisiones, utilizando herramientas especializadas y aplicando conceptos de probabilidad."
+              "News blog programmed in PHP using HTML, JavaScript, and CSS3, implementing a content management system with functionalities for publishing, editing, and deleting articles.",
+              "Student grade management system for INFRAMEN of San Salvador, developed in C# with SQL Server and Entity Framework, allowing the registration, consultation, and updating of grades.",
+              "Design and implementation of network and server architecture in the university's laboratories, configuring network equipment, servers, and workstations.",
+              "Android application for managing restaurant orders, which showed pending, in-queue, and completed orders in real-time, facilitating communication between the kitchen and waiters.",
+              "iOS application developed with Swift for personal expense management and control, with functionalities for recording, categorizing, and visualizing expenses through graphs.",
+              "Tutoring for more than three years to new students, teaching object-oriented programming and algorithms with PSeInt, developing educational material and practical exercises.",
+              "Design and modeling of relational databases using UML and entity-relationship diagrams, implementing solutions in SQL Server and MySQL.",
+              "Development of applications with graphical interfaces for Windows and Linux operating systems, applying principles of usability and user experience.",
+              "Implementation of digital systems and basic electronic circuits for device control, including laboratory practices with real components.",
+              "Configuration and administration of computer centers, including software installation, hardware maintenance, and user management.",
+              "Statistical data analysis for decision-making, using specialized tools and applying probability concepts."
             ]
           },
           "technologies": [54, 7, 8, 115, 11, 116, 117, 118, 119, 120, 126, 128, 129, 130, 131, 132, 133, 134, 145],
@@ -1189,14 +1189,14 @@
     },
     {
       "type": "estudio",
-      "company": "Especialización en Innovación tecnológica en la industria 4.0",
-      "description": "Trabajo de graduación y especialización en industria 4.0.",
+      "company": "Specialization in Technological Innovation in Industry 4.0",
+      "description": "Graduation work and specialization in industry 4.0.",
       "logo_url": "utec.png",
-      "resume": "Especializado en tecnologías clave de la Cuarta Revolución Industrial, con experiencia práctica en inteligencia artificial, big data, IoT, robótica, computación en la nube y ciberseguridad. He desarrollado proyectos que integran análisis de datos avanzados, visualización de información y soluciones en la nube, aplicando principios de liderazgo y trabajo en equipo para implementar innovaciones tecnológicas en entornos industriales.",
+      "resume": "Specialized in key technologies of the Fourth Industrial Revolution, with practical experience in artificial intelligence, big data, IoT, robotics, cloud computing, and cybersecurity. I have developed projects that integrate advanced data analysis, information visualization, and cloud solutions, applying leadership and teamwork principles to implement technological innovations in industrial environments.",
       "orden": 5,
       "job_roles": [
         {
-          "job_role": "Inteligencia Artificial para la Industria 4.0",
+          "job_role": "Artificial Intelligence for Industry 4.0",
           "job_role_id": 1002,
           "start_date": "2024-03-01",
           "end_date": "2024-05-31",
@@ -1204,7 +1204,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Liderazgo y Gestión de Equipos",
+          "job_role": "Leadership and Team Management",
           "job_role_id": 1003,
           "start_date": "2024-03-01",
           "end_date": "2024-05-31",
@@ -1212,7 +1212,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Big Data y Ciencia de Datos",
+          "job_role": "Big Data and Data Science",
           "job_role_id": 1004,
           "start_date": "2024-06-01",
           "end_date": "2024-08-31",
@@ -1220,7 +1220,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Desarrollo de Equipos de Alto Rendimiento",
+          "job_role": "Development of High-Performance Teams",
           "job_role_id": 1005,
           "start_date": "2024-06-01",
           "end_date": "2024-08-31",
@@ -1228,7 +1228,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Visualización y Análisis de Datos",
+          "job_role": "Data Visualization and Analysis",
           "job_role_id": 1006,
           "start_date": "2024-09-01",
           "end_date": "2024-10-31",
@@ -1236,7 +1236,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "IoT y Robótica Industrial",
+          "job_role": "IoT and Industrial Robotics",
           "job_role_id": 1007,
           "start_date": "2024-11-01",
           "end_date": "2024-12-31",
@@ -1244,7 +1244,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Computación en la Nube",
+          "job_role": "Cloud Computing",
           "job_role_id": 1008,
           "start_date": "2024-09-01",
           "end_date": "2024-12-31",
@@ -1252,7 +1252,7 @@
           "responsabilities": []
         },
         {
-          "job_role": "Ciberseguridad Industrial",
+          "job_role": "Industrial Cybersecurity",
           "job_role_id": 1009,
           "start_date": "2024-10-01",
           "end_date": "2024-12-31",
@@ -1262,23 +1262,23 @@
       ],
       "projects": [
         {
- "project_name": "Redes Neuronales y Visión Computadora",
-          "implementation_type": "Proyecto académico / Investigación aplicada",
-          "company": "Universidad Tecnológica de El Salvador",
+          "project_name": "Neural Networks and Computer Vision",
+          "implementation_type": "Academic project / Applied research",
+          "company": "Technological University of El Salvador",
           "company_logo_path": "pro-neural.png",
           "highlight": true,
           "project_description": {
-            "description": "Desarrollo y entrenamiento de una red neuronal pequeña, multicapa utilizando Keras y PyTorch, con un enfoque académico y experimental. El proyecto incluyó la resolución de un problema matemático sencillo mediante una red de cuatro capas (entrada de dos neuronas, dos ocultas de dos neuronas y salida de tres neuronas), así como la experimentación con modelos de visión por computadora para la identificación de objetos en imágenes y la inferencia en video y cámara en tiempo real. Se emplearon herramientas como Pandas para el manejo de datos, Matplotlib para visualización, OpenCV para procesamiento de imágenes y Google Colab como entorno de desarrollo en la nube.",
+            "description": "Development and training of a small, multilayer neural network using Keras and PyTorch, with an academic and experimental approach. The project included solving a simple mathematical problem using a four-layer network (two-neuron input, two hidden layers of two neurons, and a three-neuron output), as well as experimenting with computer vision models for object identification in images and inference in real-time video and camera. Tools such as Pandas for data handling, Matplotlib for visualization, OpenCV for image processing, and Google Colab as a cloud development environment were used.",
             "bullet_points": [
-              "Diseño y entrenamiento de una red neuronal multicapa para resolver una ecuación matemática específica.",
-              "Implementación de modelos de clasificación de objetos en imágenes usando Keras y PyTorch.",
-              "Despliegue de modelos para realizar inferencia en tiempo real sobre video y cámara local.",
-              "Uso de Pandas para la manipulación y análisis de datos de entrada y salida.",
-              "Visualización de resultados y métricas de entrenamiento con Matplotlib.",
-              "Procesamiento de imágenes y video con OpenCV.",
-              "Trabajo colaborativo y ejecución de experimentos en Google Colab.",
-              "Comprensión práctica del funcionamiento de redes multicapa y su aplicación en problemas reales.",
-              "Logro de inferencia en tiempo real y validación de resultados en diferentes escenarios."
+              "Design and training of a multilayer neural network to solve a specific mathematical equation.",
+              "Implementation of object classification models in images using Keras and PyTorch.",
+              "Deployment of models to perform real-time inference on video and local camera.",
+              "Use of Pandas for manipulation and analysis of input and output data.",
+              "Visualization of results and training metrics with Matplotlib.",
+              "Image and video processing with OpenCV.",
+              "Collaborative work and execution of experiments in Google Colab.",
+              "Practical understanding of the functioning of multilayer networks and their application in real problems.",
+              "Achievement of real-time inference and validation of results in different scenarios."
             ]
           },
           "technologies": [65, 66, 67, 68, 69, 70, 71],
@@ -1293,21 +1293,21 @@
           "project_id": 100
         },
         {
- "project_name": "Dashboards Análisis/Decisiones",
-          "implementation_type": "Proyecto académico / Visualización de datos",
-          "company": "Universidad Tecnológica de El Salvador",
+          "project_name": "Analysis/Decision Dashboards",
+          "implementation_type": "Academic project / Data visualization",
+          "company": "Technological University of El Salvador",
           "company_logo_path": "pro-dash.png",
           "highlight": true,
           "project_description": {
-            "description": "Desarrollo de dashboards interactivos utilizando Power BI y Looker Studio (Google) para el análisis de bancos de datos proporcionados por la universidad. El objetivo principal fue extraer información relevante y visual para apoyar la toma de decisiones, aplicando técnicas de integración, limpieza y transformación de datos con Python y librerías especializadas. El proyecto permitió comparar las capacidades de ambas herramientas y comprender el impacto de la visualización en el proceso de análisis de datos.",
+            "description": "Development of interactive dashboards using Power BI and Looker Studio (Google) for the analysis of datasets provided by the university. The main objective was to extract relevant and visual information to support decision-making, applying data integration, cleaning, and transformation techniques with Python and specialized libraries. The project allowed for a comparison of the capabilities of both tools and an understanding of the impact of visualization on the data analysis process.",
             "bullet_points": [
-              "Integración, limpieza y transformación de datos usando Python y librerías como pandas y numpy.",
-              "Desarrollo de dashboards interactivos y reportes personalizados en Power BI y Looker Studio.",
-              "Implementación de visualizaciones clave: gráficos de tendencias, segmentaciones, KPIs y mapas.",
-              "Comparativa técnica y funcional entre Power BI y Looker Studio para distintos escenarios de análisis.",
-              "Presentación de insights y recomendaciones para la toma de decisiones basada en datos.",
-              "Automatización de actualizaciones y conexión con fuentes externas de datos.",
-              "Logro de una comprensión profunda del proceso de análisis de datos y su impacto en la toma de decisiones."
+              "Integration, cleaning, and transformation of data using Python and libraries like pandas and numpy.",
+              "Development of interactive dashboards and custom reports in Power BI and Looker Studio.",
+              "Implementation of key visualizations: trend charts, segmentations, KPIs, and maps.",
+              "Technical and functional comparison between Power BI and Looker Studio for different analysis scenarios.",
+              "Presentation of insights and recommendations for data-driven decision-making.",
+              "Automation of updates and connection with external data sources.",
+              "Achievement of a deep understanding of the data analysis process and its impact on decision-making."
             ]
           },
           "technologies": [68, 67, 72, 73],
@@ -1322,22 +1322,22 @@
           "project_id": 101
         },
         {
- "project_name": "Simulación IoT con Node-RED/Python",
-          "implementation_type": "Proyecto académico / IoT y automatización",
-          "company": "Universidad Tecnológica de El Salvador",
+          "project_name": "IoT Simulation with Node-RED/Python",
+          "implementation_type": "Academic project / IoT and automation",
+          "company": "Technological University of El Salvador",
           "company_logo_path": "pro-iot.png",
           "highlight": true,
           "project_description": {
-            "description": "Desarrollo de scripts en Python para simular sensores IoT, configuración de Node-RED para procesar y visualizar mensajes, almacenamiento de datos simulados en SQL Server y exploración educativa de la programación de un brazo robótico PLC. Se utilizó el protocolo MQTT para la comunicación de mensajes y se analizaron diferentes protocolos y redes de bajo consumo para IoT, comprendiendo su aplicabilidad según el entorno y los requerimientos de consumo energético.",
+            "description": "Development of Python scripts to simulate IoT sensors, configuration of Node-RED to process and visualize messages, storage of simulated data in SQL Server, and educational exploration of programming a PLC robotic arm. The MQTT protocol was used for message communication, and different low-power protocols and networks for IoT were analyzed, understanding their applicability according to the environment and energy consumption requirements.",
             "bullet_points": [
-              "Simulación de sensores IoT (temperatura, humedad, movimiento, etc.) mediante scripts de Python.",
-              "Procesamiento, visualización y creación de flujos de datos en Node-RED.",
-              "Almacenamiento y consulta de datos simulados en SQL Server.",
-              "Implementación y comprensión del protocolo MQTT y otros protocolos de comunicación IoT.",
-              "Exploración y programación básica de movimientos en un brazo robótico PLC usando software especializado.",
-              "Análisis de arquitecturas IoT y redes de bajo consumo energético.",
-              "Integración básica entre software de simulación, plataformas de automatización y hardware educativo.",
-              "Logro de una comprensión integral de los componentes y flujos de un sistema IoT real."
+              "Simulation of IoT sensors (temperature, humidity, movement, etc.) using Python scripts.",
+              "Processing, visualization, and creation of data flows in Node-RED.",
+              "Storage and querying of simulated data in SQL Server.",
+              "Implementation and understanding of the MQTT protocol and other IoT communication protocols.",
+              "Exploration and basic programming of movements in a PLC robotic arm using specialized software.",
+              "Analysis of IoT architectures and low-power energy networks.",
+              "Basic integration between simulation software, automation platforms, and educational hardware.",
+              "Achievement of a comprehensive understanding of the components and flows of a real IoT system."
             ]
           },
           "technologies": [68, 74, 75, 11, 76],
@@ -1352,127 +1352,127 @@
           "project_id": 102
         },
         {
-  "project_name": "Infraestructura Segura en la Nube con Azure",
-  "implementation_type": "Proyecto académico / Administración en la Nube y Ciberseguridad",
-  "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "pro-azure-infra.png",
-  "highlight": true,
-  "project_description": {
-    "description": "Diseño y despliegue de una infraestructura de nube segura y escalable en Microsoft Azure, utilizando créditos de estudiante para la provisión de recursos. El proyecto consistió en la configuración de servidores Windows y Linux, la implementación de balanceadores de carga para distribuir el tráfico y la creación de redes virtuales (VNets) para aislar los recursos. Se aplicaron técnicas de autenticación y se configuraron grupos de seguridad de red para proteger la infraestructura, culminando con el despliegue de una aplicación de prueba para validar la arquitectura y su funcionamiento.",
-    "bullet_points": [
-      "Aprovisionamiento de recursos en la nube de Azure, incluyendo máquinas virtuales, redes y balanceadores de carga.",
-      "Configuración de dos servidores virtuales: uno con Windows Server y otro con Linux.",
-      "Implementación de un balanceador de carga para asegurar la alta disponibilidad y distribución del tráfico.",
-      "Creación de una red virtual privada (VNet) con subredes para segmentar y proteger la infraestructura.",
-      "Aplicación de reglas de firewall mediante Grupos de Seguridad de Red (NSG) para controlar el tráfico entrante y saliente.",
-      "Configuración de métodos de autenticación para el acceso seguro a los servidores.",
-      "Despliegue de una aplicación web básica para simular un entorno de producción y validar la configuración.",
-      "Logro de una comprensión práctica de la arquitectura IaaS (Infraestructura como Servicio) en Azure y sus componentes de seguridad."
-    ]
-  },
-  "technologies": [9, 51, 17, 13, 18, 90, 91, 92, 93, 94],
-  "project_role_timeline": [
-    {
-      "role": 1008,
-      "start_date": "2024-10-15",
-      "end_date": "2024-11-30"
-    },
-    {
-      "role": 1009,
-      "start_date": "2024-10-15",
-      "end_date": "2024-11-30"
-    }
-  ],
-  "orden": 20241015,
-  "project_id": 103
-},
-{
-  "project_name": "Aplicación Serverless de Gestión de Archivos en Azure",
-  "implementation_type": "Proyecto académico / Desarrollo en la Nube (PaaS y Serverless)",
-  "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "pro-files.png",
-  "highlight": true,
-  "project_description": {
-    "description": "Desarrollo de una aplicación web utilizando Python y FastAPI para la gestión de archivos en la nube de Azure. La solución integra autenticación segura con Microsoft Entra ID (Azure AD), permitiendo a los usuarios iniciar sesión y cargar archivos que se almacenan de forma segura y escalable en Azure Blob Storage. La arquitectura combina servicios PaaS, con la aplicación principal desplegada en Azure App Service, y componentes Serverless a través de Azure Functions para procesar tareas en segundo plano. El despliegue se automatizó completamente mediante un pipeline de CI/CD con Azure Pipelines, conectado a un repositorio de GitHub.",
-    "bullet_points": [
-      "Construcción de una API RESTful con Python y el framework FastAPI para la lógica de negocio.",
-      "Implementación de un flujo de autenticación seguro basado en OAuth 2.0 con Microsoft Entra ID.",
-      "Integración nativa con Azure Blob Storage para la carga, descarga y gestión de archivos de usuario.",
-      "Uso de Azure App Service para el alojamiento (hosting) continuo y escalable de la aplicación principal.",
-      "Desarrollo de microservicios o tareas asíncronas con Azure Functions en un modelo Serverless.",
-      "Configuración de un pipeline de integración y despliegue continuo (CI/CD) con Azure Pipelines desde GitHub.",
-      "Automatización de las compilaciones, pruebas y despliegues en los servicios de Azure.",
-      "Logro de una solución funcional y desacoplada que aprovecha las ventajas de los modelos PaaS y Serverless en la nube."
-    ]
-  },
-  "technologies": [68, 9, 94, 89, 95, 96, 97, 98, 99],
-  "project_role_timeline": [
-    {
-      "role": 1008,
-      "start_date": "2024-12-01",
-      "end_date": "2024-12-31"
-    }
-  ],
-  "orden": 20241201,
-  "project_id": 104
-},
-{
-  "project_name": "Sistema de Gestión Inteligente de Parqueos (Proyecto de Graduación)",
-  "implementation_type": "Proyecto de Graduación / Solución Integral IoT Edge",
-  "company": "Universidad Tecnológica de El Salvador",
-  "company_logo_path": "pro-gra.png",
-  "highlight": true,
-  "project_description": {
-    "description": "Proyecto de tesis para la obtención del grado de Especialista en Innovación Tecnológica en la Industria 4.0. Se desarrolló una solución completa para el control y gestión electrónica de los parqueos de la universidad. El proyecto piloto consistió en la instalación de sensores ultrasónicos en 5 estacionamientos, conectados a una unidad de procesamiento (Arduino y Raspberry Pi con un ESP32) para capturar y transmitir datos en tiempo real. La información sobre la ocupación de los espacios se enviaba a un broker MQTT en Azure IoT Hub, se procesaba y encolaba en Azure Service Bus para ser almacenada finalmente en una base de datos SQL Server. El sistema culminó con un dashboard interactivo en Power BI para la visualización en tiempo real, la gestión inteligente y la recolección de datos históricos, sentando las bases para futuras implementaciones de IA para el análisis predictivo.",
-    "bullet_points": [
-      "Realización de un estudio de factibilidad y diseño de una solución piloto para la automatización de parqueos.",
-      "Instalación y configuración de hardware IoT: sensores ultrasónicos, Arduino, Raspberry Pi y módulos de conectividad ESP32.",
-      "Desarrollo de firmware en C y Python para la captura de datos de los sensores y su transmisión segura vía WiFi.",
-      "Implementación de una arquitectura en la nube sobre Azure para la ingesta de datos a gran escala usando el protocolo MQTT con Azure IoT Hub.",
-      "Procesamiento y encolamiento de mensajes para garantizar una entrega de datos fiable y ordenada hacia la base de datos.",
-      "Almacenamiento persistente de datos de ocupación en SQL Server para la consulta de información histórica y en tiempo real.",
-      "Diseño y desarrollo de un dashboard interactivo para la monitorización en vivo del estado de los parqueos y la toma de decisiones.",
-      "Creación de un repositorio de datos históricos para posibilitar futuros análisis de tendencias y la aplicación de modelos de Machine Learning.",
-      "Defensa exitosa del proyecto ante un jurado evaluador, obteniendo la aprobación de la tesis y el grado académico."
-    ]
-  },
-  "technologies": [68, 75, 9, 11, 72, 100, 101, 102, 103, 104, 105, 106],
-  "project_role_timeline": [
-    {
-      "role": 1004,
-      "start_date": "2024-03-01",
-      "end_date": "2024-12-31"
-    },
-    {
-      "role": 1006,
-      "start_date": "2024-03-01",
-      "end_date": "2024-12-31"
-    },
-    {
-      "role": 1007,
-      "start_date": "2024-03-01",
-      "end_date": "2024-12-31"
-    },
-    {
-      "role": 1008,
-      "start_date": "2024-03-01",
-      "end_date": "2024-12-31"
-    }
-  ],
-  "orden": 20240301,
-  "project_id": 105
-}
+          "project_name": "Secure Cloud Infrastructure with Azure",
+          "implementation_type": "Academic project / Cloud Administration and Cybersecurity",
+          "company": "Technological University of El Salvador",
+          "company_logo_path": "pro-azure-infra.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Design and deployment of a secure and scalable cloud infrastructure in Microsoft Azure, using student credits for resource provisioning. The project consisted of configuring Windows and Linux servers, implementing load balancers to distribute traffic, and creating virtual networks (VNets) to isolate resources. Authentication techniques were applied, and network security groups were configured to protect the infrastructure, culminating in the deployment of a test application to validate the architecture and its operation.",
+            "bullet_points": [
+              "Provisioning of resources in the Azure cloud, including virtual machines, networks, and load balancers.",
+              "Configuration of two virtual servers: one with Windows Server and one with Linux.",
+              "Implementation of a load balancer to ensure high availability and traffic distribution.",
+              "Creation of a private virtual network (VNet) with subnets to segment and protect the infrastructure.",
+              "Application of firewall rules using Network Security Groups (NSG) to control inbound and outbound traffic.",
+              "Configuration of authentication methods for secure access to servers.",
+              "Deployment of a basic web application to simulate a production environment and validate the configuration.",
+              "Achievement of a practical understanding of IaaS (Infrastructure as a Service) architecture in Azure and its security components."
+            ]
+          },
+          "technologies": [9, 51, 17, 13, 18, 90, 91, 92, 93, 94],
+          "project_role_timeline": [
+            {
+              "role": 1008,
+              "start_date": "2024-10-15",
+              "end_date": "2024-11-30"
+            },
+            {
+              "role": 1009,
+              "start_date": "2024-10-15",
+              "end_date": "2024-11-30"
+            }
+          ],
+          "orden": 20241015,
+          "project_id": 103
+        },
+        {
+          "project_name": "Serverless File Management Application in Azure",
+          "implementation_type": "Academic project / Cloud Development (PaaS and Serverless)",
+          "company": "Technological University of El Salvador",
+          "company_logo_path": "pro-files.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Development of a web application using Python and FastAPI for file management in the Azure cloud. The solution integrates secure authentication with Microsoft Entra ID (Azure AD), allowing users to log in and upload files that are stored securely and scalably in Azure Blob Storage. The architecture combines PaaS services, with the main application deployed on Azure App Service, and Serverless components through Azure Functions to process background tasks. The deployment was fully automated through a CI/CD pipeline with Azure Pipelines, connected to a GitHub repository.",
+            "bullet_points": [
+              "Construction of a RESTful API with Python and the FastAPI framework for business logic.",
+              "Implementation of a secure authentication flow based on OAuth 2.0 with Microsoft Entra ID.",
+              "Native integration with Azure Blob Storage for uploading, downloading, and managing user files.",
+              "Use of Azure App Service for continuous and scalable hosting of the main application.",
+              "Development of microservices or asynchronous tasks with Azure Functions in a Serverless model.",
+              "Configuration of a continuous integration and deployment (CI/CD) pipeline with Azure Pipelines from GitHub.",
+              "Automation of builds, tests, and deployments on Azure services.",
+              "Achievement of a functional and decoupled solution that leverages the advantages of PaaS and Serverless models in the cloud."
+            ]
+          },
+          "technologies": [68, 9, 94, 89, 95, 96, 97, 98, 99],
+          "project_role_timeline": [
+            {
+              "role": 1008,
+              "start_date": "2024-12-01",
+              "end_date": "2024-12-31"
+            }
+          ],
+          "orden": 20241201,
+          "project_id": 104
+        },
+        {
+          "project_name": "Intelligent Parking Management System (Graduation Project)",
+          "implementation_type": "Graduation Project / Comprehensive IoT Edge Solution",
+          "company": "Technological University of El Salvador",
+          "company_logo_path": "pro-gra.png",
+          "highlight": true,
+          "project_description": {
+            "description": "Thesis project to obtain the degree of Specialist in Technological Innovation in Industry 4.0. A complete solution was developed for the electronic control and management of the university's parking lots. The pilot project consisted of installing ultrasonic sensors in 5 parking spaces, connected to a processing unit (Arduino and Raspberry Pi with an ESP32) to capture and transmit real-time data. Information on space occupancy was sent to an MQTT broker in Azure IoT Hub, processed, and queued in Azure Service Bus to be finally stored in a SQL Server database. The system culminated with an interactive dashboard in Power BI for real-time visualization, intelligent management, and historical data collection, laying the groundwork for future AI implementations for predictive analysis.",
+            "bullet_points": [
+              "Conducting a feasibility study and designing a pilot solution for parking automation.",
+              "Installation and configuration of IoT hardware: ultrasonic sensors, Arduino, Raspberry Pi, and ESP32 connectivity modules.",
+              "Development of firmware in C and Python for capturing sensor data and its secure transmission via WiFi.",
+              "Implementation of a cloud architecture on Azure for large-scale data ingestion using the MQTT protocol with Azure IoT Hub.",
+              "Processing and queuing of messages to ensure reliable and orderly data delivery to the database.",
+              "Persistent storage of occupancy data in SQL Server for querying historical and real-time information.",
+              "Design and development of an interactive dashboard for live monitoring of parking status and decision-making.",
+              "Creation of a historical data repository to enable future trend analysis and the application of Machine Learning models.",
+              "Successful defense of the project before an evaluation jury, obtaining approval of the thesis and the academic degree."
+            ]
+          },
+          "technologies": [68, 75, 9, 11, 72, 100, 101, 102, 103, 104, 105, 106],
+          "project_role_timeline": [
+            {
+              "role": 1004,
+              "start_date": "2024-03-01",
+              "end_date": "2024-12-31"
+            },
+            {
+              "role": 1006,
+              "start_date": "2024-03-01",
+              "end_date": "2024-12-31"
+            },
+            {
+              "role": 1007,
+              "start_date": "2024-03-01",
+              "end_date": "2024-12-31"
+            },
+            {
+              "role": 1008,
+              "start_date": "2024-03-01",
+              "end_date": "2024-12-31"
+            }
+          ],
+          "orden": 20240301,
+          "project_id": 105
+        }
       ]
     },
     {
       "type": "logro",
-      "company": "Graduación de Ingeniería en Sistemas y Computación",
+      "company": "Graduation from Systems and Computer Engineering",
       "description": "",
       "logo_url": "utec.png",
       "orden": 3,
       "job_roles": [
         {
-          "job_role": "Grado de Ingeniero en Sistemas y Computación",
+          "job_role": "Degree in Systems and Computer Engineering",
           "job_role_id": 1003,
           "start_date": "2025-05-30",
           "end_date": "2025-05-30",
@@ -1484,27 +1484,27 @@
     },
     {
       "type": "logro",
-      "company": "Ministerios Juveniles Adventistas, División Interamericana",
-      "description": "Currículo de Liderazgo para Embajadores y Líderes de Jóvenes Adultos",
+      "company": "Adventist Youth Ministries, Inter-American Division",
+      "description": "Leadership Curriculum for Ambassadors and Young Adult Leaders",
       "logo_url": "liderjuvenil.png",
       "orden": 8,
       "skills": [107, 108, 109, 110, 111, 112, 113],
       "job_roles": [
         {
-          "job_role": "Líder Juvenil Certificado (Mentor)",
+          "job_role": "Certified Youth Leader (Mentor)",
           "job_role_id": 1015,
           "start_date": "2021-01-01",
           "end_date": "2021-12-31",
           "responsabilities": [
-            {"description": "Entendimiento de la historia, filosofía, visión, objetivos y estructura del Ministerio Juvenil Adventista."
-            },{"description": "Desarrollo de habilidades para comprender y adaptarse a la juventud actual, incluyendo el entorno digital."
-            },{"description": "Liderazgo espiritual, consejería y amistad con jóvenes, actuando como ejemplo de Cristo."
-            },{"description": "Promoción de la pertenencia y el empoderamiento juvenil en la iglesia, delegando responsabilidades."
-            },{"description": "Planificación eclesiástica basada en el propósito, utilizando las cuatro fuerzas dinámicas bíblicas (Gracia, Adoración, Comunidad, Servicio)."
-            },{"description": "Desarrollo de programas juveniles creativos, balanceados y alineados con los temas anuales de los Ministerios Juveniles."
-            },{"description": "Descubrimiento, motivación y utilización de los dones espirituales de los jóvenes para el servicio y la edificación de la iglesia."
-            },{"description": "Maximización de las oportunidades y evitación de las amenazas de las redes sociales en el ministerio digital."
-            }     ]
+            {"description": "Understanding the history, philosophy, vision, objectives, and structure of the Adventist Youth Ministry."},
+            {"description": "Developing skills to understand and adapt to today's youth, including the digital environment."},
+            {"description": "Spiritual leadership, counseling, and friendship with young people, acting as an example of Christ."},
+            {"description": "Promoting youth belonging and empowerment in the church, delegating responsibilities."},
+            {"description": "Purpose-based church planning, using the four dynamic biblical forces (Grace, Worship, Community, Service)."},
+            {"description": "Developing creative, balanced youth programs aligned with the annual themes of the Youth Ministries."},
+            {"description": "Discovering, motivating, and utilizing the spiritual gifts of young people for service and the edification of the church."},
+            {"description": "Maximizing opportunities and avoiding the threats of social media in digital ministry."}
+            ]
         }
       ],
       "projects": []
