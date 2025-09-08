@@ -108,9 +108,16 @@ const MainText: React.FC<Props> = ({ t }) => {
 
   return (
     <div className='relative  h-full w-full flex gap-1 items-center justify-center'>
-      <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-end`} >
-        <div className="text-left relative flex flex-wrap  "
+      <div id="main-text" className={`w-3/4 h-full text-white z-10 px-[5%] py-[5%] flex justify-center align-center xs:w-full xs:align-start`} >
+      
+        <div className="text-left relative flex flex-wrap xs:w-full "
               style={isMobile ? {alignContent: 'end'} : {alignContent: 'center'}}>
+                
+          {isMobile && 
+            <div id="main-image-mobile" className="w-full h-1/4">
+                <img src={`${img_me_just_living.src}`}  alt="Isaac just living" className=' object-contain'/>
+            </div>
+          }
           <h2 className="text-white/60 text-6xl xs:text-2xl w-full black-shadow  mt-2 raleway ">
             {t.common.name}
           </h2>
@@ -152,9 +159,11 @@ const MainText: React.FC<Props> = ({ t }) => {
           </div>
         </div>
       </div>
-      <div id="main-image" className=" xs:absolute xs:right-0 xs:w-full xs:p-0 justify-end w-1/2 h-full pr-[5%] py-[5%] flex justify-center align-end object-contain">
-          <img src={`${img_me_just_living.src}`}  alt="Isaac just living" className=' object-contain'/>
-      </div>
+      {!isMobile && 
+        <div id="main-image" className=" xs:absolute xs:right-0 xs:w-full xs:p-0 justify-end w-1/2 h-full pr-[5%] py-[5%] flex justify-center align-end object-contain">
+            <img src={`${img_me_just_living.src}`}  alt="Isaac just living" className=' object-contain xs:object-bottom'/>
+        </div>
+      }
     </div>
   );
 };
