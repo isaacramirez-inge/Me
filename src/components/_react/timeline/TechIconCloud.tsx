@@ -40,25 +40,35 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
   const [isVisible, setIsVisible] = useState(false);
   const [containerSize, setContainerSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
 
+  // --- CÓDIGO MODIFICADO ---
+  // Reemplazamos el event listener de scroll por un IntersectionObserver para mayor rendimiento.
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const fullyVisible =
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-      setIsVisible(fullyVisible);
-    };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Actualiza el estado 'isVisible' basado en si el elemento está intersectando el viewport.
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null, // Observa intersecciones con el viewport del navegador.
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa cuando al menos el 10% del elemento es visible.
+      }
+    );
+
+    const currentContainer = containerRef.current; // Capturamos el valor actual de la ref.
+
+    if (currentContainer) {
+      observer.observe(currentContainer);
+    }
+
+    // Función de limpieza para dejar de observar cuando el componente se desmonte.
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
+      }
     };
-  }, []);
+  }, []); // El array de dependencias vacío asegura que esto se ejecute solo una vez.
+
 
   // Usar ResizeObserver para obtener el tamaño real del contenedor
   useEffect(() => {
@@ -129,7 +139,11 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
   }, [isVisible, iconStates.length]);
   
   useEffect(() => {
+    // Si no es visible y los iconos ya se están moviendo, no canceles la animación.
+    // Solo detenla si quieres que se pare al salir del viewport.
+    // Para este caso, solo arrancamos la animación si es visible.
     if (!isVisible || iconStates.length === 0) return;
+    
     let frame: number;
     const animate = () => {
       setIconStates(prevStates => {
@@ -168,9 +182,14 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
       });
       frame = requestAnimationFrame(animate);
     };
-    frame = requestAnimationFrame(animate);
+
+    // Solo inicia la animación si hay movimiento
+    if (iconStates.some(icon => icon.speed > 0)) {
+        frame = requestAnimationFrame(animate);
+    }
+    
     return () => cancelAnimationFrame(frame);
-  }, [isVisible, iconStates.length]);
+  }, [isVisible, iconStates]);
 
   return (
     <div className="tech-icon-cloud dvd-cloud xs:p-l[15%]" ref={containerRef} style={{ position: 'relative', height: '100%', minHeight: 120 }}>
