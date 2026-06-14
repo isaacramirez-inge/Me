@@ -111,7 +111,7 @@ const TimelineMaincard: React.FC<MainCardDataProps> = ({ group, dates, techs, te
     const CompanyInfo = useMemo(() => (
         <div className="header-company-data flex flex-row w-full h-full items-center">
             <div className="image-company w-[25%] h-full rounded">
-                <img className='h-full w-full object-contain object-center' src={`/${base_path}/img/company/${group.logo_url}`} alt={group.company} 
+                <img className='h-full w-full object-contain object-center' src={`${base_path ? '/' + base_path : ''}/img/company/${group.logo_url}`} alt={group.company} 
                 loading="lazy"/>
             </div>
             <div className="tv-company-info w-[75%] h-full px-4 md:px-10 flex flex-col justify-center">

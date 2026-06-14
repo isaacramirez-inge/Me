@@ -10,7 +10,7 @@ interface Props{
 
 const ReactRenderBridge: React.FC<Props> = ({langs, defaultLocale, base_path}) => {
     const goto = (lang: string) => {
-        const url = window.location.protocol + '//' + window.location.hostname+`/${base_path}/${lang}/home`;
+        const url = window.location.protocol + '//' + window.location.hostname + `${base_path ? '/' + base_path : ''}/${lang}/home`;
         window.location.href = url; 
     }
     const onComplete = () => {
