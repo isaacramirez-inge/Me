@@ -139,7 +139,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
 
   const timerIdRef = useRef<NodeJS.Timeout | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const RUTA_SONIDO_TECLEO = `/${BASE_PATH}/sounds/key2.mp3`;
+  const RUTA_SONIDO_TECLEO = `${BASE_PATH ? '/' + BASE_PATH : ''}/sounds/key2.mp3`;
 
   useEffect(() => {
     audioRef.current = new Audio(RUTA_SONIDO_TECLEO);
@@ -355,10 +355,17 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   return (
     <>
       {captchaVersion === captchaVersion3 && captchaWidgetV3()}
+      
       <div
         id="main-chat"
         ref={mainchat}
-        className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-[100dvh] flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isChatVisible ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed z-50 transition-all duration-500 ${
+          isMobile
+            ? `inset-0 w-full xs:pt-[15%] h-[100dvh] flex items-center justify-center pt-[5%] pb-2 ${
+                isChatVisible ? 'translate-x-0' : '-translate-x-full'
+              }`
+            : `bottom-6 left-6 ${isChatVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'} w-[340px] h-[50vh] max-h-[450px] rounded-2xl shadow-2xl bg-black/30 backdrop-blur-md`
+        }`}
       >
         <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
           <div className="sticky top-0 z-10 bg-black/20 p-0 rounded-md flex items-center justify-between ">
