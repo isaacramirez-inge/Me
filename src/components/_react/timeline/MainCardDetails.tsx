@@ -110,7 +110,7 @@ const MainCardDetails: React.FC<MainCardDetailsProps> = ({group, expanded, stick
             </div>
             {hasTechs[group.company] && (
                 <div className="tv-company-techs-icons">
-                    <TechIconCloud technologies={group.projects.flatMap(p => p.technologies)} />
+                    <TechIconCloud techAll={[]}/**revisar esto <- */ base_path='' technologies={group.projects.flatMap(p => p.technologies)} />
                 </div>
             )}
         </div>

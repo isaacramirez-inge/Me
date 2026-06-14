@@ -6,8 +6,6 @@ import type { MainCardData } from './_react/timeline/TimelineTypes';
 import MenuRender from '../components/navbar/MenuRender';
 import type { Translation } from '../types/types';
 
-const basePath = import.meta.env.PUBLIC_BASE_PATH || '';
-
 interface SupLang{
     code: string;
     name: string;
@@ -24,9 +22,10 @@ interface NavbarContentProps {
   m: Metrics;
   langs: SupLang[];
   links: link[];
+  base_path: string;
 }
 
-const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, langs }) => {
+const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, base_path, links, langs }) => {
   const [chatPlaceholder, setChatPlaceholder] = useState<string>('Ask ChatGPT about me...');
   const [inOutControl, setInOutControl] = useState<{in: number | null, out: number | null}>({in: null, out: null});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,14 +70,14 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
   
   return (
     <>
-      <div className="flex items-center justify-between relative z-10">
+      <div className="flex items-center justify-between relative " style={{zIndex:100}}>
       
         {/* Título o logo */}
-        <div className="text-xl font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
+        <div className="text-xl raleway font-bold text-center text-white/80 " style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>{pageTitle}</div>
        
         {/* Botón "Menu" visible solo en mobile */}
         <button
-          className="md:hidden text-sm border px-3 py-1 rounded"
+          className="md:hidden raleway  text-lg border px-3 py-1 rounded"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             const button = document.getElementById('menu-toggle');
@@ -86,21 +85,22 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ pageTitle, t, m, links, l
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
           }}
+          style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}
         >
           Menu
         </button>
 
         {/* Menú desktop */}
         <div className="hidden md:flex gap-4">
-          <MenuRender links={links} base={basePath} lang={t._info.code} prefetch={false} />
+          <MenuRender links={links} base_path={base_path} lang={t._info.code} prefetch={false} />
           <SwitchLang actualCode={t._info.code} langs={langs} />
         </div>
       </div>
 
       {/* Menú mobile oculto por defecto */}
-      <div id="mobile-menu" className="absolute mt-4 text-center flex flex-col flex-wrap content-center justify-evenly pt-4 h-[85dvh] w-[90dvw] border border-purple-500 rounded-lg gap-2 bg-black hidden">
+      <div id="mobile-menu" className="absolute mt-4 text-center z-50 flex flex-col flex-wrap content-center justify-evenly pt-4 h-[85dvh] w-[90dvw] border border-purple-500 rounded-lg gap-2 bg-black hidden">
         <SwitchLang actualCode={t._info.code} langs={langs} />
-        <MenuRender links={links} base={basePath} lang={t._info.code} prefetch={false} />
+        <MenuRender links={links} base_path={base_path} lang={t._info.code} prefetch={false} />
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../styles/breakpoints';
 import BotBubbleDispatcher from './bot/BotBubbleDispatcher';
 import ReCAPTCHA from "react-google-recaptcha";
+import hammer from 'hammerjs';
 import { api } from '../lib/axios';
 
 const V3_CAPTCHA = import.meta.env.PUBLIC_RECAPTCHA_V3_KEY;
@@ -35,7 +36,6 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   const [loading, setLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [initialSuggestions, setInitialSuggestions] = useState<string[]>([]);
   const [beforeDisplaySuggestions, setBeforeDisplaySuggestions] = useState<string[]>([]);
   const [fullResponseContent, setFullResponseContent] = useState<string>('');
   const [displayedResponseContent, setDisplayedResponseContent] = useState<string>('');
@@ -54,6 +54,9 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   const [pendingMessage, setPendingMessage] = useState<string>('');
   const [captcha2Node, setCaptcha2Node] = useState<React.ReactNode | null>(null);
   const [noticed, setNoticed] = useState<boolean>(false);
+  const mainchat = useRef<HTMLDivElement | null>(null);
+
+
 
   useEffect(() => {
     const savedChat = localStorage.getItem('chat_history');
@@ -65,6 +68,17 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       setMessagesUsage(chat.length);
     }
   }, []);
+
+  useEffect(() => {
+    if (mainchat.current) {
+      const hammer = new Hammer(mainchat?.current);
+      hammer.on('swipeleft', () => {
+        onCloseChat();
+      });
+      
+      return () => hammer.destroy();
+    }
+  }, [onCloseChat]);
 
   const onCaptcha2Resolved = () => {
     bubbleBotRef2.current?.classList.add('hidden');
@@ -125,7 +139,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
 
   const timerIdRef = useRef<NodeJS.Timeout | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const RUTA_SONIDO_TECLEO = `/${BASE_PATH}/sounds/key2.mp3`;
+  const RUTA_SONIDO_TECLEO = `${BASE_PATH ? '/' + BASE_PATH : ''}/sounds/key2.mp3`;
 
   useEffect(() => {
     audioRef.current = new Audio(RUTA_SONIDO_TECLEO);
@@ -277,7 +291,6 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
     setErrorChating('');
     const initialSuggestions = await fetchInitialSuggestions();
     setSuggestions(initialSuggestions);
-    setInitialSuggestions(initialSuggestions);
     localStorage.removeItem('chat_history');
     localStorage.removeItem('chat_id');
   };
@@ -342,16 +355,24 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
   return (
     <>
       {captchaVersion === captchaVersion3 && captchaWidgetV3()}
+      
       <div
         id="main-chat"
-        className={`fixed inset-0 w-[20%] xs:w-full xs:pt-[15%] h-full flex items-center justify-center pt-[5%] pb-2 transition-transform duration-500 ${isChatVisible ? 'translate-x-0' : '-translate-x-full'}`}
+        ref={mainchat}
+        className={`fixed z-50 transition-all duration-500 ${
+          isMobile
+            ? `inset-0 w-full xs:pt-[15%] h-[100dvh] flex items-center justify-center pt-[5%] pb-2 ${
+                isChatVisible ? 'translate-x-0' : '-translate-x-full'
+              }`
+            : `bottom-6 left-6 ${isChatVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'} w-[340px] h-[50vh] max-h-[450px] rounded-2xl shadow-2xl bg-black/30 backdrop-blur-md`
+        }`}
       >
         <div className="relative w-full h-full flex flex-col justify-between rounded-lg shadow-lg p-2">
           <div className="sticky top-0 z-10 bg-black/20 p-0 rounded-md flex items-center justify-between ">
-            <div className="flex items-center gap-2 text-white/80 text-md font-bold">
+            <div className="flex items-center raleway gap-2 text-white/80 text-md font-bold">
               <span>{t.chat.bot_name}</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 text-2xl">
               <button
                 title=""
                 onClick={handleClear}
@@ -369,11 +390,11 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             </div>
           </div>
 
-          <div className="mx-auto text-white/80 text-center flex items-center justify-between">
+          <div className="mx-auto raleway3 anim-metal text-white/80 text-center flex items-center justify-between">
             <div className={`catbot h-20 ${chat.length === 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>
               <RenderJsonLottie source={botAnim} height={100} width={100} />
             </div>
-            <p className={`font-bold ${chat.length > 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.i_am_bot_message}</p>
+            <p className={` ${chat.length > 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.i_am_bot_message}</p>
             <p className={`font-bold ${chat.length === 0 || chat.length >= messagesLimit ? 'hidden' : ''}`}>{t.chat.its_a_pleasure}</p>
           </div>
 
@@ -387,7 +408,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             {chat.map((msg, index) => (
               <div
                 key={index}
-                className={`rounded px-3 py-2 text-sm max-w-[90%] ${msg.role === 'user'
+                className={`raleway4 rounded px-3 py-2 text-sm max-w-[90%] ${msg.role === 'user'
                     ? 'bg-white/25 border-white/90 text-white/90 self-end ml-auto rounded-full rounded-br-none'
                     : 'text-white/90 border-l-2 self-start rounded-none border-purple-500'
                   }`}
@@ -396,8 +417,8 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
                 <div ref={messagesEndRef} />
               </div>))
             }
-            {loading && <div className="text-white text-xs animate-pulse">...</div>}
-            {errorChating && <div className="text-white text-xs animate-pulse">{t.chat.error_chatting}</div>}
+            {loading && <div className="text-white text-2xl animate-pulse raleway ">...</div>}
+            {errorChating && <div className="text-white text-xs animate-pulse raleway2">{t.chat.error_chatting}</div>}
           </div>
           {suggestions && (
             <div className="mt-1 mb-2 max-h-[100px] overflow-y-auto scrollbar-white">
@@ -405,7 +426,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
                 {suggestions.map((q, idx) => (
                   <button
                     key={idx}
-                    className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay"
+                    className="text-xs text-white/90 font-semibold px-2 py-1 rounded-full hover:bg-white/30 transition border border-white/30 animate-fade-in animation-delay raleway3"
                     onClick={() => handleSend(q)}
                   >
                     {q}
@@ -415,7 +436,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             </div>
           )}
 
-          <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className=' h-[1px] bg-white/50 relative w-full xs:w-[80%]'>
+          <div id="bot-bubble-ref" ref={bubbleBotGuideRef} className=' h-[0px] bg-white/50 relative w-full xs:w-[80%]'>
             <div ref={bubbleBotRef} className='absolute -top-40 left-full h-20 w-20 z-50 flex flex-col items-center justify-start scale-[1.6]'>
               <BotBubbleDispatcher
                 message={chatUsage >= chatLimit ? t.chat.hit_limit_2 : chat.length >= messagesLimit ? t.chat.hit_limit_1 : ''}
@@ -444,23 +465,26 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
             }
           </div>
 
-          <div className="flex items-center gap-2">
-            <input
-              type="text"
-              placeholder={t.chat.askme_placeholder}
-              className="flex-1 rounded-full px-2 py-1 text-sm text-white/90 bg-transparent border border-white"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}
-            />
-            <button
-              onClick={() => handleSend(input)}
-              className="text-white hover:scale-110 transition border-0 animate-pulse"
-              title="Enviar"
-            >
-              <BiSend className="text-white text-xl" />
-            </button>
+          <div className="flex items-center gap-2 xs:pb-2 h-[50px]">
+            <div className='flex items-center justify-center w-full h-full rounded-full w-full border'>
+              <input
+                type="text"
+                placeholder={t.chat.askme_placeholder}
+                className="flex-1 raleway2  focus:outline-none h-full rounded-full px-2 py-1 text-l xs:text-xl text-white/90 bg-transparent"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend(input)}
+              />
+              <button
+                onClick={() => handleSend(input)}
+                className="text-white hover:scale-110 transition border-0 animate-pulse"
+                title="Enviar"
+              >
+                <BiSend className="text-white text-xl" />
+              </button>
+            </div>
           </div>
+          <div className="flex raleway4 pt-[3px] items-center text-white/80 justify-center text-xs">{t.chat.mistakes}</div>
         </div>
       </div>
     </>

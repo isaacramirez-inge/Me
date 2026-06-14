@@ -1,27 +1,35 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './TechIconCloud.css';
-import type { Technology, TechIconCloudProps, IconState } from './TimelineTypes';
+import type { TechIconCloudProps, IconState } from './TimelineTypes';
+import { useMediaQuery } from 'react-responsive';
+import { breakpoints } from '../../../styles/breakpoints';
 
-const ICON_SIZE = 30; // px
-const ICON_MARGIN = 10; // px
-const INITIAL_SPEED = 0.3; // px/frame (lento)
-const FINAL_SPEED = 0.2; // px/frame (más suave)
 
-function detectCollision(a: IconState, b: IconState) {
+function detectCollision(a: IconState, b: IconState, ICON_SIZE: number, ICON_MARGIN: number) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
   const dist = Math.sqrt(dx * dx + dy * dy);
   return dist < ICON_SIZE + ICON_MARGIN / 2;
+  
 }
 
-const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) => {
+const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies, techAll }) => {
+  
+
+  const isMobile = useMediaQuery({ query: breakpoints.mobile });
+  const ICON_SIZE = isMobile ? 30 : 30; // px
+  const ICON_MARGIN = 10; // px
+  const INITIAL_SPEED = 0.3; // px/frame (lento)
+  const FINAL_SPEED = 0.2; // px/frame (más suave)
+
+
   const techList = techAll.filter(tech => technologies.includes(tech.id));
   const uniqueTechs = Array.from(
     new Map(
       techList
         .filter(t => typeof t.logo_path === 'string' && t.logo_path)
         .map(t => [t.name, {
-          logo_path: `/src/assets/img/icon/${t.logo_path}${t.extension}`,
+          logo_path: `/${base_path}/img/icon/${t.logo_path}${t.extension}`,
           name: t.name
         }])
     ).values()
@@ -32,25 +40,35 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
   const [isVisible, setIsVisible] = useState(false);
   const [containerSize, setContainerSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
 
+  // --- CÓDIGO MODIFICADO ---
+  // Reemplazamos el event listener de scroll por un IntersectionObserver para mayor rendimiento.
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const fullyVisible =
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-      setIsVisible(fullyVisible);
-    };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Actualiza el estado 'isVisible' basado en si el elemento está intersectando el viewport.
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null, // Observa intersecciones con el viewport del navegador.
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa cuando al menos el 10% del elemento es visible.
+      }
+    );
+
+    const currentContainer = containerRef.current; // Capturamos el valor actual de la ref.
+
+    if (currentContainer) {
+      observer.observe(currentContainer);
+    }
+
+    // Función de limpieza para dejar de observar cuando el componente se desmonte.
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
+      }
     };
-  }, []);
+  }, []); // El array de dependencias vacío asegura que esto se ejecute solo una vez.
+
 
   // Usar ResizeObserver para obtener el tamaño real del contenedor
   useEffect(() => {
@@ -121,7 +139,11 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
   }, [isVisible, iconStates.length]);
   
   useEffect(() => {
+    // Si no es visible y los iconos ya se están moviendo, no canceles la animación.
+    // Solo detenla si quieres que se pare al salir del viewport.
+    // Para este caso, solo arrancamos la animación si es visible.
     if (!isVisible || iconStates.length === 0) return;
+    
     let frame: number;
     const animate = () => {
       setIconStates(prevStates => {
@@ -144,7 +166,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
         // Colisiones entre iconos (perfect elastic mode)
         for (let i = 0; i < newStates.length; i++) {
           for (let j = i + 1; j < newStates.length; j++) {
-            if (detectCollision(newStates[i], newStates[j])) {
+            if (detectCollision(newStates[i], newStates[j], ICON_SIZE, ICON_MARGIN)) {
               // Intercambiar vectores de velocidad (dx, dy)
               const tempDx = newStates[i].dx;
               const tempDy = newStates[i].dy;
@@ -160,19 +182,24 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
       });
       frame = requestAnimationFrame(animate);
     };
-    frame = requestAnimationFrame(animate);
+
+    // Solo inicia la animación si hay movimiento
+    if (iconStates.some(icon => icon.speed > 0)) {
+        frame = requestAnimationFrame(animate);
+    }
+    
     return () => cancelAnimationFrame(frame);
-  }, [isVisible, iconStates.length]);
+  }, [isVisible, iconStates]);
 
   return (
-    <div className="tech-icon-cloud dvd-cloud" ref={containerRef} style={{ position: 'relative', height: '100%', minHeight: 120 }}>
+    <div className="tech-icon-cloud dvd-cloud xs:p-l[15%]" ref={containerRef} style={{ position: 'relative', height: '100%', minHeight: 120 }}>
       {iconStates.length === uniqueTechs.length && uniqueTechs.map((tech, idx) => (
         <img
           key={tech.name + idx}
           src={tech.logo_path}
           alt={tech.name}
           className="tech-icon-cloud-img dvd-icon"
-          title={tech.name}
+          title={`${tech.name} + ${/*techAll.find(t => t.name === tech.name)?.id || */''}`}
           style={{
             position: 'absolute',
             transform: `translate3d(${iconStates[idx]?.x ?? 0}px, ${iconStates[idx]?.y ?? 0}px, 0)`,
@@ -182,10 +209,11 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({ technologies, techAll }) 
             zIndex: 2,
             transition: 'box-shadow 0.2s',
           }}
+          loading="lazy"
         />
       ))}
     </div>
   );
 };
 
-export default TechIconCloud; 
+export default TechIconCloud;

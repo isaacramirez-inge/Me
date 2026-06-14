@@ -1,85 +1,101 @@
 {
-    "_info":{
-        "name":"English",
-        "code":"en-us"
+    "_info": {
+        "name": "English",
+        "code": "en-us"
     },
-    "common":{
+    "common": {
         "name": "Isaac Ramírez",
-        "tabtitle": "Isa Wild Developer"
+        "tabtitle": "Isaac | AI & Fullstack Engineer"
     },
-    "navbar":{
-        "this_is_me":"This is me"
+    "navbar": {
+        "this_is_me": "My Timeline"
     },
-    "home":{
-        "welcome":{
-            "title":"Isaac Sarceño",
+    "nav": {
+        "home": "Home",
+        "skills": "Skills",
+        "profile": "Profile",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "My Timeline",
+        "welcome": {
+            "title": "Isaac Sarceño",
             "subtitle": "Developer / ",
             "subttitle_lines": [
-                "Just living",
-                "Just Growing",
-                "Just Learning to living",
+                "AI & Fullstack Developer",
+                "Powered by Artificial Intelligence",
+                "Creating business solutions",
+                "Learning to live",
                 "Embracing technology"
             ],
-            "descriptions":[
-                "I am a person highly committed to each project in which I participate and passionate about creating high-impact technological solutions. I firmly believe that technology is a tool that is learned, but what is truly important is to thoroughly understand the problem and draw the most effective and efficient path towards its solution.",
-                "I have more than five years of experience developing creative fullstack solutions for complex challenges, using a broad technological stack and easily adapting to different environments. I have worked with clients from various sectors such as banking, health, telecommunications and government, each with unique objectives, restrictions and technological ecosystems. This diversity has given me a comprehensive vision and allows me to adapt quickly to new challenges.",
-                "My approach is results-oriented, with a combination of strategic thinking, technical skills and a strong analytical capacity, which makes me a valuable ally for any team or project."
+            "descriptions": [
+                "+5 years creating high-impact solutions, AI-powered agents, and data integrations beyond APIs. I firmly believe that technology is the tool, but a deep understanding of the problem is the key. My approach combines strategic thinking and technical skills to chart the most efficient path to the desired result.",
+                "I take AI beyond APIs, specializing in the architecture and development of systems with multi-agent frameworks and MCP/A2A protocols. My focus is on building and deploying AI solutions that solve complex business challenges, transforming creativity and code into business optimization.",
+                "With over five years of experience, I have developed full-stack solutions for complex challenges in sectors such as banking, healthcare, telecommunications, and government. This diversity allows me to adapt with agility to any technological ecosystem and deliver consistent results.",
+                "My commitment, honesty, and responsibility are the pillars of my work, making me a valuable ally for any team or project."
             ]
         },
-        "timeline": {
-            "title": "Timeline",
-            "descriptions": ""
+        "tabnames": {
+            "roles": "Roles",
+            "projects": "Projects",
+            "resume": "Resume",
+            "charts": "Charts"
+        },
+        "project":{
+            "used_techs":"Used Technologies"
         }
     },
     "skills": {
-        "title": "Mis habilidades"
+        "title": "My Skills"
     },
-    "profile":{
-        "title":"Sobre mí",
-        "tagline":"Abraza la tecnología"
+    "profile": {
+        "title": "About Me",
+        "tagline": "Embrace technology"
     },
-    "contact":{
-        "title":"Contáctame",
-        "name_field": "Nombre",
-        "email_field": "Correo electrónico",
-        "message_field": "Mensaje",
-        "message_placeholder": "Escribe tu mensaje aquí...",
-        "send_button": "Enviar",
-        "success_title": "Exito!",
-        "success_message":"Se ha enviado tu mensaje correctamente, Isaac responderá a la brevedad posible.",
-        "error_captcha":"Ups! ocurrio un error, intentalo nuevamente",
-        "error_message":"Ocurio un error al enviar tu mensaje, intentalo nuevamente mas tarde",
-        "confirmation_subject": "Confirmación de envío de mensaje",
-        "confirmation_greeting": "Hola",
-        "confirmation_bot_intro": "Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
-        "confirmation_message_received": "Gracias por tu mensaje. Isaac responderá a la brevedad posible.",
-        "confirmation_delivered": "Tu mensaje ha sido enviado correctamente.",
-        "confirmation_thanks": "Gracias por tu mensaje.",
-        "confirmation_footer": "Atentamente, Isaac"
+    "contact": {
+        "title": "Contact Me",
+        "name_field": "Name",
+        "email_field": "Email",
+        "message_field": "Message",
+        "empty_captcha": "Please complete the ReCAPTCHA before submitting the form.",
+        "confirmation_subject": "Message Submission Confirmation",
+        "confirmation_greeting": "Hello",
+        "confirmation_bot_intro": "this is Isa bot",
+        "confirmation_message_received": "Thank you for your message. Here is what you sent us:",
+        "confirmation_delivered": "I have successfully delivered your message to Isaac. He will contact you as soon as possible.",
+        "confirmation_thanks": "Thank you for your interest and for contacting him!",
+        "confirmation_footer": "This is an automated message sent by IsaBot. Do not reply directly to this email.",
+        "message_placeholder": "Write your message here...",
+        "send_button": "Send",
+        "success_title": "Success!",
+        "success_message": "Thank you for your message. Please check your inbox; we've sent a confirmation email. If you don't see it, please verify the email address you entered.",
+        "error_captcha": "Oops! An error occurred. Please try again.",
+        "error_message": "An error occurred while sending your message. Please try again later."
     },
-    "chat":{
+    "chat": {
         "bot_name": "ISA BOT",
-        "i_am_bot_message":"Soy el asistente virtual de Isaac, ¿en qué puedo ayudarte hoy?",
-        "its_a_pleasure":"Es un placer ayudarte!",
-        "askme_placeholder":"Preguntame algo sobre Isaac",
-        "error_chatting":"Ups! ocurrio un error",
-        "error_response":"Ocurrio un error al obtener la respuesta, intentar nuevamente mas tarde",
-        "hit_limit_1": "Parece que has alcanzado el limite de preguntas",
-        "hit_limit_2": "Parece que has alcanzado el limite de chats",
-        "captcha_message":"Por favor marca la casilla para continuar"
+        "i_am_bot_message": "I am Isaac's virtual assistant. How can I help you today?",
+        "its_a_pleasure": "It's a pleasure to help you!",
+        "askme_placeholder": "Ask me something about Isaac",
+        "error_chatting": "Oops! An error occurred.",
+        "error_response": "An error occurred while getting the response. Please try again later.",
+        "hit_limit_1": "It seems you have reached the question limit.",
+        "hit_limit_2": "It seems you have reached the chat limit. You can try again tomorrow.",
+        "captcha_message": "Please check the box to continue.",
+        "mistakes": "ISA BOT can make mistakes."
     },
     "cookies": {
-        "message": "We use cookies to improve your experience. By continuing to browse, you accept our use of cookies.",
+        "message": "We use cookies to improve your experience. By continuing to browse, you agree to our use of cookies.",
         "accept": "Accept",
         "policy": "Privacy Policy"
     },
     "policy": {
         "title": "Privacy Policy",
-        "last_updated": "Last updated: August 22, 2025",
+        "last_updated": "Last updated: August 2025",
         "introduction_title": "Introduction",
         "introduction_text": "This Privacy Policy describes how we collect, use, and disclose your information.",
         "cookies_title": "Cookies",
-        "cookies_text": "We use cookies to operate and improve our services. A cookie is a small piece of data stored on your device. We use a 'lang' cookie to store your language preference, and a 'browser_id' cookie to uniquely identify your browser for analytics and security purposes.",
+        "cookies_text": "We use cookies to operate and improve our services. A cookie is a small piece of data stored on your device. We use a 'lang' cookie to store your language preference and a 'browser_id' cookie to uniquely identify your browser for analytics and security purposes.",
         "data_title": "Data Collection and Use",
         "data_text": "When you use our contact form or chat, we collect your name, email, and the content of your message, along with your 'browser_id' and 'lang' cookies. This data is used to respond to your inquiries and improve our services."
     }

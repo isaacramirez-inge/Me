@@ -38,6 +38,7 @@ export interface ProjectRoleTimeline {
     resume?: string;
     logo_url: string;
     orden: number;
+    skills?: number[];
     job_roles: JobRole[];
     projects: Project[];
   }
@@ -107,6 +108,7 @@ export interface ProjectRoleTimeline {
   export interface TechIconCloudProps {
     techAll: Technology[];
     technologies: (number | string)[];
+    base_path: string;
   }
     
   export interface IconState {

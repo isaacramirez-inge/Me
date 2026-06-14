@@ -2,16 +2,16 @@ import React from 'react';
 import RenderJsonLottie from '../_react/RenderJsonLottie';
 import rocket from '../../assets/anim/rocket-init.json';
 
-const basePath = import.meta.env.PUBLIC_BASE_PATH || '';
-
 interface Props{
     langs: {code: string, name: string}[];
     defaultLocale: string;
+    base_path: string;
 }
 
-const ReactRenderBridge: React.FC<Props> = ({langs, defaultLocale}) => {
+const ReactRenderBridge: React.FC<Props> = ({langs, defaultLocale, base_path}) => {
     const goto = (lang: string) => {
-        window.location.replace(`/${basePath}/${lang}/home`);
+        const url = window.location.protocol + '//' + window.location.hostname+`/${base_path}/${lang}/home`;
+        window.location.href = url; 
     }
     const onComplete = () => {
         const userDetectedLanguages = [navigator.language, ...navigator.languages];

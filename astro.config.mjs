@@ -4,7 +4,8 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 
 export default defineConfig({
-    base: '/Me/',
+    trailingSlash: "never", // opciones: "always" | "never" | "ignore"
+    base: '/Me',
     output: 'static',
     vite: {
         assetsInclude: ['**/*.lottie'],

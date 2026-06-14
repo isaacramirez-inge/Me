@@ -1,13 +1,16 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Project, Technology } from './_react/timeline/TimelineTypes';
+import type { Translation } from '../types/types';
 
 interface TimelineProjectNavigatorProperties {
   projects: Project[];
   techAll: Technology[];
+  base_path: string;
+  t: Translation;
 }
 
-const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll }) => {
+const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = ({ projects, techAll , base_path, t}) => {
   const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
@@ -51,16 +54,17 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
           >
             <div className="logo flex-shrink-0 w-12 h-12 md:w-16 md:h-16">
               <img
-                className="w-full h-full object-contain object-left-top"
-                src={`/src/assets/img/company/card/${project.company_logo_path}`}
+                className="w-full h-full object-contain"
+                src={`/${base_path}/img/company/card/${project.company_logo_path}`}
                 alt={project.company}
+                loading="lazy"
               />
             </div>
             <div className="project-info overflow-hidden">
-              <h2 className="text-base sm:text-lg md:text-xl leading-snug text-white font-light break-words line-clamp-2">
+              <h2 className="text-lg leading-snug text-white/80 font-bold break-words line-clamp-2 raleway">
                 {project.project_name}
               </h2>
-              <span className="text-white/70 text-xs md:text-sm truncate block">
+              <span className="text-white/70 raleway4 text-base ">
                 {project.company}
               </span>
             </div>
@@ -70,9 +74,9 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
 
       {/* 3. El componente de detalle se renderiza siempre, pero se oculta con CSS */}
       <motion.div
-        className={`absolute inset-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-2xl p-6 text-white overflow-y-auto scrollbar-white z-10 transition-opacity duration-300 ${
-          expandedProjectId ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        } xs:absolute xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-sm xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white`}
+        className={`absolute inset-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-2xl p-6 text-white overflow-y-auto scrollbar-white z-10 transition-opacity duration-300 
+          ${expandedProjectId ? 'opacity-100 pointer-events-auto xs:fixed xs:z-50 xs:top-0 xs:left-0' : 'opacity-0 pointer-events-none'} 
+        xs:fixed xs:inset-0 xs:w-full xs:h-full xs:bg-gray-900 xs:bg-opacity-50 xs:backdrop-blur-md xs:rounded-2xl xs:p-6 xs:text-white xs:overflow-y-auto xs:scrollbar-white xs:pb-[50%] xs:mt-[50%] xs:rounded-[20px] xs:border-[3px] xs:border-solid xs:border-purple-500 xs:border-x-0`}
         initial={{ opacity: 0 }}
         animate={{ opacity: expandedProjectId ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -94,31 +98,33 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
               <div className="logo w-16 h-16 flex-shrink-0">
                 <img
                   className="w-full h-full object-contain"
-                  src={`/src/assets/img/company/card/${expandedProject.company_logo_path}`}
+                  src={`/${base_path}/img/company/card/${expandedProject.company_logo_path}`}
                   alt={expandedProject.company}
+                  loading="lazy"
                 />
               </div>
               <div className="project-info">
-                <h2 className="text-2xl font-bold mb-1">{expandedProject.project_name}</h2>
-                <span className="text-white/70 text-sm">{expandedProject.company}</span>
+                <h2 className="text-2xl raleway mb-1">{expandedProject.project_name}</h2>
+                <span className="text-white/70 text-sm md:text-base truncate raleway4 block">{expandedProject.company}</span>
               </div>
             </div>
             <div className="mt-6 mb-4 w-full border-b-2 border-purple-500">
-              <h3 className="text-lg font-semibold mb-2">Tecnologías utilizadas</h3>
+              <h3 className="text-lg raleway3 mb-2">{t.home.project.used_techs}</h3>
               <div className="flex flex-wrap justify-center gap-4">
                 {expandedProject.technologies.map((techId: number, index: number) => {
                   const tech = techAll.find(t => t.id === techId);
                   if (!tech) return null;
-                  const logoPath = `/src/assets/img/icon/${tech.logo_path}${tech.extension}`;
+                  const logoPath = `/${base_path}/img/icon/${tech.logo_path}${tech.extension}`;
                   return (
                     <div
                       key={index}
-                      className="tech-icon flex flex-col items-center text-xs text-white/80"
+                      className="tech-icon raleway4 flex flex-col items-center text-xs text-white/80"
                     >
                       <img
                         src={logoPath}
                         alt={`${tech.name} icon`}
                         className="w-8 h-8 object-contain mb-1"
+                        loading="lazy"
                       />
                       <span>{tech.name}</span>
                     </div>
@@ -127,10 +133,10 @@ const TimelineProjectNavigator: React.FC<TimelineProjectNavigatorProperties> = (
               </div>
             </div>
             <div className="mb-6">
-              <p className="text-white/90 mb-3 leading-relaxed whitespace-pre-line">
+              <p className="text-white/80 text-lg mb-3 leading-relaxed whitespace-pre-line raleway4">
                 {expandedProject.project_description.description}
               </p>
-              <ul className="list-disc list-inside space-y-2 text-white/80 text-sm pl-4">
+              <ul className="list-disc raleway4 list-inside space-y-2 text-white/70 text-lg pl-4">
                 {expandedProject.project_description.bullet_points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}

@@ -67,14 +67,14 @@ const BotBubbleDispatcher: React.FC<BotBubbleDispatcherProps> = ({message, node,
                 onClick={toggleBubble}>
             {message && showBubble &&  (
                 <div className={`absolute h-1/2 w-1/2 ${vibrate ? 'vibrate' : ''}`} >
-                   <div className={`absolute rounded${node ? '-2xl' : '-full'} ${positionClasses} animate w-full text-xs p-2 bg-blue-600 text-white`} 
+                   <div className={`absolute raleway2 rounded${node ? '-2xl' : '-full'} ${positionClasses} animate w-full text-xs p-2 bg-purple-600 text-white`} 
                         style={{
                             width: '300%',
                             maxWidth:'500%',
                             fontSize: '10px',  
                             lineHeight: '1.2' 
                         }}
-                        onClick={(e) => e.stopPropagation()}>
+                        onClick={(e) => {return; e.stopPropagation()}}>
                         {message}
                         {node && node}
                     </div>

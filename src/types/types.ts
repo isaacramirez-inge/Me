@@ -20,6 +20,15 @@ export type Translation = {
       subttitle_lines: string[],
       descriptions: string[],
     },
+    tabnames:{
+      roles: string,
+      projects: string,
+      resume: string,
+      charts: string
+    },
+    project:{
+      used_techs: string,
+    }
   },
   skills:{
     title: string,
@@ -57,7 +66,8 @@ export type Translation = {
       error_response: string,
       hit_limit_1: string,
       hit_limit_2: string,
-      captcha_message: string
+      captcha_message: string,
+      mistakes: string
   },
   policy:{
     title: string,
