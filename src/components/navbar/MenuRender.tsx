@@ -32,7 +32,7 @@ function Menu({ links: ls, base_path, lang , prefetch}: MenuProps) {
         if (!prefetch) return;
 
         links.forEach((link) => {
-            const url = `/${base_path}/${lang}/${link.path}`;
+            const url = `${base_path ? '/' + base_path : ''}/${lang}/${link.path}`;
             link.complete_url = url;
             handlePrefetch(url);
         });
@@ -41,7 +41,7 @@ function Menu({ links: ls, base_path, lang , prefetch}: MenuProps) {
     return (
         <>
         {links.map((link) => {
-            const url = `/${base_path}/${lang}/${link.path}`;
+            const url = `${base_path ? '/' + base_path : ''}/${lang}/${link.path}`;
             return (
                 <a key={link.path} href={url} className=" raleway hover:scale-125 transition-transform duration-300 font-bold text-white/80 cursor-pointer" style={{ textShadow: '0 0 10px #9f7aea, 0 0 20px #9f7aea' }}>
                     {link.name}

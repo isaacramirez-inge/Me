@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     trailingSlash: "never", // opciones: "always" | "never" | "ignore"
-    base: '/Me',
+    base: '/',
     output: 'static',
     vite: {
         assetsInclude: ['**/*.lottie'],
