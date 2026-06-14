@@ -7,13 +7,12 @@ export const submitEmailMessage = async (req: EmailRequest): Promise<EmailRespon
     const lang = getCookie('lang');
     const body = { ...req, browserId, lang };
 
-    const response = await fetch(`${API_URL}/api/email`, {
+    const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
             'x-captcha-response': req.captcha,
-            'Autorization': 'Bearer 123'
-            
+            'Authorization': 'Bearer 123'
         },
         body: JSON.stringify(body),
     });

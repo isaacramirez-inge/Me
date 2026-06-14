@@ -16,7 +16,7 @@ export const sendMessage = async (req: ChatRequest, captchaToken: string, captch
     };
     const body = { ...req, browserId, lang };
     try{
-        const response = await axios.post(`${apiUrl}/v1/message`, body, { headers });
+        const response = await axios.post(`${apiUrl}/message`, body, { headers });
         if (![200, 201].includes(response.status)) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
