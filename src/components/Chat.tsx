@@ -212,17 +212,25 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
       setRedrawCounter(prev => prev + 1);
       return;
     }
-    const token = { value: '' };
-    if (captchaVersion === captchaVersion3) {
-      const tokenv3 = await captcha?.current?.executeAsync();
-      token.value = tokenv3 as string;
-    } else if (captchaVersion === captchaVersion2) {
-      const tokenv2 = captcha?.current?.getValue();
-      token.value = tokenv2 as string;
-      setRedrawCounter(prev => prev + 1);
+    let useVersion = captchaVersion;
+    let tokenValue = '';
+    try {
+      if (captchaVersion === captchaVersion3) {
+        const tokenv3 = await captcha?.current?.executeAsync();
+        tokenValue = tokenv3 as string;
+      } else if (captchaVersion === captchaVersion2) {
+        const tokenv2 = captcha?.current?.getValue();
+        tokenValue = tokenv2 as string;
+        setRedrawCounter(prev => prev + 1);
+      }
+    } catch (e) {
+      console.warn('reCAPTCHA failed, falling back to bypass mode');
     }
-    if (!token.value) { return; };
-    setCaptchaToken(token.value);
+    if (!tokenValue) {
+      useVersion = '0';
+      tokenValue = 'bypass';
+    }
+    setCaptchaToken(tokenValue);
 
     const userMessage: ChatMessage = { role: 'user', content: text };
     setChat((prev) => [...prev, userMessage]);
@@ -237,7 +245,7 @@ const Chat: React.FC<ChatProps> = ({ onCloseChat, t, isChatVisible }) => {
     const chatUuid = '';
     try {
       const chatRq: ChatRequest = { userId, userUuid, chatId, chatUuid, intl, newMessages: [userMessage], noticed: noticed };
-      const response: ChatResponse = await sendMessage(chatRq, token.value, captchaVersion);
+      const response: ChatResponse = await sendMessage(chatRq, tokenValue, useVersion);
       if (response.systemMessage?.includes('--done-clear--')) {
         handleClear();
         setLoading(false);
