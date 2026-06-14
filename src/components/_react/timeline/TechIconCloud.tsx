@@ -29,7 +29,7 @@ const TechIconCloud: React.FC<TechIconCloudProps> = ({  base_path, technologies,
       techList
         .filter(t => typeof t.logo_path === 'string' && t.logo_path)
         .map(t => [t.name, {
-          logo_path: `${base_path ? '/' + base_path : ''}/img/icon/${t.logo_path}${t.extension}`,
+          logo_path: `${base_path ? '/' + base_path : ''}/img/icon/${t.logo_path}${t.extension}?v=${__CACHE_BUSTER__}`,
           name: t.name
         }])
     ).values()

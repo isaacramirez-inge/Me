@@ -9,6 +9,9 @@ export default defineConfig({
     output: 'static',
     vite: {
         assetsInclude: ['**/*.lottie'],
+        define: {
+            __CACHE_BUSTER__: JSON.stringify(Date.now().toString(36)),
+        },
     },
     i18n: {
         locales: ['en-us', 'es-es', 'es-sv'],
